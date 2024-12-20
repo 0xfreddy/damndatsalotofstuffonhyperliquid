@@ -1077,7 +1077,7 @@ const tags = [
           <img src="/images/logos/fmoulin7.jpg" alt="FMoulin" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
           <span className="md:text-base text-xs">@fmoulin7</span>
         </a>
-        <a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-<a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+        <a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
           <img src="/images/logos/hypurr_co.jpg" alt="Hypurr" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
           <span className="md:text-base text-xs">@hypurr_co</span>
         </a>
