@@ -847,7 +847,7 @@ const tags = [
 
   return (
     <div className="min-h-screen bg-dark-green text-white flex flex-col">
-      <header className="bg-mint p-4 shadow-lg flex justify-between items-center">
+      <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
         <a
           href="https://google.com"
           target="_blank"
@@ -863,7 +863,7 @@ const tags = [
         </a>
 
         <div className="w-full ml-10 mx-auto flex justify-center items-center">
-          <span className="text-gray-900 font-bold text-xl">onHL</span>
+          <span className="text-gray-900 font-bold text-xl">damndatsalotofstuffonhyperliquid</span>
         </div>
 
         {cryptoPrice && (
@@ -1025,7 +1025,7 @@ const tags = [
 
       <footer className="bg-[#97FCE4] p-4 mt-auto shadow-lg w-full">
         <div className="max-w-4xl mx-auto flex justify-center items-center">
-          <span className="text-gray-900 font-bold text-xl">onHL</span>
+          <span className="text-gray-900 font-bold text-xl">damndatsalotofstuffonhyperliquid</span>
         </div>
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
           <a
