@@ -886,7 +886,7 @@ const tags = [
           }`}
         >
           <Network size={16} />
-          Network
+          Graph
         </button>
         <button
           onClick={() => setActiveView("directory")}
