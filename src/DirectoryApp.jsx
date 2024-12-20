@@ -712,7 +712,7 @@ const tags = [
         ctx.fillStyle = node.label !== selectedTag ? "#FFFFFF" : "#1F2937";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        const fontSize = Math.max(10, node.radius / 4);
+        const fontSize = Math.max(10, node.radius / 3);
         ctx.font = `${fontSize}px sans-serif`;
         ctx.fillText(node.label, node.x, node.y, node.radius * 2);
       } else {
