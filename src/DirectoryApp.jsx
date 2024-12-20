@@ -965,6 +965,7 @@ const tags = [
       onTouchStart={handleTouchStart}
       style={{ touchAction: "none" }}
     />
+    
     <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
       <h2 className="text-xl font-bold mb-4 text-center">Notable Profiles</h2>
       <div className="flex flex-wrap justify-center gap-2">
