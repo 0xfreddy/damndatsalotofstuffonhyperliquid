@@ -859,7 +859,7 @@ const tags = [
             alt=""
             className="h-8 w-8 bg-white p-1.5 rounded-full"
           />
-          <span>Button</span>
+          <span>Hyperliquid</span>
         </a>
 
         <div className="w-full ml-10 mx-auto flex justify-center items-center">
@@ -1029,20 +1029,20 @@ const tags = [
         </div>
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
           <a
-            href="https://google.com"
+            href="https://hyperfoundation.org/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="twitter_logo_url_here"
+              src="https://ibb.co/Kz1t7Cb"
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
-            <span className="md:text-base text-xs">@loremipsum</span>
+            <span className="md:text-base text-xs">@0xfreddy</span>
           </a>
           <a
-            href="https://google.com"
+            href="https://x.com/freddy_0x"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
@@ -1052,10 +1052,10 @@ const tags = [
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
-            <span className="md:text-base text-xs">@loremipsum</span>
+            <span className="md:text-base text-xs">@Macr0Mark</span>
           </a>
           <a
-            href="https://google.com"
+            href="https://x.com/Macr0Mark"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
@@ -1065,7 +1065,7 @@ const tags = [
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
-            <span className="md:text-base text-xs">@loremipsum</span>
+            <span className="md:text-base text-xs">@Tonkavan</span>
           </a>
         </div>
       </footer>
