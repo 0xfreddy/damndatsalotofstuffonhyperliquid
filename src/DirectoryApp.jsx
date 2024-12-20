@@ -857,7 +857,7 @@ const tags = [
           <img
             src="https://i.ibb.co/NVN04W5/hl-logo.png"
             alt="HL"
-            className="h-8 w-8 bg-white p-1.5 rounded-full"
+            className="h-8 w-12 bg-white p-1.5 rounded-full"
           />
           <span>Hyperliquid</span>
         </a>
