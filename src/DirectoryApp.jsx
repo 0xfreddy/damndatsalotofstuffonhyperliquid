@@ -361,7 +361,7 @@ const tags = [
       title: "Native EVM",
       month: "May",
       year: "2024",
-      link: "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a"",
+      link: "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a",
     },
     {
       title: "HyperBFT (Consensus Algorithm)",
