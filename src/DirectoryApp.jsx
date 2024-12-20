@@ -25,6 +25,13 @@ const DirectoryApp = () => {
     },
     {
       id: 2,
+      name: "HyperDitto",
+      tags: ["Tools"],
+      twitter: "https://x.com/hyperditto",
+      logo: "/images/logos/hyperditto.png",
+    },
+    {
+      id: 3,
       name: "hyperland",
       tags: ["Defi", "Staking"],
       twitter: "https://x.com/hyperlendx",
