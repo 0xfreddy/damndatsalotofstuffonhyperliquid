@@ -997,106 +997,114 @@ const tags = [
     <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
       <h2 className="text-xl font-bold mb-4 text-center">Worth a follow</h2>
       <div className="flex flex-wrap justify-center gap-2">
-        <a href="https://x.com/NMTD8" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/nmtd8.png" alt="NMTD8" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@NMTD8</span>
-        </a>
-        <a href="https://x.com/crypto_adair" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/crypto_adair.png" alt="Crypto Adair" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@crypto_adair</span>
-        </a>
-        <a href="https://x.com/chameleon_jeff" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/chameleon_jeff.png" alt="Jeff" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@chameleon_jeff</span>
-        </a>
-        <a href="https://x.com/laurentzeimes" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/laurentzeimes.png" alt="Laurent" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@laurentzeimes</span>
-        </a>
-        <a href="https://x.com/fiege_max" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/fiege_max.png" alt="Max" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@fiege_max</span>
-        </a>
-        <a href="https://x.com/nexushl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/nexushl.png" alt="Nexus" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@nexushl</span>
-        </a>
-        <a href="https://x.com/KingJulianIAm" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/kingjulianiam.png" alt="King Julian" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@KingJulianIAm</span>
-        </a>
-        <a href="https://x.com/GuthixHL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/guthixhl.png" alt="Guthix" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@GuthixHL</span>
-        </a>
-        <a href="https://x.com/Henrik_on_HL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/henrik_on_hl.png" alt="Henrik" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@Henrik_on_HL</span>
-        </a>
-        <a href="https://x.com/points_hl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/points_hl.png" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@points_hl</span>
-        </a>
-        <a href="https://x.com/JHyperliquid" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/jhyperliquid.png" alt="JHyperliquid" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@JHyperliquid</span>
-        </a>
-        <a href="https://x.com/0xPasteke" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/0xpasteke.png" alt="Pasteke" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@0xPasteke</span>
-        </a>
-        <a href="https://x.com/CapitalMonet" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/capitalmonet.png" alt="Capital Monet" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@CapitalMonet</span>
-        </a>
-        <a href="https://x.com/derteil00" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/derteil00.png" alt="Derteil" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@derteil00</span>
-        </a>
-        <a href="https://x.com/esprisi0" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/esprisi0.png" alt="Esprisi" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@esprisi0</span>
-        </a>
-        <a href="https://x.com/SamuraiTakedown" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/samuraitakedown.png" alt="Samurai" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@SamuraiTakedown</span>
-        </a>
-        <a href="https://x.com/0xAdrianzy" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/0xadrianzy.png" alt="Adrianzy" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@0xAdrianzy</span>
-        </a>
-        <a href="https://x.com/0xNairolf" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/0xnairolf.png" alt="Nairolf" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@0xNairolf</span>
-        </a>
-        <a href="https://x.com/CC2Ventures" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/cc2ventures.png" alt="CC2Ventures" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@CC2Ventures</span>
-        </a>
-        <a href="https://x.com/fmoulin7" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/fmoulin7.png" alt="FMoulin" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@fmoulin7</span>
-        </a>
-        <a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/hypurr_co.png" alt="Hypurr" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@hypurr_co</span>
-        </a>
-        <a href="https://x.com/comfycapital_" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/comfycapital.png" alt="Comfy Capital" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@comfycapital_</span>
-        </a>
-        <a href="https://x.com/HyperliquidFan" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/hyperliquidfan.png" alt="HyperliquidFan" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@HyperliquidFan</span>
-        </a>
-        <a href="https://x.com/stevenyuntcap" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/stevenyuntcap.png" alt="Steven Yun" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@stevenyuntcap</span>
-        </a>
-        <a href="https://x.com/Sakrexer" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/images/logos/sakrexer.png" alt="Sakrexer" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@Sakrexer</span>
-        </a>
+       <a href="https://x.com/NMTD8" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/hF8dTDq/NMTD8.png" alt="NMTD8" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@NMTD8</span>
+</a>
+
+<a href="https://x.com/0xAdrianzy" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/PYbPmcx/0x-Adrianzy.png" alt="Adrianzy" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@0xAdrianzy</span>
+</a>
+
+<a href="https://x.com/0xNairolf" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/tBrptV5/0x-Nairolf.png" alt="Nairolf" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@0xNairolf</span>
+</a>
+
+<a href="https://x.com/0xPasteke" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/mNyhSQT/0x-Pasteke.png" alt="Pasteke" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@0xPasteke</span>
+</a>
+
+<a href="https://x.com/CapitalMonet" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/DLBPYNb/Capital-Monet.png" alt="Capital Monet" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@CapitalMonet</span>
+</a>
+
+<a href="https://x.com/CC2Ventures" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/8Kdd2H6/CC2-Ventures.png" alt="CC2 Ventures" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@CC2Ventures</span>
+</a>
+
+<a href="https://x.com/chameleon_jeff" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/LpNYZhn/chameleon-jeff.png" alt="Jeff" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@chameleon_jeff</span>
+</a>
+
+<a href="https://x.com/comfycapital_" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/2668gbR/comfycapital.png" alt="Comfy Capital" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@comfycapital_</span>
+</a>
+
+<a href="https://x.com/crypto_adair" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/zJb10Vs/crypto-adair.png" alt="Crypto Adair" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@crypto_adair</span>
+</a>
+
+<a href="https://x.com/derteil00" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/gSmG9DR/derteil00.png" alt="Derteil" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@derteil00</span>
+</a>
+
+<a href="https://x.com/esprisi0" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/nDRWdB3/esprisi0.png" alt="Esprisi" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@esprisi0</span>
+</a>
+
+<a href="https://x.com/fiege_max" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/5WPhBWF/fiege-max.png" alt="Max" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@fiege_max</span>
+</a>
+
+<a href="https://x.com/fmoulin7" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/mytjWB8/fmoulin7.png" alt="FMoulin" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@fmoulin7</span>
+</a>
+
+<a href="https://x.com/GuthixHL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/YjwVMhq/GuthixHL.png" alt="Guthix" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@GuthixHL</span>
+</a>
+
+<a href="https://x.com/Henrik_on_HL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/37vNjcm/Henrik-on-HL.png" alt="Henrik" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@Henrik_on_HL</span>
+</a>
+
+<a href="https://x.com/HyperliquidFan" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/596MrDM/Hyperliquid-Fan.png" alt="HyperliquidFan" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@HyperliquidFan</span>
+</a>
+
+<a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/THdpNKB/hypurr-co.png" alt="Hypurr" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@hypurr_co</span>
+</a>
+
+<a href="https://x.com/JHyperliquid" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/vsBdKdy/JHyperliquid.png" alt="JHyperliquid" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@JHyperliquid</span>
+</a>
+
+<a href="https://x.com/KingJulianIAm" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/FhtJBTj/King-Julian-IAm.png" alt="King Julian" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@KingJulianIAm</span>
+</a>
+
+<a href="https://x.com/laurentzeimes" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/w7sdxmh/laurentzeimes.png" alt="Laurent" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@laurentzeimes</span>
+</a>
+
+<a href="https://x.com/nexushl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/sjZBCbg/nexushl.png" alt="Nexus" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@nexushl</span>
+</a>
+
+<a href="https://x.com/points_hl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/vLLLKvY/points-hl.png" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@points_hl
       </div>
     </div>
   </div>
