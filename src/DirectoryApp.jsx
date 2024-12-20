@@ -921,11 +921,11 @@ const tags = [
     }
   }, [selectedTag, imagesLoaded]);
 
-  return (
-    <div className="min-h-screen bg-dark-green text-white flex flex-col">
-      <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
-        <div className="w-full ml-10 mx-auto flex justify-center items-center">
-          <span className="text-gray-900 font-bold text-xl">onHL</span>
+return (
+  <div className="min-h-screen bg-dark-green text-white flex flex-col">
+    <header className="bg-mint p-2 shadow-lg flex justify-start items-center">
+      <div className="ml-10">
+        <span className="text-gray-900 font-bold text-xl">onHL</span>
         </div>
 
         {cryptoPrice && (
