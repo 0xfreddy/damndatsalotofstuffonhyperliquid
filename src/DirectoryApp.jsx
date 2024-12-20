@@ -959,29 +959,28 @@ return (
         <LayoutGrid size={16} />
         Directory
       </button>
-    </div> 
-  </div>
+    </div>
 
-<div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
-  <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
-    <canvas
-      ref={canvasRef}
-      width={800}
-      height={window.innerWidth < 768 ? 1000 : 600}
-      className="w-full cursor-pointer md:bg-hero-pattern md:bg-cover rounded-xl md:bg-center md:bg-no-repeat bg-transparent"
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onTouchStart={handleTouchStart}
-      style={{ touchAction: "none" }}
-    />
-    
-    <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
-      <h2 className="text-xl font-bold mb-4 text-center">Worth a follow</h2>
-      <div className="flex flex-wrap justify-center gap-2">
+    <div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
+      <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
+        <canvas
+          ref={canvasRef}
+          width={800}
+          height={window.innerWidth < 768 ? 1000 : 600}
+          className="w-full cursor-pointer md:bg-hero-pattern md:bg-cover rounded-xl md:bg-center md:bg-no-repeat bg-transparent"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchStart={handleTouchStart}
+          style={{ touchAction: "none" }}
+        />
+        
+        <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
+          <h2 className="text-xl font-bold mb-4 text-center">Worth a follow</h2>
+          <div className="flex flex-wrap justify-center gap-2">
        <a href="https://x.com/NMTD8" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
   <img src="https://i.ibb.co/hF8dTDq/NMTD8.png" alt="NMTD8" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
   <span className="md:text-base text-xs">@NMTD8</span>
@@ -992,101 +991,6 @@ return (
   <span className="md:text-base text-xs">@0xAdrianzy</span>
 </a>
 
-<a href="https://x.com/0xNairolf" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/tBrptV5/0x-Nairolf.png" alt="Nairolf" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@0xNairolf</span>
-</a>
-
-<a href="https://x.com/0xPasteke" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/mNyhSQT/0x-Pasteke.png" alt="Pasteke" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@0xPasteke</span>
-</a>
-
-<a href="https://x.com/CapitalMonet" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/DLBPYNb/Capital-Monet.png" alt="Capital Monet" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@CapitalMonet</span>
-</a>
-
-<a href="https://x.com/CC2Ventures" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/8Kdd2H6/CC2-Ventures.png" alt="CC2 Ventures" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@CC2Ventures</span>
-</a>
-
-<a href="https://x.com/chameleon_jeff" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/LpNYZhn/chameleon-jeff.png" alt="Jeff" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@chameleon_jeff</span>
-</a>
-
-<a href="https://x.com/comfycapital_" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/2668gbR/comfycapital.png" alt="Comfy Capital" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@comfycapital_</span>
-</a>
-
-<a href="https://x.com/crypto_adair" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/zJb10Vs/crypto-adair.png" alt="Crypto Adair" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@crypto_adair</span>
-</a>
-
-<a href="https://x.com/derteil00" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/gSmG9DR/derteil00.png" alt="Derteil" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@derteil00</span>
-</a>
-
-<a href="https://x.com/esprisi0" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/nDRWdB3/esprisi0.png" alt="Esprisi" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@esprisi0</span>
-</a>
-
-<a href="https://x.com/fiege_max" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/5WPhBWF/fiege-max.png" alt="Max" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@fiege_max</span>
-</a>
-
-<a href="https://x.com/fmoulin7" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/mytjWB8/fmoulin7.png" alt="FMoulin" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@fmoulin7</span>
-</a>
-
-<a href="https://x.com/GuthixHL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/YjwVMhq/GuthixHL.png" alt="Guthix" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@GuthixHL</span>
-</a>
-
-<a href="https://x.com/Henrik_on_HL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/37vNjcm/Henrik-on-HL.png" alt="Henrik" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@Henrik_on_HL</span>
-</a>
-
-<a href="https://x.com/HyperliquidFan" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/596MrDM/Hyperliquid-Fan.png" alt="HyperliquidFan" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@HyperliquidFan</span>
-</a>
-
-<a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/THdpNKB/hypurr-co.png" alt="Hypurr" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@hypurr_co</span>
-</a>
-
-<a href="https://x.com/JHyperliquid" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/vsBdKdy/JHyperliquid.png" alt="JHyperliquid" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@JHyperliquid</span>
-</a>
-
-<a href="https://x.com/KingJulianIAm" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/FhtJBTj/King-Julian-IAm.png" alt="King Julian" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@KingJulianIAm</span>
-</a>
-
-<a href="https://x.com/laurentzeimes" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/w7sdxmh/laurentzeimes.png" alt="Laurent" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@laurentzeimes</span>
-</a>
-
-<a href="https://x.com/nexushl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/sjZBCbg/nexushl.png" alt="Nexus" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@nexushl</span>
-</a>
-
 <a href="https://x.com/points_hl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
   <img src="https://i.ibb.co/vLLLKvY/points-hl.png" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
   <span className="md:text-base text-xs">@points_hl</span>
@@ -1095,11 +999,11 @@ return (
     </div>
   </div>
 
-  <section
-    className={`flex flex-col space-y-6 ${
-      activeView !== "directory" ? "hidden md:block" : ""
-    }`}
-  >
+<section
+        className={`flex flex-col space-y-6 ${
+          activeView !== "directory" ? "hidden md:block" : ""
+        }`}
+      >
           <div className="flex justify-between items-center">
             <h1 className="text-2xl">Directory</h1>
             <div className="bg-mint border-dark-green p-2 rounded-lg">
@@ -1194,11 +1098,11 @@ return (
           </div>
         </section>
       </div>
-
-      <footer className="bg-[#97FCE4] p-4 mt-auto shadow-lg w-full">
-        <div className="max-w-4xl mx-auto flex justify-center items-center">
-          <span className="text-gray-900 font-bold text-xl">onHL</span>
-        </div>
+    
+  <footer className="bg-[#97FCE4] p-4 mt-auto shadow-lg w-full">
+      <div className="max-w-4xl mx-auto flex justify-center items-center">
+        <span className="text-gray-900 font-bold text-xl">onHL</span>
+      </div>
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
           <a
             href="https://x.com/freddy_0x"
@@ -1243,6 +1147,6 @@ return (
       </footer>
     </div>
   );
-};
+}
 
 export default DirectoryApp;
