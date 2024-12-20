@@ -175,7 +175,7 @@ const DirectoryApp = () => {
       name: "Hypurr Finance",
       tags: ["Defi"],
       twitter: "https://x.com/hypurrfi",
-      logo: "/images/logos/hypurrfi-logo.png",
+      logo: "/images/logos/hypurrfinance-logo.png",
     },
     {
       id: 26,
@@ -835,7 +835,7 @@ const tags = [
     <div className="min-h-screen bg-dark-green text-white flex flex-col">
       <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
         <a
-          href="https://google.com"
+          href="https://hyperfoundation.org/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-x-2 bg-dark-green text-white px-5 py-2 rounded-md hover:bg-green-600 transition-colors"
