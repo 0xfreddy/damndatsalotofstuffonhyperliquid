@@ -351,18 +351,6 @@ const tags = [
     "link": "https://x.com/chameleon_jeff/status/1795859763034731002"
   },
   {
-    "title": "Native EVM",
-    "month": "May",
-    "year": "2024",
-    "link": "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a"
-  },
-  {
-    "title": "HyperBFT (Consensus Algorithm)",
-    "month": "May",
-    "year": "2024",
-    "link": "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a"
-  },
-  {
     "title": "To House All of Finance",
     "month": "April",
     "year": "2024",
