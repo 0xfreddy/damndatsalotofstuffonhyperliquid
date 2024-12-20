@@ -284,7 +284,7 @@ const DirectoryApp = () => {
     },
 {
   id: 41,
-  name: "memedata.info",
+  name: "memedata",
   tags: ["Analytics"],
   twitter: "https://x.com/shinji2048",
   logo: "/images/logos/shinji2048.png",
