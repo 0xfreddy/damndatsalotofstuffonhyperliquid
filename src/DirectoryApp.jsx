@@ -949,27 +949,83 @@ const tags = [
         </button>
       </div>
 
-      <div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
-        <div
-          className={`rounded-lg md:shadow-xl w-full ${
-            activeView !== "canvas" ? "hidden md:block" : ""
-          }`}
+<div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
+  <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
+    <canvas
+      ref={canvasRef}
+      width={800}
+      height={window.innerWidth < 768 ? 1000 : 600}
+      className="w-full cursor-pointer md:bg-hero-pattern md:bg-cover rounded-xl md:bg-center md:bg-no-repeat bg-transparent"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchStart={handleTouchStart}
+      style={{ touchAction: "none" }}
+    />
+    <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
+      <h2 className="text-xl font-bold mb-4 text-center">Notable Profiles</h2>
+      <div className="flex flex-wrap justify-center gap-2">
+        
+          href="https://x.com/chameleon_jeff"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
         >
-          <canvas
-            ref={canvasRef}
-            width={800}
-            height={window.innerWidth < 768 ? 1000 : 600}
-            className="w-full cursor-pointer md:bg-hero-pattern md:bg-cover rounded-xl md:bg-center md:bg-no-repeat bg-transparent"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onTouchStart={handleTouchStart}
-            style={{ touchAction: "none" }}
+          <img
+            src="/api/placeholder/24/24"
+            alt="Jeff"
+            className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white"
           />
-        </div>
+          <span className="md:text-base text-xs">@chameleon_jeff</span>
+        </a>
+        
+        
+          href="https://x.com/hyperliquidx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
+        >
+          <img
+            src="https://i.ibb.co/NVN04W5/hl-logo.png"
+            alt="HyperLiquid"
+            className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white"
+          />
+          <span className="md:text-base text-xs">@HyperLiquidX</span>
+        </a>
+
+        
+          href="https://x.com/shinji2048"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
+        >
+          <img
+            src="/api/placeholder/24/24"
+            alt="Shinji"
+            className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white"
+          />
+          <span className="md:text-base text-xs">@shinji2048</span>
+        </a>
+
+        
+          href="https://x.com/degennquant"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
+        >
+          <img
+            src="/api/placeholder/24/24"
+            alt="degen"
+            className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white"
+          />
+          <span className="md:text-base text-xs">@degennquant</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
         <section
           className={`flex flex-col space-y-6 ${
