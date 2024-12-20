@@ -511,7 +511,7 @@ const tags = [
           "https://api.coingecko.com/api/v3/simple/price?ids=hyperliquid&vs_currencies=usd"
         );
         const data = await response.json();
-        setCryptoPrice(data.hype.usd);
+        setCryptoPrice(data.hyperliquid.usd);
       } catch (error) {
         console.error("Error fetching crypto price:", error);
         setCryptoPrice("N/A");
@@ -868,7 +868,7 @@ const tags = [
 
         {cryptoPrice && (
           <div className="text-gray-900 font-medium flex items-center gap-x-2">
-            Ethereum:{" "}
+            Hype:{" "}
             <span>
               ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
             </span>
@@ -1035,7 +1035,7 @@ const tags = [
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="https://i.ibb.co/Qj5Wnsp/0xfreddy.jpg"
+              src="https://i.ibb.co/640F1X0/0xfreddy-1.png""
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
@@ -1048,7 +1048,7 @@ const tags = [
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="https://i.ibb.co/Kb1Z472/macro.jpg"
+              src="https://i.ibb.co/6WB6Rfy/macro-1.png"
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
@@ -1061,7 +1061,7 @@ const tags = [
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="https://i.ibb.co/sjXL8KY/tonka.jpg"
+              src="https://i.ibb.co/sqYr1qG/tonka-1.png"
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
