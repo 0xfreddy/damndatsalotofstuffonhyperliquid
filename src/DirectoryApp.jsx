@@ -1244,7 +1244,7 @@ Directory
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}
 
 export default DirectoryApp;
