@@ -923,45 +923,44 @@ const tags = [
 
 return (
   <div className="min-h-screen bg-dark-green text-white flex flex-col">
-    <header className="bg-mint p-2 shadow-lg flex justify-start items-center">
+    <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
       <div className="ml-10">
         <span className="text-gray-900 font-bold text-xl">onHL</span>
-        </div>
-
-        {cryptoPrice && (
-          <div className="text-gray-900 font-medium flex items-center gap-x-2">
-            Hype:{" "}
-            <span>
-              ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
-            </span>
-          </div>
-        )}
-      </header>
-
-      <div className="md:hidden flex justify-center gap-2 p-4">
-        <button
-          onClick={() => setActiveView("canvas")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-            activeView === "canvas"
-              ? "bg-mint text-dark-green"
-              : "bg-dark-green text-white border border-mint"
-          }`}
-        >
-          <Network size={16} />
-          Graph
-        </button>
-        <button
-          onClick={() => setActiveView("directory")}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-            activeView === "directory"
-              ? "bg-mint text-dark-green"
-              : "bg-dark-green text-white border border-mint"
-          }`}
-        >
-          <LayoutGrid size={16} />
-          Directory
-        </button>
       </div>
+      {cryptoPrice && (
+        <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
+          Hype:{" "}
+          <span>
+            ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
+          </span>
+        </div>
+      )}
+    </header>
+    <div className="md:hidden flex justify-center gap-2 p-4">
+      <button
+        onClick={() => setActiveView("canvas")}
+        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+          activeView === "canvas"
+            ? "bg-mint text-dark-green"
+            : "bg-dark-green text-white border border-mint"
+        }`}
+      >
+        <Network size={16} />
+        Graph
+      </button>
+      <button
+        onClick={() => setActiveView("directory")}
+        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+          activeView === "directory"
+            ? "bg-mint text-dark-green"
+            : "bg-dark-green text-white border border-mint"
+        }`}
+      >
+        <LayoutGrid size={16} />
+        Directory
+      </button>
+    </div> 
+  </div>
 
 <div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
   <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
