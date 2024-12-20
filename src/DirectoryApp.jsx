@@ -1028,11 +1028,11 @@ const tags = [
     </div>
   </div>
 
-        <section
-          className={`flex flex-col space-y-6 ${
-            activeView !== "directory" ? "hidden md:block" : ""
-          }`}
-        >
+  <section
+    className={`flex flex-col space-y-6 ${
+      activeView !== "directory" ? "hidden md:block" : ""
+    }`}
+  >
           <div className="flex justify-between items-center">
             <h1 className="text-2xl">Directory</h1>
             <div className="bg-mint border-dark-green p-2 rounded-lg">
