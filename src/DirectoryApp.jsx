@@ -1195,7 +1195,7 @@ Directory
           </div>
         </section>
       </div>
-
+)
       <footer className="bg-[#97FCE4] p-4 mt-auto shadow-lg w-full">
         <div className="max-w-4xl mx-auto flex justify-center items-center">
           <span className="text-gray-900 font-bold text-xl">onHL</span>
