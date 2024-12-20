@@ -1035,7 +1035,7 @@ const tags = [
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="https://i.ibb.co/640F1X0/0xfreddy-1.png""
+              src="https://i.ibb.co/640F1X0/0xfreddy-1.png"
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
