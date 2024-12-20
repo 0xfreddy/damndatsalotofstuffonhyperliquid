@@ -962,7 +962,7 @@ Directory
     </div> 
   </div>
   )
-  
+  return(
   <div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
   <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
     <canvas
