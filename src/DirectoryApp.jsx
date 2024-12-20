@@ -924,20 +924,6 @@ const tags = [
   return (
     <div className="min-h-screen bg-dark-green text-white flex flex-col">
       <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
-        <a
-          href="https://hyperfoundation.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-x-2 bg-dark-green text-white px-5 py-2 rounded-md hover:bg-green-600 transition-colors"
-        >
-          <img
-            src="https://i.ibb.co/NVN04W5/hl-logo.png"
-            alt="HL"
-            className="h-8 w-12 bg-white p-1.5 rounded-full"
-          />
-          <span>Hyperliquid</span>
-        </a>
-
         <div className="w-full ml-10 mx-auto flex justify-center items-center">
           <span className="text-gray-900 font-bold text-xl">onHL</span>
         </div>
