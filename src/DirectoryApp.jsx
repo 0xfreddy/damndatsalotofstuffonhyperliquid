@@ -203,7 +203,7 @@ const DirectoryApp = () => {
       name: "VegasHL",
       tags: ["GambleFi"],
       twitter: "https://x.com/vegas_hl",
-      logo: "/images/logos/vegashl-logo.png",
+      logo: "/images/logos/vegas-logo.png",
     },
     {
       id: 28,
