@@ -347,6 +347,7 @@ const tags = [
     "Yield",
     "LST",
     "Oracle"
+    "Tools"
 ];
   const articles = [
   {
