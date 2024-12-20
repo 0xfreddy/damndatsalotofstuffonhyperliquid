@@ -712,7 +712,7 @@ const tags = [
         ctx.fillStyle = node.label !== selectedTag ? "#FFFFFF" : "#1F2937";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        const fontSize = Math.max(10, node.radius / 2);
+        const fontSize = Math.max(10, node.radius / 1);
         ctx.font = `${fontSize}px sans-serif`;
         ctx.fillText(node.label, node.x, node.y, node.radius * 2);
       } else {
@@ -722,7 +722,7 @@ const tags = [
         const item = items.find((i) => `item-${i.id}` === node.id);
         if (item && projectImages.current[item.id]) {
           const img = projectImages.current[item.id];
-          const imgSize = node.radius * 2;
+          const imgSize = node.radius * 1;
 
           try {
             ctx.save();
