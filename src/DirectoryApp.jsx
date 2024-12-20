@@ -282,20 +282,48 @@ const DirectoryApp = () => {
       twitter: "https://x.com/InsilicoTrading",
       logo: "/images/logos/insilico-logo.png",
     },
-    {
-      id: 4,
-      name: "memedata.info",
-      tags: ["Analytics"],
-      twitter: "https://x.com/shinji2048",
-      logo: "",
-    },
-    {
-      id: 42,
-      name: "Redstone",
-      tags: ["Oracle", "Infra"],
-      twitter: "https://x.com/redstone_defi",
-      logo: "/images/logos/redstone-logo.png",
-    }
+{
+  id: 41,
+  name: "memedata.info",
+  tags: ["Analytics"],
+  twitter: "https://x.com/shinji2048",
+  logo: "",
+},
+{
+  id: 42,
+  name: "Redstone",
+  tags: ["Oracle", "Infra"],
+  twitter: "https://x.com/redstone_defi",
+  logo: "/images/logos/redstone-logo.png",
+},
+{
+  id: 43,
+  name: "Hypers",
+  tags: ["NFT"],
+  twitter: "https://x.com/HypersOnHL",
+  logo: "/images/logos/HypersOnHL-logo.png",
+},
+{
+  id: 44,
+  name: "Drip.trade",
+  tags: ["NFT"],
+  twitter: "https://x.com/drip__trade",
+  logo: "/images/logos/driptrade-logo.png",
+},
+{
+  id: 45,
+  name: "Schizo",
+  tags: ["meme"],
+  twitter: "https://x.com/schizo_on_hl",
+  logo: "/images/logos/schizo-logo.png",
+},
+{
+  id: 46,
+  name: "Peri Pair Bot",
+  tags: ["Trading"],
+  twitter: "https://x.com/peripairbot",
+  logo: "/images/logos/peripairbot-logo.png",
+}
     
 ]
 const tags = [
@@ -969,24 +997,105 @@ const tags = [
     <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
       <h2 className="text-xl font-bold mb-4 text-center">Notable Profiles</h2>
       <div className="flex flex-wrap justify-center gap-2">
+        <a href="https://x.com/NMTD8" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/nmtd8.jpg" alt="NMTD8" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@NMTD8</span>
+        </a>
+        <a href="https://x.com/crypto_adair" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/crypto_adair.jpg" alt="Crypto Adair" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@crypto_adair</span>
+        </a>
         <a href="https://x.com/chameleon_jeff" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/api/placeholder/24/24" alt="Jeff" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <img src="/images/logos/chameleon_jeff.jpg" alt="Jeff" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
           <span className="md:text-base text-xs">@chameleon_jeff</span>
         </a>
-        
-        <a href="https://x.com/hyperliquidx" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="https://i.ibb.co/NVN04W5/hl-logo.png" alt="HyperLiquid" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@HyperLiquidX</span>
+        <a href="https://x.com/laurentzeimes" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/laurentzeimes.jpg" alt="Laurent" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@laurentzeimes</span>
         </a>
-
-        <a href="https://x.com/shinji2048" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/api/placeholder/24/24" alt="Shinji" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@shinji2048</span>
+        <a href="https://x.com/fiege_max" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/fiege_max.jpg" alt="Max" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@fiege_max</span>
         </a>
-
-        <a href="https://x.com/degennquant" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-          <img src="/api/placeholder/24/24" alt="degen" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-          <span className="md:text-base text-xs">@degennquant</span>
+        <a href="https://x.com/nexushl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/nexushl.jpg" alt="Nexus" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@nexushl</span>
+        </a>
+        <a href="https://x.com/KingJulianIAm" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/kingjulianiam.jpg" alt="King Julian" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@KingJulianIAm</span>
+        </a>
+        <a href="https://x.com/GuthixHL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/guthixhl.jpg" alt="Guthix" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@GuthixHL</span>
+        </a>
+        <a href="https://x.com/Henrik_on_HL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/henrik_on_hl.jpg" alt="Henrik" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@Henrik_on_HL</span>
+        </a>
+        <a href="https://x.com/points_hl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/points_hl.jpg" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@points_hl</span>
+        </a>
+        <a href="https://x.com/JHyperliquid" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/jhyperliquid.jpg" alt="JHyperliquid" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@JHyperliquid</span>
+        </a>
+        <a href="https://x.com/0xPasteke" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/0xpasteke.jpg" alt="Pasteke" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@0xPasteke</span>
+        </a>
+        <a href="https://x.com/CapitalMonet" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/capitalmonet.jpg" alt="Capital Monet" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@CapitalMonet</span>
+        </a>
+        <a href="https://x.com/derteil00" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/derteil00.jpg" alt="Derteil" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@derteil00</span>
+        </a>
+        <a href="https://x.com/esprisi0" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/esprisi0.jpg" alt="Esprisi" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@esprisi0</span>
+        </a>
+        <a href="https://x.com/SamuraiTakedown" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/samuraitakedown.jpg" alt="Samurai" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@SamuraiTakedown</span>
+        </a>
+        <a href="https://x.com/0xAdrianzy" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/0xadrianzy.jpg" alt="Adrianzy" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@0xAdrianzy</span>
+        </a>
+        <a href="https://x.com/0xNairolf" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/0xnairolf.jpg" alt="Nairolf" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@0xNairolf</span>
+        </a>
+        <a href="https://x.com/CC2Ventures" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/cc2ventures.jpg" alt="CC2Ventures" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@CC2Ventures</span>
+        </a>
+        <a href="https://x.com/fmoulin7" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/fmoulin7.jpg" alt="FMoulin" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@fmoulin7</span>
+        </a>
+        <a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-<a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/hypurr_co.jpg" alt="Hypurr" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@hypurr_co</span>
+        </a>
+        <a href="https://x.com/comfycapital_" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/comfycapital.jpg" alt="Comfy Capital" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@comfycapital_</span>
+        </a>
+        <a href="https://x.com/HyperliquidFan" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/hyperliquidfan.jpg" alt="HyperliquidFan" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@HyperliquidFan</span>
+        </a>
+        <a href="https://x.com/stevenyuntcap" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/stevenyuntcap.jpg" alt="Steven Yun" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@stevenyuntcap</span>
+        </a>
+        <a href="https://x.com/Sakrexer" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+          <img src="/images/logos/sakrexer.jpg" alt="Sakrexer" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+          <span className="md:text-base text-xs">@Sakrexer</span>
         </a>
       </div>
     </div>
