@@ -508,10 +508,10 @@ const tags = [
     const fetchCryptoPrice = async () => {
       try {
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
+          "https://api.coingecko.com/api/v3/simple/price?ids=hyperliquid&vs_currencies=usd"
         );
         const data = await response.json();
-        setCryptoPrice(data.ethereum.usd);
+        setCryptoPrice(data.hype.usd);
       } catch (error) {
         console.error("Error fetching crypto price:", error);
         setCryptoPrice("N/A");
