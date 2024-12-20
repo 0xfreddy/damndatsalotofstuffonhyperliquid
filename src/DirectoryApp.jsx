@@ -855,8 +855,8 @@ const tags = [
           className="flex items-center gap-x-2 bg-dark-green text-white px-5 py-2 rounded-md hover:bg-green-600 transition-colors"
         >
           <img
-            src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=040"
-            alt=""
+            src="https://i.ibb.co/NVN04W5/hl-logo.png"
+            alt="HL"
             className="h-8 w-8 bg-white p-1.5 rounded-full"
           />
           <span>Hyperliquid</span>
@@ -1029,30 +1029,17 @@ const tags = [
         </div>
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
           <a
-            href="https://hyperfoundation.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
-          >
-            <img
-              src="https://ibb.co/Kz1t7Cb"
-              alt="Twitter"
-              className="md:w-5 md:h-5 w-3 h-3"
-            />
-            <span className="md:text-base text-xs">@0xfreddy</span>
-          </a>
-          <a
             href="https://x.com/freddy_0x"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="twitter_logo_url_here"
+              src="https://i.ibb.co/Qj5Wnsp/0xfreddy.jpg"
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
-            <span className="md:text-base text-xs">@Macr0Mark</span>
+            <span className="md:text-base text-xs">@0xfreddy</span>
           </a>
           <a
             href="https://x.com/Macr0Mark"
@@ -1061,7 +1048,20 @@ const tags = [
             className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
           >
             <img
-              src="twitter_logo_url_here"
+              src="https://i.ibb.co/Kb1Z472/macro.jpg"
+              alt="Twitter"
+              className="md:w-5 md:h-5 w-3 h-3"
+            />
+            <span className="md:text-base text-xs">@Macr0Mark</span>
+          </a>
+          <a
+            href="https://x.com/Tonkavan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
+          >
+            <img
+              src="https://i.ibb.co/sjXL8KY/tonka.jpg"
               alt="Twitter"
               className="md:w-5 md:h-5 w-3 h-3"
             />
