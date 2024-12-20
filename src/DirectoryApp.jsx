@@ -31,13 +31,6 @@ const DirectoryApp = () => {
       logo: "/images/logos/hyperland-logo.png",
     },
     {
-      id: 3,
-      name: "funfun",
-      tags: ["meme", "Social"],
-      twitter: "https://x.com/fan_dot_fun",
-      logo: "/images/logos/funfun-logo.png",
-    },
-    {
       id: 4,
       name: "stHYPE",
       tags: ["Staking", "Defi"],
@@ -146,7 +139,7 @@ const DirectoryApp = () => {
       id: 19,
       name: "Pip",
       tags: ["meme", "Social"],
-      twitter: "https://x.com/HypurrScan",
+      twitter: "https://x.com/PipOnHL",
       logo: "/images/logos/hypurrscan-logo.png",
     },
     {
@@ -155,13 +148,6 @@ const DirectoryApp = () => {
       tags: ["Analytics", "Data"],
       twitter: "https://x.com/DefiLlama",
       logo: "/images/logos/defillama-logo.png",
-    },
-    {
-      id: 21,
-      name: "Hyperliquid Staking",
-      tags: ["Staking", "Defi"],
-      twitter: "https://x.com/HyperliquidX",
-      logo: "/images/logos/hyperliquid-logo.png",
     },
     {
       id: 22,
@@ -188,7 +174,7 @@ const DirectoryApp = () => {
       id: 25,
       name: "Hypurr Finance",
       tags: ["Defi"],
-      twitter: "",
+      twitter: "https://x.com/hypurrfi",
       logo: "/images/logos/hypurrfi-logo.png",
     },
     {
@@ -217,7 +203,7 @@ const DirectoryApp = () => {
       name: "Harmonix Finance",
       tags: ["Yield", "Defi"],
       twitter: "https://x.com/harmonixfi",
-      logo: "/images/logos/harmonix-logo.png",
+      logo: "/images/logos/harmony-logo.png",
     },
     {
       id: 30,
