@@ -283,12 +283,20 @@ const DirectoryApp = () => {
       logo: "/images/logos/insilico-logo.png",
     },
     {
-      id: 41,
+      id: 4,
+      name: "memedata.info",
+      tags: ["Analytics"],
+      twitter: "https://x.com/shinji2048",
+      logo: "",
+    },
+    {
+      id: 42,
       name: "Redstone",
       tags: ["Oracle", "Infra"],
       twitter: "https://x.com/redstone_defi",
       logo: "/images/logos/redstone-logo.png",
     }
+    
 ]
 const tags = [
     "Defi",
@@ -306,68 +314,134 @@ const tags = [
     "Oracle"
 ];
   const articles = [
-    {
-      title:
-        "Jeff Post-TGE: \"If you're reading this now, you're still early.\"",
-      month: "December",
-      year: "2024",
-      link: "https://x.com/chameleon_jeff/status/1862885996846805222",
-    },
-    {
-      title: "The Entire Financial Stack",
-      month: "November",
-      year: "2024",
-      link: "https://x.com/chameleon_jeff/status/1853439016957554873",
-    },
-    {
-      title: "The AWS of Liquidity",
-      month: "October",
-      year: "2024",
-      link: "https://x.com/chameleon_jeff/status/1841392573199585291",
-    },
-    {
-      title: "Builder Codes",
-      month: "October",
-      year: "2024",
-      link: "https://x.com/HyperliquidX/status/1840955444191473712",
-    },
-    {
-      title: "L1 Season 2",
-      month: "May",
-      year: "2024",
-      link: "https://x.com/HyperliquidX/status/1795683649960206488",
-    },
-    {
-      title: "When You See a 100x",
-      month: "May",
-      year: "2024",
-      link: "https://x.com/chameleon_jeff/status/1795859763034731002",
-    },
-    {
-      title: "Native EVM",
-      month: "May",
-      year: "2024",
-      link: "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a",
-    },
-    {
-      title: "HyperBFT (Consensus Algorithm)",
-      month: "May",
-      year: "2024",
-      link: "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a",
-    },
-    {
-      title: "To House All of Finance",
-      month: "April",
-      year: "2024",
-      link: "https://x.com/chameleon_jeff/status/1784592436792275221",
-    },
-    {
-      title: "Native Spot Trading",
-      month: "March",
-      year: "2024",
-      link: "https://x.com/HyperliquidX/status/1773531180815507473",
-    },
-  ];
+  {
+    "title": "Jeff Post-TGE: If you're reading this now, you're still early.",
+    "month": "December",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1862885996846805222"
+  },
+  {
+    "title": "The Entire Financial Stack",
+    "month": "November",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1853439016957554873"
+  },
+  {
+    "title": "The AWS of Liquidity",
+    "month": "October",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1841392573199585291"
+  },
+  {
+    "title": "Builder Codes",
+    "month": "October",
+    "year": "2024",
+    "link": "https://x.com/HyperliquidX/status/1840955444191473712"
+  },
+  {
+    "title": "L1 Season 2",
+    "month": "May",
+    "year": "2024",
+    "link": "https://x.com/HyperliquidX/status/1795683649960206488"
+  },
+  {
+    "title": "When You See a 100x",
+    "month": "May",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1795859763034731002"
+  },
+  {
+    "title": "Native EVM",
+    "month": "May",
+    "year": "2024",
+    "link": "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a"
+  },
+  {
+    "title": "HyperBFT (Consensus Algorithm)",
+    "month": "May",
+    "year": "2024",
+    "link": "https://www.notion.so/Hyperliquid-All-Tweets-152f1a87c48c804da5f7cc97e1c8047a"
+  },
+  {
+    "title": "To House All of Finance",
+    "month": "April",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1784592436792275221"
+  },
+  {
+    "title": "Native Spot Trading",
+    "month": "March",
+    "year": "2024",
+    "link": "https://x.com/HyperliquidX/status/1773531180815507473"
+  },
+  {
+    "title": "The Not-So-Definitive guide to Hyperliquid Precompiles",
+    "month": "December",
+    "year": "2024",
+    "link": "https://medium.com/@ambitlabs/the-not-so-definitive-guide-to-hyperliquid-precompiles-f0b6025bb4a3"
+  },
+  {
+    "title": "Delphi Digital: Hyperliquid Pre-TGE",
+    "month": "November",
+    "year": "2024",
+    "link": "https://members.delphidigital.io/feed/hyperliquid-readies-for-tge?a=1&utm_source=twitter&utm_medium=social&utm_campaign=HL-TGE-AF"
+  },
+  {
+    "title": "The Potential of Smart Contracts on Binance",
+    "month": "December",
+    "year": "2024",
+    "link": "https://x.com/reachingarete/status/1857461572014096575"
+  },
+  {
+    "title": "Jeff Pod",
+    "month": "November",
+    "year": "2024",
+    "link": "https://www.youtube.com/watch?v=WeRh589I76o"
+  },
+  {
+    "title": "Hyperliquid: The Hyperoptimized Order Book L1",
+    "month": "September",
+    "year": "2024",
+    "link": "https://newsletter.asxn.xyz/p/hyperliquid-the-hyperoptimized-order"
+  },
+  {
+    "title": "HL from a Quant/Trader's Perspective",
+    "month": "August",
+    "year": "2024",
+    "link": "https://x.com/DThomasStealth/status/1825383978552938808"
+  },
+  {
+    "title": "Hyperliquid: The High Performance Era",
+    "month": "July",
+    "year": "2024",
+    "link": "https://protecc.xyz/research/hyperliquid-the-high-performance-era"
+  },
+  {
+    "title": "Jeff Pod",
+    "month": "June",
+    "year": "2024",
+    "link": "https://www.youtube.com/watch?v=cxyUtPoC1-E&t=1s"
+  },
+  {
+    "title": "Nansen: Hyperliquid Perp Dex",
+    "month": "January",
+    "year": "2024",
+    "link": "https://x.com/0xomok/status/1745060597425906008"
+  },
+  {
+    "title": "Latency and transaction ordering on Hyperliquid",
+    "month": "January",
+    "year": "2024",
+    "link": "https://medium.com/@hyperliquid/latency-and-transaction-ordering-on-hyperliquid-cf28df3648eb"
+  },
+  {
+    "title": "Why an Onchain Order Book Matters",
+    "month": "April",
+    "year": "2024",
+    "link": "https://medium.com/@hyperliquid/why-an-onchain-order-book-matters-d74cdf7e6fc"
+  }
+]
+
 
   const getTagConnections = () => {
     const connections = {};
