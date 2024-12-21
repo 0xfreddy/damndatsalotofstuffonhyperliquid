@@ -333,8 +333,8 @@ const DirectoryApp = () => {
 },
 {
   id: 47,
-  name: "Vaport",
-  tags: ["Social"],
+  name: "Vapor",
+  tags: ["Social", "AI"],
   twitter: "https://x.com/vaporwarefun",
   logo: "/images/logos/vapor-logo.png",
 },
@@ -377,7 +377,7 @@ const tags = [
     "Oracle",
     "Tools",
     "Community", 
-    "Stable"
+    "AI"
 ];
   const articles = [
   {
