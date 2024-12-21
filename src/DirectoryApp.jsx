@@ -147,7 +147,7 @@ const DirectoryApp = () => {
       name: "Pip",
       tags: ["meme", "Social"],
       twitter: "https://x.com/PipOnHL",
-      logo: "/images/logos/hypurrscan-logo.png",
+      logo: "/images/logos/pip-logo.png",
     },
     {
       id: 20,
