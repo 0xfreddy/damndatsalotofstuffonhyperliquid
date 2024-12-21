@@ -19,7 +19,7 @@ const DirectoryApp = () => {
     {
       id: 1,
       name: "felix",
-      tags: ["Defi", "Trading"],
+      tags: ["Defi", "Stable"],
       twitter: "https://x.com/felixprotocol",
       logo: "/images/logos/felix-logo.png",
     },
@@ -54,14 +54,14 @@ const DirectoryApp = () => {
     {
       id: 6,
       name: "HyperSwap",
-      tags: ["Defi", "Trading"],
+      tags: ["Dex", "Tools"],
       twitter: "https://x.com/HyperSwapX",
       logo: "/images/logos/hyperswap-logo.png",
     },
     {
       id: 7,
       name: "Kinetiq",
-      tags: ["Staking", "Defi"],
+      tags: ["Defi"],
       twitter: "https://x.com/kinetiq_xyz",
       logo: "/images/logos/kinetiq-logo.png",
     },
@@ -75,14 +75,14 @@ const DirectoryApp = () => {
     {
       id: 9,
       name: "HL Names",
-      tags: ["Infra", "Social"],
+      tags: ["Tools", "Social"],
       twitter: "https://x.com/hlnames",
       logo: "/images/logos/hl-names-logo.png",
     },
     {
       id: 10,
       name: "fanfun",
-      tags: ["Social", "meme"],
+      tags: ["Social", "Meme"],
       twitter: "https://x.com/fan_dot_fun",
       logo: "/images/logos/funfun-logo.png",
     },
@@ -109,8 +109,8 @@ const DirectoryApp = () => {
     },
     {
       id: 14,
-      name: "HyperData",
-      tags: ["Data", "Explorer"],
+      name: "HyperFun",
+      tags: ["GambleFi"],
       twitter: "https://x.com/hyperfunX",
       logo: "/images/logos/hyperfun-logo.png",
     },
@@ -131,21 +131,21 @@ const DirectoryApp = () => {
     {
       id: 17,
       name: "Yeeti",
-      tags: ["meme"],
+      tags: ["Meme"],
       twitter: "https://x.com/YeetiOnHL",
       logo: "/images/logos/yeeti-logo.png",
     },
     {
       id: 18,
       name: "CatCabal",
-      tags: ["meme", "Social"],
+      tags: ["Meme"],
       twitter: "https://x.com/CatCabal_hl",
       logo: "/images/logos/catcabal-logo.png",
     },
     {
       id: 19,
       name: "Pip",
-      tags: ["meme", "Social"],
+      tags: ["Meme"],
       twitter: "https://x.com/PipOnHL",
       logo: "/images/logos/pip-logo.png",
     },
@@ -166,7 +166,7 @@ const DirectoryApp = () => {
     {
       id: 23,
       name: "Liquid Start",
-      tags: ["Trading"],
+      tags: ["Defi"],
       twitter: "https://x.com/Liquid_Start",
       logo: "/images/logos/liquidstart-logo.png",
     },
@@ -187,7 +187,7 @@ const DirectoryApp = () => {
     {
       id: 26,
       name: "Hyperstats",
-      tags: ["Analytics", "Data"],
+      tags: ["Analytics", "Tools"],
       twitter: "https://x.com/hyperstats_xyz",
       logo: "/images/logos/hyperstats-logo.png",
     },
@@ -229,21 +229,21 @@ const DirectoryApp = () => {
     {
       id: 32,
       name: "Nucleus Earn",
-      tags: ["Yield", "Defi"],
+      tags: ["Defi"],
       twitter: "https://x.com/nucleusearn",
       logo: "/images/logos/nucleus-logo.png",
     },
     {
       id: 33,
       name: "Thunder Labs",
-      tags: ["LST", "Staking"],
+      tags: ["LST"],
       twitter: "https://x.com/ThunderheadLabs",
       logo: "/images/logos/thunderlabs-logo.png",
     },
     {
       id: 34,
       name: "KittenSwap",
-      tags: ["Defi", "Trading"],
+      tags: ["Dex"],
       twitter: "https://x.com/kittenswaphype",
       logo: "/images/logos/kittenswap-logo.png",
     },
@@ -320,7 +320,7 @@ const DirectoryApp = () => {
 {
   id: 45,
   name: "Schizo",
-  tags: ["meme"],
+  tags: ["Meme"],
   twitter: "https://x.com/schizo_on_hl",
   logo: "/images/logos/schizo-logo.png",
 },
@@ -355,7 +355,8 @@ const DirectoryApp = () => {
 ]
 const tags = [
     "Defi",
-    "meme",
+    "Dex",
+    "Meme",
     "Staking",
     "Trading",
     "Infra",
@@ -369,6 +370,7 @@ const tags = [
     "Oracle",
     "Tools",
     "Community"  
+    "Stable"
 ];
   const articles = [
   {
