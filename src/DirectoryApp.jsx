@@ -137,7 +137,7 @@ const DirectoryApp = () => {
     },
     {
       id: 18,
-      name: "CatCabal",
+      name: "Catbal",
       tags: ["Meme"],
       twitter: "https://x.com/CatCabal_hl",
       logo: "/images/logos/catcabal-logo.png",
