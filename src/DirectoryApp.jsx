@@ -330,8 +330,28 @@ const DirectoryApp = () => {
   tags: ["Trading"],
   twitter: "https://x.com/peripairbot",
   logo: "/images/logos/peripairbot-logo.png",
+},
+{
+  id: 47,
+  name: "Vaport",
+  tags: ["Social"],
+  twitter: "https://x.com/vaporwarefun",
+  logo: "/images/logos/vapor-logo.png",
+},
+{
+  id: 48,
+  name: "Hey Jeff",
+  tags: ["Tools"],
+  twitter: "https://x.com/janklimo",
+  logo: "/images/logos/peripairbot-logo.png",
+},
+    {
+  id: 49,
+  name: "Hypurr Collective",
+  tags: ["Community"],
+  twitter: "https://x.com/hypurr_co",
+  logo: "/images/logos/hypurr-logo.png",
 }
-    
 ]
 const tags = [
     "Defi",
@@ -347,7 +367,8 @@ const tags = [
     "Yield",
     "LST",
     "Oracle",
-    "Tools"
+    "Tools",
+    "Community"  
 ];
   const articles = [
   {
