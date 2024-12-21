@@ -19,7 +19,7 @@ const DirectoryApp = () => {
     {
       id: 1,
       name: "felix",
-      tags: ["Defi", "Stable"],
+      tags: ["Defi"],
       twitter: "https://x.com/felixprotocol",
       logo: "/images/logos/felix-logo.png",
     },
@@ -376,7 +376,7 @@ const tags = [
     "LST",
     "Oracle",
     "Tools",
-    "Community"  
+    "Community", 
     "Stable"
 ];
   const articles = [
