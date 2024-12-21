@@ -351,6 +351,13 @@ const DirectoryApp = () => {
   tags: ["Community"],
   twitter: "https://x.com/hypurr_co",
   logo: "/images/logos/hypurr-logo.png",
+},
+      {
+  id: 50,
+  name: "Panda",
+  tags: ["Meme","Community"],
+  twitter: "https://x.com/panda_on_hl",
+  logo: "/images/logos/panda-logo.png",
 }
 ]
 const tags = [
