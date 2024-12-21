@@ -346,7 +346,7 @@ const tags = [
     "GambleFi",
     "Yield",
     "LST",
-    "Oracle"
+    "Oracle",
     "Tools"
 ];
   const articles = [
