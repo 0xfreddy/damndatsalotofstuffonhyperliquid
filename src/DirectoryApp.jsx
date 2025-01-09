@@ -358,7 +358,64 @@ const DirectoryApp = () => {
   tags: ["Meme","Community"],
   twitter: "https://x.com/panda_on_hl",
   logo: "/images/logos/panda-logo.png",
+},
+{
+  id: 51,
+  name: "LadyOnHL",
+  tags: ["Meme"],
+  twitter: "https://x.com/lady_on_hl",
+  logo: "/images/logos/ladyhl-logo.png",
+},
+{
+  id: 52,
+  name: "HypurrDash",
+  tags: ["Analytics", "Data"],
+  twitter: "https://x.com/hypurrdash",
+  logo: "/images/logos/hyperdash-logo.png",
+},
+{
+  id: 53,
+  name: "WashOnHL",
+  tags: ["Trading"],
+  twitter: "https://x.com/wash_on_hl",
+  logo: "/images/logos/washsniper-logo.png",
+},
+{
+  id: 54,
+  name: "HyperTracker",
+  tags: ["Tools"],
+  twitter: "https://x.com/NMTD8/status/1871588493283270733",
+  logo: "/images/logos/hypertracker-logo.png",
+},
+{
+  id: 55,
+  name: "Hyperlend Explorer",
+  tags: ["Explorer"],
+  twitter: "https://explorer.hyperlend.finance/",
+  logo: "/images/logos/blockscout-logo.png",
+},
+{
+  id: 56,
+  name: "ASXN",
+  tags: ["Data"],
+  twitter: "https://x.com/asxn_r/status/1873668265450598613",
+  logo: "/images/logos/asxn-logo.png",
+},
+{
+  id: 57,
+  name: "Hypertrack",
+  tags: ["Tools"],
+  twitter: "https://x.com/hyperlendx/status/1855309389814432163",
+  logo: "/images/logos/hypertrack-logo.png",
+},
+{
+  id: 58,
+  name: "Tholos",
+  tags: ["Tools"],
+  twitter: "https://x.com/TholosApp",
+  logo: "/images/logos/tholos-logo.png",
 }
+
 ]
 const tags = [
     "Defi",
@@ -494,6 +551,7 @@ const tags = [
     "year": "2024",
     "link": "https://medium.com/@hyperliquid/why-an-onchain-order-book-matters-d74cdf7e6fc"
   }
+  
 ]
 
 
