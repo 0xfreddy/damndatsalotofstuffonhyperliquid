@@ -392,7 +392,7 @@ const DirectoryApp = () => {
   name: "Hyperlend Explorer",
   tags: ["Explorer"],
   twitter: "https://explorer.hyperlend.finance/",
-  logo: "/images/logos/blockscout-logo.png",
+  logo: "/images/logos/hyperland-logo.png",
 },
 {
   id: 56,
