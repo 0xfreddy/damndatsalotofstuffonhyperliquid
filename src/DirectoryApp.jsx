@@ -460,7 +460,7 @@ const DirectoryApp = () => {
 {
   id: 65,
   name: "Kibl",
-  tags: ["DeFi"],
+  tags: ["Defi"],
   twitter: "https://x.com/kiblprotocol",
   logo: "/images/logos/kibl.png",
 }
@@ -483,7 +483,8 @@ const tags = [
     "Oracle",
     "Tools",
     "Community", 
-    "AI"
+    "AI",
+    "NFT"
 ];
   const articles = [
   {
