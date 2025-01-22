@@ -414,6 +414,55 @@ const DirectoryApp = () => {
   tags: ["Tools"],
   twitter: "https://x.com/TholosApp",
   logo: "/images/logos/tholos-logo.png",
+},
+{
+  id: 59,
+  name: "Octis",
+  tags: ["Trading"],
+  twitter: "https://x.com/octis_808",
+  logo: "/images/logos/octis.png",
+},
+{
+  id: 60,
+  name: "Hypio",
+  tags: ["NFT"],
+  twitter: "https://x.com/HypioHL",
+  logo: "/images/logos/hypio.png",
+},
+{
+  id: 61,
+  name: "Hyperflip",
+  tags: ["GambleFi"],
+  twitter: "https://x.com/hypercoinflip",
+  logo: "/images/logos/hyperflip.png",
+},
+{
+  id: 62,
+  name: "USDC Inflows",
+  tags: ["Data"],
+  twitter: "https://x.com/mogie__/status/1881818562274459701",
+  logo: "/images/logos/mogie.png",
+},
+{
+  id: 63,
+  name: "Hyperdelta",
+  tags: ["Trading"],
+  twitter: "https://x.com/HyperdeltaX",
+  logo: "/images/logos/hyperdelta.png",
+},
+{
+  id: 64,
+  name: "Hypervol",
+  tags: ["Trading"],
+  twitter: "https://x.com/Hypervol_xyz",
+  logo: "/images/logos/hypervol.png",
+},
+{
+  id: 65,
+  name: "Kibl",
+  tags: ["DeFi"],
+  twitter: "https://x.com/kiblprotocol",
+  logo: "/images/logos/kibl.png",
 }
 
 ]
