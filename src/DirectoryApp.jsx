@@ -904,12 +904,12 @@ const tags = [
         const item = items.find((i) => `item-${i.id}` === node.id);
         if (item && projectImages.current[item.id]) {
           const img = projectImages.current[item.id];
-          const imgSize = node.radius * 2;
+          const imgSize = node.radius * 2.2;
 
           try {
             ctx.save();
             ctx.beginPath();
-            ctx.arc(node.x, node.y, node.radius - 2, 0, Math.PI * 2);
+            ctx.arc(node.x, node.y, node.radius - 1, 0, Math.PI * 2);
             ctx.clip();
             ctx.drawImage(
               img,
