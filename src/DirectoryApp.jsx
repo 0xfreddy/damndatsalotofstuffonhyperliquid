@@ -61,9 +61,9 @@ const DirectoryApp = () => {
     {
       id: 7,
       name: "Kinetiq",
-      tags: ["Defi"],
+      tags: ["LST"],
       twitter: "https://x.com/kinetiq_xyz",
-      logo: "/images/logos/kinetiq-logo.png",
+      logo: "/images/logos/kinetiq1-logo.png",
     },
     {
       id: 8,
@@ -160,8 +160,8 @@ const DirectoryApp = () => {
       id: 22,
       name: "Hyperbeat",
       tags: ["Infra"],
-      twitter: "https://x.com/degennquant",
-      logo: "/images/logos/hyperbeat-logo.png",
+      twitter: "https://x.com/0xHyperBeat",
+      logo: "/images/logos/hyperbeat1-logo.png",
     },
     {
       id: 23,
@@ -463,6 +463,41 @@ const DirectoryApp = () => {
   tags: ["Defi"],
   twitter: "https://x.com/kiblprotocol",
   logo: "/images/logos/kibl.png",
+},
+{
+  id: 66,
+  name: "Marbles",
+  tags: ["RWA"],
+  twitter: "https://x.com/marblesrwa",
+  logo: "/images/logos/marbles-logo.png",
+},
+{
+  id: 68,
+  name: "Liquidlaunch",
+  tags: [ "AI"],
+  twitter: "https://x.com/LiquidLaunchHL",
+  logo: "/images/logos/liquidlaunch-logo.png",
+},
+{
+  id: 69,
+  name: "Autist",
+  tags: ["Meme"],
+  twitter: "https://x.com/autisthyper",
+  logo: "/images/logos/autist.png",
+},
+{
+  id: 70,
+  name: "HCR Bot",
+  tags: ["Infra"],
+  twitter: "https://x.com/HCR_BOT",
+  logo: "/images/logos/hcrbot-logo.png",
+},
+{
+  id: 71,
+  name: "Liquina",
+  tags: ["Infra"],
+  twitter: "https://x.com/LiquinaHL",
+  logo: "/images/logos/liquina.png",
 }
 
 ]
@@ -484,7 +519,8 @@ const tags = [
     "Tools",
     "Community", 
     "AI",
-    "NFT"
+    "NFT",
+    "RWA"
 ];
   const articles = [
   {
@@ -1234,6 +1270,11 @@ return (
 <a href="https://x.com/points_hl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
   <img src="https://i.ibb.co/vLLLKvY/points-hl.png" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
   <span className="md:text-base text-xs">@points_hl</span>
+</a>
+
+<a href="https://x.com/ellie_nfts" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/64nyDMb/ellie.jpg" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@ellie.hl</span>
 </a>
       </div>
     </div>
