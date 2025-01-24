@@ -343,7 +343,7 @@ const DirectoryApp = () => {
   name: "Hey Jeff",
   tags: ["Tools"],
   twitter: "https://x.com/janklimo",
-  logo: "/images/logos/peripairbot-logo.png",
+  logo: "/images/logos/jeff-logo.png",
 },
     {
   id: 49,
