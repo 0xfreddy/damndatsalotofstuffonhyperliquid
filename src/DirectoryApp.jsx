@@ -61,7 +61,7 @@ const DirectoryApp = () => {
     {
       id: 7,
       name: "Kinetiq",
-      tags: ["Defi"],
+      tags: ["LST"],
       twitter: "https://x.com/kinetiq_xyz",
       logo: "/images/logos/kinetiq-logo.png",
     },
@@ -159,8 +159,8 @@ const DirectoryApp = () => {
     {
       id: 22,
       name: "Hyperbeat",
-      tags: ["Infra"],
-      twitter: "https://x.com/degennquant",
+      tags: ["Infra","Staking"],
+      twitter: "https://x.com/0xHyperBeat",
       logo: "/images/logos/hyperbeat-logo.png",
     },
     {
@@ -425,7 +425,7 @@ const DirectoryApp = () => {
 {
   id: 60,
   name: "Hypio",
-  tags: ["NFT"],
+  tags: ["NFT","Community"],
   twitter: "https://x.com/HypioHL",
   logo: "/images/logos/hypio.png",
 },
@@ -463,6 +463,76 @@ const DirectoryApp = () => {
   tags: ["Defi"],
   twitter: "https://x.com/kiblprotocol",
   logo: "/images/logos/kibl.png",
+},
+{
+  id: 66,
+  name: "Marbles",
+  tags: ["RWA"],
+  twitter: "https://x.com/marblesrwa",
+  logo: "/images/logos/marbles-logo.png",
+},
+{
+  id: 68,
+  name: "Liquidlaunch",
+  tags: [ "AI"],
+  twitter: "https://x.com/LiquidLaunchHL",
+  logo: "/images/logos/liquidlaunch-logo.png",
+},
+{
+  id: 69,
+  name: "Autist",
+  tags: ["Meme"],
+  twitter: "https://x.com/autisthyper",
+  logo: "/images/logos/autist.png",
+},
+{
+  id: 70,
+  name: "HCR Bot",
+  tags: ["Infra"],
+  twitter: "https://x.com/HCR_BOT",
+  logo: "/images/logos/hcrbot-logo.png",
+},
+{
+  id: 71,
+  name: "Liquina",
+  tags: ["Infra"],
+  twitter: "https://x.com/LiquinaHL",
+  logo: "/images/logos/liquina.png",
+},
+{
+  id: 72,
+  name: "Dexari",
+  tags: ["Trading","Mobile"],
+  twitter: "https://x.com/DexariDotCom",
+  logo: "/images/logos/dexari.png",
+},
+{
+  id: 73,
+  name: "Hypurr Markets",
+  tags: ["Tools"],
+  twitter: "https://x.com/HypurrMarkets",
+  logo: "/images/logos/hypurrmarkets.png",
+},
+{
+  id: 74,
+  name: "Hype Terminal",
+  tags: ["Trading"],
+  twitter: "https://x.com/hype_terminal",
+  logo: "/images/logos/hypeterminal.png",
+},
+{
+  id: 74,
+  name: "HL Fund",
+  tags: ["Investment"],
+  twitter: "https://x.com/hl_fund",
+  logo: "/images/logos/hlfund.png",
+},
+{
+  id: 74,
+  name: "Hyperrich",
+  tags: ["Trading","Tools"],
+  twitter: "https://x.com/hyperrichdotfun",
+  logo: "/images/logos/Hyperrich.png",
 }
 
 ]
@@ -484,7 +554,10 @@ const tags = [
     "Tools",
     "Community", 
     "AI",
-    "NFT"
+    "NFT",
+    "RWA",
+    "Mobile",
+    "Investment",
 ];
   const articles = [
   {
@@ -815,8 +888,10 @@ const tags = [
     if (!canvas || !imagesLoaded) return;
 
     const ctx = canvas.getContext("2d");
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const dpr = window.devicePixelRatio || 1;
+    
+    // Clear with proper scaling
+    ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
     linksRef.current.forEach((link) => {
       const isHighlighted = isLinkHighlighted(link);
@@ -868,12 +943,12 @@ const tags = [
         const item = items.find((i) => `item-${i.id}` === node.id);
         if (item && projectImages.current[item.id]) {
           const img = projectImages.current[item.id];
-          const imgSize = node.radius * 2;
+          const imgSize = node.radius * 2.2;
 
           try {
             ctx.save();
             ctx.beginPath();
-            ctx.arc(node.x, node.y, node.radius - 2, 0, Math.PI * 2);
+            ctx.arc(node.x, node.y, node.radius - 1, 0, Math.PI * 2);
             ctx.clip();
             ctx.drawImage(
               img,
@@ -884,13 +959,7 @@ const tags = [
             );
             ctx.restore();
           } catch (error) {
-            console.error(`Error drawing image for item ${item.id}:`, error, {
-              img,
-              imgSize,
-              nodeRadius: node.radius,
-              nodeX: node.x,
-              nodeY: node.y,
-            });
+            console.error(`Error drawing image for item ${item.id}:`, error);
           }
         }
       }
@@ -1025,19 +1094,21 @@ const tags = [
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    canvas.addEventListener("touchstart", handleTouchStart);
-    canvas.addEventListener("touchmove", handleTouchMove);
-    canvas.addEventListener("touchend", handleTouchEnd);
-
-    return () => {
-      canvas.removeEventListener("touchstart", handleTouchStart);
-      canvas.removeEventListener("touchmove", handleTouchMove);
-      canvas.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!canvasRef.current || !imagesLoaded) return;
+    // Adjust for high DPI displays
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    
+    // Set the canvas size to match its display size * device pixel ratio
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    
+    // Scale the context to ensure correct drawing
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    
+    // Update canvas style dimensions
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
 
     nodesRef.current = initializeNodes();
     linksRef.current = initializeLinks();
@@ -1111,9 +1182,11 @@ return (
       <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
         <canvas
           ref={canvasRef}
-          width={800}
-          height={window.innerWidth < 768 ? 1000 : 600}
           className="w-full cursor-pointer md:bg-hero-pattern md:bg-cover rounded-xl md:bg-center md:bg-no-repeat bg-transparent"
+          style={{ 
+            touchAction: "none",
+            height: window.innerWidth < 768 ? "1000px" : "600px" 
+          }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
@@ -1121,7 +1194,6 @@ return (
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onTouchStart={handleTouchStart}
-          style={{ touchAction: "none" }}
         />
         
         <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
@@ -1235,6 +1307,11 @@ return (
   <img src="https://i.ibb.co/vLLLKvY/points-hl.png" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
   <span className="md:text-base text-xs">@points_hl</span>
 </a>
+
+<a href="https://x.com/ellie_nfts" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
+  <img src="https://i.ibb.co/64nyDMb/ellie.jpg" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
+  <span className="md:text-base text-xs">@ellie.hl</span>
+</a>
       </div>
     </div>
   </div>
@@ -1274,9 +1351,10 @@ return (
                     <img
                       src={item.logo}
                       alt={`${item.name} logo`}
-                      className="w-6 h-6 rounded-full bg-white p-0.5"
+                      className="w-8 h-8 rounded-full bg-white p-0.5 object-contain"
+                      style={{ imageRendering: 'high-quality' }}
                       onError={(e) => {
-                        e.target.src = "/api/placeholder/24/24";
+                        e.target.src = "/api/placeholder/32/32";
                       }}
                     />
                     <span className="font-medium">{item.name}</span>
