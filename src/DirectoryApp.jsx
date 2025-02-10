@@ -498,6 +498,41 @@ const DirectoryApp = () => {
   tags: ["Infra"],
   twitter: "https://x.com/LiquinaHL",
   logo: "/images/logos/liquina.png",
+},
+{
+  id: 72,
+  name: "Dexari",
+  tags: ["Trading","Mobile"],
+  twitter: "https://x.com/DexariDotCom",
+  logo: "/images/logos/dexari.png",
+},
+{
+  id: 73,
+  name: "Hypurr Markets",
+  tags: ["Tools"],
+  twitter: "https://x.com/HypurrMarkets",
+  logo: "/images/logos/hypurrmarkets.png",
+},
+{
+  id: 74,
+  name: "Hype Terminal",
+  tags: ["Trading"],
+  twitter: "https://x.com/hype_terminal",
+  logo: "/images/logos/hypeterminal.png",
+},
+{
+  id: 74,
+  name: "HL Fund",
+  tags: ["Investment"],
+  twitter: "https://x.com/hl_fund",
+  logo: "/images/logos/hlfund.png",
+},
+{
+  id: 74,
+  name: "Hyperrich",
+  tags: ["Trading","Tools"],
+  twitter: "https://x.com/hyperrichdotfun",
+  logo: "/images/logos/Hyperrich.png",
 }
 
 ]
@@ -520,7 +555,9 @@ const tags = [
     "Community", 
     "AI",
     "NFT",
-    "RWA"
+    "RWA",
+    "Mobile",
+    "Investment",
 ];
   const articles = [
   {
