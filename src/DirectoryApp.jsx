@@ -532,7 +532,7 @@ const DirectoryApp = () => {
   name: "Hyperrich",
   tags: ["Trading","Tools"],
   twitter: "https://x.com/hyperrichdotfun",
-  logo: "/images/logos/Hyperrich.png",
+  logo: "/images/logos/hyperrich.png",
 }
 
 ]
