@@ -1152,7 +1152,7 @@ const tags = [
       {/* Header - fixed height */}
       <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
         <div className="ml-10">
-          <span className="text-gray-900 font-bold text-xl">onHL</span>
+          <span className="text-gray-900 font-bold text-xl">damndatsalotofstuffonhyperliquid</span>
         </div>
         {cryptoPrice && (
           <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
@@ -1177,7 +1177,7 @@ const tags = [
                   value={selectedTags}
                   onChange={setSelectedTags}
                   className="text-dark-green"
-                  placeholder="Select categories..."
+                  placeholder="Categories"
                 />
               </div>
 
@@ -1329,9 +1329,6 @@ const tags = [
 
       {/* Footer - fixed height */}
       <footer className="bg-[#97FCE4] p-4 shadow-lg">
-        <div className="max-w-4xl mx-auto flex justify-center items-center">
-          <span className="text-gray-900 font-bold text-xl">onHL</span>
-        </div>
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
           <a
             href="https://x.com/freddy_0x"
