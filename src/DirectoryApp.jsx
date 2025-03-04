@@ -299,254 +299,254 @@ const DirectoryApp = () => {
       twitter: "https://x.com/InsilicoTrading",
       logo: "/images/logos/insilico-logo.png",
     },
-{
-  id: 41,
-  name: "memedata",
-  tags: ["Analytics"],
-  twitter: "https://x.com/shinji2048",
-  logo: "/images/logos/shinji2048.png",
-},
-{
-  id: 42,
-  name: "Redstone",
-  tags: ["Oracle", "Infra"],
-  twitter: "https://x.com/redstone_defi",
-  logo: "/images/logos/redstone-logo.png",
-},
-{
-  id: 43,
-  name: "Hypers",
-  tags: ["NFT"],
-  twitter: "https://x.com/HypersOnHL",
-  logo: "/images/logos/HypersOnHL-logo.png",
-},
-{
-  id: 44,
-  name: "Drip.trade",
-  tags: ["NFT"],
-  twitter: "https://x.com/drip__trade",
-  logo: "/images/logos/driptrade-logo.png",
-},
-{
-  id: 45,
-  name: "Schizo",
-  tags: ["Meme"],
-  twitter: "https://x.com/schizo_on_hl",
-  logo: "/images/logos/schizo-logo.png",
-},
-{
-  id: 46,
-  name: "Peri Pair Bot",
-  tags: ["Trading"],
-  twitter: "https://x.com/peripairbot",
-  logo: "/images/logos/peripairbot-logo.png",
-},
-{
-  id: 47,
-  name: "Vapor",
-  tags: ["Social", "AI"],
-  twitter: "https://x.com/vaporwarefun",
-  logo: "/images/logos/vapor-logo.png",
-},
-{
-  id: 48,
-  name: "Hey Jeff",
-  tags: ["Tools"],
-  twitter: "https://x.com/janklimo",
-  logo: "/images/logos/peripairbot-logo.png",
-},
     {
-  id: 49,
-  name: "Hypurr Collective",
-  tags: ["Community"],
-  twitter: "https://x.com/hypurr_co",
-  logo: "/images/logos/hypurr-logo.png",
-},
-      {
-  id: 50,
-  name: "Panda",
-  tags: ["Meme","Community"],
-  twitter: "https://x.com/panda_on_hl",
-  logo: "/images/logos/panda-logo.png",
-},
-{
-  id: 51,
-  name: "LadyOnHL",
-  tags: ["Meme"],
-  twitter: "https://x.com/lady_on_hl",
-  logo: "/images/logos/ladyhl-logo.png",
-},
-{
-  id: 52,
-  name: "HypurrDash",
-  tags: ["Analytics", "Data"],
-  twitter: "https://x.com/hypurrdash",
-  logo: "/images/logos/hyperdash-logo.png",
-},
-{
-  id: 53,
-  name: "WashOnHL",
-  tags: ["Trading"],
-  twitter: "https://x.com/wash_on_hl",
-  logo: "/images/logos/washsniper-logo.png",
-},
-{
-  id: 54,
-  name: "HyperTracker",
-  tags: ["Tools"],
-  twitter: "https://x.com/NMTD8/status/1871588493283270733",
-  logo: "/images/logos/hypertracker-logo.png",
-},
-{
-  id: 55,
-  name: "Hyperlend Explorer",
-  tags: ["Explorer"],
-  twitter: "https://explorer.hyperlend.finance/",
-  logo: "/images/logos/hyperland-logo.png",
-},
-{
-  id: 56,
-  name: "ASXN",
-  tags: ["Data"],
-  twitter: "https://x.com/asxn_r/status/1873668265450598613",
-  logo: "/images/logos/asxn-logo.png",
-},
-{
-  id: 57,
-  name: "Hypertrack",
-  tags: ["Tools"],
-  twitter: "https://x.com/hyperlendx/status/1855309389814432163",
-  logo: "/images/logos/hypertrack-logo.png",
-},
-{
-  id: 58,
-  name: "Tholos",
-  tags: ["Tools"],
-  twitter: "https://x.com/TholosApp",
-  logo: "/images/logos/tholos-logo.png",
-},
-{
-  id: 59,
-  name: "Octis",
-  tags: ["Trading"],
-  twitter: "https://x.com/octis_808",
-  logo: "/images/logos/octis.png",
-},
-{
-  id: 60,
-  name: "Hypio",
-  tags: ["NFT","Community"],
-  twitter: "https://x.com/HypioHL",
-  logo: "/images/logos/hypio.png",
-},
-{
-  id: 61,
-  name: "Hyperflip",
-  tags: ["GambleFi"],
-  twitter: "https://x.com/hypercoinflip",
-  logo: "/images/logos/hyperflip.png",
-},
-{
-  id: 62,
-  name: "USDC Inflows",
-  tags: ["Data"],
-  twitter: "https://x.com/mogie__/status/1881818562274459701",
-  logo: "/images/logos/mogie.png",
-},
-{
-  id: 63,
-  name: "Hyperdelta",
-  tags: ["Trading"],
-  twitter: "https://x.com/HyperdeltaX",
-  logo: "/images/logos/hyperdelta.png",
-},
-{
-  id: 64,
-  name: "Hypervol",
-  tags: ["Trading"],
-  twitter: "https://x.com/Hypervol_xyz",
-  logo: "/images/logos/hypervol.png",
-},
-{
-  id: 65,
-  name: "Kibl",
-  tags: ["Defi"],
-  twitter: "https://x.com/kiblprotocol",
-  logo: "/images/logos/kibl.png",
-},
-{
-  id: 66,
-  name: "Marbles",
-  tags: ["RWA"],
-  twitter: "https://x.com/marblesrwa",
-  logo: "/images/logos/marbles-logo.png",
-},
-{
-  id: 68,
-  name: "Liquidlaunch",
-  tags: [ "AI"],
-  twitter: "https://x.com/LiquidLaunchHL",
-  logo: "/images/logos/liquidlaunch-logo.png",
-},
-{
-  id: 69,
-  name: "Autist",
-  tags: ["Meme"],
-  twitter: "https://x.com/autisthyper",
-  logo: "/images/logos/autist.png",
-},
-{
-  id: 70,
-  name: "HCR Bot",
-  tags: ["Infra"],
-  twitter: "https://x.com/HCR_BOT",
-  logo: "/images/logos/hcrbot-logo.png",
-},
-{
-  id: 71,
-  name: "Liquina",
-  tags: ["Infra"],
-  twitter: "https://x.com/LiquinaHL",
-  logo: "/images/logos/liquina.png",
-},
-{
-  id: 72,
-  name: "Dexari",
-  tags: ["Trading","Mobile"],
-  twitter: "https://x.com/DexariDotCom",
-  logo: "/images/logos/dexari.png",
-},
-{
-  id: 73,
-  name: "Hypurr Markets",
-  tags: ["Tools"],
-  twitter: "https://x.com/HypurrMarkets",
-  logo: "/images/logos/hypurrmarkets.png",
-},
-{
-  id: 74,
-  name: "Hype Terminal",
-  tags: ["Trading"],
-  twitter: "https://x.com/hype_terminal",
-  logo: "/images/logos/hypeterminal.png",
-},
-{
-  id: 74,
-  name: "HL Fund",
-  tags: ["Investment"],
-  twitter: "https://x.com/hl_fund",
-  logo: "/images/logos/hlfund.png",
-},
-{
-  id: 74,
-  name: "Hyperrich",
-  tags: ["Trading","Tools"],
-  twitter: "https://x.com/hyperrichdotfun",
-  logo: "/images/logos/Hyperrich.png",
-}
+      id: 41,
+      name: "memedata",
+      tags: ["Analytics"],
+      twitter: "https://x.com/shinji2048",
+      logo: "/images/logos/shinji2048.png",
+    },
+    {
+      id: 42,
+      name: "Slate",
+      tags: ["AI", "Tools", "Trading"],
+      twitter: "https://x.com/slate_hl",
+      logo: "/images/logos/slate-logo.png",
+    },
+    {
+      id: 43,
+      name: "HPS Protocol",
+      tags: ["Defi", "NFT", "Mobile"],
+      twitter: "https://x.com/HPSProtocol",
+      logo: "/images/logos/HPSProtocol.png",
+    },
+    {
+      id: 44,
+      name: "Chris Ling",
+      tags: ["Tools", "Trading"],
+      twitter: "https://x.com/chrisling_hl",
+      logo: "/images/logos/chrisling-logo.png",
+    },
+    {
+      id: 45,
+      name: "Schizo",
+      tags: ["Meme"],
+      twitter: "https://x.com/schizo_on_hl",
+      logo: "/images/logos/schizo-logo.png",
+    },
+    {
+      id: 46,
+      name: "Peri Pair Bot",
+      tags: ["Trading"],
+      twitter: "https://x.com/peripairbot",
+      logo: "/images/logos/peripairbot-logo.png",
+    },
+    {
+      id: 47,
+      name: "Vapor",
+      tags: ["Social", "AI"],
+      twitter: "https://x.com/vaporwarefun",
+      logo: "/images/logos/vapor-logo.png",
+    },
+    {
+      id: 48,
+      name: "Hey Jeff",
+      tags: ["Tools"],
+      twitter: "https://x.com/janklimo",
+      logo: "/images/logos/peripairbot-logo.png",
+    },
+    {
+      id: 49,
+      name: "Hypurr Collective",
+      tags: ["Community"],
+      twitter: "https://x.com/hypurr_co",
+      logo: "/images/logos/hypurr-logo.png",
+    },
+    {
+      id: 50,
+      name: "Panda",
+      tags: ["Meme","Community"],
+      twitter: "https://x.com/panda_on_hl",
+      logo: "/images/logos/panda-logo.png",
+    },
+    {
+      id: 51,
+      name: "LadyOnHL",
+      tags: ["Meme"],
+      twitter: "https://x.com/lady_on_hl",
+      logo: "/images/logos/ladyhl-logo.png",
+    },
+    {
+      id: 52,
+      name: "HypurrDash",
+      tags: ["Analytics", "Data"],
+      twitter: "https://x.com/hypurrdash",
+      logo: "/images/logos/hyperdash-logo.png",
+    },
+    {
+      id: 53,
+      name: "WashOnHL",
+      tags: ["Trading"],
+      twitter: "https://x.com/wash_on_hl",
+      logo: "/images/logos/washsniper-logo.png",
+    },
+    {
+      id: 54,
+      name: "HyperTracker",
+      tags: ["Tools"],
+      twitter: "https://x.com/NMTD8/status/1871588493283270733",
+      logo: "/images/logos/hypertracker-logo.png",
+    },
+    {
+      id: 55,
+      name: "Hyperlend Explorer",
+      tags: ["Explorer"],
+      twitter: "https://explorer.hyperlend.finance/",
+      logo: "/images/logos/hyperland-logo.png",
+    },
+    {
+      id: 56,
+      name: "ASXN",
+      tags: ["Data"],
+      twitter: "https://x.com/asxn_r/status/1873668265450598613",
+      logo: "/images/logos/asxn-logo.png",
+    },
+    {
+      id: 57,
+      name: "Hypertrack",
+      tags: ["Tools"],
+      twitter: "https://x.com/hyperlendx/status/1855309389814432163",
+      logo: "/images/logos/hypertrack-logo.png",
+    },
+    {
+      id: 58,
+      name: "Tholos",
+      tags: ["Tools"],
+      twitter: "https://x.com/TholosApp",
+      logo: "/images/logos/tholos-logo.png",
+    },
+    {
+      id: 59,
+      name: "Octis",
+      tags: ["Trading"],
+      twitter: "https://x.com/octis_808",
+      logo: "/images/logos/octis.png",
+    },
+    {
+      id: 60,
+      name: "Hypio",
+      tags: ["NFT","Community"],
+      twitter: "https://x.com/HypioHL",
+      logo: "/images/logos/hypio.png",
+    },
+    {
+      id: 61,
+      name: "Hyperflip",
+      tags: ["GambleFi"],
+      twitter: "https://x.com/hypercoinflip",
+      logo: "/images/logos/hyperflip.png",
+    },
+    {
+      id: 62,
+      name: "USDC Inflows",
+      tags: ["Data"],
+      twitter: "https://x.com/mogie__/status/1881818562274459701",
+      logo: "/images/logos/mogie.png",
+    },
+    {
+      id: 63,
+      name: "Hyperdelta",
+      tags: ["Trading"],
+      twitter: "https://x.com/HyperdeltaX",
+      logo: "/images/logos/hyperdelta.png",
+    },
+    {
+      id: 64,
+      name: "Hypervol",
+      tags: ["Trading"],
+      twitter: "https://x.com/Hypervol_xyz",
+      logo: "/images/logos/hypervol.png",
+    },
+    {
+      id: 65,
+      name: "Kibl",
+      tags: ["Defi"],
+      twitter: "https://x.com/kiblprotocol",
+      logo: "/images/logos/kibl.png",
+    },
+    {
+      id: 66,
+      name: "Marbles",
+      tags: ["RWA"],
+      twitter: "https://x.com/marblesrwa",
+      logo: "/images/logos/marbles-logo.png",
+    },
+    {
+      id: 68,
+      name: "Liquidlaunch",
+      tags: [ "AI"],
+      twitter: "https://x.com/LiquidLaunchHL",
+      logo: "/images/logos/liquidlaunch-logo.png",
+    },
+    {
+      id: 69,
+      name: "Autist",
+      tags: ["Meme"],
+      twitter: "https://x.com/autisthyper",
+      logo: "/images/logos/autist.png",
+    },
+    {
+      id: 70,
+      name: "HCR Bot",
+      tags: ["Infra"],
+      twitter: "https://x.com/HCR_BOT",
+      logo: "/images/logos/hcrbot-logo.png",
+    },
+    {
+      id: 71,
+      name: "Liquina",
+      tags: ["Infra"],
+      twitter: "https://x.com/LiquinaHL",
+      logo: "/images/logos/liquina.png",
+    },
+    {
+      id: 72,
+      name: "Dexari",
+      tags: ["Trading","Mobile"],
+      twitter: "https://x.com/DexariDotCom",
+      logo: "/images/logos/dexari.png",
+    },
+    {
+      id: 73,
+      name: "Hypurr Markets",
+      tags: ["Tools"],
+      twitter: "https://x.com/HypurrMarkets",
+      logo: "/images/logos/hypurrmarkets.png",
+    },
+    {
+      id: 74,
+      name: "Hype Terminal",
+      tags: ["Trading"],
+      twitter: "https://x.com/hype_terminal",
+      logo: "/images/logos/hypeterminal.png",
+    },
+    {
+      id: 74,
+      name: "HL Fund",
+      tags: ["Investment"],
+      twitter: "https://x.com/hl_fund",
+      logo: "/images/logos/hlfund.png",
+    },
+    {
+      id: 74,
+      name: "Hyperrich",
+      tags: ["Trading","Tools"],
+      twitter: "https://x.com/hyperrichdotfun",
+      logo: "/images/logos/Hyperrich.png",
+    }
+  ];
 
-]
-const tags = [
+  const tags = [
     "Defi",
     "Dex",
     "Meme",
@@ -568,124 +568,124 @@ const tags = [
     "RWA",
     "Mobile",
     "Investment",
-];
+  ];
+
   const articles = [
-  {
-    "title": "Jeff Post-TGE: If you're reading this now, you're still early.",
-    "month": "December",
-    "year": "2024",
-    "link": "https://x.com/chameleon_jeff/status/1862885996846805222"
-  },
-  {
-    "title": "The Entire Financial Stack",
-    "month": "November",
-    "year": "2024",
-    "link": "https://x.com/chameleon_jeff/status/1853439016957554873"
-  },
-  {
-    "title": "The AWS of Liquidity",
-    "month": "October",
-    "year": "2024",
-    "link": "https://x.com/chameleon_jeff/status/1841392573199585291"
-  },
-  {
-    "title": "Builder Codes",
-    "month": "October",
-    "year": "2024",
-    "link": "https://x.com/HyperliquidX/status/1840955444191473712"
-  },
-  {
-    "title": "L1 Season 2",
-    "month": "May",
-    "year": "2024",
-    "link": "https://x.com/HyperliquidX/status/1795683649960206488"
-  },
-  {
-    "title": "When You See a 100x",
-    "month": "May",
-    "year": "2024",
-    "link": "https://x.com/chameleon_jeff/status/1795859763034731002"
-  },
-  {
-    "title": "To House All of Finance",
-    "month": "April",
-    "year": "2024",
-    "link": "https://x.com/chameleon_jeff/status/1784592436792275221"
-  },
-  {
-    "title": "Native Spot Trading",
-    "month": "March",
-    "year": "2024",
-    "link": "https://x.com/HyperliquidX/status/1773531180815507473"
-  },
-  {
-    "title": "The Not-So-Definitive guide to Hyperliquid Precompiles",
-    "month": "December",
-    "year": "2024",
-    "link": "https://medium.com/@ambitlabs/the-not-so-definitive-guide-to-hyperliquid-precompiles-f0b6025bb4a3"
-  },
-  {
-    "title": "Delphi Digital: Hyperliquid Pre-TGE",
-    "month": "November",
-    "year": "2024",
-    "link": "https://members.delphidigital.io/feed/hyperliquid-readies-for-tge?a=1&utm_source=twitter&utm_medium=social&utm_campaign=HL-TGE-AF"
-  },
-  {
-    "title": "The Potential of Smart Contracts on Binance",
-    "month": "December",
-    "year": "2024",
-    "link": "https://x.com/reachingarete/status/1857461572014096575"
-  },
-  {
-    "title": "Jeff Pod",
-    "month": "November",
-    "year": "2024",
-    "link": "https://www.youtube.com/watch?v=WeRh589I76o"
-  },
-  {
-    "title": "Hyperliquid: The Hyperoptimized Order Book L1",
-    "month": "September",
-    "year": "2024",
-    "link": "https://newsletter.asxn.xyz/p/hyperliquid-the-hyperoptimized-order"
-  },
-  {
-    "title": "HL from a Quant/Trader's Perspective",
-    "month": "August",
-    "year": "2024",
-    "link": "https://x.com/DThomasStealth/status/1825383978552938808"
-  },
-  {
-    "title": "Hyperliquid: The High Performance Era",
-    "month": "July",
-    "year": "2024",
-    "link": "https://protecc.xyz/research/hyperliquid-the-high-performance-era"
-  },
-  {
-    "title": "Jeff Pod",
-    "month": "June",
-    "year": "2024",
-    "link": "https://www.youtube.com/watch?v=cxyUtPoC1-E&t=1s"
-  },
-  {
-    "title": "Nansen: Hyperliquid Perp Dex",
-    "month": "January",
-    "year": "2024",
-    "link": "https://x.com/0xomok/status/1745060597425906008"
-  },
-  {
-    "title": "Latency and transaction ordering on Hyperliquid",
-    "month": "January",
-    "year": "2024",
-    "link": "https://medium.com/@hyperliquid/latency-and-transaction-ordering-on-hyperliquid-cf28df3648eb"
-  },
-  {
-    "title": "Why an Onchain Order Book Matters",
-    "month": "April",
-    "year": "2024",
-    "link": "https://medium.com/@hyperliquid/why-an-onchain-order-book-matters-d74cdf7e6fc"
-  }
-  
-]
+    {
+      "title": "Jeff Post-TGE: If you're reading this now, you're still early.",
+      "month": "December",
+      "year": "2024",
+      "link": "https://x.com/chameleon_jeff/status/1862885996846805222"
+    },
+    {
+      "title": "The Entire Financial Stack",
+      "month": "November",
+      "year": "2024",
+      "link": "https://x.com/chameleon_jeff/status/1853439016957554873"
+    },
+    {
+      "title": "The AWS of Liquidity",
+      "month": "October",
+      "year": "2024",
+      "link": "https://x.com/chameleon_jeff/status/1841392573199585291"
+    },
+    {
+      "title": "Builder Codes",
+      "month": "October",
+      "year": "2024",
+      "link": "https://x.com/HyperliquidX/status/1840955444191473712"
+    },
+    {
+      "title": "L1 Season 2",
+      "month": "May",
+      "year": "2024",
+      "link": "https://x.com/HyperliquidX/status/1795683649960206488"
+    },
+    {
+      "title": "When You See a 100x",
+      "month": "May",
+      "year": "2024",
+      "link": "https://x.com/chameleon_jeff/status/1795859763034731002"
+    },
+    {
+      "title": "To House All of Finance",
+      "month": "April",
+      "year": "2024",
+      "link": "https://x.com/chameleon_jeff/status/1784592436792275221"
+    },
+    {
+      "title": "Native Spot Trading",
+      "month": "March",
+      "year": "2024",
+      "link": "https://x.com/HyperliquidX/status/1773531180815507473"
+    },
+    {
+      "title": "The Not-So-Definitive guide to Hyperliquid Precompiles",
+      "month": "December",
+      "year": "2024",
+      "link": "https://medium.com/@ambitlabs/the-not-so-definitive-guide-to-hyperliquid-precompiles-f0b6025bb4a3"
+    },
+    {
+      "title": "Delphi Digital: Hyperliquid Pre-TGE",
+      "month": "November",
+      "year": "2024",
+      "link": "https://members.delphidigital.io/feed/hyperliquid-readies-for-tge?a=1&utm_source=twitter&utm_medium=social&utm_campaign=HL-TGE-AF"
+    },
+    {
+      "title": "The Potential of Smart Contracts on Binance",
+      "month": "December",
+      "year": "2024",
+      "link": "https://x.com/reachingarete/status/1857461572014096575"
+    },
+    {
+      "title": "Jeff Pod",
+      "month": "November",
+      "year": "2024",
+      "link": "https://www.youtube.com/watch?v=WeRh589I76o"
+    },
+    {
+      "title": "Hyperliquid: The Hyperoptimized Order Book L1",
+      "month": "September",
+      "year": "2024",
+      "link": "https://newsletter.asxn.xyz/p/hyperliquid-the-hyperoptimized-order"
+    },
+    {
+      "title": "HL from a Quant/Trader's Perspective",
+      "month": "August",
+      "year": "2024",
+      "link": "https://x.com/DThomasStealth/status/1825383978552938808"
+    },
+    {
+      "title": "Hyperliquid: The High Performance Era",
+      "month": "July",
+      "year": "2024",
+      "link": "https://protecc.xyz/research/hyperliquid-the-high-performance-era"
+    },
+    {
+      "title": "Jeff Pod",
+      "month": "June",
+      "year": "2024",
+      "link": "https://www.youtube.com/watch?v=cxyUtPoC1-E&t=1s"
+    },
+    {
+      "title": "Nansen: Hyperliquid Perp Dex",
+      "month": "January",
+      "year": "2024",
+      "link": "https://x.com/0xomok/status/1745060597425906008"
+    },
+    {
+      "title": "Latency and transaction ordering on Hyperliquid",
+      "month": "January",
+      "year": "2024",
+      "link": "https://medium.com/@hyperliquid/latency-and-transaction-ordering-on-hyperliquid-cf28df3648eb"
+    },
+    {
+      "title": "Why an Onchain Order Book Matters",
+      "month": "April",
+      "year": "2024",
+      "link": "https://medium.com/@hyperliquid/why-an-onchain-order-book-matters-d74cdf7e6fc"
+    }
+  ];
 
   // Convert tags array to options for react-select
   const tagOptions = tags.map(tag => ({
