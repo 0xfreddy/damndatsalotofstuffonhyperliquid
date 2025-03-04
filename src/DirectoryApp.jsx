@@ -1229,7 +1229,7 @@ return (
       </div>
       {cryptoPrice && (
         <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
-          Hype:{" "}
+          HYPE:{" "}
           <span>
             ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
           </span>
