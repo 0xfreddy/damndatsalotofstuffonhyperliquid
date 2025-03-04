@@ -543,7 +543,77 @@ const DirectoryApp = () => {
       tags: ["Trading","Tools"],
       twitter: "https://x.com/hyperrichdotfun",
       logo: "/images/logos/Hyperrich.png",
-    }
+    },
+    {
+  id: 75,
+  name: "Slate",
+  tags: ["AI", "Tools", "Trading"],
+  twitter: "https://x.com/slate_ceo",
+  logo: "/images/logos/Slate.png",
+},
+{
+  id: 76,
+  name: "HPS Protocol",
+  tags: ["DeFi", "NFT", "Mobile"],
+  twitter: "https://x.com/HPSProtocol",
+  logo: "/images/logos/HPSProtocol.png",
+},
+{
+  id: 77,
+  name: "Chris Ling",
+  tags: ["Tools", "Trading"],
+  twitter: "https://x.com/chrisling_dev",
+  logo: "/images/logos/ChrisLing.png",
+},
+{
+  id: 78,
+  name: "Mercury App",
+  tags: ["Mobile", "Trading"],
+  twitter: "https://x.com/mercuryapphl",
+  logo: "/images/logos/MercuryApp.png",
+},
+{
+  id: 79,
+  name: "Hyperstable",
+  tags: ["Stablecoin", "Yield"],
+  twitter: "https://x.com/HyperstableX",
+  logo: "/images/logos/Hyperstable.png",
+},
+{
+  id: 80,
+  name: "Hyperlane",
+  tags: ["Infra"],
+  twitter: "https://x.com/hyperlane",
+  logo: "/images/logos/Hyperlane.png",
+},
+{
+  id: 81,
+  name: "LiquidLoot",
+  tags: ["NFT"],
+  twitter: "https://x.com/LootLiquid",
+  logo: "/images/logos/LiquidLoot.png",
+},
+{
+  id: 82,
+  name: "Okto",
+  tags: ["Infra"],
+  twitter: "https://x.com/okto_web3",
+  logo: "/images/logos/Okto.png",
+},
+{
+  id: 83,
+  name: "Bridge Hypio",
+  tags: ["Infra", "NFT"],
+  twitter: "https://x.com/HypioHL",
+  logo: "/images/logos/Hypio.png",
+},
+{
+  id: 84,
+  name: "Eternal AI",
+  tags: ["AI"],
+  twitter: "https://x.com/CryptoEternalAI",
+  logo: "/images/logos/EternalAI.png",
+}
   ];
 
 const tags = [
@@ -568,6 +638,7 @@ const tags = [
     "RWA",
     "Mobile",
     "Investment",
+    "Stablecoin",
 ];
 
   const articles = [
