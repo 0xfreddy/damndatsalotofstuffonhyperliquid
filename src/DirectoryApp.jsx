@@ -299,180 +299,180 @@ const DirectoryApp = () => {
       twitter: "https://x.com/InsilicoTrading",
       logo: "/images/logos/insilico-logo.png",
     },
-    {
-      id: 41,
-      name: "memedata",
-      tags: ["Analytics"],
-      twitter: "https://x.com/shinji2048",
-      logo: "/images/logos/shinji2048.png",
-    },
-    {
-      id: 42,
+{
+  id: 41,
+  name: "memedata",
+  tags: ["Analytics"],
+  twitter: "https://x.com/shinji2048",
+  logo: "/images/logos/shinji2048.png",
+},
+{
+  id: 42,
       name: "Slate",
       tags: ["AI", "Tools", "Trading"],
       twitter: "https://x.com/slate_hl",
       logo: "/images/logos/slate-logo.png",
-    },
-    {
-      id: 43,
+},
+{
+  id: 43,
       name: "HPS Protocol",
       tags: ["Defi", "NFT", "Mobile"],
       twitter: "https://x.com/HPSProtocol",
       logo: "/images/logos/HPSProtocol.png",
-    },
-    {
-      id: 44,
+},
+{
+  id: 44,
       name: "Chris Ling",
       tags: ["Tools", "Trading"],
       twitter: "https://x.com/chrisling_hl",
       logo: "/images/logos/chrisling-logo.png",
-    },
+},
+{
+  id: 45,
+  name: "Schizo",
+  tags: ["Meme"],
+  twitter: "https://x.com/schizo_on_hl",
+  logo: "/images/logos/schizo-logo.png",
+},
+{
+  id: 46,
+  name: "Peri Pair Bot",
+  tags: ["Trading"],
+  twitter: "https://x.com/peripairbot",
+  logo: "/images/logos/peripairbot-logo.png",
+},
+{
+  id: 47,
+  name: "Vapor",
+  tags: ["Social", "AI"],
+  twitter: "https://x.com/vaporwarefun",
+  logo: "/images/logos/vapor-logo.png",
+},
+{
+  id: 48,
+  name: "Hey Jeff",
+  tags: ["Tools"],
+  twitter: "https://x.com/janklimo",
+  logo: "/images/logos/peripairbot-logo.png",
+},
     {
-      id: 45,
-      name: "Schizo",
-      tags: ["Meme"],
-      twitter: "https://x.com/schizo_on_hl",
-      logo: "/images/logos/schizo-logo.png",
-    },
-    {
-      id: 46,
-      name: "Peri Pair Bot",
-      tags: ["Trading"],
-      twitter: "https://x.com/peripairbot",
-      logo: "/images/logos/peripairbot-logo.png",
-    },
-    {
-      id: 47,
-      name: "Vapor",
-      tags: ["Social", "AI"],
-      twitter: "https://x.com/vaporwarefun",
-      logo: "/images/logos/vapor-logo.png",
-    },
-    {
-      id: 48,
-      name: "Hey Jeff",
-      tags: ["Tools"],
-      twitter: "https://x.com/janklimo",
-      logo: "/images/logos/peripairbot-logo.png",
-    },
-    {
-      id: 49,
-      name: "Hypurr Collective",
-      tags: ["Community"],
-      twitter: "https://x.com/hypurr_co",
-      logo: "/images/logos/hypurr-logo.png",
-    },
-    {
-      id: 50,
-      name: "Panda",
-      tags: ["Meme","Community"],
-      twitter: "https://x.com/panda_on_hl",
-      logo: "/images/logos/panda-logo.png",
-    },
-    {
-      id: 51,
-      name: "LadyOnHL",
-      tags: ["Meme"],
-      twitter: "https://x.com/lady_on_hl",
-      logo: "/images/logos/ladyhl-logo.png",
-    },
-    {
-      id: 52,
-      name: "HypurrDash",
-      tags: ["Analytics", "Data"],
-      twitter: "https://x.com/hypurrdash",
-      logo: "/images/logos/hyperdash-logo.png",
-    },
-    {
-      id: 53,
-      name: "WashOnHL",
-      tags: ["Trading"],
-      twitter: "https://x.com/wash_on_hl",
-      logo: "/images/logos/washsniper-logo.png",
-    },
-    {
-      id: 54,
-      name: "HyperTracker",
-      tags: ["Tools"],
-      twitter: "https://x.com/NMTD8/status/1871588493283270733",
-      logo: "/images/logos/hypertracker-logo.png",
-    },
-    {
-      id: 55,
-      name: "Hyperlend Explorer",
-      tags: ["Explorer"],
-      twitter: "https://explorer.hyperlend.finance/",
-      logo: "/images/logos/hyperland-logo.png",
-    },
-    {
-      id: 56,
-      name: "ASXN",
-      tags: ["Data"],
-      twitter: "https://x.com/asxn_r/status/1873668265450598613",
-      logo: "/images/logos/asxn-logo.png",
-    },
-    {
-      id: 57,
-      name: "Hypertrack",
-      tags: ["Tools"],
-      twitter: "https://x.com/hyperlendx/status/1855309389814432163",
-      logo: "/images/logos/hypertrack-logo.png",
-    },
-    {
-      id: 58,
-      name: "Tholos",
-      tags: ["Tools"],
-      twitter: "https://x.com/TholosApp",
-      logo: "/images/logos/tholos-logo.png",
-    },
-    {
-      id: 59,
-      name: "Octis",
-      tags: ["Trading"],
-      twitter: "https://x.com/octis_808",
-      logo: "/images/logos/octis.png",
-    },
-    {
-      id: 60,
-      name: "Hypio",
+  id: 49,
+  name: "Hypurr Collective",
+  tags: ["Community"],
+  twitter: "https://x.com/hypurr_co",
+  logo: "/images/logos/hypurr-logo.png",
+},
+      {
+  id: 50,
+  name: "Panda",
+  tags: ["Meme","Community"],
+  twitter: "https://x.com/panda_on_hl",
+  logo: "/images/logos/panda-logo.png",
+},
+{
+  id: 51,
+  name: "LadyOnHL",
+  tags: ["Meme"],
+  twitter: "https://x.com/lady_on_hl",
+  logo: "/images/logos/ladyhl-logo.png",
+},
+{
+  id: 52,
+  name: "HypurrDash",
+  tags: ["Analytics", "Data"],
+  twitter: "https://x.com/hypurrdash",
+  logo: "/images/logos/hyperdash-logo.png",
+},
+{
+  id: 53,
+  name: "WashOnHL",
+  tags: ["Trading"],
+  twitter: "https://x.com/wash_on_hl",
+  logo: "/images/logos/washsniper-logo.png",
+},
+{
+  id: 54,
+  name: "HyperTracker",
+  tags: ["Tools"],
+  twitter: "https://x.com/NMTD8/status/1871588493283270733",
+  logo: "/images/logos/hypertracker-logo.png",
+},
+{
+  id: 55,
+  name: "Hyperlend Explorer",
+  tags: ["Explorer"],
+  twitter: "https://explorer.hyperlend.finance/",
+  logo: "/images/logos/hyperland-logo.png",
+},
+{
+  id: 56,
+  name: "ASXN",
+  tags: ["Data"],
+  twitter: "https://x.com/asxn_r/status/1873668265450598613",
+  logo: "/images/logos/asxn-logo.png",
+},
+{
+  id: 57,
+  name: "Hypertrack",
+  tags: ["Tools"],
+  twitter: "https://x.com/hyperlendx/status/1855309389814432163",
+  logo: "/images/logos/hypertrack-logo.png",
+},
+{
+  id: 58,
+  name: "Tholos",
+  tags: ["Tools"],
+  twitter: "https://x.com/TholosApp",
+  logo: "/images/logos/tholos-logo.png",
+},
+{
+  id: 59,
+  name: "Octis",
+  tags: ["Trading"],
+  twitter: "https://x.com/octis_808",
+  logo: "/images/logos/octis.png",
+},
+{
+  id: 60,
+  name: "Hypio",
       tags: ["NFT","Community"],
-      twitter: "https://x.com/HypioHL",
-      logo: "/images/logos/hypio.png",
-    },
-    {
-      id: 61,
-      name: "Hyperflip",
-      tags: ["GambleFi"],
-      twitter: "https://x.com/hypercoinflip",
-      logo: "/images/logos/hyperflip.png",
-    },
-    {
-      id: 62,
-      name: "USDC Inflows",
-      tags: ["Data"],
-      twitter: "https://x.com/mogie__/status/1881818562274459701",
-      logo: "/images/logos/mogie.png",
-    },
-    {
-      id: 63,
-      name: "Hyperdelta",
-      tags: ["Trading"],
-      twitter: "https://x.com/HyperdeltaX",
-      logo: "/images/logos/hyperdelta.png",
-    },
-    {
-      id: 64,
-      name: "Hypervol",
-      tags: ["Trading"],
-      twitter: "https://x.com/Hypervol_xyz",
-      logo: "/images/logos/hypervol.png",
-    },
-    {
-      id: 65,
-      name: "Kibl",
-      tags: ["Defi"],
-      twitter: "https://x.com/kiblprotocol",
-      logo: "/images/logos/kibl.png",
+  twitter: "https://x.com/HypioHL",
+  logo: "/images/logos/hypio.png",
+},
+{
+  id: 61,
+  name: "Hyperflip",
+  tags: ["GambleFi"],
+  twitter: "https://x.com/hypercoinflip",
+  logo: "/images/logos/hyperflip.png",
+},
+{
+  id: 62,
+  name: "USDC Inflows",
+  tags: ["Data"],
+  twitter: "https://x.com/mogie__/status/1881818562274459701",
+  logo: "/images/logos/mogie.png",
+},
+{
+  id: 63,
+  name: "Hyperdelta",
+  tags: ["Trading"],
+  twitter: "https://x.com/HyperdeltaX",
+  logo: "/images/logos/hyperdelta.png",
+},
+{
+  id: 64,
+  name: "Hypervol",
+  tags: ["Trading"],
+  twitter: "https://x.com/Hypervol_xyz",
+  logo: "/images/logos/hypervol.png",
+},
+{
+  id: 65,
+  name: "Kibl",
+  tags: ["Defi"],
+  twitter: "https://x.com/kiblprotocol",
+  logo: "/images/logos/kibl.png",
     },
     {
       id: 66,
@@ -546,7 +546,7 @@ const DirectoryApp = () => {
     }
   ];
 
-  const tags = [
+const tags = [
     "Defi",
     "Dex",
     "Meme",
@@ -568,123 +568,123 @@ const DirectoryApp = () => {
     "RWA",
     "Mobile",
     "Investment",
-  ];
+];
 
   const articles = [
-    {
-      "title": "Jeff Post-TGE: If you're reading this now, you're still early.",
-      "month": "December",
-      "year": "2024",
-      "link": "https://x.com/chameleon_jeff/status/1862885996846805222"
-    },
-    {
-      "title": "The Entire Financial Stack",
-      "month": "November",
-      "year": "2024",
-      "link": "https://x.com/chameleon_jeff/status/1853439016957554873"
-    },
-    {
-      "title": "The AWS of Liquidity",
-      "month": "October",
-      "year": "2024",
-      "link": "https://x.com/chameleon_jeff/status/1841392573199585291"
-    },
-    {
-      "title": "Builder Codes",
-      "month": "October",
-      "year": "2024",
-      "link": "https://x.com/HyperliquidX/status/1840955444191473712"
-    },
-    {
-      "title": "L1 Season 2",
-      "month": "May",
-      "year": "2024",
-      "link": "https://x.com/HyperliquidX/status/1795683649960206488"
-    },
-    {
-      "title": "When You See a 100x",
-      "month": "May",
-      "year": "2024",
-      "link": "https://x.com/chameleon_jeff/status/1795859763034731002"
-    },
-    {
-      "title": "To House All of Finance",
-      "month": "April",
-      "year": "2024",
-      "link": "https://x.com/chameleon_jeff/status/1784592436792275221"
-    },
-    {
-      "title": "Native Spot Trading",
-      "month": "March",
-      "year": "2024",
-      "link": "https://x.com/HyperliquidX/status/1773531180815507473"
-    },
-    {
-      "title": "The Not-So-Definitive guide to Hyperliquid Precompiles",
-      "month": "December",
-      "year": "2024",
-      "link": "https://medium.com/@ambitlabs/the-not-so-definitive-guide-to-hyperliquid-precompiles-f0b6025bb4a3"
-    },
-    {
-      "title": "Delphi Digital: Hyperliquid Pre-TGE",
-      "month": "November",
-      "year": "2024",
-      "link": "https://members.delphidigital.io/feed/hyperliquid-readies-for-tge?a=1&utm_source=twitter&utm_medium=social&utm_campaign=HL-TGE-AF"
-    },
-    {
-      "title": "The Potential of Smart Contracts on Binance",
-      "month": "December",
-      "year": "2024",
-      "link": "https://x.com/reachingarete/status/1857461572014096575"
-    },
-    {
-      "title": "Jeff Pod",
-      "month": "November",
-      "year": "2024",
-      "link": "https://www.youtube.com/watch?v=WeRh589I76o"
-    },
-    {
-      "title": "Hyperliquid: The Hyperoptimized Order Book L1",
-      "month": "September",
-      "year": "2024",
-      "link": "https://newsletter.asxn.xyz/p/hyperliquid-the-hyperoptimized-order"
-    },
-    {
-      "title": "HL from a Quant/Trader's Perspective",
-      "month": "August",
-      "year": "2024",
-      "link": "https://x.com/DThomasStealth/status/1825383978552938808"
-    },
-    {
-      "title": "Hyperliquid: The High Performance Era",
-      "month": "July",
-      "year": "2024",
-      "link": "https://protecc.xyz/research/hyperliquid-the-high-performance-era"
-    },
-    {
-      "title": "Jeff Pod",
-      "month": "June",
-      "year": "2024",
-      "link": "https://www.youtube.com/watch?v=cxyUtPoC1-E&t=1s"
-    },
-    {
-      "title": "Nansen: Hyperliquid Perp Dex",
-      "month": "January",
-      "year": "2024",
-      "link": "https://x.com/0xomok/status/1745060597425906008"
-    },
-    {
-      "title": "Latency and transaction ordering on Hyperliquid",
-      "month": "January",
-      "year": "2024",
-      "link": "https://medium.com/@hyperliquid/latency-and-transaction-ordering-on-hyperliquid-cf28df3648eb"
-    },
-    {
-      "title": "Why an Onchain Order Book Matters",
-      "month": "April",
-      "year": "2024",
-      "link": "https://medium.com/@hyperliquid/why-an-onchain-order-book-matters-d74cdf7e6fc"
-    }
+  {
+    "title": "Jeff Post-TGE: If you're reading this now, you're still early.",
+    "month": "December",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1862885996846805222"
+  },
+  {
+    "title": "The Entire Financial Stack",
+    "month": "November",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1853439016957554873"
+  },
+  {
+    "title": "The AWS of Liquidity",
+    "month": "October",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1841392573199585291"
+  },
+  {
+    "title": "Builder Codes",
+    "month": "October",
+    "year": "2024",
+    "link": "https://x.com/HyperliquidX/status/1840955444191473712"
+  },
+  {
+    "title": "L1 Season 2",
+    "month": "May",
+    "year": "2024",
+    "link": "https://x.com/HyperliquidX/status/1795683649960206488"
+  },
+  {
+    "title": "When You See a 100x",
+    "month": "May",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1795859763034731002"
+  },
+  {
+    "title": "To House All of Finance",
+    "month": "April",
+    "year": "2024",
+    "link": "https://x.com/chameleon_jeff/status/1784592436792275221"
+  },
+  {
+    "title": "Native Spot Trading",
+    "month": "March",
+    "year": "2024",
+    "link": "https://x.com/HyperliquidX/status/1773531180815507473"
+  },
+  {
+    "title": "The Not-So-Definitive guide to Hyperliquid Precompiles",
+    "month": "December",
+    "year": "2024",
+    "link": "https://medium.com/@ambitlabs/the-not-so-definitive-guide-to-hyperliquid-precompiles-f0b6025bb4a3"
+  },
+  {
+    "title": "Delphi Digital: Hyperliquid Pre-TGE",
+    "month": "November",
+    "year": "2024",
+    "link": "https://members.delphidigital.io/feed/hyperliquid-readies-for-tge?a=1&utm_source=twitter&utm_medium=social&utm_campaign=HL-TGE-AF"
+  },
+  {
+    "title": "The Potential of Smart Contracts on Binance",
+    "month": "December",
+    "year": "2024",
+    "link": "https://x.com/reachingarete/status/1857461572014096575"
+  },
+  {
+    "title": "Jeff Pod",
+    "month": "November",
+    "year": "2024",
+    "link": "https://www.youtube.com/watch?v=WeRh589I76o"
+  },
+  {
+    "title": "Hyperliquid: The Hyperoptimized Order Book L1",
+    "month": "September",
+    "year": "2024",
+    "link": "https://newsletter.asxn.xyz/p/hyperliquid-the-hyperoptimized-order"
+  },
+  {
+    "title": "HL from a Quant/Trader's Perspective",
+    "month": "August",
+    "year": "2024",
+    "link": "https://x.com/DThomasStealth/status/1825383978552938808"
+  },
+  {
+    "title": "Hyperliquid: The High Performance Era",
+    "month": "July",
+    "year": "2024",
+    "link": "https://protecc.xyz/research/hyperliquid-the-high-performance-era"
+  },
+  {
+    "title": "Jeff Pod",
+    "month": "June",
+    "year": "2024",
+    "link": "https://www.youtube.com/watch?v=cxyUtPoC1-E&t=1s"
+  },
+  {
+    "title": "Nansen: Hyperliquid Perp Dex",
+    "month": "January",
+    "year": "2024",
+    "link": "https://x.com/0xomok/status/1745060597425906008"
+  },
+  {
+    "title": "Latency and transaction ordering on Hyperliquid",
+    "month": "January",
+    "year": "2024",
+    "link": "https://medium.com/@hyperliquid/latency-and-transaction-ordering-on-hyperliquid-cf28df3648eb"
+  },
+  {
+    "title": "Why an Onchain Order Book Matters",
+    "month": "April",
+    "year": "2024",
+    "link": "https://medium.com/@hyperliquid/why-an-onchain-order-book-matters-d74cdf7e6fc"
+  }
   ];
 
   // Convert tags array to options for react-select
@@ -879,7 +879,7 @@ const DirectoryApp = () => {
           x: event.clientX, 
           y: event.clientY 
         });
-      } else {
+        } else {
         setSelectedProject(null);
       }
     }
@@ -995,7 +995,7 @@ const DirectoryApp = () => {
     const handleResize = () => {
       if (!canvasRef.current || !cameraRef.current || !rendererRef.current) return;
 
-      const canvas = canvasRef.current;
+    const canvas = canvasRef.current;
       const parent = canvas.parentElement;
       const width = parent.clientWidth;
       const height = parent.clientHeight;
@@ -1080,8 +1080,8 @@ const DirectoryApp = () => {
 
   // Add click handler to canvas
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (canvas) {
+      const canvas = canvasRef.current;
+      if (canvas) {
       canvas.addEventListener('click', handleCanvasClick);
       return () => canvas.removeEventListener('click', handleCanvasClick);
     }
@@ -1093,7 +1093,7 @@ const DirectoryApp = () => {
     if (canvas) {
       canvas.addEventListener('mousemove', handleCanvasMouseMove);
       canvas.addEventListener('mouseleave', handleCanvasMouseLeave);
-      return () => {
+    return () => {
         canvas.removeEventListener('mousemove', handleCanvasMouseMove);
         canvas.removeEventListener('mouseleave', handleCanvasMouseLeave);
       };
@@ -1147,24 +1147,24 @@ const DirectoryApp = () => {
     </div>
   );
 
-  return (
+return (
     <div className="flex flex-col h-screen bg-dark-green text-white">
       {/* Header - fixed height */}
-      <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
-        <div className="ml-10">
+    <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
+      <div className="ml-10">
           <span className="text-gray-900 font-bold text-xl md:text-xl text-sm">
             damndatsalotofstuffonhyperliquid
           </span>
+      </div>
+      {cryptoPrice && (
+        <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
+          Hype:{" "}
+          <span>
+            ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
+          </span>
         </div>
-        {cryptoPrice && (
-          <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
-            Hype:{" "}
-            <span>
-              ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
-            </span>
-          </div>
-        )}
-      </header>
+      )}
+    </header>
 
       {/* Main content */}
       <div className="flex-grow relative overflow-hidden"> {/* Add overflow-hidden */}
@@ -1184,7 +1184,7 @@ const DirectoryApp = () => {
               </div>
 
               {/* View toggle button */}
-              <button
+      <button
                 onClick={() => setViewMode(viewMode === 'graph' ? 'directory' : 'graph')}
                 className="px-4 py-2 bg-mint text-dark-green rounded-lg hover:bg-opacity-80 transition-colors flex items-center gap-2 whitespace-nowrap"
               >
@@ -1195,15 +1195,15 @@ const DirectoryApp = () => {
                   </>
                 ) : (
                   <>
-                    <Network size={16} />
+        <Network size={16} />
                     Graph View
                   </>
                 )}
-              </button>
+      </button>
 
               {/* Reset button */}
               {selectedCategory && (
-                <button
+      <button
                   onClick={() => setSelectedCategory(null)}
                   className="px-4 py-2 bg-mint text-dark-green rounded-lg hover:bg-opacity-80 transition-colors flex items-center gap-2 whitespace-nowrap"
                 >
@@ -1220,14 +1220,14 @@ const DirectoryApp = () => {
                     />
                   </svg>
                   Reset View
-                </button>
+      </button>
               )}
-            </div>
+    </div>
 
             {/* View content */}
             {viewMode === 'graph' ? (
-              <canvas
-                ref={canvasRef}
+        <canvas
+          ref={canvasRef}
                 className="w-full h-full rounded-xl bg-transparent"
                 style={{ 
                   height: window.innerWidth < 768 ? 'calc(85vh - 180px)' : '100%' // Reduce height on mobile
@@ -1236,8 +1236,8 @@ const DirectoryApp = () => {
             ) : (
               <DirectoryView />
             )}
-          </div>
-        </div>
+    </div>
+  </div>
 
         {/* Project Popup - only show in graph view */}
         {viewMode === 'graph' && selectedProject && (
@@ -1260,30 +1260,30 @@ const DirectoryApp = () => {
                 <h3 className="text-lg font-bold text-mint">
                   {selectedProject.name}
                 </h3>
-              </div>
+                  </div>
               
               <div className="flex items-center justify-between">
                 <div className="flex flex-wrap gap-2 flex-grow">
                   {selectedProject.tags.map((tag, index) => (
-                    <span
+                        <span
                       key={index}
                       className="px-3 py-1 bg-mint bg-opacity-20 text-mint rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                 
-                <a
+                    <a
                   href={selectedProject.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                   className="ml-2 p-2 bg-mint text-dark-green rounded-full hover:bg-opacity-80 transition-colors"
                   title="Twitter"
-                >
+                    >
                   <Twitter size={16} />
-                </a>
-              </div>
+                    </a>
+                  </div>
               
               <button
                 onClick={() => setSelectedProject(null)}
@@ -1302,7 +1302,7 @@ const DirectoryApp = () => {
                   />
                 </svg>
               </button>
-            </div>
+                </div>
           </div>
         )}
 
@@ -1327,11 +1327,11 @@ const DirectoryApp = () => {
               <span className="text-mint font-medium">
                 {hoverTooltip.name}
               </span>
-            </div>
-          </div>
+                    </div>
+                  </div>
         )}
       </div>
-
+    
       {/* Footer - fixed height */}
       <footer className="bg-[#97FCE4] p-4 shadow-lg">
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
