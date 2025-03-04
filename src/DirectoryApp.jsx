@@ -596,7 +596,7 @@ const DirectoryApp = () => {
 {
   id: 82,
   name: "Okto",
-  tags: ["Infra"],
+  tags: ["Infra","Mobile"],
   twitter: "https://x.com/okto_web3",
   logo: "/images/logos/Okto.png",
 },
@@ -613,6 +613,20 @@ const DirectoryApp = () => {
   tags: ["AI"],
   twitter: "https://x.com/CryptoEternalAI",
   logo: "/images/logos/EternalAI.png",
+},
+{
+  id: 85,
+  name: "deBridge",
+  tags: ["Infra"],
+  twitter: "https://x.com/deBridgeFinance",
+  logo: "/images/logos/debridge.png",
+},
+{
+  id: 86,
+  name: "Valantis",
+  tags: ["Defi","Yield"],
+  twitter: "https://x.com/ValantisLabs",
+  logo: "/images/logos/valantis.png",
 }
   ];
 
