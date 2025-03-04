@@ -1152,9 +1152,9 @@ return (
       {/* Header - fixed height */}
     <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
       <div className="ml-10">
-          <span className="text-gray-900 font-bold text-xl md:text-xl text-sm">
-            damndatsalotofstuffonhyperliquid
-          </span>
+        <span className="text-gray-900 text-xl hidden md:block">
+          damndatsalotofstuffonhyperliquid
+        </span>
       </div>
       {cryptoPrice && (
         <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
