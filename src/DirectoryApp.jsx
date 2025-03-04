@@ -591,7 +591,7 @@ const DirectoryApp = () => {
   name: "LiquidLoot",
   tags: ["NFT"],
   twitter: "https://x.com/LootLiquid",
-  logo: "/images/logos/LiquidLoot.png",
+  logo: "/images/logos/Liquidloot.png",
 },
 {
   id: 82,
@@ -605,7 +605,7 @@ const DirectoryApp = () => {
   name: "Bridge Hypio",
   tags: ["Infra", "NFT"],
   twitter: "https://x.com/HypioHL",
-  logo: "/images/logos/Hypio.png",
+  logo: "/images/logos/hypio.png",
 },
 {
   id: 84,
