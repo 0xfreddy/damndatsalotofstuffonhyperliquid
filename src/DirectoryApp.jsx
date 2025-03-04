@@ -1,19 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Twitter, Scroll, LayoutGrid, Network } from "lucide-react";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import Select from 'react-select';
 
 const DirectoryApp = () => {
-  const [selectedTag, setSelectedTag] = useState(null);
+  const [selectedTags, setSelectedTags] = useState([]);
   const canvasRef = useRef(null);
-  const nodesRef = useRef([]);
-  const linksRef = useRef([]);
-  const draggedNodeRef = useRef(null);
-  const animationFrameRef = useRef(null);
-  const scaleRef = useRef(1);
+  const sceneRef = useRef(null);
+  const cameraRef = useRef(null);
+  const rendererRef = useRef(null);
+  const controlsRef = useRef(null);
+  const nodesRef = useRef({});
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const projectImages = useRef({});
   const [cryptoPrice, setCryptoPrice] = useState(null);
-  const [isSimulationRunning, setIsSimulationRunning] = useState(false);
   const [activeView, setActiveView] = useState("canvas");
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const raycasterRef = useRef(new THREE.Raycaster());
+  const mouseRef = useRef(new THREE.Vector2());
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
+  const [viewMode, setViewMode] = useState('graph'); // 'graph' or 'directory'
+  const [hoverTooltip, setHoverTooltip] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
   const items = [
     {
@@ -677,93 +687,343 @@ const tags = [
   
 ]
 
+  // Convert tags array to options for react-select
+  const tagOptions = tags.map(tag => ({
+    value: tag,
+    label: tag
+  }));
 
-  const getTagConnections = () => {
-    const connections = {};
-    tags.forEach((tag) => (connections[tag] = 0));
+  const initThreeJS = () => {
+    const canvas = canvasRef.current;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
 
-    items.forEach((item) => {
-      item.tags.forEach((tag) => {
-        connections[tag] = (connections[tag] || 0) + 1;
-      });
-    });
+    // Scene setup with new background color
+    const scene = new THREE.Scene();
+    sceneRef.current = scene;
+    scene.background = new THREE.Color(0x0C2926); // Updated background color
 
-    return connections;
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    cameraRef.current = camera;
+    camera.position.z = 500;
+
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    rendererRef.current = renderer;
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Controls setup with restricted movement
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controlsRef.current = controls;
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enablePan = false; // Disable panning
+    controls.minDistance = 200; // Set minimum zoom
+    controls.maxDistance = 800; // Set maximum zoom
+    controls.enableRotate = true;
+    controls.rotateSpeed = 0.5;
   };
 
-  const initializeNodes = () => {
-    const nodes = [];
-    const canvasWidth = canvasRef.current.width;
-    const canvasHeight = canvasRef.current.height;
-    const centerX = canvasWidth / 2;
-    const centerY = canvasHeight / 2;
-
-    const tagConnections = getTagConnections();
-    const maxConnections = Math.max(...Object.values(tagConnections));
-
-    const isMobile = window.innerWidth < 768;
-    const mobileSizeMultiplier = isMobile ? 2 : 1;
-
-    tags.forEach((tag, i) => {
-      const angle = (i * 2 * Math.PI) / tags.length;
-      const radius = 100;
-      const connections = tagConnections[tag];
-      const size =
-        (16 + (connections / maxConnections) * 20) * mobileSizeMultiplier;
-
-      nodes.push({
-        id: `tag-${tag}`,
-        x: centerX + Math.cos(angle) * radius,
-        y: centerY + Math.sin(angle) * radius,
-        vx: 0,
-        vy: 0,
-        mass: (5 + (connections / maxConnections) * 3) * mobileSizeMultiplier,
-        radius: size,
-        type: "tag",
-        label: tag,
-        connections: connections,
-      });
+  const createProjectNode = (item, position) => {
+    const geometry = new THREE.CircleGeometry(15, 32);
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load(item.logo, (texture) => {
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.encoding = THREE.sRGBEncoding;
     });
 
-    items.forEach((item, i) => {
-      const angle = (i * 2 * Math.PI) / items.length;
-      const radius = 180 * mobileSizeMultiplier;
-      nodes.push({
-        id: `item-${item.id}`,
-        x: centerX + Math.cos(angle) * radius,
-        y: centerY + Math.sin(angle) * radius,
-        vx: 0,
-        vy: 0,
-        mass: 10 * mobileSizeMultiplier,
-        radius: 20 * mobileSizeMultiplier,
-        type: "item",
-        label: item.name,
-        tags: item.tags,
-      });
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+      side: THREE.DoubleSide
     });
 
-    return nodes;
+    const node = new THREE.Mesh(geometry, material);
+    node.position.copy(position);
+    node.userData.type = 'project';
+    node.userData.id = item.id;
+    
+    return node;
   };
 
-  const initializeLinks = () => {
-    const links = [];
-    items.forEach((item) => {
-      item.tags.forEach((tag) => {
-        const sourceNode = nodesRef.current.find(
-          (n) => n.id === `item-${item.id}`
-        );
-        const targetNode = nodesRef.current.find((n) => n.id === `tag-${tag}`);
-        if (sourceNode && targetNode) {
-          links.push({
-            source: sourceNode,
-            target: targetNode,
-            strength: 0.5,
-          });
+  const createCategoryNode = (category, position) => {
+    // Create category node
+    const geometry = new THREE.CircleGeometry(10, 32);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x97FCE4,
+      transparent: true,
+      opacity: 0.8
+    });
+
+    const node = new THREE.Mesh(geometry, material);
+    node.position.copy(position);
+    node.userData.type = 'category';
+    node.userData.category = category;
+
+    // Add category label
+    const labelGeometry = new THREE.PlaneGeometry(40, 10);
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = 256;
+    canvas.height = 64;
+    context.fillStyle = 'white';
+    context.font = 'bold 24px Arial';
+    context.textAlign = 'center';
+    context.fillText(category, 128, 32);
+    
+    const labelTexture = new THREE.CanvasTexture(canvas);
+    const labelMaterial = new THREE.MeshBasicMaterial({
+      map: labelTexture,
+      transparent: true,
+      side: THREE.DoubleSide
+    });
+    
+    const label = new THREE.Mesh(labelGeometry, labelMaterial);
+    label.position.y = -20;
+    node.add(label);
+
+    return node;
+  };
+
+  const createConnection = (startPos, endPos, opacity = 0.3) => {
+    const points = [startPos, endPos];
+    const geometry = new THREE.BufferGeometry().setFromPoints(points);
+    const material = new THREE.LineBasicMaterial({ 
+      color: 0x97FCE4,
+      transparent: true,
+      opacity: opacity
+    });
+    return new THREE.Line(geometry, material);
+  };
+
+  const handleCanvasMouseMove = (event) => {
+    if (viewMode !== 'graph') return;
+    
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    
+    mouseRef.current.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouseRef.current.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycasterRef.current.setFromCamera(mouseRef.current, cameraRef.current);
+    const intersects = raycasterRef.current.intersectObjects(sceneRef.current.children, true);
+
+    if (intersects.length > 0) {
+      const categoryNode = intersects.find(intersect => 
+        intersect.object.userData && intersect.object.userData.type === 'category'
+      )?.object;
+
+      const projectNode = intersects.find(intersect => 
+        intersect.object.userData && intersect.object.userData.type === 'project'
+      )?.object;
+
+      if (categoryNode) {
+        setHoverTooltip({
+          type: 'category',
+          name: categoryNode.userData.category
+        });
+      } else if (projectNode) {
+        const project = items.find(item => item.id === projectNode.userData.id);
+        setHoverTooltip({
+          type: 'project',
+          name: project.name,
+          logo: project.logo
+        });
+      } else {
+        setHoverTooltip(null);
+      }
+      
+      setTooltipPosition({
+        x: event.clientX,
+        y: event.clientY
+      });
+    } else {
+      setHoverTooltip(null);
+    }
+  };
+
+  const handleCanvasMouseLeave = () => {
+    setHoverTooltip(null);
+  };
+
+  const handleCanvasClick = (event) => {
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    
+    mouseRef.current.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouseRef.current.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycasterRef.current.setFromCamera(mouseRef.current, cameraRef.current);
+    const intersects = raycasterRef.current.intersectObjects(sceneRef.current.children, true);
+
+    if (intersects.length > 0) {
+      const categoryNode = intersects.find(intersect => 
+        intersect.object.userData && intersect.object.userData.type === 'category'
+      )?.object;
+
+      const projectNode = intersects.find(intersect => 
+        intersect.object.userData && intersect.object.userData.type === 'project'
+      )?.object;
+
+      if (categoryNode) {
+        const category = categoryNode.userData.category;
+        setSelectedCategory(prev => prev === category ? null : category);
+        setSelectedProject(null);
+      } else if (projectNode) {
+        const project = items.find(item => item.id === projectNode.userData.id);
+        setSelectedProject(project);
+        setPopupPosition({ 
+          x: event.clientX, 
+          y: event.clientY 
+        });
+      } else {
+        setSelectedProject(null);
+      }
+    }
+  };
+
+  const updateGraph = () => {
+    const scene = sceneRef.current;
+    
+    // Clear existing nodes
+    while(scene.children.length > 0) {
+      scene.remove(scene.children[0]);
+    }
+
+    // Add lights
+    const light = new THREE.PointLight(0xffffff, 1, 0);
+    light.position.set(0, 200, 0);
+    scene.add(light);
+    
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    // Filter items based on selected category and tags
+    const filteredItems = items.filter(item => {
+      const matchesTags = selectedTags.length === 0 || 
+        selectedTags.some(tag => item.tags.includes(tag.value));
+      const matchesCategory = !selectedCategory || 
+        item.tags.includes(selectedCategory);
+      return matchesTags && matchesCategory;
+    });
+
+    // Create category nodes in a sphere
+    const categoryNodes = new Map();
+    const uniqueCategories = [...new Set(filteredItems.flatMap(item => item.tags))];
+    
+    uniqueCategories.forEach((category, index) => {
+      const y = 1 - (index / (uniqueCategories.length - 1)) * 2;
+      const radius = Math.sqrt(1 - y * y);
+      const theta = index * Math.PI * (3 - Math.sqrt(5));
+
+      const position = new THREE.Vector3(
+        radius * Math.cos(theta) * 400,
+        y * 400,
+        radius * Math.sin(theta) * 400
+      );
+      
+      const categoryNode = createCategoryNode(category, position);
+      // Highlight selected category
+      if (category === selectedCategory) {
+        categoryNode.material.color.setHex(0xFF9900);
+        categoryNode.material.opacity = 1;
+      }
+      scene.add(categoryNode);
+      categoryNodes.set(category, categoryNode);
+    });
+
+    // Create project nodes in an inner sphere
+    filteredItems.forEach((item, index) => {
+      const y = 1 - (index / (filteredItems.length - 1)) * 2;
+      const radius = Math.sqrt(1 - y * y);
+      const theta = index * Math.PI * (3 - Math.sqrt(5));
+
+      const position = new THREE.Vector3(
+        radius * Math.cos(theta) * 200,
+        y * 200,
+        radius * Math.sin(theta) * 200
+      );
+
+      const projectNode = createProjectNode(item, position);
+      scene.add(projectNode);
+      nodesRef.current[item.id] = projectNode;
+
+      // Create connections to categories
+      item.tags.forEach(tag => {
+        const categoryNode = categoryNodes.get(tag);
+        if (categoryNode) {
+          const connection = createConnection(
+            projectNode.position, 
+            categoryNode.position,
+            tag === selectedCategory ? 0.8 : 0.3 // Highlight connections to selected category
+          );
+          scene.add(connection);
         }
       });
     });
-    return links;
   };
+
+  const animate = () => {
+    if (!rendererRef.current) return;
+
+    requestAnimationFrame(animate);
+    
+    // Make all nodes face the camera
+    Object.values(nodesRef.current).forEach(node => {
+      node.quaternion.copy(cameraRef.current.quaternion);
+    });
+
+    // Update category nodes to face camera
+    sceneRef.current.children.forEach(child => {
+      if (child.userData && child.userData.type === 'category') {
+        child.quaternion.copy(cameraRef.current.quaternion);
+      }
+    });
+
+    controlsRef.current.update();
+    rendererRef.current.render(sceneRef.current, cameraRef.current);
+  };
+
+  useEffect(() => {
+    initThreeJS();
+    updateGraph();
+    animate();
+
+    const handleResize = () => {
+      if (!canvasRef.current || !cameraRef.current || !rendererRef.current) return;
+
+      const canvas = canvasRef.current;
+      const parent = canvas.parentElement;
+      const width = parent.clientWidth;
+      const height = parent.clientHeight;
+
+      // Update canvas size
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      // Update canvas resolution
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+
+      // Update camera and renderer
+      cameraRef.current.aspect = width / height;
+      cameraRef.current.updateProjectionMatrix();
+      rendererRef.current.setSize(width, height, false);
+      rendererRef.current.setPixelRatio(dpr);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    updateGraph();
+  }, [selectedCategory, selectedTags]);
 
   useEffect(() => {
     const loadImages = async () => {
@@ -818,609 +1078,260 @@ const tags = [
     return () => clearInterval(interval);
   }, []);
 
-  const applyPhysics = () => {
-    const nodes = nodesRef.current;
-    const links = linksRef.current;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    const canvasWidth = canvas.width;
-    const canvasHeight = canvas.height;
-
-    for (let i = 0; i < nodes.length; i++) {
-      const node = nodes[i];
-
-      node.x = Math.max(
-        node.radius,
-        Math.min(canvasWidth - node.radius, node.x)
-      );
-      node.y = Math.max(
-        node.radius,
-        Math.min(canvasHeight - node.radius, node.y)
-      );
-      for (let j = i + 1; j < nodes.length; j++) {
-        const node1 = nodes[i];
-        const node2 = nodes[j];
-
-        const dx = node2.x - node1.x;
-        const dy = node2.y - node1.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const minDistance = node1.radius + node2.radius;
-
-        if (distance < minDistance) {
-          const overlap = minDistance - distance;
-          const angle = Math.atan2(dy, dx);
-
-          const separationX = (overlap * Math.cos(angle)) / 2;
-          const separationY = (overlap * Math.sin(angle)) / 2;
-
-          node1.x -= separationX;
-          node1.y -= separationY;
-          node2.x += separationX;
-          node2.y += separationY;
-
-          node1.vx -= separationX * 0.1;
-          node1.vy -= separationY * 0.1;
-          node2.vx += separationX * 0.1;
-          node2.vy += separationY * 0.1;
-        }
-      }
-    }
-  };
-
-  const isNodeHighlighted = (node) => {
-    if (!selectedTag) return false;
-    if (node.type === "tag") return node.label === selectedTag;
-    return node.tags?.includes(selectedTag);
-  };
-
-  const isLinkHighlighted = (link) => {
-    if (!selectedTag) return true;
-    return (
-      link.target.label === selectedTag ||
-      link.source.tags?.includes(selectedTag)
-    );
-  };
-
-  const draw = () => {
-    const canvas = canvasRef.current;
-    if (!canvas || !imagesLoaded) return;
-
-    const ctx = canvas.getContext("2d");
-    const dpr = window.devicePixelRatio || 1;
-    
-    // Clear with proper scaling
-    ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
-
-    linksRef.current.forEach((link) => {
-      const isHighlighted = isLinkHighlighted(link);
-      ctx.beginPath();
-      ctx.moveTo(link.source.x, link.source.y);
-      ctx.lineTo(link.target.x, link.target.y);
-      ctx.strokeStyle = isHighlighted ? "#97FCE4" : "#4B5563";
-      ctx.lineWidth = isHighlighted ? 2 : 1;
-      ctx.stroke();
-    });
-
-    nodesRef.current.forEach((node) => {
-      const isHighlighted = isNodeHighlighted(node);
-
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-
-      if (node.type === "tag") {
-        const gradient = ctx.createRadialGradient(
-          node.x,
-          node.y,
-          0,
-          node.x,
-          node.y,
-          node.radius
-        );
-
-        if (node.label === selectedTag) {
-          gradient.addColorStop(0, "#FFFFFF");
-          gradient.addColorStop(1, "#369b8e");
-        } else {
-          gradient.addColorStop(0, isHighlighted ? "#97FCE4" : "#4B5563");
-          gradient.addColorStop(1, isHighlighted ? "#369b8e" : "#1F2937");
-        }
-
-        ctx.fillStyle = gradient;
-        ctx.fill();
-
-        ctx.fillStyle = node.label !== selectedTag ? "#FFFFFF" : "#1F2937";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        const fontSize = Math.max(10, node.radius / 3);
-        ctx.font = `${fontSize}px sans-serif`;
-        ctx.fillText(node.label, node.x, node.y, node.radius * 2);
-      } else {
-        ctx.fillStyle = isHighlighted ? "#97FCE4" : "#4B5563";
-        ctx.fill();
-
-        const item = items.find((i) => `item-${i.id}` === node.id);
-        if (item && projectImages.current[item.id]) {
-          const img = projectImages.current[item.id];
-          const imgSize = node.radius * 2.2;
-
-          try {
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, node.radius - 1, 0, Math.PI * 2);
-            ctx.clip();
-            ctx.drawImage(
-              img,
-              node.x - imgSize / 2,
-              node.y - imgSize / 2,
-              imgSize,
-              imgSize
-            );
-            ctx.restore();
-          } catch (error) {
-            console.error(`Error drawing image for item ${item.id}:`, error);
-          }
-        }
-      }
-    });
-  };
-
-  const startSimulation = () => {
-    if (isSimulationRunning) return;
-
-    setIsSimulationRunning(true);
-    const animate = () => {
-      applyPhysics();
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-    animate();
-  };
-
-  const stopSimulation = () => {
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current);
-    }
-    setIsSimulationRunning(false);
-  };
-
-  const handleMouseDown = (e) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const rect = canvas.getBoundingClientRect();
-    const scale = scaleRef.current;
-    const x = (e.clientX - rect.left) * scale;
-    const y = (e.clientY - rect.top) * scale;
-
-    nodesRef.current.forEach((node) => {
-      const dx = x - node.x;
-      const dy = y - node.y;
-      if (Math.sqrt(dx * dx + dy * dy) < node.radius) {
-        draggedNodeRef.current = node;
-        if (node.type === "tag") {
-          setSelectedTag(selectedTag === node.label ? null : node.label);
-        }
-      }
-    });
-  };
-
-  const handleMouseMove = (e) => {
-    if (!draggedNodeRef.current || !canvasRef.current) return;
-
-    const rect = canvasRef.current.getBoundingClientRect();
-    const scale = scaleRef.current;
-    const node = draggedNodeRef.current;
-
-    let newX = (e.clientX - rect.left) * scale;
-    let newY = (e.clientY - rect.top) * scale;
-
-    newX = Math.max(
-      node.radius,
-      Math.min(canvasRef.current.width - node.radius, newX)
-    );
-    newY = Math.max(
-      node.radius,
-      Math.min(canvasRef.current.height - node.radius, newY)
-    );
-
-    node.x = newX;
-    node.y = newY;
-
-    node.vx = 0;
-    node.vy = 0;
-
-    draw();
-  };
-
-  const handleMouseUp = () => {
-    draggedNodeRef.current = null;
-  };
-
-  const handleTouchStart = (event) => {
-    event.preventDefault();
-    if (!canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    const scale = scaleRef.current;
-
-    const touch = event.touches[0];
-    const x = (touch.clientX - rect.left) * scale;
-    const y = (touch.clientY - rect.top) * scale;
-
-    nodesRef.current.forEach((node) => {
-      const dx = x - node.x;
-      const dy = y - node.y;
-      if (Math.sqrt(dx * dx + dy * dy) < node.radius) {
-        draggedNodeRef.current = node;
-        if (node.type === "tag") {
-          setSelectedTag(selectedTag === node.label ? null : node.label);
-        }
-      }
-    });
-  };
-
-  const handleTouchMove = (event) => {
-    event.preventDefault();
-    if (!draggedNodeRef.current || !canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
-    const scale = scaleRef.current;
-    const node = draggedNodeRef.current;
-
-    const touch = event.touches[0];
-    let newX = (touch.clientX - rect.left) * scale;
-    let newY = (touch.clientY - rect.top) * scale;
-
-    newX = Math.max(node.radius, Math.min(canvas.width - node.radius, newX));
-    newY = Math.max(node.radius, Math.min(canvas.height - node.radius, newY));
-
-    node.x = newX;
-    node.y = newY;
-
-    node.vx = 0;
-    node.vy = 0;
-
-    draw();
-  };
-
-  const handleTouchEnd = () => {
-    draggedNodeRef.current = null;
-  };
-
+  // Add click handler to canvas
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    // Adjust for high DPI displays
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    
-    // Set the canvas size to match its display size * device pixel ratio
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    
-    // Scale the context to ensure correct drawing
-    const ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-    
-    // Update canvas style dimensions
-    canvas.style.width = `${rect.width}px`;
-    canvas.style.height = `${rect.height}px`;
-
-    nodesRef.current = initializeNodes();
-    linksRef.current = initializeLinks();
-
-    const updateScale = () => {
-      const canvas = canvasRef.current;
-      const rect = canvas.getBoundingClientRect();
-
-      if (canvas) {
-        scaleRef.current = canvas.width / rect.width;
-      }
-    };
-
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    startSimulation();
-
-    return () => {
-      window.removeEventListener("resize", updateScale);
-      stopSimulation();
-    };
-  }, [imagesLoaded]);
-
-  useEffect(() => {
-    if (imagesLoaded && canvasRef.current) {
-      draw();
+    if (canvas) {
+      canvas.addEventListener('click', handleCanvasClick);
+      return () => canvas.removeEventListener('click', handleCanvasClick);
     }
-  }, [selectedTag, imagesLoaded]);
+  }, []);
 
-return (
-  <div className="min-h-screen bg-dark-green text-white flex flex-col">
-    <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
-      <div className="ml-10">
-        <span className="text-gray-900 font-bold text-xl">onHL</span>
-      </div>
-      {cryptoPrice && (
-        <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
-          Hype:{" "}
-          <span>
-            ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
-          </span>
-        </div>
-      )}
-    </header>
-    <div className="md:hidden flex justify-center gap-2 p-4">
-      <button
-        onClick={() => setActiveView("canvas")}
-        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-          activeView === "canvas"
-            ? "bg-mint text-dark-green"
-            : "bg-dark-green text-white border border-mint"
-        }`}
-      >
-        <Network size={16} />
-        Graph
-      </button>
-      <button
-        onClick={() => setActiveView("directory")}
-        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-          activeView === "directory"
-            ? "bg-mint text-dark-green"
-            : "bg-dark-green text-white border border-mint"
-        }`}
-      >
-        <LayoutGrid size={16} />
-        Directory
-      </button>
-    </div>
+  // Add event listeners
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.addEventListener('mousemove', handleCanvasMouseMove);
+      canvas.addEventListener('mouseleave', handleCanvasMouseLeave);
+      return () => {
+        canvas.removeEventListener('mousemove', handleCanvasMouseMove);
+        canvas.removeEventListener('mouseleave', handleCanvasMouseLeave);
+      };
+    }
+  }, [viewMode]);
 
-    <div className="w-full mx-auto p-6 space-y-8 md:space-y-0 flex-grow flex flex-col md:grid md:grid-cols-2 md:space-x-8">
-      <div className={`rounded-lg md:shadow-xl w-full ${activeView !== "canvas" ? "hidden md:block" : ""}`}>
-        <canvas
-          ref={canvasRef}
-          className="w-full cursor-pointer md:bg-hero-pattern md:bg-cover rounded-xl md:bg-center md:bg-no-repeat bg-transparent"
-          style={{ 
-            touchAction: "none",
-            height: window.innerWidth < 768 ? "1000px" : "600px" 
-          }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onTouchStart={handleTouchStart}
-        />
-        
-        <div className="mt-8 p-4 bg-aqua/40 rounded-lg shadow-xl">
-          <h2 className="text-xl font-bold mb-4 text-center">Worth a follow</h2>
-          <div className="flex flex-wrap justify-center gap-2">
-       <a href="https://x.com/NMTD8" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/hF8dTDq/NMTD8.png" alt="NMTD8" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@NMTD8</span>
-</a>
-            <a href="https://x.com/0xNairolf" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/tBrptV5/0x-Nairolf.png" alt="Nairolf" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@0xNairolf</span>
-</a>
-
-<a href="https://x.com/0xPasteke" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/mNyhSQT/0x-Pasteke.png" alt="Pasteke" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@0xPasteke</span>
-</a>
-
-<a href="https://x.com/CapitalMonet" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/DLBPYNb/Capital-Monet.png" alt="Capital Monet" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@CapitalMonet</span>
-</a>
-
-<a href="https://x.com/CC2Ventures" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/8Kdd2H6/CC2-Ventures.png" alt="CC2 Ventures" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@CC2Ventures</span>
-</a>
-
-<a href="https://x.com/chameleon_jeff" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/LpNYZhn/chameleon-jeff.png" alt="Jeff" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@chameleon_jeff</span>
-</a>
-
-<a href="https://x.com/comfycapital_" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/2668gbR/comfycapital.png" alt="Comfy Capital" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@comfycapital_</span>
-</a>
-
-<a href="https://x.com/crypto_adair" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/zJb10Vs/crypto-adair.png" alt="Crypto Adair" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@crypto_adair</span>
-</a>
-
-<a href="https://x.com/derteil00" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/gSmG9DR/derteil00.png" alt="Derteil" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@derteil00</span>
-</a>
-
-<a href="https://x.com/esprisi0" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/nDRWdB3/esprisi0.png" alt="Esprisi" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@esprisi0</span>
-</a>
-
-<a href="https://x.com/fiege_max" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/5WPhBWF/fiege-max.png" alt="Max" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@fiege_max</span>
-</a>
-
-<a href="https://x.com/fmoulin7" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/mytjWB8/fmoulin7.png" alt="FMoulin" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@fmoulin7</span>
-</a>
-
-<a href="https://x.com/GuthixHL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/YjwVMhq/GuthixHL.png" alt="Guthix" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@GuthixHL</span>
-</a>
-
-<a href="https://x.com/Henrik_on_HL" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/37vNjcm/Henrik-on-HL.png" alt="Henrik" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@Henrik_on_HL</span>
-</a>
-
-<a href="https://x.com/HyperliquidFan" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/596MrDM/Hyperliquid-Fan.png" alt="HyperliquidFan" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@HyperliquidFan</span>
-</a>
-
-<a href="https://x.com/hypurr_co" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/THdpNKB/hypurr-co.png" alt="Hypurr" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@hypurr_co</span>
-</a>
-
-<a href="https://x.com/JHyperliquid" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/vsBdKdy/JHyperliquid.png" alt="JHyperliquid" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@JHyperliquid</span>
-</a>
-
-<a href="https://x.com/KingJulianIAm" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/FhtJBTj/King-Julian-IAm.png" alt="King Julian" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@KingJulianIAm</span>
-</a>
-
-<a href="https://x.com/laurentzeimes" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/w7sdxmh/laurentzeimes.png" alt="Laurent" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@laurentzeimes</span>
-</a>
-
-<a href="https://x.com/nexushl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/sjZBCbg/nexushl.png" alt="Nexus" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@nexushl</span>
-</a>
-
-<a href="https://x.com/0xAdrianzy" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/PYbPmcx/0x-Adrianzy.png" alt="Adrianzy" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@0xAdrianzy</span>
-</a>
-
-<a href="https://x.com/points_hl" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/vLLLKvY/points-hl.png" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@points_hl</span>
-</a>
-
-<a href="https://x.com/ellie_nfts" target="_blank" rel="noopener noreferrer" className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors">
-  <img src="https://i.ibb.co/64nyDMb/ellie.jpg" alt="Points" className="md:w-5 md:h-5 w-3 h-3 rounded-full bg-white" />
-  <span className="md:text-base text-xs">@ellie.hl</span>
-</a>
-      </div>
-    </div>
-  </div>
-
-<section
-        className={`flex flex-col space-y-6 ${
-          activeView !== "directory" ? "hidden md:block" : ""
-        }`}
-      >
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl">Directory</h1>
-            <div className="bg-mint border-dark-green p-2 rounded-lg">
-              <select
-                className="border rounded-md text-dark-green bg-mint transition-colors border-mint focus:outline-none"
-                onChange={(e) => setSelectedTag(e.target.value || null)}
-                value={selectedTag || ""}
-              >
-                <option value="">All Tags</option>
-                {tags.map((tag) => (
-                  <option key={tag} value={tag}>
-                    {tag} ({getTagConnections()[tag]})
-                  </option>
-                ))}
-              </select>
+  // Update the DirectoryView component
+  const DirectoryView = () => (
+    <div className="overflow-y-auto h-full pt-16 pb-4"> {/* Add padding-top for filters */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        {items.filter(item => {
+          const matchesTags = selectedTags.length === 0 || 
+            selectedTags.some(tag => item.tags.includes(tag.value));
+          const matchesCategory = !selectedCategory || 
+            item.tags.includes(selectedCategory);
+          return matchesTags && matchesCategory;
+        }).map(item => (
+          <div key={item.id} className="bg-dark-green border border-mint rounded-lg p-4 flex flex-col gap-3">
+            <div className="flex items-center gap-3">
+              <img 
+                src={item.logo} 
+                alt={item.name} 
+                className="w-10 h-10 rounded-full"
+              />
+              <h3 className="text-lg font-bold text-mint">{item.name}</h3>
             </div>
-          </div>
-
-          <div className="space-y-2">
-            {items
-              .filter((item) => !selectedTag || item.tags.includes(selectedTag))
-              .map((item) => (
-                <div
-                  key={item.id}
-                  className="flex justify-between items-center p-3 border border-aqua rounded-md hover:bg-mint/20 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={item.logo}
-                      alt={`${item.name} logo`}
-                      className="w-8 h-8 rounded-full bg-white p-0.5 object-contain"
-                      style={{ imageRendering: 'high-quality' }}
-                      onError={(e) => {
-                        e.target.src = "/api/placeholder/32/32";
-                      }}
-                    />
-                    <span className="font-medium">{item.name}</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex gap-2">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 bg-[#97FCE4] text-gray-900 rounded-full text-sm font-medium"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <a
-                      href={item.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#97FCE4] transition-colors"
-                    >
-                      <Twitter className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              ))}
-          </div>
-
-          <div className="border border-gray-700 rounded-lg p-4 space-y-4 bg-aqua/40 shadow-xl">
-            <h2 className="text-xl font-bold">Articles</h2>
-            <div className="space-y-2">
-              {articles.map((article, index) => (
-                <div
-                  key={index}
-                  className="flex justify-between items-center p-3 bg-dark-green/70 rounded-md hover:bg-dark-green transition-colors"
-                >
-                  <div className="flex-grow">
-                    <div className="font-medium">{article.title}</div>
-                    <div className="text-sm text-gray-400">
-                      {article.month} {article.year}
-                    </div>
-                  </div>
-                  <a
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-[#97FCE4] transition-colors ml-4"
+            <div className="flex items-center justify-between">
+              <div className="flex flex-wrap gap-2">
+                {item.tags.map((tag, index) => (
+                  <span 
+                    key={index}
+                    className="px-2 py-1 bg-mint bg-opacity-20 text-mint rounded-full text-xs"
                   >
-                    {article.link.includes("x.com") ||
-                    article.link.includes("twitter.com") ? (
-                      <Twitter className="w-4 h-4" />
-                    ) : (
-                      <Scroll className="w-4 h-4" />
-                    )}
-                  </a>
-                </div>
-              ))}
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={item.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-mint text-dark-green rounded-full hover:bg-opacity-80 transition-colors"
+                title="Twitter"
+              >
+                <Twitter size={16} />
+              </a>
             </div>
           </div>
-        </section>
+        ))}
       </div>
-    
-  <footer className="bg-[#97FCE4] p-4 mt-auto shadow-lg w-full">
-      <div className="max-w-4xl mx-auto flex justify-center items-center">
-        <span className="text-gray-900 font-bold text-xl">onHL</span>
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col h-screen bg-dark-green text-white">
+      {/* Header - fixed height */}
+      <header className="bg-mint p-2 shadow-lg flex justify-between items-center">
+        <div className="ml-10">
+          <span className="text-gray-900 font-bold text-xl">onHL</span>
+        </div>
+        {cryptoPrice && (
+          <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
+            Hype:{" "}
+            <span>
+              ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
+            </span>
+          </div>
+        )}
+      </header>
+
+      {/* Main content */}
+      <div className="flex-grow relative overflow-hidden"> {/* Add overflow-hidden */}
+        <div className="absolute inset-0">
+          <div className="h-full relative">
+            {/* Controls bar - make it fixed */}
+            <div className="absolute top-4 left-4 right-4 z-10 flex gap-4 items-center bg-dark-green p-2 rounded-lg">
+              <div className="flex-grow">
+                <Select
+                  isMulti
+                  options={tagOptions}
+                  value={selectedTags}
+                  onChange={setSelectedTags}
+                  className="text-dark-green"
+                  placeholder="Select categories..."
+                />
+              </div>
+
+              {/* View toggle button */}
+              <button
+                onClick={() => setViewMode(viewMode === 'graph' ? 'directory' : 'graph')}
+                className="px-4 py-2 bg-mint text-dark-green rounded-lg hover:bg-opacity-80 transition-colors flex items-center gap-2 whitespace-nowrap"
+              >
+                {viewMode === 'graph' ? (
+                  <>
+                    <LayoutGrid size={16} />
+                    Directory View
+                  </>
+                ) : (
+                  <>
+                    <Network size={16} />
+                    Graph View
+                  </>
+                )}
+              </button>
+
+              {/* Reset button */}
+              {selectedCategory && (
+                <button
+                  onClick={() => setSelectedCategory(null)}
+                  className="px-4 py-2 bg-mint text-dark-green rounded-lg hover:bg-opacity-80 transition-colors flex items-center gap-2 whitespace-nowrap"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path 
+                      fillRule="evenodd" 
+                      d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" 
+                      clipRule="evenodd" 
+                    />
+                  </svg>
+                  Reset View
+                </button>
+              )}
+            </div>
+
+            {/* View content */}
+            {viewMode === 'graph' ? (
+              <canvas
+                ref={canvasRef}
+                className="w-full h-full rounded-xl bg-transparent"
+              />
+            ) : (
+              <DirectoryView />
+            )}
+          </div>
+        </div>
+
+        {/* Project Popup - only show in graph view */}
+        {viewMode === 'graph' && selectedProject && (
+          <div 
+            className="fixed z-50 bg-dark-green border border-mint rounded-lg shadow-xl p-4"
+            style={{
+              left: popupPosition.x + 10,
+              top: popupPosition.y + 10,
+              transform: 'translate(-50%, -50%)',
+              width: '300px'
+            }}
+          >
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                <img 
+                  src={selectedProject.logo} 
+                  alt={selectedProject.name} 
+                  className="w-8 h-8 rounded-full"
+                />
+                <h3 className="text-lg font-bold text-mint">
+                  {selectedProject.name}
+                </h3>
+              </div>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex flex-wrap gap-2 flex-grow">
+                  {selectedProject.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-mint bg-opacity-20 text-mint rounded-full text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <a
+                  href={selectedProject.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 p-2 bg-mint text-dark-green rounded-full hover:bg-opacity-80 transition-colors"
+                  title="Twitter"
+                >
+                  <Twitter size={16} />
+                </a>
+              </div>
+              
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-2 right-2 text-mint hover:text-white transition-colors"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-5 w-5" 
+                  viewBox="0 0 20 20" 
+                  fill="currentColor"
+                >
+                  <path 
+                    fillRule="evenodd" 
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" 
+                    clipRule="evenodd" 
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Hover Tooltip */}
+        {viewMode === 'graph' && hoverTooltip && (
+          <div 
+            className="fixed z-50 bg-dark-green border border-mint rounded-lg shadow-xl p-2"
+            style={{
+              left: tooltipPosition.x + 10,
+              top: tooltipPosition.y + 10,
+              pointerEvents: 'none' // Prevent tooltip from interfering with interactions
+            }}
+          >
+            <div className="flex items-center gap-2">
+              {hoverTooltip.type === 'project' && (
+                <img 
+                  src={hoverTooltip.logo} 
+                  alt={hoverTooltip.name}
+                  className="w-6 h-6 rounded-full"
+                />
+              )}
+              <span className="text-mint font-medium">
+                {hoverTooltip.name}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Footer - fixed height */}
+      <footer className="bg-[#97FCE4] p-4 shadow-lg">
+        <div className="max-w-4xl mx-auto flex justify-center items-center">
+          <span className="text-gray-900 font-bold text-xl">onHL</span>
+        </div>
         <div className="flex row md:w-auto w-full items-center justify-center md:gap-4 gap-1 mt-4">
           <a
             href="https://x.com/freddy_0x"
@@ -1460,6 +1371,19 @@ return (
               className="md:w-5 md:h-5 w-3 h-3"
             />
             <span className="md:text-base text-xs">@Tonkavan</span>
+          </a>
+          <a
+            href="https://x.com/hyperditto"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
+          >
+            <img
+              src="/images/logos/hyperditto.png"
+              alt="Twitter"
+              className="md:w-5 md:h-5 w-3 h-3"
+            />
+            <span className="md:text-base text-xs">@hyperditto</span>
           </a>
         </div>
       </footer>
