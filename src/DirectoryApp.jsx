@@ -371,7 +371,7 @@ const DirectoryApp = () => {
     },
     {
       id: 52,
-      name: "HypurrDash",
+      name: "HyperDash",
       tags: ["Analytics", "Data"],
       twitter: "https://x.com/hypurrdash",
       logo: "/images/logos/hyperdash-logo.png",
@@ -704,6 +704,48 @@ const DirectoryApp = () => {
       tags: ["Yield", "Defi"],
       twitter: "https://x.com/hyperunit",
       logo: "/images/logos/unit.png",
+    },
+    {
+      id: 100,
+      name: "HiveFi",
+      tags: ["Defi"],
+      twitter: "https://x.com/HiveFi_X",
+      logo: "/images/logos/hivefi.png",
+    },
+    {
+      id: 101,
+      name: "Gigabrain",
+      tags: ["Tool trading AI"],
+      twitter: "https://x.com/GigabrainGG",
+      logo: "/images/logos/gigabrain.png",
+    },
+    {
+      id: 102,
+      name: "Perpflow",
+      tags: ["Trading"],
+      twitter: "https://x.com/perpflow",
+      logo: "/images/logos/perpflow.png",
+    },
+    {
+      id: 103,
+      name: "HyperProjects",
+      tags: ["News"],
+      twitter: "https://x.com/HyperProjectsX",
+      logo: "/images/logos/hyperproject.png",
+    },
+    {
+      id: 104,
+      name: "Ezpairs",
+      tags: ["Trading"],
+      twitter: "https://x.com/EzPairs/photo",
+      logo: "/images/logos/expairs.png",
+    },
+    {
+      id: 105,
+      name: "Altitude",
+      tags: ["Infra"],
+      twitter: "https://x.com/valtitudexyz",
+      logo: "/images/logos/altitude.png",
     }
   ];
 
@@ -731,7 +773,8 @@ const tags = [
     "Investment",
     "Stablecoin",
     "News",
-    "Landing"
+    "Landing",
+    "Tool trading AI"
 ];
 
   const articles = [
