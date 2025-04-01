@@ -3,6 +3,7 @@ import { Twitter, Scroll, LayoutGrid, Network } from "lucide-react";
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import Select from 'react-select';
+import { Analytics } from "@vercel/analytics/react";
 
 const DirectoryApp = () => {
   const [selectedTags, setSelectedTags] = useState([]);
@@ -1002,7 +1003,7 @@ const tags = [
       color: 0x97FCE4,
       transparent: true,
       opacity: opacity,
-      linewidth: 4
+      linewidth: 2
     });
     return new THREE.Line(geometry, material);
   };
@@ -1619,6 +1620,7 @@ return (
         </div>
       </footer>
     </div>
+    <Analytics />
   );
 }
 
