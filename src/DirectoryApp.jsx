@@ -299,180 +299,173 @@ const DirectoryApp = () => {
       twitter: "https://x.com/InsilicoTrading",
       logo: "/images/logos/insilico-logo.png",
     },
-{
-  id: 41,
-  name: "memedata",
-  tags: ["Analytics"],
-  twitter: "https://x.com/shinji2048",
-  logo: "/images/logos/shinji2048.png",
-},
-{
-  id: 42,
+    {
+      id: 41,
+      name: "memedata",
+      tags: ["Analytics"],
+      twitter: "https://x.com/shinji2048",
+      logo: "/images/logos/shinji2048.png",
+    },
+    {
+      id: 42,
       name: "Slate",
       tags: ["AI", "Tools", "Trading"],
       twitter: "https://x.com/slate_hl",
       logo: "/images/logos/slate-logo.png",
-},
-{
-  id: 43,
-      name: "HPS Protocol",
-      tags: ["Defi", "NFT", "Mobile"],
-      twitter: "https://x.com/HPSProtocol",
-      logo: "/images/logos/HPSProtocol.png",
-},
-{
-  id: 44,
+    },
+    {
+      id: 44,
       name: "Chris Ling",
       tags: ["Tools", "Trading"],
       twitter: "https://x.com/chrisling_hl",
       logo: "/images/logos/chrisling-logo.png",
-},
-{
-  id: 45,
-  name: "Schizo",
-  tags: ["Meme"],
-  twitter: "https://x.com/schizo_on_hl",
-  logo: "/images/logos/schizo-logo.png",
-},
-{
-  id: 46,
-  name: "Peri Pair Bot",
-  tags: ["Trading"],
-  twitter: "https://x.com/peripairbot",
-  logo: "/images/logos/peripairbot-logo.png",
-},
-{
-  id: 47,
-  name: "Vapor",
-  tags: ["Social", "AI"],
-  twitter: "https://x.com/vaporwarefun",
-  logo: "/images/logos/vapor-logo.png",
-},
-{
-  id: 48,
-  name: "Hey Jeff",
-  tags: ["Tools"],
-  twitter: "https://x.com/janklimo",
-  logo: "/images/logos/peripairbot-logo.png",
-},
+    },
     {
-  id: 49,
-  name: "Hypurr Collective",
-  tags: ["Community"],
-  twitter: "https://x.com/hypurr_co",
-  logo: "/images/logos/hypurr-logo.png",
-},
-      {
-  id: 50,
-  name: "Panda",
-  tags: ["Meme","Community"],
-  twitter: "https://x.com/panda_on_hl",
-  logo: "/images/logos/panda-logo.png",
-},
-{
-  id: 51,
-  name: "LadyOnHL",
-  tags: ["Meme"],
-  twitter: "https://x.com/lady_on_hl",
-  logo: "/images/logos/ladyhl-logo.png",
-},
-{
-  id: 52,
-  name: "HypurrDash",
-  tags: ["Analytics", "Data"],
-  twitter: "https://x.com/hypurrdash",
-  logo: "/images/logos/hyperdash-logo.png",
-},
-{
-  id: 53,
-  name: "WashOnHL",
-  tags: ["Trading"],
-  twitter: "https://x.com/wash_on_hl",
-  logo: "/images/logos/washsniper-logo.png",
-},
-{
-  id: 54,
-  name: "HyperTracker",
-  tags: ["Tools"],
-  twitter: "https://x.com/NMTD8/status/1871588493283270733",
-  logo: "/images/logos/hypertracker-logo.png",
-},
-{
-  id: 55,
-  name: "Hyperlend Explorer",
-  tags: ["Explorer"],
-  twitter: "https://explorer.hyperlend.finance/",
-  logo: "/images/logos/hyperland-logo.png",
-},
-{
-  id: 56,
-  name: "ASXN",
-  tags: ["Data"],
-  twitter: "https://x.com/asxn_r/status/1873668265450598613",
-  logo: "/images/logos/asxn-logo.png",
-},
-{
-  id: 57,
-  name: "Hypertrack",
-  tags: ["Tools"],
-  twitter: "https://x.com/hyperlendx/status/1855309389814432163",
-  logo: "/images/logos/hypertrack-logo.png",
-},
-{
-  id: 58,
-  name: "Tholos",
-  tags: ["Tools"],
-  twitter: "https://x.com/TholosApp",
-  logo: "/images/logos/tholos-logo.png",
-},
-{
-  id: 59,
-  name: "Octis",
-  tags: ["Trading"],
-  twitter: "https://x.com/octis_808",
-  logo: "/images/logos/octis.png",
-},
-{
-  id: 60,
-  name: "Hypio",
+      id: 45,
+      name: "Schizo",
+      tags: ["Meme"],
+      twitter: "https://x.com/schizo_on_hl",
+      logo: "/images/logos/schizo-logo.png",
+    },
+    {
+      id: 46,
+      name: "Peri Pair Bot",
+      tags: ["Trading"],
+      twitter: "https://x.com/peripairbot",
+      logo: "/images/logos/peripairbot-logo.png",
+    },
+    {
+      id: 47,
+      name: "Vapor",
+      tags: ["Social", "AI"],
+      twitter: "https://x.com/vaporwarefun",
+      logo: "/images/logos/vapor-logo.png",
+    },
+    {
+      id: 48,
+      name: "Hey Jeff",
+      tags: ["Tools"],
+      twitter: "https://x.com/janklimo",
+      logo: "/images/logos/peripairbot-logo.png",
+    },
+    {
+      id: 49,
+      name: "Hypurr Collective",
+      tags: ["Community"],
+      twitter: "https://x.com/hypurr_co",
+      logo: "/images/logos/hypurr-logo.png",
+    },
+    {
+      id: 50,
+      name: "Panda",
+      tags: ["Meme","Community"],
+      twitter: "https://x.com/panda_on_hl",
+      logo: "/images/logos/panda-logo.png",
+    },
+    {
+      id: 51,
+      name: "LadyOnHL",
+      tags: ["Meme"],
+      twitter: "https://x.com/lady_on_hl",
+      logo: "/images/logos/ladyhl-logo.png",
+    },
+    {
+      id: 52,
+      name: "HypurrDash",
+      tags: ["Analytics", "Data"],
+      twitter: "https://x.com/hypurrdash",
+      logo: "/images/logos/hyperdash-logo.png",
+    },
+    {
+      id: 53,
+      name: "WashOnHL",
+      tags: ["Trading"],
+      twitter: "https://x.com/wash_on_hl",
+      logo: "/images/logos/washsniper-logo.png",
+    },
+    {
+      id: 54,
+      name: "HyperTracker",
+      tags: ["Tools"],
+      twitter: "https://x.com/NMTD8/status/1871588493283270733",
+      logo: "/images/logos/hypertracker-logo.png",
+    },
+    {
+      id: 55,
+      name: "Hyperlend Explorer",
+      tags: ["Explorer"],
+      twitter: "https://explorer.hyperlend.finance/",
+      logo: "/images/logos/hyperland-logo.png",
+    },
+    {
+      id: 56,
+      name: "ASXN",
+      tags: ["Data"],
+      twitter: "https://x.com/asxn_r/status/1873668265450598613",
+      logo: "/images/logos/asxn-logo.png",
+    },
+    {
+      id: 57,
+      name: "Hypertrack",
+      tags: ["Tools"],
+      twitter: "https://x.com/hyperlendx/status/1855309389814432163",
+      logo: "/images/logos/hypertrack-logo.png",
+    },
+    {
+      id: 58,
+      name: "Tholos",
+      tags: ["Tools"],
+      twitter: "https://x.com/TholosApp",
+      logo: "/images/logos/tholos-logo.png",
+    },
+    {
+      id: 59,
+      name: "Octis",
+      tags: ["Trading"],
+      twitter: "https://x.com/octis_808",
+      logo: "/images/logos/octis.png",
+    },
+    {
+      id: 60,
+      name: "Hypio",
       tags: ["NFT","Community"],
-  twitter: "https://x.com/HypioHL",
-  logo: "/images/logos/hypio.png",
-},
-{
-  id: 61,
-  name: "Hyperflip",
-  tags: ["GambleFi"],
-  twitter: "https://x.com/hypercoinflip",
-  logo: "/images/logos/hyperflip.png",
-},
-{
-  id: 62,
-  name: "USDC Inflows",
-  tags: ["Data"],
-  twitter: "https://x.com/mogie__/status/1881818562274459701",
-  logo: "/images/logos/mogie.png",
-},
-{
-  id: 63,
-  name: "Hyperdelta",
-  tags: ["Trading"],
-  twitter: "https://x.com/HyperdeltaX",
-  logo: "/images/logos/hyperdelta.png",
-},
-{
-  id: 64,
-  name: "Hypervol",
-  tags: ["Trading"],
-  twitter: "https://x.com/Hypervol_xyz",
-  logo: "/images/logos/hypervol.png",
-},
-{
-  id: 65,
-  name: "Kibl",
-  tags: ["Defi"],
-  twitter: "https://x.com/kiblprotocol",
-  logo: "/images/logos/kibl.png",
+      twitter: "https://x.com/HypioHL",
+      logo: "/images/logos/hypio.png",
+    },
+    {
+      id: 61,
+      name: "Hyperflip",
+      tags: ["GambleFi"],
+      twitter: "https://x.com/hypercoinflip",
+      logo: "/images/logos/hyperflip.png",
+    },
+    {
+      id: 62,
+      name: "USDC Inflows",
+      tags: ["Data"],
+      twitter: "https://x.com/mogie__/status/1881818562274459701",
+      logo: "/images/logos/mogie.png",
+    },
+    {
+      id: 63,
+      name: "Hyperdelta",
+      tags: ["Trading"],
+      twitter: "https://x.com/HyperdeltaX",
+      logo: "/images/logos/hyperdelta.png",
+    },
+    {
+      id: 64,
+      name: "Hypervol",
+      tags: ["Trading"],
+      twitter: "https://x.com/Hypervol_xyz",
+      logo: "/images/logos/hypervol.png",
+    },
+    {
+      id: 65,
+      name: "Kibl",
+      tags: ["Defi"],
+      twitter: "https://x.com/kiblprotocol",
+      logo: "/images/logos/kibl.png",
     },
     {
       id: 66,
@@ -545,89 +538,173 @@ const DirectoryApp = () => {
       logo: "/images/logos/Hyperrich.png",
     },
     {
-  id: 75,
-  name: "Slate",
-  tags: ["AI", "Tools", "Trading"],
-  twitter: "https://x.com/slate_ceo",
-  logo: "/images/logos/Slate.png",
-},
-{
-  id: 76,
-  name: "HPS Protocol",
-  tags: ["DeFi", "NFT", "Mobile"],
-  twitter: "https://x.com/HPSProtocol",
-  logo: "/images/logos/HPSProtocol.png",
-},
-{
-  id: 77,
-  name: "Chris Ling",
-  tags: ["Tools", "Trading"],
-  twitter: "https://x.com/chrisling_dev",
-  logo: "/images/logos/ChrisLing.png",
-},
-{
-  id: 78,
-  name: "Mercury App",
-  tags: ["Mobile", "Trading"],
-  twitter: "https://x.com/mercuryapphl",
-  logo: "/images/logos/MercuryApp.png",
-},
-{
-  id: 79,
-  name: "Hyperstable",
-  tags: ["Stablecoin", "Yield"],
-  twitter: "https://x.com/HyperstableX",
-  logo: "/images/logos/Hyperstable.png",
-},
-{
-  id: 80,
-  name: "Hyperlane",
-  tags: ["Infra"],
-  twitter: "https://x.com/hyperlane",
-  logo: "/images/logos/Hyperlane.png",
-},
-{
-  id: 81,
-  name: "LiquidLoot",
-  tags: ["NFT"],
-  twitter: "https://x.com/LootLiquid",
-  logo: "/images/logos/Liquidloot.png",
-},
-{
-  id: 82,
-  name: "Okto",
-  tags: ["Infra","Mobile"],
-  twitter: "https://x.com/okto_web3",
-  logo: "/images/logos/Okto.png",
-},
-{
-  id: 83,
-  name: "Bridge Hypio",
-  tags: ["Infra", "NFT"],
-  twitter: "https://x.com/HypioHL",
-  logo: "/images/logos/hypio.png",
-},
-{
-  id: 84,
-  name: "Eternal AI",
-  tags: ["AI"],
-  twitter: "https://x.com/CryptoEternalAI",
-  logo: "/images/logos/EternalAI.png",
-},
-{
-  id: 85,
-  name: "deBridge",
-  tags: ["Infra"],
-  twitter: "https://x.com/deBridgeFinance",
-  logo: "/images/logos/debridge.png",
-},
-{
-  id: 86,
-  name: "Valantis",
-  tags: ["Defi","Yield"],
-  twitter: "https://x.com/ValantisLabs",
-  logo: "/images/logos/valantis.png",
-}
+      id: 75,
+      name: "Slate",
+      tags: ["AI", "Tools", "Trading"],
+      twitter: "https://x.com/slate_ceo",
+      logo: "/images/logos/Slate.png",
+    },
+    {
+      id: 77,
+      name: "Chris Ling",
+      tags: ["Tools", "Trading"],
+      twitter: "https://x.com/chrisling_dev",
+      logo: "/images/logos/ChrisLing.png",
+    },
+    {
+      id: 78,
+      name: "Mercury App",
+      tags: ["Mobile", "Trading"],
+      twitter: "https://x.com/mercuryapphl",
+      logo: "/images/logos/MercuryApp.png",
+    },
+    {
+      id: 79,
+      name: "Hyperstable",
+      tags: ["Stablecoin", "Yield"],
+      twitter: "https://x.com/HyperstableX",
+      logo: "/images/logos/Hyperstable.png",
+    },
+    {
+      id: 80,
+      name: "Hyperlane",
+      tags: ["Infra"],
+      twitter: "https://x.com/hyperlane",
+      logo: "/images/logos/Hyperlane.png",
+    },
+    {
+      id: 81,
+      name: "LiquidLoot",
+      tags: ["NFT"],
+      twitter: "https://x.com/LootLiquid",
+      logo: "/images/logos/Liquidloot.png",
+    },
+    {
+      id: 82,
+      name: "Okto",
+      tags: ["Infra","Mobile"],
+      twitter: "https://x.com/okto_web3",
+      logo: "/images/logos/Okto.png",
+    },
+    {
+      id: 83,
+      name: "Bridge Hypio",
+      tags: ["Infra", "NFT"],
+      twitter: "https://x.com/HypioHL",
+      logo: "/images/logos/hypio.png",
+    },
+    {
+      id: 84,
+      name: "Eternal AI",
+      tags: ["AI"],
+      twitter: "https://x.com/CryptoEternalAI",
+      logo: "/images/logos/EternalAI.png",
+    },
+    {
+      id: 85,
+      name: "deBridge",
+      tags: ["Infra"],
+      twitter: "https://x.com/deBridgeFinance",
+      logo: "/images/logos/debridge.png",
+    },
+    {
+      id: 86,
+      name: "Valantis",
+      tags: ["Defi","Yield"],
+      twitter: "https://x.com/ValantisLabs",
+      logo: "/images/logos/valantis.png",
+    },
+    {
+      id: 87,
+      name: "Hyperyield",
+      tags: ["Yield", "Defi"],
+      twitter: "https://x.com/HyperYieldx",
+      logo: "/images/logos/hyperyield.png",
+    },
+    {
+      id: 88,
+      name: "Hyperupdates",
+      tags: ["News"],
+      twitter: "https://x.com/hyper_updates",
+      logo: "/images/logos/hyperupdates.png",
+    },
+    {
+      id: 89,
+      name: "Hana",
+      tags: ["Trading"],
+      twitter: "https://x.com/HanaNetwork",
+      logo: "/images/logos/hana.png",
+    },
+    {
+      id: 90,
+      name: "Hypers",
+      tags: ["NFT"],
+      twitter: "https://x.com/HypersOnHL",
+      logo: "/images/logos/hypers.png",
+    },
+    {
+      id: 91,
+      name: "Keiko",
+      tags: ["Landing"],
+      twitter: "https://x.com/KeikoFinance",
+      logo: "/images/logos/keiko.png",
+    },
+    {
+      id: 92,
+      name: "Laminar",
+      tags: ["Dex"],
+      twitter: "https://x.com/laminar_xyz",
+      logo: "/images/logos/laminar.png",
+    },
+    {
+      id: 93,
+      name: "Mizu",
+      tags: ["Yield"],
+      twitter: "https://x.com/mizulabs",
+      logo: "/images/logos/mizu.png",
+    },
+    {
+      id: 94,
+      name: "Hypershot",
+      tags: ["Trading", "Tools"],
+      twitter: "https://x.com/Hypershot_xyz",
+      logo: "/images/logos/hypershot.png",
+    },
+    {
+      id: 95,
+      name: "Hyperflash",
+      tags: ["LST"],
+      twitter: "https://x.com/HyperFlash_hl",
+      logo: "/images/logos/hyperflash.png",
+    },
+    {
+      id: 96,
+      name: "Fan App",
+      tags: ["Tools"],
+      twitter: "https://x.com/fanappX",
+      logo: "/images/logos/fan.png",
+    },
+    {
+      id: 97,
+      name: "Sentiment",
+      tags: ["LST"],
+      twitter: "https://x.com/sentimentxyz",
+      logo: "/images/logos/sentient.png",
+    },
+    {
+      id: 98,
+      name: "Hypernews",
+      tags: ["News"],
+      twitter: "https://x.com/HyperliquidNews",
+      logo: "/images/logos/hypernews.png",
+    },
+    {
+      id: 99,
+      name: "Unit",
+      tags: ["Yield", "Defi"],
+      twitter: "https://x.com/hyperunit",
+      logo: "/images/logos/unit.png",
+    }
   ];
 
 const tags = [
@@ -653,6 +730,8 @@ const tags = [
     "Mobile",
     "Investment",
     "Stablecoin",
+    "News",
+    "Landing"
 ];
 
   const articles = [
@@ -879,7 +958,8 @@ const tags = [
     const material = new THREE.LineBasicMaterial({ 
       color: 0x97FCE4,
       transparent: true,
-      opacity: opacity
+      opacity: opacity,
+      linewidth: 4
     });
     return new THREE.Line(geometry, material);
   };
@@ -1241,14 +1321,19 @@ return (
           damndatsalotofstuffonhyperliquid
         </span>
       </div>
-      {cryptoPrice && (
-        <div className="mr-10 text-gray-900 font-medium flex items-center gap-x-2">
-          HYPE:{" "}
-          <span>
-            ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
-          </span>
+      <div className="flex items-center gap-x-6 mr-10">
+        <div className="text-gray-900 font-medium">
+          HL products: {items.length}
         </div>
-      )}
+        {cryptoPrice && (
+          <div className="text-gray-900 font-medium flex items-center gap-x-2">
+            HYPE:{" "}
+            <span>
+              ${cryptoPrice === "N/A" ? cryptoPrice : cryptoPrice.toFixed(2)}
+            </span>
+          </div>
+        )}
+      </div>
     </header>
 
       {/* Main content */}
