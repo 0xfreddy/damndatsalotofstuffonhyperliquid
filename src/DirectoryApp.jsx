@@ -715,7 +715,7 @@ const DirectoryApp = () => {
     {
       id: 101,
       name: "Gigabrain",
-      tags: ["Tool trading AI"],
+      tags: ["Tools", "Trading", "AI"],
       twitter: "https://x.com/GigabrainGG",
       logo: "/images/logos/gigabrain.png",
     },
@@ -1365,6 +1365,14 @@ return (
         </span>
       </div>
       <div className="flex items-center gap-x-6 mr-10">
+        <a
+          href="https://x.com/freddy_0x"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-900 font-medium hover:text-gray-700 transition-colors flex items-center gap-x-2"
+        >
+          missed something? shoot dm
+        </a>
         <div className="text-gray-900 font-medium">
           HL products: {items.length}
         </div>
