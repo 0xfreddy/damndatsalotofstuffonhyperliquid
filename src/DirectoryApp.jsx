@@ -1376,7 +1376,10 @@ return (
             alt="Twitter"
             className="md:w-5 md:h-5 w-3 h-3"
           />
-          <span className="md:text-base text-xs">missed something? shoot dm</span>
+          <span className="md:text-base text-xs">
+            <span className="hidden md:inline">missed something? </span>
+            shoot dm
+          </span>
         </a>
         <div className="text-gray-900 font-medium">
           HL products: {items.length}
