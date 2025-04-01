@@ -1369,9 +1369,14 @@ return (
           href="https://x.com/freddy_0x"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-900 font-medium hover:text-gray-700 transition-colors flex items-center gap-x-2"
+          className="flex items-center md:gap-2 gap-x-1 bg-dark-green text-white md:px-4 px-3 md:py-2 py-1 rounded-full hover:bg-gray-600 transition-colors"
         >
-          missed something? shoot dm
+          <img
+            src="https://i.ibb.co/640F1X0/0xfreddy-1.png"
+            alt="Twitter"
+            className="md:w-5 md:h-5 w-3 h-3"
+          />
+          <span className="md:text-base text-xs">missed something? shoot dm</span>
         </a>
         <div className="text-gray-900 font-medium">
           HL products: {items.length}
