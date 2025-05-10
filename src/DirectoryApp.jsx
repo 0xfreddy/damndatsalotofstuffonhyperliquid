@@ -1654,8 +1654,8 @@ return (
           </a>
         </div>
       </footer>
+      <Analytics />
     </div>
-    <Analytics />
   );
 }
 
