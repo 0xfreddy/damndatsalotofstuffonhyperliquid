@@ -172,7 +172,7 @@ const DirectoryApp = () => {
       name: "Hyperbeat",
       tags: ["Infra","Staking"],
       twitter: "https://x.com/0xHyperBeat",
-      logo: "/images/logos/hyperbeat-logo.png",
+      logo: "/images/logos/hyperbeat.png",
     },
     {
       id: 23,
@@ -747,6 +747,41 @@ const DirectoryApp = () => {
       tags: ["Infra"],
       twitter: "https://x.com/valtitudexyz",
       logo: "/images/logos/altitude.png",
+    },
+    {
+      id: 106,
+      name: "LayerZero",
+      tags: ["Infra"],
+      twitter: "https://x.com/LayerZero_Core/status/1920848296219996251",
+      logo: "/images/logos/layerzero.png",
+    },
+    {
+      id: 107,
+      name: "SuperX",
+      tags: ["Trading"],
+      twitter: "https://x.com/trysuper_",
+      logo: "/images/logos/superx.png",
+    },
+    {
+      id: 108,
+      name: "Dune",
+      tags: ["Infra"],
+      twitter: "https://x.com/Dune/status/1920465979857150169",
+      logo: "/images/logos/dune.png",
+    },
+    {
+      id: 109,
+      name: "Liminal",
+      tags: ["Yield"],
+      twitter: "https://x.com/liminalmoney",
+      logo: "/images/logos/liminal.jpg",
+    },
+    {
+      id: 110,
+      name: "Hyperwarpfi",
+      tags: ["Tools"],
+      twitter: "https://x.com/hyperwarpfi",
+      logo: "/images/logos/hyperwarpfi.png",
     }
   ];
 
