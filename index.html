@@ -18,11 +18,16 @@
                 <!-- Red cross overlay for node removal mode -->
                 <div id="node-removal-overlay" class="node-removal-overlay"></div>
                 
-                <!-- BIRU BIRU Action Button -->
+                <!-- Hyperliquid-ify Action Button -->
                 <div id="biru-biru-container" class="biru-biru-container" style="display: none;">
-                    <button id="biru-biru-btn" class="biru-biru-btn">BIRU BIRU</button>
+                    <button id="biru-biru-btn" class="biru-biru-btn">Hyperliquid-ify</button>
                     <div id="action-buttons" class="action-buttons" style="display: none;">
-                        <button id="reset-categories-btn" class="action-btn reset-btn-secondary">Reset</button>
+                        <button id="reset-categories-btn" class="action-btn reset-btn-secondary" title="Reset">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                        </button>
                         <button id="share-btn" class="action-btn share-btn">Share</button>
                     </div>
                 </div>
@@ -65,8 +70,9 @@
                 </div>
                 
                 <!-- Shoot DM Chip -->
-                <div class="shoot-dm-chip">
-                    shoot dm
+                <div class="shoot-dm-chip" onclick="window.open('https://google.com', '_blank')" title="Shoot dm">
+                    <span class="default-text">Missed Something?</span>
+                    <span class="hover-text">Shoot dm</span>
                 </div>
             </div>
         </div>

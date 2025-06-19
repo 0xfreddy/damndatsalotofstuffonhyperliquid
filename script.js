@@ -1169,8 +1169,10 @@ function enterNodeRemovalMode() {
     
     // Update button text and style
     const biruBiruBtn = document.getElementById('biru-biru-btn');
-    biruBiruBtn.textContent = 'EXIT MODE';
-    biruBiruBtn.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+    biruBiruBtn.textContent = 'close';
+    biruBiruBtn.style.background = 'transparent';
+    biruBiruBtn.style.border = '2px solid #e74c3c';
+    biruBiruBtn.style.color = '#e74c3c';
     
     // Fit all visible nodes in the canvas
     network.fit({
@@ -1200,8 +1202,10 @@ function exitNodeRemovalMode() {
     
     // Reset button text and style
     const biruBiruBtn = document.getElementById('biru-biru-btn');
-    biruBiruBtn.textContent = 'BIRU BIRU';
-    biruBiruBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+    biruBiruBtn.textContent = 'Hyperliquid-ify';
+    biruBiruBtn.style.background = 'transparent';
+    biruBiruBtn.style.border = '2px solid #27ae60';
+    biruBiruBtn.style.color = '#27ae60';
     
     // Remove visual feedback
     graphContainer.style.border = 'none';

@@ -758,7 +758,7 @@ body {
     accent-color: #27ae60;
 }
 
-/* BIRU BIRU Button Container */
+/* Hyperliquid-ify Button Container */
 .biru-biru-container {
     position: absolute;
     bottom: 20px;
@@ -767,48 +767,21 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 30px;
-    padding: 8px 12px;
+    border-radius: 25px;
+    padding: 6px 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .biru-biru-btn {
-    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-    border: none;
-    border-radius: 25px;
-    padding: 12px 24px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.biru-biru-btn:hover {
-    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-}
-
-.biru-biru-btn:active {
-    transform: translateY(0);
-}
-
-.action-buttons {
-    display: flex;
-    gap: 8px;
-    animation: slideInRight 0.3s ease-out;
-}
-
-.action-btn {
-    border: none;
+    background: transparent;
+    border: 2px solid #27ae60;
     border-radius: 20px;
     padding: 8px 16px;
+    color: #27ae60;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -817,24 +790,66 @@ body {
     letter-spacing: 0.5px;
 }
 
+.biru-biru-btn:hover {
+    background: rgba(39, 174, 96, 0.1);
+    color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.biru-biru-btn:active {
+    transform: translateY(0);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.action-btn {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    border-radius: 16px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .reset-btn-secondary {
-    background: rgba(255, 107, 107, 0.9);
-    color: #fff;
-    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+    border-color: rgba(255, 107, 107, 0.6);
+    color: rgba(255, 107, 107, 0.9);
+    width: 32px;
+    padding: 6px;
 }
 
 .reset-btn-secondary:hover {
-    background: rgba(255, 107, 107, 1);
+    background: rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 1);
+    color: #ff6b6b;
+}
+
+.reset-btn-secondary svg {
+    stroke: currentColor;
 }
 
 .share-btn {
-    background: rgba(52, 152, 219, 0.9);
-    color: #fff;
-    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    border-color: rgba(52, 152, 219, 0.6);
+    color: rgba(52, 152, 219, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .share-btn:hover {
-    background: rgba(52, 152, 219, 1);
+    background: rgba(52, 152, 219, 0.1);
+    border-color: rgba(52, 152, 219, 1);
+    color: #3498db;
 }
 
 @keyframes slideInRight {
@@ -1231,9 +1246,22 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
-    text-transform: lowercase;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.shoot-dm-chip .hover-text {
+    display: none;
+}
+
+.shoot-dm-chip:hover .default-text {
+    display: none;
+}
+
+.shoot-dm-chip:hover .hover-text {
+    display: inline;
 }
 
 .shoot-dm-chip:hover {
