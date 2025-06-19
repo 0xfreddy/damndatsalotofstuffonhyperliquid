@@ -823,16 +823,16 @@ body {
 }
 
 .reset-btn-secondary {
-    border-color: rgba(255, 107, 107, 0.6);
-    color: rgba(255, 107, 107, 0.9);
+    border-color: rgba(136, 136, 136, 0.6);
+    color: rgba(136, 136, 136, 0.9);
     width: 32px;
     padding: 6px;
 }
 
 .reset-btn-secondary:hover {
-    background: rgba(255, 107, 107, 0.1);
-    border-color: rgba(255, 107, 107, 1);
-    color: #ff6b6b;
+    background: rgba(136, 136, 136, 0.1);
+    border-color: rgba(136, 136, 136, 1);
+    color: #888888;
 }
 
 .reset-btn-secondary svg {
@@ -840,16 +840,16 @@ body {
 }
 
 .share-btn {
-    border-color: rgba(52, 152, 219, 0.6);
-    color: rgba(52, 152, 219, 0.9);
+    border-color: rgba(39, 174, 96, 0.6);
+    color: rgba(39, 174, 96, 0.9);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .share-btn:hover {
-    background: rgba(52, 152, 219, 0.1);
-    border-color: rgba(52, 152, 219, 1);
-    color: #3498db;
+    background: rgba(39, 174, 96, 0.1);
+    border-color: rgba(39, 174, 96, 1);
+    color: #27ae60;
 }
 
 @keyframes slideInRight {
