@@ -1711,6 +1711,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize graph
     initializeGraph();
     
+    // Fetch and display HYPE data
+    fetchHypeData();
+    
+    // Fetch and display HYPE price data
+    fetchHypePrice();
+    
     // Handle section toggles
     const toggleButtons = document.querySelectorAll('.section-toggle');
     toggleButtons.forEach(button => {
@@ -1988,3 +1994,209 @@ function hideCentralLogo() {
 
 // Make remove function global
 window.removeProjectFromSlot = removeProjectFromSlot;
+
+// Fetch HYPE data from DeFiLlama API
+async function fetchHypeData() {
+    try {
+        console.log('Fetching HYPE TVL data from DeFiLlama API...');
+        
+        // DeFiLlama API endpoint for chains TVL
+        const response = await fetch('https://api.llama.fi/v2/chains');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const chains = await response.json();
+        
+        // Find Hyperliquid L1 data
+        const hyperliquidData = chains.find(chain => 
+            chain.name.toLowerCase().includes('hyperliquid') || 
+            chain.gecko_id === 'hyperliquid-l1' ||
+            chain.name === 'Hyperliquid'
+        );
+        
+        if (hyperliquidData) {
+            console.log('Hyperliquid data found:', hyperliquidData);
+            
+            // Update TVL display
+            const tvlValue = hyperliquidData.tvl || 0;
+            const tvlChange = hyperliquidData.tvlPrevDay ? 
+                ((tvlValue - hyperliquidData.tvlPrevDay) / hyperliquidData.tvlPrevDay * 100) : 0;
+            
+            updateHypeTvlDisplay(tvlValue, tvlChange);
+            
+            // Try to get additional price data (this might need a different endpoint)
+            await fetchHypePrice();
+        } else {
+            console.warn('Hyperliquid data not found in chains response');
+            // Try alternative approach with direct API call
+            await fetchHyperliquidDirectly();
+        }
+        
+    } catch (error) {
+        console.error('Error fetching HYPE data:', error);
+        // Keep placeholder data but show it's not real-time
+        document.getElementById('hype-tvl').textContent = '$1.2B (Demo)';
+        document.getElementById('hype-tvl-change').textContent = '+5.67% (Demo)';
+    }
+}
+
+// Alternative method to fetch Hyperliquid data directly
+async function fetchHyperliquidDirectly() {
+    try {
+        // Try the historical TVL endpoint for Hyperliquid
+        const response = await fetch('https://api.llama.fi/v2/historicalChainTvl/Hyperliquid');
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.length > 0) {
+                const latest = data[data.length - 1];
+                const previous = data.length > 1 ? data[data.length - 2] : latest;
+                
+                const tvlValue = latest.tvl;
+                const tvlChange = ((tvlValue - previous.tvl) / previous.tvl * 100);
+                
+                updateHypeTvlDisplay(tvlValue, tvlChange);
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching Hyperliquid data directly:', error);
+    }
+}
+
+// Fetch HYPE token price (placeholder - would need actual price API)
+async function fetchHypePrice() {
+    try {
+        console.log('Fetching HYPE token price from CoinGecko API...');
+        
+        // CoinGecko API endpoint for HYPE token price
+        // Using the provided API key and hyperliquid slug
+        const apiKey = 'CG-cM9WbuxHugAkJkqV72bfNmx6';
+        const coinId = 'hyperliquid';
+        
+        const response = await fetch(
+            `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&include_24hr_change=true&x_cg_demo_api_key=${apiKey}`
+        );
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data[coinId]) {
+            const priceData = data[coinId];
+            console.log('HYPE price data found:', priceData);
+            
+            const price = priceData.usd || 0;
+            const priceChange = priceData.usd_24h_change || 0;
+            
+            updateHypePriceDisplay(price, priceChange);
+        } else {
+            console.warn('HYPE price data not found in response');
+            // Try alternative method with Pro API if available
+            await fetchHypePriceAlternative();
+        }
+        
+    } catch (error) {
+        console.error('Error fetching HYPE price:', error);
+        // Keep placeholder data but show it's not real-time
+        document.getElementById('hype-price').textContent = '$12.34 (Demo)';
+        document.getElementById('hype-price-change').textContent = '+2.45% (Demo)';
+    }
+}
+
+// Alternative method to fetch HYPE price with Pro API endpoints
+async function fetchHypePriceAlternative() {
+    try {
+        const apiKey = 'CG-cM9WbuxHugAkJkqV72bfNmx6';
+        const coinId = 'hyperliquid';
+        
+        // Try the coin data endpoint for more detailed information
+        const response = await fetch(
+            `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false&x_cg_demo_api_key=${apiKey}`
+        );
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.market_data) {
+                const price = data.market_data.current_price?.usd || 0;
+                const priceChange = data.market_data.price_change_percentage_24h || 0;
+                
+                updateHypePriceDisplay(price, priceChange);
+                console.log('HYPE price fetched via alternative method');
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching HYPE price via alternative method:', error);
+    }
+}
+
+// Update the price display in the sidebar
+function updateHypePriceDisplay(price, priceChange) {
+    const priceElement = document.getElementById('hype-price');
+    const priceChangeElement = document.getElementById('hype-price-change');
+    
+    // Format price value
+    const formattedPrice = formatPriceValue(price);
+    priceElement.textContent = formattedPrice;
+    
+    // Format and display change
+    const formattedChange = priceChange >= 0 ? `+${priceChange.toFixed(2)}%` : `${priceChange.toFixed(2)}%`;
+    priceChangeElement.textContent = formattedChange;
+    
+    // Update change class based on positive/negative
+    priceChangeElement.className = `stat-change ${priceChange >= 0 ? 'positive' : 'negative'}`;
+    
+    console.log(`Price updated: ${formattedPrice}, Change: ${formattedChange}`);
+}
+
+// Format price value for display
+function formatPriceValue(value) {
+    if (value >= 1000) {
+        return `$${value.toFixed(0)}`;
+    } else if (value >= 100) {
+        return `$${value.toFixed(1)}`;
+    } else if (value >= 10) {
+        return `$${value.toFixed(2)}`;
+    } else if (value >= 1) {
+        return `$${value.toFixed(3)}`;
+    } else if (value >= 0.1) {
+        return `$${value.toFixed(4)}`;
+    } else {
+        return `$${value.toFixed(6)}`;
+    }
+}
+
+// Update the TVL display in the sidebar
+function updateHypeTvlDisplay(tvlValue, tvlChange) {
+    const tvlElement = document.getElementById('hype-tvl');
+    const tvlChangeElement = document.getElementById('hype-tvl-change');
+    
+    // Format TVL value
+    const formattedTvl = formatTvlValue(tvlValue);
+    tvlElement.textContent = formattedTvl;
+    
+    // Format and display change
+    const formattedChange = tvlChange >= 0 ? `+${tvlChange.toFixed(2)}%` : `${tvlChange.toFixed(2)}%`;
+    tvlChangeElement.textContent = formattedChange;
+    
+    // Update change class based on positive/negative
+    tvlChangeElement.className = `stat-change ${tvlChange >= 0 ? 'positive' : 'negative'}`;
+    
+    console.log(`TVL updated: ${formattedTvl}, Change: ${formattedChange}`);
+}
+
+// Format TVL value for display
+function formatTvlValue(value) {
+    if (value >= 1e9) {
+        return `$${(value / 1e9).toFixed(2)}B`;
+    } else if (value >= 1e6) {
+        return `$${(value / 1e6).toFixed(1)}M`;
+    } else if (value >= 1e3) {
+        return `$${(value / 1e3).toFixed(1)}K`;
+    } else {
+        return `$${value.toFixed(2)}`;
+    }
+}
