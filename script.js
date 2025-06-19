@@ -1066,13 +1066,25 @@ function initializeGraph() {
     network.on("hoverNode", function(params) {
         document.body.style.cursor = 'pointer';
         
-        // Show red cross overlay for project nodes in removal mode
+        // In node removal mode, replace project node image with red cross
         if (isNodeRemovalMode) {
             const nodeId = params.node;
             const node = nodes.get(nodeId);
             
             if (node && node.project) {
-                showRedCrossOverlay(params.pointer.DOM);
+                // Store original image if not already stored
+                if (!node.originalImage) {
+                    node.originalImage = node.image;
+                }
+                
+                // Create red cross data URL
+                const redCrossDataUrl = createRedCrossDataUrl();
+                
+                // Update node with red cross image
+                nodes.update({
+                    id: nodeId,
+                    image: redCrossDataUrl
+                });
             }
         }
     });
@@ -1080,9 +1092,18 @@ function initializeGraph() {
     network.on("blurNode", function(params) {
         document.body.style.cursor = 'default';
         
-        // Hide red cross overlay
+        // In node removal mode, restore original image when not hovering
         if (isNodeRemovalMode) {
-            hideRedCrossOverlay();
+            const nodeId = params.node;
+            const node = nodes.get(nodeId);
+            
+            if (node && node.project && node.originalImage) {
+                // Restore original image
+                nodes.update({
+                    id: nodeId,
+                    image: node.originalImage
+                });
+            }
         }
     });
     
@@ -1235,10 +1256,27 @@ function exitNodeRemovalMode() {
     graphContainer.style.border = 'none';
     graphContainer.style.borderRadius = '10px';
     
-    // Hide red cross overlay
-    hideRedCrossOverlay();
+    // Restore all original node images
+    restoreAllOriginalImages();
     
     console.log('Exited node removal mode');
+}
+
+// Restore original images for all project nodes
+function restoreAllOriginalImages() {
+    projects.forEach(project => {
+        const nodeId = `project-${project.id}`;
+        const node = nodes.get(nodeId);
+        
+        if (node && node.originalImage) {
+            nodes.update({
+                id: nodeId,
+                image: node.originalImage
+            });
+            // Clear the stored original image
+            delete node.originalImage;
+        }
+    });
 }
 
 function removeNodeFromGraph(nodeId) {
@@ -1813,6 +1851,18 @@ function filterGraphByCategories(selectedCategories) {
     
     // Show BIRU BIRU button when categories are filtered
     showBiruBiruButton();
+    
+    // Auto-fit all visible nodes with a slight delay to ensure rendering is complete
+    setTimeout(() => {
+        if (network) {
+            network.fit({
+                animation: {
+                    duration: 1000,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }
+    }, 100);
 }
 
 // Collection box functions
@@ -2199,4 +2249,34 @@ function formatTvlValue(value) {
     } else {
         return `$${value.toFixed(2)}`;
     }
+}
+
+// Create red cross data URL for node removal mode
+function createRedCrossDataUrl() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const size = 80; // Same size as project nodes
+    
+    canvas.width = size;
+    canvas.height = size;
+    
+    // Fill with semi-transparent red background
+    ctx.fillStyle = 'rgba(231, 76, 60, 0.9)';
+    ctx.fillRect(0, 0, size, size);
+    
+    // Draw red cross
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 8;
+    ctx.lineCap = 'round';
+    
+    // Draw X
+    const margin = size * 0.25;
+    ctx.beginPath();
+    ctx.moveTo(margin, margin);
+    ctx.lineTo(size - margin, size - margin);
+    ctx.moveTo(size - margin, margin);
+    ctx.lineTo(margin, size - margin);
+    ctx.stroke();
+    
+    return canvas.toDataURL();
 }
