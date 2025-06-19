@@ -44,6 +44,10 @@
                         <h2 id="node-title">Select a node</h2>
                     </div>
                     
+                    <div id="info-content" class="info-content">
+                        <p class="placeholder">Click on a project or category to see details here.</p>
+                    </div>
+                    
                     <div id="category-multiselect-container" style="display:none; margin-top: 20px;">
                         <div id="category-chips-container" class="category-chips-container">
                             <!-- Category chips will be dynamically generated here -->
@@ -70,7 +74,7 @@
                 </div>
                 
                 <!-- Shoot DM Chip -->
-                <div class="shoot-dm-chip" onclick="window.open('https://google.com', '_blank')" title="Shoot dm">
+                <div class="shoot-dm-chip" onclick="window.open('https://x.com/freddy_0x', '_blank')" title="Shoot dm">
                     <span class="default-text">Missed Something?</span>
                     <span class="hover-text">Shoot dm</span>
                 </div>
@@ -82,30 +86,31 @@
     <div id="share-popup" class="share-popup" style="display: none;">
         <div class="share-popup-overlay" onclick="closeSharePopup()"></div>
         <div class="share-popup-content">
-            <div class="share-popup-header">
-                <h3>Share Your Graph</h3>
-                <button class="share-popup-close" onclick="closeSharePopup()">×</button>
-            </div>
             <div class="share-popup-body">
                 <div class="share-image-container">
                     <canvas id="share-canvas" style="max-width: 100%; height: auto;"></canvas>
                 </div>
                 <div class="share-actions">
-                    <button id="copy-image-btn" class="share-action-btn copy-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy Image
-                    </button>
-                    <button id="download-image-btn" class="share-action-btn download-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7,10 12,15 17,10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Download
-                    </button>
+                    <div class="share-button-chip">
+                        <button id="copy-image-btn" class="share-action-btn copy-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="m5,9a2,2 0 0 1 2,-2h2"></path>
+                                <path d="m5,9v10a2,2 0 0 0 2,2h10"></path>
+                            </svg>
+                            Copy Image
+                        </button>
+                    </div>
+                    <div class="share-button-chip">
+                        <button id="download-image-btn" class="share-action-btn download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Image
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

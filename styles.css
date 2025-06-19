@@ -378,7 +378,7 @@ body {
 /* Top Section: Node Information */
 .info-top-section {
     flex: 1;
-    min-height: 60%;
+    min-height: 50%;
     padding-bottom: 15px;
 }
 
@@ -433,7 +433,7 @@ body {
 
 /* Bottom Section: HYPE Data */
 .info-bottom-section {
-    min-height: 35%;
+    min-height: 45%;
     padding-top: 15px;
 }
 
@@ -779,15 +779,19 @@ body {
 .biru-biru-btn {
     background: transparent;
     border: 2px solid #27ae60;
-    border-radius: 20px;
-    padding: 8px 16px;
-    color: #27ae60;
+    border-radius: 50%;
+    padding: 6px 12px;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 
 .biru-biru-btn:hover {
@@ -841,7 +845,7 @@ body {
 
 .share-btn {
     border-color: rgba(39, 174, 96, 0.6);
-    color: rgba(39, 174, 96, 0.9);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -849,7 +853,7 @@ body {
 .share-btn:hover {
     background: rgba(39, 174, 96, 0.1);
     border-color: rgba(39, 174, 96, 1);
-    color: #27ae60;
+    color: #ffffff;
 }
 
 @keyframes slideInRight {
@@ -869,23 +873,6 @@ body {
     cursor: crosshair !important;
     border: 3px dashed rgba(255, 255, 255, 0.8) !important;
     border-radius: 12px !important;
-}
-
-.node-removal-mode::after {
-    content: 'Click on any project node to remove it';
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 107, 107, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    z-index: 1001;
-    animation: fadeInDown 0.3s ease-out;
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 .node-removal-mode .vis-network .vis-image {
@@ -1040,82 +1027,41 @@ body {
 
 .share-popup-content {
     position: relative;
-    background: rgba(12, 41, 38, 0.95);
+    background: rgba(12, 41, 38, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    max-width: calc(100vw - 40px);
-    max-height: calc(100vh - 40px);
+    max-width: 600px;
+    max-height: 500px;
     width: auto;
     height: auto;
     overflow: hidden;
     animation: slideInScale 0.3s ease-out;
     display: flex;
     flex-direction: column;
-    min-width: 400px;
-    min-height: 300px;
-}
-
-.share-popup-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    flex-shrink: 0;
-}
-
-.share-popup-header h3 {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.share-popup-close {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.2s ease;
-}
-
-.share-popup-close:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1);
 }
 
 .share-popup-body {
-    padding: 20px;
     flex: 1;
-    overflow: auto;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    min-height: 0;
+    gap: 20px;
+    overflow: hidden;
 }
 
 .share-image-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-    min-height: 0;
+    border-radius: 12px;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 300px;
 }
 
 .share-image-container canvas {
@@ -1135,42 +1081,52 @@ body {
     flex-shrink: 0;
 }
 
+.share-button-chip {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .share-action-btn {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 12px 24px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
+    border: 2px solid;
+    border-radius: 50px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    background: transparent;
 }
 
 .copy-btn {
-    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    border-color: #27ae60;
+    color: #ffffff;
 }
 
 .copy-btn:hover {
-    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+    background: rgba(39, 174, 96, 0.1);
+    color: #ffffff;
+    border-color: #2ecc71;
     transform: translateY(-2px);
 }
 
 .download-btn {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    border-color: #888888;
+    color: #ffffff;
 }
 
 .download-btn:hover {
-    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    background: rgba(136, 136, 136, 0.1);
+    color: #ffffff;
+    border-color: #aaaaaa;
     transform: translateY(-2px);
 }
 
@@ -1205,14 +1161,6 @@ body {
         max-height: calc(100vh - 20px);
     }
     
-    .share-popup-header {
-        padding: 15px 20px;
-    }
-    
-    .share-popup-header h3 {
-        font-size: 20px;
-    }
-    
     .share-popup-body {
         padding: 20px;
     }
@@ -1231,8 +1179,8 @@ body {
 /* Shoot DM Chip */
 .shoot-dm-chip {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 30px;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -1248,8 +1196,7 @@ body {
     user-select: none;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .shoot-dm-chip .hover-text {

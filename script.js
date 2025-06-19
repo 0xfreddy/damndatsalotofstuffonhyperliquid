@@ -1127,6 +1127,31 @@ function initializeBiruBiru() {
     biruBiruBtn.addEventListener('click', toggleNodeRemovalMode);
     resetCategoriesBtn.addEventListener('click', resetRemovedNodes);
     shareBtn.addEventListener('click', handleShare);
+    
+    // Set initial styling based on content
+    adjustButtonStyling(biruBiruBtn);
+    
+    // Hide reset button initially since no nodes are removed
+    updateResetButtonVisibility();
+}
+
+// Function to adjust button styling based on content length
+function adjustButtonStyling(button) {
+    const content = button.innerHTML.trim();
+    
+    if (content.length <= 2) {
+        // Short content (icons) - keep circular
+        button.style.width = '32px';
+        button.style.padding = '6px';
+        button.style.borderRadius = '50%';
+        button.style.minWidth = '32px';
+    } else {
+        // Longer content (text) - make rectangular
+        button.style.width = 'auto';
+        button.style.padding = '6px 12px';
+        button.style.borderRadius = '16px';
+        button.style.minWidth = 'auto';
+    }
 }
 
 function showBiruBiruButton() {
@@ -1169,15 +1194,13 @@ function enterNodeRemovalMode() {
     
     // Update button text and style
     const biruBiruBtn = document.getElementById('biru-biru-btn');
-    biruBiruBtn.innerHTML = `
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-    `;
+    biruBiruBtn.innerHTML = `×`;
     biruBiruBtn.style.background = 'transparent';
     biruBiruBtn.style.border = '2px solid #888888';
-    biruBiruBtn.style.color = '#888888';
+    biruBiruBtn.style.color = '#ffffff';
+    
+    // Adjust button styling based on content
+    adjustButtonStyling(biruBiruBtn);
     
     // Fit all visible nodes in the canvas
     network.fit({
@@ -1207,10 +1230,13 @@ function exitNodeRemovalMode() {
     
     // Reset button text and style
     const biruBiruBtn = document.getElementById('biru-biru-btn');
-    biruBiruBtn.textContent = 'Hyperliquid-ify';
+    biruBiruBtn.innerHTML = `⚡`;
     biruBiruBtn.style.background = 'transparent';
     biruBiruBtn.style.border = '2px solid #27ae60';
-    biruBiruBtn.style.color = '#27ae60';
+    biruBiruBtn.style.color = '#ffffff';
+    
+    // Adjust button styling based on content
+    adjustButtonStyling(biruBiruBtn);
     
     // Remove visual feedback
     graphContainer.style.border = 'none';
@@ -1241,43 +1267,108 @@ function restoreAllOriginalImages() {
 
 function removeNodeFromGraph(nodeId) {
     console.log('Removing node:', nodeId);
+    console.log('Current removedNodeIds before removal:', removedNodeIds);
     
     // Add to removed list
     if (!removedNodeIds.includes(nodeId)) {
         removedNodeIds.push(nodeId);
+        console.log('Node added to removed list. New list:', removedNodeIds);
+    } else {
+        console.log('Node already in removed list');
     }
     
     // Hide the node and its edges
     nodes.update({id: nodeId, hidden: true});
+    console.log('Node hidden:', nodeId);
     
     // Hide edges connected to this node
     const connectedEdges = edges.get({
         filter: edge => edge.from === nodeId || edge.to === nodeId
     });
     
+    console.log('Connected edges to hide:', connectedEdges.length);
     connectedEdges.forEach(edge => {
         edges.update({id: edge.id, hidden: true});
     });
     
-    console.log('Total removed nodes:', removedNodeIds.length);
+    // Update reset button visibility
+    console.log('Calling updateResetButtonVisibility...');
+    updateResetButtonVisibility();
+    
+    console.log('Total removed nodes after removal:', removedNodeIds.length);
 }
 
 function resetRemovedNodes() {
-    console.log('Resetting removed nodes');
+    console.log('Resetting removed nodes, total to restore:', removedNodeIds.length);
+    console.log('Nodes to restore:', removedNodeIds);
+    
+    // Store the nodes to restore before clearing the array
+    const nodesToRestore = [...removedNodeIds];
+    
+    // Clear removed list first to avoid any conflicts
+    removedNodeIds = [];
     
     // Show all previously removed nodes
-    removedNodeIds.forEach(nodeId => {
+    nodesToRestore.forEach(nodeId => {
+        console.log('Restoring node:', nodeId);
         nodes.update({id: nodeId, hidden: false});
     });
     
-    // Show all edges for current filter
-    const currentCategories = window.selectedCategories || [];
-    filterGraphByCategories(currentCategories);
+    // Restore edges for the restored nodes
+    nodesToRestore.forEach(nodeId => {
+        const connectedEdges = edges.get({
+            filter: edge => edge.from === nodeId || edge.to === nodeId
+        });
+        
+        connectedEdges.forEach(edge => {
+            // Only show the edge if both connected nodes are visible
+            const fromNode = nodes.get(edge.from);
+            const toNode = nodes.get(edge.to);
+            
+            if (fromNode && toNode && !fromNode.hidden && !toNode.hidden) {
+                edges.update({id: edge.id, hidden: false});
+            }
+        });
+    });
     
-    // Clear removed list
-    removedNodeIds = [];
+    // Update reset button visibility
+    updateResetButtonVisibility();
     
-    console.log('All nodes restored');
+    console.log(`All ${nodesToRestore.length} nodes restored successfully`);
+    console.log('Removed nodes list cleared, current length:', removedNodeIds.length);
+}
+
+function updateResetButtonVisibility() {
+    console.log('updateResetButtonVisibility called');
+    console.log('Current removedNodeIds length:', removedNodeIds.length);
+    console.log('Current removedNodeIds:', removedNodeIds);
+    
+    const resetBtn = document.getElementById('reset-categories-btn');
+    const actionButtons = document.getElementById('action-buttons');
+    console.log('Reset button element found:', !!resetBtn);
+    console.log('Action buttons container found:', !!actionButtons);
+    
+    if (resetBtn && actionButtons) {
+        if (removedNodeIds.length > 0) {
+            console.log('Showing reset button - nodes have been removed');
+            // Make sure the action buttons container is visible
+            actionButtons.style.display = 'flex';
+            // Show the reset button
+            resetBtn.style.display = 'flex';
+            resetBtn.style.visibility = 'visible';
+        } else {
+            console.log('Hiding reset button - no nodes removed');
+            resetBtn.style.display = 'none';
+            // Check if we should hide the entire action buttons container
+            const shareBtn = document.getElementById('share-btn');
+            if (shareBtn && shareBtn.style.display === 'none') {
+                actionButtons.style.display = 'none';
+            }
+        }
+    } else {
+        if (!resetBtn) console.error('Reset button element not found! ID: reset-categories-btn');
+        if (!actionButtons) console.error('Action buttons container not found! ID: action-buttons');
+    }
 }
 
 function handleShare() {
@@ -1417,30 +1508,60 @@ function performGraphCapture() {
             ctx.scale(1, 1); // Keep 1:1 ratio but ensure crisp rendering
         }
         
-        // Fill with dark background
-        ctx.fillStyle = '#0C2926';
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        // Load and draw mesh gradient background
+        const backgroundImg = new Image();
+        backgroundImg.onload = function() {
+            // Draw the mesh gradient background to fill the entire canvas
+            ctx.drawImage(backgroundImg, 0, 0, canvasWidth, canvasHeight);
+            
+            // Draw the entire network canvas at high resolution
+            try {
+                ctx.drawImage(
+                    networkCanvas,
+                    0, 0, sourceWidth, sourceHeight,    // Source: entire canvas
+                    0, 0, canvasWidth, canvasHeight     // Destination: high resolution
+                );
+                
+                console.log('High-resolution image drawn successfully with mesh gradient background');
+                
+                // Add watermarks (scaled for high resolution)
+                addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
+                
+                // Show the popup
+                showSharePopup();
+                
+            } catch (drawError) {
+                console.error('Error drawing image:', drawError);
+                alert('Error capturing graph image: ' + drawError.message);
+            }
+        };
         
-        // Draw the entire network canvas at high resolution
-        try {
-            ctx.drawImage(
-                networkCanvas,
-                0, 0, sourceWidth, sourceHeight,    // Source: entire canvas
-                0, 0, canvasWidth, canvasHeight     // Destination: high resolution
-            );
+        backgroundImg.onerror = function() {
+            console.warn('Failed to load mesh gradient background, using solid color fallback');
+            // Fallback to solid color background
+            ctx.fillStyle = '#0C2926';
+            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
             
-            console.log('High-resolution image drawn successfully');
-            
-            // Add watermarks (scaled for high resolution)
-            addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
-            
-            // Show the popup
-            showSharePopup();
-            
-        } catch (drawError) {
-            console.error('Error drawing image:', drawError);
-            alert('Error capturing graph image: ' + drawError.message);
-        }
+            // Draw the network canvas
+            try {
+                ctx.drawImage(
+                    networkCanvas,
+                    0, 0, sourceWidth, sourceHeight,
+                    0, 0, canvasWidth, canvasHeight
+                );
+                
+                console.log('High-resolution image drawn with fallback background');
+                addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
+                showSharePopup();
+                
+            } catch (drawError) {
+                console.error('Error drawing image:', drawError);
+                alert('Error capturing graph image: ' + drawError.message);
+            }
+        };
+        
+        // Load the mesh gradient image
+        backgroundImg.src = '/images/background/image-mesh-gradient.png';
         
     } catch (error) {
         console.error('Error in performGraphCapture:', error);
@@ -1449,28 +1570,8 @@ function performGraphCapture() {
 }
 
 function addWatermarkToCanvas(ctx, width, height) {
-    // Calculate scale factor for text based on image size (ultra-high resolution scaling)
-    const baseWidth = 1000; // Higher reference width for ultra-high resolution
-    const scaleFactor = Math.max(1.5, width / baseWidth); // Minimum scale of 1.5 for crisp text
-    
-    // Add title at the top (scaled text)
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-    ctx.font = `bold ${Math.floor(48 * scaleFactor)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
-    ctx.textAlign = 'center';
-    ctx.fillText('HyperEVM Ecosystem - My Custom Graph', width / 2, 80 * scaleFactor);
-    
-    // Add subtitle (scaled text)
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.font = `${Math.floor(28 * scaleFactor)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
-    const selectedCount = selectedCategories.length;
-    const removedCount = removedNodeIds.length;
-    ctx.fillText(`${selectedCount} categories selected • ${removedCount} projects removed`, width / 2, 130 * scaleFactor);
-    
-    // Add small watermark at bottom right (scaled text)
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-    ctx.font = `${Math.floor(22 * scaleFactor)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
-    ctx.textAlign = 'right';
-    ctx.fillText('hyperevm.org', width - 50 * scaleFactor, height - 50 * scaleFactor);
+    // Remove all watermarks and text overlays - keep canvas clean
+    // No title, subtitle, or watermark text will be added
 }
 
 function showSharePopup() {
@@ -1592,21 +1693,33 @@ window.closeSharePopup = closeSharePopup;
 
 // Display node information in the panel
 function displayNodeInfo(nodeId, node) {
+    console.log('displayNodeInfo called with:', { nodeId, node: node ? node.project || node : 'no node' });
+    
+    // Check if required elements exist
+    const nodeTitle = document.getElementById('node-title');
+    const infoContent = document.getElementById('info-content');
+    const nodeIndicator = document.querySelector('.node-indicator');
+    
+    if (!nodeTitle || !infoContent || !nodeIndicator) {
+        console.error('Missing required elements:', { nodeTitle: !!nodeTitle, infoContent: !!infoContent, nodeIndicator: !!nodeIndicator });
+        return;
+    }
+    
     // For project nodes
     if (node.project) {
         const project = node.project;
-        document.getElementById('node-title').textContent = project.name;
+        console.log('Displaying project info for:', project.name);
         
-        const infoContent = document.getElementById('info-content');
+        nodeTitle.textContent = project.name;
+        
         infoContent.innerHTML = `
             <p><strong>Category:</strong> ${project.tags.join(', ')}</p>
             <p><strong>Twitter:</strong> <a href="${project.twitter}" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">Visit Twitter</a></p>
-            ${project.logo ? `<img src="${project.logo}" alt="${project.name}" style="max-width: 100px; margin-top: 10px; border-radius: 10px;">` : ''}
-            <p style="margin-top: 15px; color: rgba(255,255,255,0.7); font-size: 14px;"><em>Drag this project to the collection box to save it.</em></p>
+            ${project.logo ? `<img src="${project.logo.replace('/images/logos/', '/images/')}" alt="${project.name}" style="max-width: 100px; margin-top: 10px; border-radius: 10px;">` : ''}
         `;
         
-        document.querySelector('.node-indicator').style.background = '#27ae60';
-        document.querySelector('.node-indicator').style.boxShadow = '0 0 10px #27ae60';
+        nodeIndicator.style.background = '#27ae60';
+        nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
         
         document.getElementById('category-multiselect-container').style.display = 'none';
         return;
@@ -1615,9 +1728,10 @@ function displayNodeInfo(nodeId, node) {
     // For category nodes
     if (tags.includes(nodeId)) {
         const projectsInCategory = projects.filter(p => p.tags.includes(nodeId));
-        document.getElementById('node-title').textContent = nodeId;
+        console.log('Displaying category info for:', nodeId, 'with', projectsInCategory.length, 'projects');
         
-        const infoContent = document.getElementById('info-content');
+        nodeTitle.textContent = nodeId;
+        
         infoContent.innerHTML = `
             <p><strong>${projectsInCategory.length} projects</strong> in this category.</p>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
@@ -1633,8 +1747,8 @@ function displayNodeInfo(nodeId, node) {
             </div>
         `;
         
-        document.querySelector('.node-indicator').style.background = '#27ae60';
-        document.querySelector('.node-indicator').style.boxShadow = '0 0 10px #27ae60';
+        nodeIndicator.style.background = '#27ae60';
+        nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
         
         document.getElementById('category-multiselect-container').style.display = 'none';
         return;
@@ -1642,11 +1756,14 @@ function displayNodeInfo(nodeId, node) {
     
     // For hyperEVM node
     if (nodeId === 'hyperEVM') {
-        document.getElementById('node-title').textContent = 'hyperEVM';
+        console.log('Displaying hyperEVM info');
         
+        nodeTitle.textContent = 'hyperEVM';
         
-        document.querySelector('.node-indicator').style.background = '#27ae60';
-        document.querySelector('.node-indicator').style.boxShadow = '0 0 10px #27ae60';
+        infoContent.innerHTML = ``;
+        
+        nodeIndicator.style.background = '#27ae60';
+        nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
         
         // Show and populate category chips
         const multiSelectContainer = document.getElementById('category-multiselect-container');
@@ -1665,6 +1782,8 @@ function displayNodeInfo(nodeId, node) {
         filterGraphByCategories(window.selectedCategories || []);
         return;
     }
+    
+    console.log('No matching node type found for:', nodeId);
 }
 
 // Function to toggle category chip selection
