@@ -906,7 +906,12 @@ projects.forEach(project => {
     });
 });
 
-// Collection box state - REMOVED (no longer needed)
+// Collection box state
+let collectedProjects = [];
+let isCollectionBoxVisible = false;
+let draggedNode = null;
+let isDraggingToCollection = false;
+
 // Node removal state
 let isNodeRemovalMode = false;
 let removedNodeIds = [];
@@ -1014,6 +1019,39 @@ function initializeGraph() {
         }
     });
     
+    // Handle drag start
+    network.on("dragStart", function(params) {
+        if (params.nodes.length > 0) {
+            const nodeId = params.nodes[0];
+            const node = nodes.get(nodeId);
+            if (node.project && !isNodeRemovalMode) {
+                draggedNode = node;
+                showCollectionBox();
+            }
+        }
+    });
+    
+    // Handle drag end and detect drop on collection box
+    network.on("dragEnd", function(params) {
+        if (draggedNode && isCollectionBoxVisible && !isNodeRemovalMode) {
+            const pointer = params.pointer.DOM;
+            const collectionBox = document.getElementById('project-collection-box');
+            const boxRect = collectionBox.getBoundingClientRect();
+            
+            // Check if dropped on collection box
+            if (pointer.x >= boxRect.left && pointer.x <= boxRect.right &&
+                pointer.y >= boxRect.top && pointer.y <= boxRect.bottom &&
+                collectedProjects.length < 4) {
+                
+                // Check if project is not already collected
+                if (!collectedProjects.find(p => p.id === draggedNode.project.id)) {
+                    addProjectToCollection(draggedNode.project);
+                }
+            }
+        }
+        draggedNode = null;
+    });
+    
     // Handle hover effects
     network.on("hoverNode", function(params) {
         document.body.style.cursor = 'pointer';
@@ -1082,7 +1120,8 @@ function initializeGraph() {
         });
     });
     
-    // Initialize BIRU BIRU functionality
+    // Initialize collection box and BIRU BIRU functionality
+    initializeCollectionBox();
     initializeBiruBiru();
 }
 
@@ -1633,6 +1672,11 @@ function displayNodeInfo(nodeId, node) {
     
     // For hyperEVM node
     if (nodeId === 'hyperEVM') {
+        // Hide collection box when selecting hyperEVM if empty
+        if (isCollectionBoxVisible && collectedProjects.length === 0) {
+            hideCollectionBox();
+        }
+        
         document.getElementById('node-title').textContent = 'hyperEVM';
         
         
@@ -1811,10 +1855,185 @@ function filterGraphByCategories(selectedCategories) {
     }, 100);
 }
 
-// Collection box functions REMOVED - no longer needed for this version
+// Collection box functions
+function showCollectionBox() {
+    const collectionBox = document.getElementById('project-collection-box');
+    if (!isCollectionBoxVisible) {
+        collectionBox.style.display = 'block';
+        collectionBox.classList.remove('hiding');
+        isCollectionBoxVisible = true;
+    }
+}
 
-// Make remove function global - REMOVED
-// window.removeProjectFromSlot = removeProjectFromSlot;
+function hideCollectionBox() {
+    const collectionBox = document.getElementById('project-collection-box');
+    collectionBox.classList.add('hiding');
+    isCollectionBoxVisible = false;
+    setTimeout(() => {
+        collectionBox.style.display = 'none';
+        collectionBox.classList.remove('hiding');
+    }, 300);
+}
+
+function initializeCollectionBox() {
+    const resetBtn = document.getElementById('reset-collection');
+    resetBtn.addEventListener('click', resetCollection);
+    
+    // Add hover effects for collection box
+    const collectionBox = document.getElementById('project-collection-box');
+    collectionBox.addEventListener('mouseenter', () => {
+        if (draggedNode) {
+            collectionBox.style.borderColor = 'rgba(39, 174, 96, 0.8)';
+            collectionBox.style.background = 'rgba(39, 174, 96, 0.1)';
+        }
+    });
+    
+    collectionBox.addEventListener('mouseleave', () => {
+        collectionBox.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+        collectionBox.style.background = 'rgba(255, 255, 255, 0.1)';
+    });
+}
+
+function addProjectToCollection(project) {
+    if (collectedProjects.length >= 4) return;
+    
+    const slotIndex = collectedProjects.length;
+    collectedProjects.push({...project, slotIndex});
+    renderCollectionSlot(slotIndex, project);
+    
+    console.log('Projects collected:', collectedProjects.length);
+    console.log('Collection array:', collectedProjects.map(p => p.name));
+    
+    // Show central logo if all 4 slots are filled
+    if (collectedProjects.length === 4) {
+        console.log('All 4 slots filled! Attempting to show central logo...');
+        setTimeout(() => {
+            showCentralLogo();
+        }, 100); // Small delay to ensure DOM is updated
+    }
+}
+
+function renderCollectionSlot(slotIndex, project) {
+    const slot = document.querySelector(`[data-slot="${slotIndex}"]`);
+    const logoPath = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg';
+    
+    slot.classList.add('filled');
+    slot.innerHTML = `
+        <img src="${logoPath}" alt="${project.name}" class="project-logo" title="${project.name}">
+        <div class="remove-project" onclick="removeProjectFromSlot(${slotIndex})">×</div>
+    `;
+}
+
+function removeProjectFromSlot(slotIndex) {
+    const projectIndex = collectedProjects.findIndex(p => p.slotIndex === slotIndex);
+    
+    if (projectIndex > -1) {
+        const slot = document.querySelector(`[data-slot="${slotIndex}"]`);
+        
+        // Hide central logo if it's visible
+        if (collectedProjects.length === 4) {
+            hideCentralLogo();
+        }
+        
+        // Add pop animation
+        slot.classList.add('popping');
+        
+        setTimeout(() => {
+            // Remove project and reindex remaining projects
+            collectedProjects.splice(projectIndex, 1);
+            
+            // Clear all slots and re-render
+            const allSlots = document.querySelectorAll('.collection-slot');
+            allSlots.forEach(slot => {
+                slot.classList.remove('filled', 'popping');
+                slot.innerHTML = '';
+            });
+            
+            // Re-render remaining projects with updated indices
+            collectedProjects.forEach((project, index) => {
+                project.slotIndex = index;
+                renderCollectionSlot(index, project);
+            });
+            
+            // Hide collection box if empty
+            if (collectedProjects.length === 0) {
+                hideCollectionBox();
+            }
+        }, 400);
+    }
+}
+
+function resetCollection() {
+    if (collectedProjects.length === 0) return;
+    
+    // Hide central logo if visible
+    if (collectedProjects.length === 4) {
+        hideCentralLogo();
+    }
+    
+    const filledSlots = document.querySelectorAll('.collection-slot.filled');
+    
+    // Add staggered pop animations
+    filledSlots.forEach((slot, index) => {
+        setTimeout(() => {
+            slot.classList.add('popping');
+        }, index * 100);
+    });
+    
+    // Clear collection after animations complete
+    setTimeout(() => {
+        collectedProjects = [];
+        const allSlots = document.querySelectorAll('.collection-slot');
+        allSlots.forEach(slot => {
+            slot.classList.remove('filled', 'popping');
+            slot.innerHTML = '';
+        });
+        hideCollectionBox();
+    }, filledSlots.length * 100 + 400);
+}
+
+function showCentralLogo() {
+    console.log('showCentralLogo called');
+    const centerElement = document.getElementById('collection-center');
+    console.log('Center element found:', centerElement);
+    console.log('Current display style:', centerElement ? centerElement.style.display : 'element not found');
+    
+    if (centerElement) {
+        // Force show with important styles
+        centerElement.style.display = 'block';
+        centerElement.style.visibility = 'visible';
+        centerElement.style.opacity = '1';
+        centerElement.classList.remove('hiding');
+        
+        // Force a reflow
+        centerElement.offsetHeight;
+        
+        console.log('Central logo should now be visible');
+        console.log('Final display style:', centerElement.style.display);
+        console.log('Final visibility:', centerElement.style.visibility);
+        console.log('Final opacity:', centerElement.style.opacity);
+    } else {
+        console.error('collection-center element not found!');
+        // Try to find it with a different method
+        const allElements = document.querySelectorAll('#collection-center');
+        console.log('Found elements with id collection-center:', allElements.length);
+    }
+}
+
+function hideCentralLogo() {
+    console.log('hideCentralLogo called');
+    const centerElement = document.getElementById('collection-center');
+    if (centerElement) {
+        centerElement.classList.add('hiding');
+        setTimeout(() => {
+            centerElement.style.display = 'none';
+            centerElement.classList.remove('hiding');
+        }, 400);
+    }
+}
+
+// Make remove function global
+window.removeProjectFromSlot = removeProjectFromSlot;
 
 // Fetch HYPE data from DeFiLlama API
 async function fetchHypeData() {
