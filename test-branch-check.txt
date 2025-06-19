@@ -1,3 +1,0 @@
-Test commit to verify we're on the correct v3 branch
-Timestamp: 2024-12-19
-Branch verification test 
