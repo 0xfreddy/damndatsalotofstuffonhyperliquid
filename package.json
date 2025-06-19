@@ -1,0 +1,14 @@
+{
+  "name": "hyperevm-ecosystem-graph",
+  "version": "1.0.0",
+  "description": "HyperEVM Ecosystem Graph Visualization",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 run_server.py",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": ["hyperevm", "ecosystem", "graph", "visualization"],
+  "author": "",
+  "license": "MIT",
+  "type": "module"
+} 
