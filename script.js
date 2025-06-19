@@ -2071,10 +2071,8 @@ async function fetchHypeData() {
             
             // Update TVL display
             const tvlValue = hyperliquidData.tvl || 0;
-            const tvlChange = hyperliquidData.tvlPrevDay ? 
-                ((tvlValue - hyperliquidData.tvlPrevDay) / hyperliquidData.tvlPrevDay * 100) : 0;
             
-            updateHypeTvlDisplay(tvlValue, tvlChange);
+            updateHypeTvlDisplay(tvlValue);
             
             // Try to get additional price data (this might need a different endpoint)
             await fetchHypePrice();
@@ -2088,7 +2086,6 @@ async function fetchHypeData() {
         console.error('Error fetching HYPE data:', error);
         // Keep placeholder data but show it's not real-time
         document.getElementById('hype-tvl').textContent = '$1.2B (Demo)';
-        document.getElementById('hype-tvl-change').textContent = '+5.67% (Demo)';
     }
 }
 
@@ -2102,12 +2099,10 @@ async function fetchHyperliquidDirectly() {
             const data = await response.json();
             if (data.length > 0) {
                 const latest = data[data.length - 1];
-                const previous = data.length > 1 ? data[data.length - 2] : latest;
                 
                 const tvlValue = latest.tvl;
-                const tvlChange = ((tvlValue - previous.tvl) / previous.tvl * 100);
                 
-                updateHypeTvlDisplay(tvlValue, tvlChange);
+                updateHypeTvlDisplay(tvlValue);
             }
         }
     } catch (error) {
@@ -2220,22 +2215,14 @@ function formatPriceValue(value) {
 }
 
 // Update the TVL display in the sidebar
-function updateHypeTvlDisplay(tvlValue, tvlChange) {
+function updateHypeTvlDisplay(tvlValue) {
     const tvlElement = document.getElementById('hype-tvl');
-    const tvlChangeElement = document.getElementById('hype-tvl-change');
     
     // Format TVL value
     const formattedTvl = formatTvlValue(tvlValue);
     tvlElement.textContent = formattedTvl;
     
-    // Format and display change
-    const formattedChange = tvlChange >= 0 ? `+${tvlChange.toFixed(2)}%` : `${tvlChange.toFixed(2)}%`;
-    tvlChangeElement.textContent = formattedChange;
-    
-    // Update change class based on positive/negative
-    tvlChangeElement.className = `stat-change ${tvlChange >= 0 ? 'positive' : 'negative'}`;
-    
-    console.log(`TVL updated: ${formattedTvl}, Change: ${formattedChange}`);
+    console.log(`TVL updated: ${formattedTvl}`);
 }
 
 // Format TVL value for display
