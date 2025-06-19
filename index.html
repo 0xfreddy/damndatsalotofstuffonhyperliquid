@@ -14,58 +14,129 @@
         <div class="graph-section">
             <div class="glass-panel">
                 <div id="graph-container"></div>
+                
+                <!-- Red cross overlay for node removal mode -->
+                <div id="node-removal-overlay" class="node-removal-overlay"></div>
+                
+                <!-- BIRU BIRU Action Button -->
+                <div id="biru-biru-container" class="biru-biru-container" style="display: none;">
+                    <button id="biru-biru-btn" class="biru-biru-btn">BIRU BIRU</button>
+                    <div id="action-buttons" class="action-buttons" style="display: none;">
+                        <button id="reset-categories-btn" class="action-btn reset-btn-secondary">Reset</button>
+                        <button id="share-btn" class="action-btn share-btn">Share</button>
+                    </div>
+                </div>
+                
+                <!-- Project Collection Box -->
+                <div id="project-collection-box" class="collection-box" style="display: none;">
+                    <div class="collection-header">
+                        <div class="collection-title">
+                            <h3>AGAGAGAGA</h3>
+                            <p>HSHSHS</p>
+                        </div>
+                        <button id="reset-collection" class="reset-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="m19 6-2 14H7L5 6"/>
+                                <path d="m10 11 4 4"/>
+                                <path d="m14 11-4 4"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="collection-content">
+                        <div class="collection-slots">
+                            <div class="collection-slot" data-slot="0"></div>
+                            <div class="collection-slot" data-slot="1"></div>
+                            <div class="collection-slot" data-slot="2"></div>
+                            <div class="collection-slot" data-slot="3"></div>
+                        </div>
+                        <!-- Central logo and connection lines (hidden by default) -->
+                        <div class="collection-center" id="collection-center" style="display: none;">
+                            <img src="images/hyperliquid.png" alt="Hyperliquid" class="center-logo">
+                            <svg class="connection-lines" viewBox="0 0 200 200">
+                                <line class="connection-line" x1="100" y1="100" x2="50" y2="50" />
+                                <line class="connection-line" x1="100" y1="100" x2="150" y2="50" />
+                                <line class="connection-line" x1="100" y1="100" x2="50" y2="150" />
+                                <line class="connection-line" x1="100" y1="100" x2="150" y2="150" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Information Panel -->
         <div class="info-section">
             <div class="glass-panel">
-                <div class="info-header">
-                    <div class="node-indicator"></div>
-                    <h2 id="node-title">Select a node</h2>
+                <!-- Top Section: Node Information -->
+                <div class="info-top-section">
+                    <div class="info-header">
+                        <div class="node-indicator"></div>
+                        <h2 id="node-title">Select a node</h2>
+                    </div>
+                    
+                    <div id="category-multiselect-container" style="display:none; margin-top: 20px;">
+                        <div id="category-chips-container" class="category-chips-container">
+                            <!-- Category chips will be dynamically generated here -->
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="info-content" id="info-content">
-                    <p class="placeholder">Click on a node in the graph to view its information.</p>
+                <!-- Divider -->
+                <div class="info-divider"></div>
+                
+                <!-- Bottom Section: HYPE Data -->
+                <div class="info-bottom-section">
+                    <div class="hype-data-content">
+                        <div class="hype-stat-item">
+                            <div class="stat-label">Price</div>
+                            <div class="stat-value" id="hype-price">$12.34</div>
+                            <div class="stat-change positive" id="hype-price-change">+2.45%</div>
+                        </div>
+                        <div class="hype-stat-item">
+                            <div class="stat-label">TVL</div>
+                            <div class="stat-value" id="hype-tvl">$1.2B</div>
+                            <div class="stat-change positive" id="hype-tvl-change">+5.67%</div>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Shoot DM Chip -->
+                <div class="shoot-dm-chip">
+                    shoot dm
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- Collapsible Sections -->
-                <div class="info-sections">
-                    <div class="section-item">
-                        <button class="section-toggle" data-section="initiatives">
-                            <span class="section-icon">▲</span>
-                            <span>INITIATIVES</span>
-                            <span class="toggle-icon">+</span>
-                        </button>
-                        <div class="section-content" id="initiatives-content"></div>
-                    </div>
-
-                    <div class="section-item">
-                        <button class="section-toggle" data-section="research">
-                            <span class="section-icon">■</span>
-                            <span>RESEARCH</span>
-                            <span class="toggle-icon">+</span>
-                        </button>
-                        <div class="section-content" id="research-content"></div>
-                    </div>
-
-                    <div class="section-item">
-                        <button class="section-toggle" data-section="artifacts">
-                            <span class="section-icon">●</span>
-                            <span>ARTIFACTS</span>
-                            <span class="toggle-icon">+</span>
-                        </button>
-                        <div class="section-content" id="artifacts-content"></div>
-                    </div>
-
-                    <div class="section-item">
-                        <button class="section-toggle" data-section="paths">
-                            <span class="section-icon">●</span>
-                            <span>PATHS</span>
-                            <span class="toggle-icon">+</span>
-                        </button>
-                        <div class="section-content" id="paths-content"></div>
-                    </div>
+    <!-- Share Popup Modal -->
+    <div id="share-popup" class="share-popup" style="display: none;">
+        <div class="share-popup-overlay" onclick="closeSharePopup()"></div>
+        <div class="share-popup-content">
+            <div class="share-popup-header">
+                <h3>Share Your Graph</h3>
+                <button class="share-popup-close" onclick="closeSharePopup()">×</button>
+            </div>
+            <div class="share-popup-body">
+                <div class="share-image-container">
+                    <canvas id="share-canvas" style="max-width: 100%; height: auto;"></canvas>
+                </div>
+                <div class="share-actions">
+                    <button id="copy-image-btn" class="share-action-btn copy-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy Image
+                    </button>
+                    <button id="download-image-btn" class="share-action-btn download-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download
+                    </button>
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ A beautiful interactive graph visualization of the HyperEVM ecosystem featuring 
 - **Glassmorphism Design**: Modern glass-effect UI with blur and transparency
 - **Project Information**: View project details, Twitter links, and logos
 - **Responsive Design**: Works on desktop and mobile devices
+- **Project Logos as Nodes**: Project nodes now display only the logo (image) in the graph. The project name appears in the info panel when selected.
 
 ## Ecosystem Overview
 
@@ -51,6 +52,7 @@ To add logos for projects:
 2. Use the filename specified in the project data
 3. Supported formats: PNG, JPG, SVG
 4. Recommended size: 100x100px or square aspect ratio
+5. If a logo is missing or fails to load, a placeholder image will be shown automatically.
 
 ## Technologies Used
 

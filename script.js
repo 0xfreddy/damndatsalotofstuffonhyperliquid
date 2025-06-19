@@ -816,63 +816,67 @@ const categoryGradients = {
 
 // Category colors for nodes
 const categoryColors = {
-    Defi: '#667eea',
-    Dex: '#f093fb',
-    Meme: '#fa709a',
-    Staking: '#4facfe',
-    Trading: '#43e97b',
-    Infra: '#667eea',
-    Social: '#fc6c8f',
-    Data: '#2af598',
-    Explorer: '#7028e4',
-    Analytics: '#13547a',
-    GambleFi: '#ff0844',
-    Yield: '#b224ef',
-    LST: '#5f72bd',
-    Oracle: '#09203f',
-    Tools: '#764ba2',
-    Community: '#ffecd2',
-    AI: '#8E2DE2',
-    NFT: '#ee5a6f',
-    RWA: '#16a085',
-    Mobile: '#3a7bd5',
-    Investment: '#134e5e',
-    Stablecoin: '#1e3c72',
-    News: '#ff4e50',
-    Landing: '#11998e'
+    Defi: '#27ae60',
+    Dex: '#27ae60',
+    Meme: '#27ae60',
+    Staking: '#27ae60',
+    Trading: '#27ae60',
+    Infra: '#27ae60',
+    Social: '#27ae60',
+    Data: '#27ae60',
+    Explorer: '#27ae60',
+    Analytics: '#27ae60',
+    GambleFi: '#27ae60',
+    Yield: '#27ae60',
+    LST: '#27ae60',
+    Oracle: '#27ae60',
+    Tools: '#27ae60',
+    Community: '#27ae60',
+    AI: '#27ae60',
+    NFT: '#27ae60',
+    RWA: '#27ae60',
+    Mobile: '#27ae60',
+    Investment: '#27ae60',
+    Stablecoin: '#27ae60',
+    News: '#27ae60',
+    Landing: '#27ae60'
 };
 
 // Create nodes
 const nodes = new vis.DataSet([
-    // Central node
-    { id: 'hyperEVM', label: 'hyperEVM', color: '#1e272e', shape: 'star', font: { color: '#fff', size: 20 }, size: 40 }
+    // Central node - increased size
+    { id: 'hyperEVM', label: '', shape: 'circularImage', image: 'images/hyperliquid.png', size: 120, color: { background: 'rgba(0,0,0,0)', border: 'rgba(0,0,0,0)', highlight: 'rgba(0,0,0,0)', hover: 'rgba(0,0,0,0)' }, borderWidth: 2, font: { color: 'rgba(0,0,0,0)', size: 1 } }
 ]);
 
-// Add category nodes
+// Add category nodes - increased size and font
 tags.forEach(tag => {
     nodes.add({
         id: tag,
         label: tag,
-        color: categoryColors[tag],
+        color: {
+            background: 'rgba(0,0,0,0)',
+            border: '#000',
+            highlight: { background: 'rgba(0,0,0,0)', border: '#000' },
+            hover: { background: 'rgba(0,0,0,0)', border: '#000' }
+        },
         shape: 'box',
-        font: { color: '#fff', size: 16 },
-        size: 30,
+        font: { color: '#fff', size: 50 },
+        size: 90,
         group: 'category'
     });
 });
 
-// Add project nodes
+// Add project nodes - increased size
 projects.forEach(project => {
+    let logoPath = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg';
     nodes.add({
         id: `project-${project.id}`,
-        label: project.name,
-        color: categoryColors[project.tags[0]] || '#888888',
-        shape: 'circle',
-        font: { color: '#fff', size: 12 },
-        size: 20,
-        project: project,
-        image: project.logo,
-        brokenImage: undefined
+        color: undefined,
+        shape: 'circularImage',
+        image: logoPath,
+        brokenImage: '/images/placeholder.svg',
+        size: 80,
+        project: project
     });
 });
 
@@ -885,7 +889,8 @@ tags.forEach(tag => {
         from: 'hyperEVM',
         to: tag,
         width: 3,
-        color: { color: 'rgba(255,255,255,0.3)' }
+        color: { color: 'rgba(20, 216, 121, 0.5)' },
+        dashes: true
     });
 });
 
@@ -895,11 +900,25 @@ projects.forEach(project => {
         edges.add({
             from: tag,
             to: `project-${project.id}`,
-            width: 1,
+            width: 2,
             color: { color: 'rgba(255,255,255,0.2)' }
         });
     });
 });
+
+// Collection box state
+let collectedProjects = [];
+let isCollectionBoxVisible = false;
+let draggedNode = null;
+let isDraggingToCollection = false;
+
+// Node removal state
+let isNodeRemovalMode = false;
+let removedNodeIds = [];
+let originalFilteredProjects = [];
+
+// Category filtering state
+let selectedCategories = [];
 
 // Initialize the network
 let network = null;
@@ -917,12 +936,12 @@ function initializeGraph() {
             enabled: true,
             solver: 'forceAtlas2Based',
             forceAtlas2Based: {
-                gravitationalConstant: -80,
+                gravitationalConstant: -150,
                 centralGravity: 0.005,
-                springLength: 250,
+                springLength: 420,
                 springConstant: 0.05,
                 damping: 0.4,
-                avoidOverlap: 0.8
+                avoidOverlap: 1.2
             },
             stabilization: {
                 enabled: true,
@@ -936,21 +955,21 @@ function initializeGraph() {
             hierarchical: false
         },
         nodes: {
-            borderWidth: 2,
-            borderWidthSelected: 3,
+            borderWidth: 0,
+            borderWidthSelected: 0,
             font: {
-                size: 12,
+                size: 20,
                 strokeWidth: 3,
-                strokeColor: 'rgba(0,0,0,0.5)'
+                strokeColor: 'rgba(19, 75, 0, 0.44)'
             },
             shadow: true,
             scaling: {
-                min: 10,
-                max: 40
+                min: 30,
+                max: 120
             }
         },
         edges: {
-            width: 1,
+            width: 2,
             color: {
                 color: 'rgba(255,255,255,0.3)',
                 highlight: 'rgba(255,255,255,0.8)',
@@ -961,7 +980,7 @@ function initializeGraph() {
                 roundness: 0.5
             },
             shadow: false,
-            hoverWidth: 2
+            hoverWidth: 3
         },
         interaction: {
             hover: true,
@@ -975,7 +994,7 @@ function initializeGraph() {
             category: {
                 shape: 'box',
                 font: {
-                    size: 16,
+                    size: 20,
                     color: '#ffffff'
                 }
             }
@@ -990,24 +1009,93 @@ function initializeGraph() {
             const nodeId = params.nodes[0];
             const node = nodes.get(nodeId);
             
-            // Change background gradient if it's a category node
-            if (node.group === 'category') {
-                document.body.style.background = categoryGradients[nodeId];
-            } else if (nodeId === 'hyperEVM') {
-                document.body.style.background = categoryGradients.default;
+            // Handle node removal mode
+            if (isNodeRemovalMode && node.project) {
+                removeNodeFromGraph(nodeId);
+                return;
             }
             
             displayNodeInfo(nodeId, node);
+            
+            // Show collection box if a project is selected
+            if (node.project) {
+                showCollectionBox();
+            }
+        } else {
+            // Hide collection box if clicking empty space and no projects collected
+            if (collectedProjects.length === 0) {
+                hideCollectionBox();
+            }
         }
+    });
+    
+    // Handle drag start
+    network.on("dragStart", function(params) {
+        if (params.nodes.length > 0) {
+            const nodeId = params.nodes[0];
+            const node = nodes.get(nodeId);
+            if (node.project && !isNodeRemovalMode) {
+                draggedNode = node;
+                showCollectionBox();
+            }
+        }
+    });
+    
+    // Handle drag end and detect drop on collection box
+    network.on("dragEnd", function(params) {
+        if (draggedNode && isCollectionBoxVisible && !isNodeRemovalMode) {
+            const pointer = params.pointer.DOM;
+            const collectionBox = document.getElementById('project-collection-box');
+            const boxRect = collectionBox.getBoundingClientRect();
+            
+            // Check if dropped on collection box
+            if (pointer.x >= boxRect.left && pointer.x <= boxRect.right &&
+                pointer.y >= boxRect.top && pointer.y <= boxRect.bottom &&
+                collectedProjects.length < 4) {
+                
+                // Check if project is not already collected
+                if (!collectedProjects.find(p => p.id === draggedNode.project.id)) {
+                    addProjectToCollection(draggedNode.project);
+                }
+            }
+        }
+        draggedNode = null;
     });
     
     // Handle hover effects
     network.on("hoverNode", function(params) {
         document.body.style.cursor = 'pointer';
+        
+        // Show red cross overlay for project nodes in removal mode
+        if (isNodeRemovalMode) {
+            const nodeId = params.node;
+            const node = nodes.get(nodeId);
+            
+            if (node && node.project) {
+                showRedCrossOverlay(params.pointer.DOM);
+            }
+        }
     });
     
     network.on("blurNode", function(params) {
         document.body.style.cursor = 'default';
+        
+        // Hide red cross overlay
+        if (isNodeRemovalMode) {
+            hideRedCrossOverlay();
+        }
+    });
+    
+    // Handle mouse movement for overlay positioning
+    network.on("hoverNode", function(params) {
+        if (isNodeRemovalMode) {
+            const nodeId = params.node;
+            const node = nodes.get(nodeId);
+            
+            if (node && node.project) {
+                updateRedCrossPosition(params.pointer.DOM);
+            }
+        }
     });
     
     // Center the hyperEVM node
@@ -1020,7 +1108,489 @@ function initializeGraph() {
             }
         });
     });
+    
+    // Initialize collection box and BIRU BIRU functionality
+    initializeCollectionBox();
+    initializeBiruBiru();
 }
+
+// Apply glow effect to HyperEVM node
+function applyHyperEVMGlow() {
+    // Simple approach - just log that CSS is handling the glow
+    console.log('Canvas glow effect applied via CSS');
+}
+
+// Add CSS animation for pulsing glow
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes hyperEVMPulse {
+        0%, 100% {
+            filter: 
+                drop-shadow(0 0 20px rgba(39, 174, 96, 1.0))
+                drop-shadow(0 0 40px rgba(39, 174, 96, 0.8))
+                drop-shadow(0 0 60px rgba(39, 174, 96, 0.6))
+                drop-shadow(0 0 80px rgba(39, 174, 96, 0.4))
+                drop-shadow(0 0 100px rgba(39, 174, 96, 0.2));
+            transform: scale(1);
+        }
+        50% {
+            filter: 
+                drop-shadow(0 0 30px rgba(39, 174, 96, 1.0))
+                drop-shadow(0 0 60px rgba(39, 174, 96, 0.9))
+                drop-shadow(0 0 90px rgba(39, 174, 96, 0.7))
+                drop-shadow(0 0 120px rgba(39, 174, 96, 0.5))
+                drop-shadow(0 0 150px rgba(39, 174, 96, 0.3));
+            transform: scale(1.05);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// BIRU BIRU functionality
+function initializeBiruBiru() {
+    const biruBiruBtn = document.getElementById('biru-biru-btn');
+    const resetCategoriesBtn = document.getElementById('reset-categories-btn');
+    const shareBtn = document.getElementById('share-btn');
+    
+    biruBiruBtn.addEventListener('click', toggleNodeRemovalMode);
+    resetCategoriesBtn.addEventListener('click', resetRemovedNodes);
+    shareBtn.addEventListener('click', handleShare);
+}
+
+function showBiruBiruButton() {
+    const container = document.getElementById('biru-biru-container');
+    container.style.display = 'flex';
+}
+
+function hideBiruBiruButton() {
+    const container = document.getElementById('biru-biru-container');
+    const actionButtons = document.getElementById('action-buttons');
+    container.style.display = 'none';
+    actionButtons.style.display = 'none';
+    
+    // Exit node removal mode if active
+    if (isNodeRemovalMode) {
+        exitNodeRemovalMode();
+    }
+}
+
+function toggleNodeRemovalMode() {
+    if (!isNodeRemovalMode) {
+        enterNodeRemovalMode();
+    } else {
+        exitNodeRemovalMode();
+    }
+}
+
+function enterNodeRemovalMode() {
+    isNodeRemovalMode = true;
+    const graphContainer = document.getElementById('graph-container');
+    const biruContainer = document.querySelector('.biru-biru-container');
+    
+    // Add removal mode class
+    graphContainer.classList.add('node-removal-mode');
+    biruContainer.classList.add('node-removal-mode');
+    
+    // Show action buttons
+    const actionButtons = document.getElementById('action-buttons');
+    actionButtons.style.display = 'flex';
+    
+    // Update button text and style
+    const biruBiruBtn = document.getElementById('biru-biru-btn');
+    biruBiruBtn.textContent = 'EXIT MODE';
+    biruBiruBtn.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+    
+    // Fit all visible nodes in the canvas
+    network.fit({
+        animation: {
+            duration: 1000,
+            easingFunction: 'easeInOutQuad'
+        }
+    });
+    
+    console.log('Entered node removal mode');
+    console.log('Graph container classes:', graphContainer.classList.toString());
+    console.log('Container has removal class:', graphContainer.classList.contains('node-removal-mode'));
+}
+
+function exitNodeRemovalMode() {
+    isNodeRemovalMode = false;
+    const graphContainer = document.getElementById('graph-container');
+    const biruContainer = document.querySelector('.biru-biru-container');
+    
+    // Remove removal mode class
+    graphContainer.classList.remove('node-removal-mode');
+    biruContainer.classList.remove('node-removal-mode');
+    
+    // Hide action buttons
+    const actionButtons = document.getElementById('action-buttons');
+    actionButtons.style.display = 'none';
+    
+    // Reset button text and style
+    const biruBiruBtn = document.getElementById('biru-biru-btn');
+    biruBiruBtn.textContent = 'BIRU BIRU';
+    biruBiruBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+    
+    // Remove visual feedback
+    graphContainer.style.border = 'none';
+    graphContainer.style.borderRadius = '10px';
+    
+    // Hide red cross overlay
+    hideRedCrossOverlay();
+    
+    console.log('Exited node removal mode');
+}
+
+function removeNodeFromGraph(nodeId) {
+    console.log('Removing node:', nodeId);
+    
+    // Add to removed list
+    if (!removedNodeIds.includes(nodeId)) {
+        removedNodeIds.push(nodeId);
+    }
+    
+    // Hide the node and its edges
+    nodes.update({id: nodeId, hidden: true});
+    
+    // Hide edges connected to this node
+    const connectedEdges = edges.get({
+        filter: edge => edge.from === nodeId || edge.to === nodeId
+    });
+    
+    connectedEdges.forEach(edge => {
+        edges.update({id: edge.id, hidden: true});
+    });
+    
+    console.log('Total removed nodes:', removedNodeIds.length);
+}
+
+function resetRemovedNodes() {
+    console.log('Resetting removed nodes');
+    
+    // Show all previously removed nodes
+    removedNodeIds.forEach(nodeId => {
+        nodes.update({id: nodeId, hidden: false});
+    });
+    
+    // Show all edges for current filter
+    const currentCategories = window.selectedCategories || [];
+    filterGraphByCategories(currentCategories);
+    
+    // Clear removed list
+    removedNodeIds = [];
+    
+    console.log('All nodes restored');
+}
+
+function handleShare() {
+    console.log('Opening share popup...');
+    captureGraphImage();
+}
+
+// Share popup functions
+function captureGraphImage() {
+    try {
+        console.log('Starting graph capture...');
+        
+        // Check if network is initialized
+        if (!network) {
+            console.error('Network not initialized');
+            alert('Graph not ready. Please wait for the graph to load completely.');
+            return;
+        }
+        
+        // Directly capture without fitting (to avoid potential issues)
+        performGraphCapture();
+        
+    } catch (error) {
+        console.error('Error preparing graph for capture:', error);
+        alert('Unable to prepare graph for capture: ' + error.message);
+    }
+}
+
+function performGraphCapture() {
+    try {
+        console.log('Performing graph capture...');
+        
+        // Multiple methods to find the canvas
+        let networkCanvas = null;
+        
+        // Method 1: Direct query selector
+        networkCanvas = document.querySelector('#graph-container canvas');
+        console.log('Method 1 - Direct selector:', networkCanvas);
+        
+        if (!networkCanvas) {
+            // Method 2: Vis.js specific selector
+            networkCanvas = document.querySelector('#graph-container .vis-network canvas');
+            console.log('Method 2 - Vis selector:', networkCanvas);
+        }
+        
+        if (!networkCanvas) {
+            // Method 3: Find all canvases and use the first one
+            const allCanvases = document.querySelectorAll('#graph-container canvas');
+            console.log('Method 3 - All canvases:', allCanvases);
+            if (allCanvases.length > 0) {
+                networkCanvas = allCanvases[0];
+            }
+        }
+        
+        if (!networkCanvas) {
+            // Method 4: Try to access canvas from network object
+            try {
+                if (network && network.canvas && network.canvas.frame && network.canvas.frame.canvas) {
+                    networkCanvas = network.canvas.frame.canvas;
+                    console.log('Method 4 - Network object:', networkCanvas);
+                }
+            } catch (e) {
+                console.log('Method 4 failed:', e);
+            }
+        }
+        
+        if (!networkCanvas) {
+            console.error('No canvas found with any method');
+            alert('Unable to find graph canvas. Please make sure the graph is fully loaded.');
+            return;
+        }
+        
+        console.log('Found canvas:', networkCanvas);
+        console.log('Canvas dimensions:', networkCanvas.width, 'x', networkCanvas.height);
+        
+        // Validate canvas has proper dimensions
+        if (!networkCanvas.width || !networkCanvas.height) {
+            console.error('Canvas has invalid dimensions');
+            alert('Graph canvas not properly initialized. Please wait for the graph to load completely.');
+            return;
+        }
+        
+        // Get the share canvas
+        const shareCanvas = document.getElementById('share-canvas');
+        if (!shareCanvas) {
+            console.error('Share canvas not found');
+            alert('Share popup not properly initialized.');
+            return;
+        }
+        
+        const ctx = shareCanvas.getContext('2d');
+        
+        // Instead of trying to get bounding box, just capture the entire canvas
+        // at very high resolution for crisp quality
+        const sourceWidth = networkCanvas.width;
+        const sourceHeight = networkCanvas.height;
+        
+        console.log('Source dimensions:', sourceWidth, 'x', sourceHeight);
+        
+        // Set ultra-high resolution dimensions for crisp quality
+        const scalingFactor = 4; // 4x scaling for ultra-high resolution
+        const targetWidth = Math.min(4000, sourceWidth * scalingFactor);  // Max 4000px width, 4x scale
+        const targetHeight = Math.min(3200, sourceHeight * scalingFactor); // Max 3200px height, 4x scale
+        
+        // Calculate scale to maintain aspect ratio
+        const scale = Math.min(targetWidth / sourceWidth, targetHeight / sourceHeight);
+        const canvasWidth = Math.floor(sourceWidth * scale);
+        const canvasHeight = Math.floor(sourceHeight * scale);
+        
+        // For display in popup, scale down to reasonable size
+        const maxDisplayWidth = 800;
+        const maxDisplayHeight = 640;
+        const displayScale = Math.min(maxDisplayWidth / canvasWidth, maxDisplayHeight / canvasHeight);
+        const displayWidth = Math.floor(canvasWidth * displayScale);
+        const displayHeight = Math.floor(canvasHeight * displayScale);
+        
+        console.log('Canvas dimensions:', canvasWidth, 'x', canvasHeight);
+        console.log('Display dimensions:', displayWidth, 'x', displayHeight);
+        console.log('Scale factor:', scale);
+        
+        // Set canvas to ultra-high resolution for capture
+        shareCanvas.width = canvasWidth;
+        shareCanvas.height = canvasHeight;
+        
+        // Set CSS size for display (much smaller for popup viewing)
+        shareCanvas.style.width = displayWidth + 'px';
+        shareCanvas.style.height = displayHeight + 'px';
+        
+        // Enable ultra-high-quality rendering
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        
+        // Scale the context for high-DPI rendering
+        const devicePixelRatio = window.devicePixelRatio || 1;
+        if (devicePixelRatio > 1) {
+            // Further enhance for high-DPI displays
+            ctx.scale(1, 1); // Keep 1:1 ratio but ensure crisp rendering
+        }
+        
+        // Fill with dark background
+        ctx.fillStyle = '#0C2926';
+        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        
+        // Draw the entire network canvas at high resolution
+        try {
+            ctx.drawImage(
+                networkCanvas,
+                0, 0, sourceWidth, sourceHeight,    // Source: entire canvas
+                0, 0, canvasWidth, canvasHeight     // Destination: high resolution
+            );
+            
+            console.log('High-resolution image drawn successfully');
+            
+            // Add watermarks (scaled for high resolution)
+            addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
+            
+            // Show the popup
+            showSharePopup();
+            
+        } catch (drawError) {
+            console.error('Error drawing image:', drawError);
+            alert('Error capturing graph image: ' + drawError.message);
+        }
+        
+    } catch (error) {
+        console.error('Error in performGraphCapture:', error);
+        alert('Unable to capture graph image: ' + error.message);
+    }
+}
+
+function addWatermarkToCanvas(ctx, width, height) {
+    // Calculate scale factor for text based on image size (ultra-high resolution scaling)
+    const baseWidth = 1000; // Higher reference width for ultra-high resolution
+    const scaleFactor = Math.max(1.5, width / baseWidth); // Minimum scale of 1.5 for crisp text
+    
+    // Add title at the top (scaled text)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.font = `bold ${Math.floor(48 * scaleFactor)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText('HyperEVM Ecosystem - My Custom Graph', width / 2, 80 * scaleFactor);
+    
+    // Add subtitle (scaled text)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.font = `${Math.floor(28 * scaleFactor)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+    const selectedCount = selectedCategories.length;
+    const removedCount = removedNodeIds.length;
+    ctx.fillText(`${selectedCount} categories selected • ${removedCount} projects removed`, width / 2, 130 * scaleFactor);
+    
+    // Add small watermark at bottom right (scaled text)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.font = `${Math.floor(22 * scaleFactor)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+    ctx.textAlign = 'right';
+    ctx.fillText('hyperevm.org', width - 50 * scaleFactor, height - 50 * scaleFactor);
+}
+
+function showSharePopup() {
+    const popup = document.getElementById('share-popup');
+    popup.style.display = 'flex';
+    
+    // Initialize button event listeners
+    initializeShareButtons();
+}
+
+function closeSharePopup() {
+    const popup = document.getElementById('share-popup');
+    popup.style.display = 'none';
+}
+
+function initializeShareButtons() {
+    const copyBtn = document.getElementById('copy-image-btn');
+    const downloadBtn = document.getElementById('download-image-btn');
+    
+    // Remove existing event listeners to prevent duplicates
+    copyBtn.replaceWith(copyBtn.cloneNode(true));
+    downloadBtn.replaceWith(downloadBtn.cloneNode(true));
+    
+    // Get fresh references
+    const newCopyBtn = document.getElementById('copy-image-btn');
+    const newDownloadBtn = document.getElementById('download-image-btn');
+    
+    newCopyBtn.addEventListener('click', copyImageToClipboard);
+    newDownloadBtn.addEventListener('click', downloadImage);
+}
+
+async function copyImageToClipboard() {
+    try {
+        const canvas = document.getElementById('share-canvas');
+        
+        // Convert canvas to blob
+        canvas.toBlob(async (blob) => {
+            try {
+                // Use the Clipboard API to copy the image
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        'image/png': blob
+                    })
+                ]);
+                
+                // Show success feedback
+                showCopySuccess();
+                
+            } catch (error) {
+                console.error('Failed to copy image:', error);
+                // Fallback: create a download link
+                fallbackCopyMethod(canvas);
+            }
+        }, 'image/png', 1.0);
+        
+    } catch (error) {
+        console.error('Error copying image:', error);
+        alert('Unable to copy image to clipboard');
+    }
+}
+
+function fallbackCopyMethod(canvas) {
+    // Create a temporary download link as fallback
+    const link = document.createElement('a');
+    link.download = 'hyperevm-graph.png';
+    link.href = canvas.toDataURL('image/png', 1.0);
+    
+    // Show message to user
+    alert('Clipboard not supported. Image will be downloaded instead.');
+    link.click();
+}
+
+function showCopySuccess() {
+    const copyBtn = document.getElementById('copy-image-btn');
+    const originalText = copyBtn.innerHTML;
+    
+    copyBtn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"></polyline>
+        </svg>
+        Copied!
+    `;
+    
+    copyBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+    
+    setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+        copyBtn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+    }, 2000);
+}
+
+function downloadImage() {
+    try {
+        const canvas = document.getElementById('share-canvas');
+        const link = document.createElement('a');
+        
+        // Generate filename with timestamp
+        const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+        link.download = `hyperevm-graph-${timestamp}.png`;
+        
+        // Convert canvas to data URL
+        link.href = canvas.toDataURL('image/png', 1.0);
+        
+        // Trigger download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        console.log('Graph image downloaded');
+        
+    } catch (error) {
+        console.error('Error downloading image:', error);
+        alert('Unable to download image');
+    }
+}
+
+// Make functions global for HTML onclick handlers
+window.closeSharePopup = closeSharePopup;
 
 // Display node information in the panel
 function displayNodeInfo(nodeId, node) {
@@ -1034,17 +1604,13 @@ function displayNodeInfo(nodeId, node) {
             <p><strong>Category:</strong> ${project.tags.join(', ')}</p>
             <p><strong>Twitter:</strong> <a href="${project.twitter}" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">Visit Twitter</a></p>
             ${project.logo ? `<img src="${project.logo}" alt="${project.name}" style="max-width: 100px; margin-top: 10px; border-radius: 10px;">` : ''}
+            <p style="margin-top: 15px; color: rgba(255,255,255,0.7); font-size: 14px;"><em>Drag this project to the collection box to save it.</em></p>
         `;
         
-        document.querySelector('.node-indicator').style.background = node.color;
-        document.querySelector('.node-indicator').style.boxShadow = `0 0 10px ${node.color}`;
+        document.querySelector('.node-indicator').style.background = '#27ae60';
+        document.querySelector('.node-indicator').style.boxShadow = '0 0 10px #27ae60';
         
-        // Clear sections for projects
-        updateSection('initiatives', []);
-        updateSection('research', []);
-        updateSection('artifacts', []);
-        updateSection('paths', []);
-        
+        document.getElementById('category-multiselect-container').style.display = 'none';
         return;
     }
     
@@ -1056,47 +1622,79 @@ function displayNodeInfo(nodeId, node) {
         const infoContent = document.getElementById('info-content');
         infoContent.innerHTML = `
             <p><strong>${projectsInCategory.length} projects</strong> in this category.</p>
-            <div style="margin-top: 15px; max-height: 300px; overflow-y: auto;">
+            <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
                 ${projectsInCategory.map(p => `
-                    <div style="padding: 5px 0; color: rgba(255,255,255,0.8);">
-                        • ${p.name}
+                    <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 6px 10px;">
+                        <img src="${p.logo ? p.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg'}" alt="${p.name}" style="width: 32px; height: 32px; border-radius: 50%; background: #fff; object-fit: cover; border: 1.5px solid #27ae60;">
+                        <span style="color: #fff; font-size: 15px;">${p.name}</span>
+                        <a href="${p.twitter}" target="_blank" style="margin-left: 8px; display: flex; align-items: center; text-decoration: none;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1da1f2" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 5.924c-.793.352-1.646.59-2.542.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082 4.48 4.48 0 0 0-7.635 4.086A12.72 12.72 0 0 1 3.112 4.89a4.48 4.48 0 0 0 1.387 5.976 4.47 4.47 0 0 1-2.03-.561v.057a4.48 4.48 0 0 0 3.594 4.393 4.48 4.48 0 0 1-2.025.077 4.48 4.48 0 0 0 4.184 3.114A8.98 8.98 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.017c8.26 0 12.785-6.84 12.785-12.785 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z"/></svg>
+                        </a>
                     </div>
                 `).join('')}
             </div>
         `;
         
-        document.querySelector('.node-indicator').style.background = node.color;
-        document.querySelector('.node-indicator').style.boxShadow = `0 0 10px ${node.color}`;
+        document.querySelector('.node-indicator').style.background = '#27ae60';
+        document.querySelector('.node-indicator').style.boxShadow = '0 0 10px #27ae60';
         
-        // Update sections with category info
-        updateSection('initiatives', [`${projectsInCategory.length} active projects`]);
-        updateSection('research', ['Category analysis', 'Market trends']);
-        updateSection('artifacts', ['Project listings', 'Category metrics']);
-        updateSection('paths', ['Ecosystem growth', 'Innovation tracking']);
-        
+        document.getElementById('category-multiselect-container').style.display = 'none';
         return;
     }
     
     // For hyperEVM node
     if (nodeId === 'hyperEVM') {
+        // Hide collection box when selecting hyperEVM if empty
+        if (isCollectionBoxVisible && collectedProjects.length === 0) {
+            hideCollectionBox();
+        }
+        
         document.getElementById('node-title').textContent = 'hyperEVM';
         
-        const infoContent = document.getElementById('info-content');
-        infoContent.innerHTML = `
-            <p>The central hub connecting ${projects.length} projects across ${tags.length} categories in the HyperEVM ecosystem.</p>
-            <p style="margin-top: 15px;"><strong>Total Projects:</strong> ${projects.length}</p>
-            <p><strong>Categories:</strong> ${tags.length}</p>
-        `;
         
-        document.querySelector('.node-indicator').style.background = node.color;
-        document.querySelector('.node-indicator').style.boxShadow = `0 0 10px ${node.color}`;
+        document.querySelector('.node-indicator').style.background = '#27ae60';
+        document.querySelector('.node-indicator').style.boxShadow = '0 0 10px #27ae60';
         
-        updateSection('initiatives', ['Ecosystem Growth', 'Project Incubation', 'Community Building']);
-        updateSection('research', ['DeFi Innovation', 'Cross-chain Technology', 'Scalability Solutions']);
-        updateSection('artifacts', ['Smart Contracts', 'Developer Tools', 'Documentation']);
-        updateSection('paths', ['Web3 Adoption', 'DeFi Evolution', 'Ecosystem Expansion']);
+        // Show and populate category chips
+        const multiSelectContainer = document.getElementById('category-multiselect-container');
+        const chipsContainer = document.getElementById('category-chips-container');
+        multiSelectContainer.style.display = 'block';
+        
+        // Generate category chips
+        chipsContainer.innerHTML = tags.map(tag => `
+            <div class="category-chip ${window.selectedCategories && window.selectedCategories.includes(tag) ? 'selected' : ''}" 
+                 data-category="${tag}" onclick="toggleCategoryChip('${tag}')">
+                ${tag}
+            </div>
+        `).join('');
+        
+        // Apply current filter
+        filterGraphByCategories(window.selectedCategories || []);
+        return;
     }
 }
+
+// Function to toggle category chip selection
+function toggleCategoryChip(category) {
+    const chip = document.querySelector(`[data-category="${category}"]`);
+    
+    if (chip.classList.contains('selected')) {
+        chip.classList.remove('selected');
+        selectedCategories = selectedCategories.filter(c => c !== category);
+    } else {
+        chip.classList.add('selected');
+        selectedCategories.push(category);
+    }
+    
+    // Store globally for access by other functions
+    window.selectedCategories = selectedCategories;
+    
+    console.log('Selected categories:', selectedCategories);
+    filterGraphByCategories(selectedCategories);
+}
+
+// Make the function global
+window.toggleCategoryChip = toggleCategoryChip;
 
 // Update section content
 function updateSection(sectionName, items) {
@@ -1134,4 +1732,259 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, 2000);
-}); 
+});
+
+// On page load, clear selection
+window.selectedCategories = [];
+
+// Add a test function to manually trigger the central logo
+window.testCentralLogo = function() {
+    console.log('Manual test of central logo');
+    showCentralLogo();
+}
+
+// Red cross overlay functions
+function showRedCrossOverlay(pointer) {
+    const overlay = document.getElementById('node-removal-overlay');
+    const graphContainer = document.getElementById('graph-container');
+    const containerRect = graphContainer.getBoundingClientRect();
+    
+    overlay.style.display = 'block';
+    overlay.style.left = (pointer.x - 30) + 'px'; // Center the 60px overlay
+    overlay.style.top = (pointer.y - 30) + 'px';
+}
+
+function hideRedCrossOverlay() {
+    const overlay = document.getElementById('node-removal-overlay');
+    overlay.style.display = 'none';
+}
+
+function updateRedCrossPosition(pointer) {
+    const overlay = document.getElementById('node-removal-overlay');
+    if (overlay.style.display === 'block') {
+        overlay.style.left = (pointer.x - 30) + 'px';
+        overlay.style.top = (pointer.y - 30) + 'px';
+    }
+}
+
+// Update the filtering logic to show BIRU BIRU button
+function filterGraphByCategories(selectedCategories) {
+    if (!selectedCategories || selectedCategories.length === 0) {
+        // Show all nodes and edges
+        nodes.forEach(n => nodes.update({id: n.id, hidden: false}));
+        edges.forEach(e => edges.update({id: e.id, hidden: false}));
+        hideBiruBiruButton();
+        return;
+    }
+    
+    // Hide all nodes and edges first
+    nodes.forEach(n => nodes.update({id: n.id, hidden: true}));
+    edges.forEach(e => edges.update({id: e.id, hidden: true}));
+    
+    // Always show hyperEVM
+    nodes.update({id: 'hyperEVM', hidden: false});
+    
+    // Show selected categories and their projects
+    selectedCategories.forEach(tag => {
+        nodes.update({id: tag, hidden: false});
+        // Show edge from hyperEVM to category
+        const edge = edges.get({filter: e => e.from === 'hyperEVM' && e.to === tag});
+        if (edge.length > 0) edges.update({id: edge[0].id, hidden: false});
+        
+        // Show projects for this category (excluding removed ones)
+        projects.forEach(project => {
+            if (project.tags.includes(tag)) {
+                const projectNodeId = `project-${project.id}`;
+                if (!removedNodeIds.includes(projectNodeId)) {
+                    nodes.update({id: projectNodeId, hidden: false});
+                    // Show edge from category to project
+                    const edge2 = edges.get({filter: e => e.from === tag && e.to === projectNodeId});
+                    if (edge2.length > 0) edges.update({id: edge2[0].id, hidden: false});
+                }
+            }
+        });
+    });
+    
+    // Show BIRU BIRU button when categories are filtered
+    showBiruBiruButton();
+}
+
+// Collection box functions
+function showCollectionBox() {
+    const collectionBox = document.getElementById('project-collection-box');
+    if (!isCollectionBoxVisible) {
+        collectionBox.style.display = 'block';
+        collectionBox.classList.remove('hiding');
+        isCollectionBoxVisible = true;
+    }
+}
+
+function hideCollectionBox() {
+    const collectionBox = document.getElementById('project-collection-box');
+    collectionBox.classList.add('hiding');
+    isCollectionBoxVisible = false;
+    setTimeout(() => {
+        collectionBox.style.display = 'none';
+        collectionBox.classList.remove('hiding');
+    }, 300);
+}
+
+function initializeCollectionBox() {
+    const resetBtn = document.getElementById('reset-collection');
+    resetBtn.addEventListener('click', resetCollection);
+    
+    // Add hover effects for collection box
+    const collectionBox = document.getElementById('project-collection-box');
+    collectionBox.addEventListener('mouseenter', () => {
+        if (draggedNode) {
+            collectionBox.style.borderColor = 'rgba(39, 174, 96, 0.8)';
+            collectionBox.style.background = 'rgba(39, 174, 96, 0.1)';
+        }
+    });
+    
+    collectionBox.addEventListener('mouseleave', () => {
+        collectionBox.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+        collectionBox.style.background = 'rgba(255, 255, 255, 0.1)';
+    });
+}
+
+function addProjectToCollection(project) {
+    if (collectedProjects.length >= 4) return;
+    
+    const slotIndex = collectedProjects.length;
+    collectedProjects.push({...project, slotIndex});
+    renderCollectionSlot(slotIndex, project);
+    
+    console.log('Projects collected:', collectedProjects.length);
+    console.log('Collection array:', collectedProjects.map(p => p.name));
+    
+    // Show central logo if all 4 slots are filled
+    if (collectedProjects.length === 4) {
+        console.log('All 4 slots filled! Attempting to show central logo...');
+        setTimeout(() => {
+            showCentralLogo();
+        }, 100); // Small delay to ensure DOM is updated
+    }
+}
+
+function renderCollectionSlot(slotIndex, project) {
+    const slot = document.querySelector(`[data-slot="${slotIndex}"]`);
+    const logoPath = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg';
+    
+    slot.classList.add('filled');
+    slot.innerHTML = `
+        <img src="${logoPath}" alt="${project.name}" class="project-logo" title="${project.name}">
+        <div class="remove-project" onclick="removeProjectFromSlot(${slotIndex})">×</div>
+    `;
+}
+
+function removeProjectFromSlot(slotIndex) {
+    const projectIndex = collectedProjects.findIndex(p => p.slotIndex === slotIndex);
+    
+    if (projectIndex > -1) {
+        const slot = document.querySelector(`[data-slot="${slotIndex}"]`);
+        
+        // Hide central logo if it's visible
+        if (collectedProjects.length === 4) {
+            hideCentralLogo();
+        }
+        
+        // Add pop animation
+        slot.classList.add('popping');
+        
+        setTimeout(() => {
+            // Remove project and reindex remaining projects
+            collectedProjects.splice(projectIndex, 1);
+            
+            // Clear all slots and re-render
+            const allSlots = document.querySelectorAll('.collection-slot');
+            allSlots.forEach(slot => {
+                slot.classList.remove('filled', 'popping');
+                slot.innerHTML = '';
+            });
+            
+            // Re-render remaining projects with updated indices
+            collectedProjects.forEach((project, index) => {
+                project.slotIndex = index;
+                renderCollectionSlot(index, project);
+            });
+            
+            // Hide collection box if empty
+            if (collectedProjects.length === 0) {
+                hideCollectionBox();
+            }
+        }, 400);
+    }
+}
+
+function resetCollection() {
+    if (collectedProjects.length === 0) return;
+    
+    // Hide central logo if visible
+    if (collectedProjects.length === 4) {
+        hideCentralLogo();
+    }
+    
+    const filledSlots = document.querySelectorAll('.collection-slot.filled');
+    
+    // Add staggered pop animations
+    filledSlots.forEach((slot, index) => {
+        setTimeout(() => {
+            slot.classList.add('popping');
+        }, index * 100);
+    });
+    
+    // Clear collection after animations complete
+    setTimeout(() => {
+        collectedProjects = [];
+        const allSlots = document.querySelectorAll('.collection-slot');
+        allSlots.forEach(slot => {
+            slot.classList.remove('filled', 'popping');
+            slot.innerHTML = '';
+        });
+        hideCollectionBox();
+    }, filledSlots.length * 100 + 400);
+}
+
+function showCentralLogo() {
+    console.log('showCentralLogo called');
+    const centerElement = document.getElementById('collection-center');
+    console.log('Center element found:', centerElement);
+    console.log('Current display style:', centerElement ? centerElement.style.display : 'element not found');
+    
+    if (centerElement) {
+        // Force show with important styles
+        centerElement.style.display = 'block';
+        centerElement.style.visibility = 'visible';
+        centerElement.style.opacity = '1';
+        centerElement.classList.remove('hiding');
+        
+        // Force a reflow
+        centerElement.offsetHeight;
+        
+        console.log('Central logo should now be visible');
+        console.log('Final display style:', centerElement.style.display);
+        console.log('Final visibility:', centerElement.style.visibility);
+        console.log('Final opacity:', centerElement.style.opacity);
+    } else {
+        console.error('collection-center element not found!');
+        // Try to find it with a different method
+        const allElements = document.querySelectorAll('#collection-center');
+        console.log('Found elements with id collection-center:', allElements.length);
+    }
+}
+
+function hideCentralLogo() {
+    console.log('hideCentralLogo called');
+    const centerElement = document.getElementById('collection-center');
+    if (centerElement) {
+        centerElement.classList.add('hiding');
+        setTimeout(() => {
+            centerElement.style.display = 'none';
+            centerElement.classList.remove('hiding');
+        }, 400);
+    }
+}
+
+// Make remove function global
+window.removeProjectFromSlot = removeProjectFromSlot;
