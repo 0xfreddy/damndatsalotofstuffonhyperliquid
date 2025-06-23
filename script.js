@@ -2030,8 +2030,30 @@ function displayNodeInfo(nodeId, node) {
         
         nodeTitle.textContent = project.name;
         
+        infoContent.style.display = 'block'; // Show the content div for projects
         infoContent.innerHTML = `
-            <p><strong>Category:</strong> ${project.tags.join(', ')}</p>
+            <div style="margin-bottom: 15px;">
+                <p style="margin-bottom: 8px;"><strong>Categories:</strong></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    ${project.tags.map(tag => `
+                        <span class="project-category-chip" onclick="filterByCategory('${tag}')" style="
+                            background: rgba(39, 174, 96, 0.15);
+                            border: 1px solid rgba(39, 174, 96, 0.3);
+                            color: #27ae60;
+                            padding: 4px 12px;
+                            border-radius: 20px;
+                            font-size: 12px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            display: inline-block;
+                            backdrop-filter: blur(10px);
+                        " 
+                        onmouseover="this.style.background='rgba(39, 174, 96, 0.25)'; this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.background='rgba(39, 174, 96, 0.15)'; this.style.transform='scale(1)'"
+                        >${tag}</span>
+                    `).join('')}
+                </div>
+            </div>
             <p><strong>Twitter:</strong> <a href="${project.twitter}" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">Visit Twitter</a></p>
             ${project.logo ? `<img src="${project.logo.replace('/images/logos/', '/images/')}" alt="${project.name}" style="max-width: 100px; margin-top: 10px; border-radius: 10px;">` : ''}
         `;
@@ -2050,6 +2072,7 @@ function displayNodeInfo(nodeId, node) {
         
         nodeTitle.textContent = nodeId;
         
+        infoContent.style.display = 'block'; // Show the content div for categories
         infoContent.innerHTML = `
             <p><strong>${projectsInCategory.length} projects</strong> in this category.</p>
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
@@ -2093,6 +2116,7 @@ function displayNodeInfo(nodeId, node) {
         nodeTitle.appendChild(projectCountChip);
         
         infoContent.innerHTML = ``;
+        infoContent.style.display = 'none'; // Hide the empty content div
         
         nodeIndicator.style.background = '#27ae60';
         nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
@@ -2101,6 +2125,7 @@ function displayNodeInfo(nodeId, node) {
         const multiSelectContainer = document.getElementById('category-multiselect-container');
         const chipsContainer = document.getElementById('category-chips-container');
         multiSelectContainer.style.display = 'block';
+        multiSelectContainer.style.marginTop = '0'; // Remove top margin for hyperEVM
         
         // Generate category chips
         chipsContainer.innerHTML = tags.map(tag => `
@@ -2139,6 +2164,51 @@ function toggleCategoryChip(category) {
 
 // Make the function global
 window.toggleCategoryChip = toggleCategoryChip;
+
+// Function to filter graph by a single category (called from project details panel)
+function filterByCategory(category) {
+    console.log('Filtering by single category:', category);
+    
+    // Set the selected category (replace any existing selection)
+    window.selectedCategories = [category];
+    
+    // Apply the filter
+    filterGraphByCategories([category]);
+    
+    // Update the hyperEVM panel to show the selected category
+    setTimeout(() => {
+        network.selectNodes(['hyperEVM']);
+        displayNodeInfo('hyperEVM', nodes.get('hyperEVM'));
+        
+        // Ensure the view is centered on all visible nodes - DISABLED to fix zoom loop
+        // setTimeout(() => {
+        //     if (network) {
+        //         const visibleNodeIds = [];
+        //         nodes.forEach(node => {
+        //             if (!node.hidden) {
+        //                 visibleNodeIds.push(node.id);
+        //             }
+        //         });
+        //         
+        //         if (visibleNodeIds.length > 0) {
+        //             network.fit({
+        //                 nodes: visibleNodeIds,
+        //                 animation: {
+        //                     duration: 800,
+        //                     easingFunction: 'easeInOutQuad'
+        //                 }
+        //             });
+        //         }
+        //     }
+        // }, 300);
+    }, 100);
+    
+    // Optional: Show a notification about the filter
+    console.log(`Graph filtered to show only "${category}" projects`);
+}
+
+// Make the function global
+window.filterByCategory = filterByCategory;
 
 // Update section content
 function updateSection(sectionName, items) {
@@ -2224,6 +2294,20 @@ function filterGraphByCategories(selectedCategories) {
         nodes.forEach(n => nodes.update({id: n.id, hidden: false}));
         edges.forEach(e => edges.update({id: e.id, hidden: false}));
         hideBiruBiruButton();
+        
+        // Fit the view to show all nodes when no filter is applied - DISABLED to fix zoom loop
+        // setTimeout(() => {
+        //     if (network) {
+        //         console.log('Fitting view to show all nodes (no filter)');
+        //         network.fit({
+        //             animation: {
+        //                 duration: 1000,
+        //                 easingFunction: 'easeInOutQuad'
+        //             }
+        //         });
+        //     }
+        // }, 200);
+        
         return;
     }
     
@@ -2258,17 +2342,31 @@ function filterGraphByCategories(selectedCategories) {
     // Show BIRU BIRU button when categories are filtered
     showBiruBiruButton();
     
-    // Auto-fit all visible nodes with a slight delay to ensure rendering is complete - DISABLED to fix zoom issue
+    // Auto-fit all visible nodes with a slight delay to ensure rendering is complete - DISABLED to fix zoom loop
     // setTimeout(() => {
     //     if (network) {
-    //         network.fit({
-    //             animation: {
-    //                 duration: 1000,
-    //                 easingFunction: 'easeInOutQuad'
+    //         // Get all visible node IDs
+    //         const visibleNodeIds = [];
+    //         nodes.forEach(node => {
+    //             if (!node.hidden) {
+    //                 visibleNodeIds.push(node.id);
     //             }
     //         });
+    //         
+    //         console.log('Fitting view to visible nodes:', visibleNodeIds.length, 'nodes');
+    //         
+    //         // Fit the view to show all visible nodes
+    //         if (visibleNodeIds.length > 0) {
+    //             network.fit({
+    //                 nodes: visibleNodeIds,
+    //                 animation: {
+    //                     duration: 1000,
+    //                     easingFunction: 'easeInOutQuad'
+    //                 }
+    //             });
+    //         }
     //     }
-    // }, 100);
+    // }, 200); // Increased delay to ensure all nodes are properly hidden/shown first
 }
 
 // Collection box functions REMOVED - no longer needed for this version
