@@ -895,6 +895,13 @@ const projects = [
       tags: ["Tools", "Data"],
       twitter: "https://x.com/atareh/status/1927479710470037685",
       logo: "/images/logos/hyperscreener.png",
+    },
+    {
+        id: 133,
+        name: "HyperEVM",
+        tags: ["Data"],
+        twitter: "https://x.com/PixOnChain/status/1932589848566890837",
+        logo: "/images/logos/hyperevmtech.jpg",
     }
 ];
 
@@ -956,7 +963,7 @@ const categoryGradients = {
     Investment: 'linear-gradient(135deg, #134e5e 0%, #71b280 100%)',
     Stablecoin: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
     News: 'linear-gradient(135deg, #ff4e50 0%, #f9d423 100%)',
-    Landing: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    Lending: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
     Research: 'linear-gradient(135deg, #cc2b5e 0%, #753a88 100%)',
     Aggregator: 'linear-gradient(135deg, #fc466b 0%, #3f5efb 100%)',
     Privacy: 'linear-gradient(135deg, #000046 0%, #1cb5e0 100%)',
@@ -1386,6 +1393,12 @@ function enterNodeRemovalMode() {
     const actionButtons = document.getElementById('action-buttons');
     actionButtons.style.display = 'flex';
     
+    // Show node removal instructions
+    const instructions = document.getElementById('node-removal-instructions');
+    if (instructions) {
+        instructions.style.display = 'block';
+    }
+    
     // Update button text and style
     const biruBiruBtn = document.getElementById('biru-biru-btn');
     biruBiruBtn.innerHTML = `×`;
@@ -1421,6 +1434,12 @@ function exitNodeRemovalMode() {
     // Hide action buttons
     const actionButtons = document.getElementById('action-buttons');
     actionButtons.style.display = 'none';
+    
+    // Hide node removal instructions
+    const instructions = document.getElementById('node-removal-instructions');
+    if (instructions) {
+        instructions.style.display = 'none';
+    }
     
     // Reset button text and style
     const biruBiruBtn = document.getElementById('biru-biru-btn');
@@ -1881,7 +1900,53 @@ function addWatermarkToCanvas(ctx, width, height) {
     const x = Math.max(40, width * 0.03); // Left padding
     const y = height - Math.max(40, height * 0.04); // Bottom padding
     
-    // Draw text with stroke and fill
+    // Measure text dimensions for chip background
+    const textMetrics = ctx.measureText(watermarkText);
+    const textWidth = textMetrics.width;
+    const textHeight = fontSize; // Approximate text height
+    
+    // Chip padding
+    const chipPadding = fontSize * 0.3; // Responsive padding based on font size
+    const chipRadius = fontSize * 0.3; // Responsive border radius
+    
+    // Calculate chip dimensions and position
+    const chipX = x - chipPadding;
+    const chipY = y - textHeight - chipPadding;
+    const chipWidth = textWidth + (chipPadding * 2);
+    const chipHeight = textHeight + (chipPadding * 2);
+    
+    // Save current context state
+    ctx.save();
+    
+    // Clear any existing shadow for chip drawing
+    ctx.shadowColor = 'transparent';
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+    
+    // Draw chip background with rounded corners
+    ctx.beginPath();
+    ctx.roundRect(chipX, chipY, chipWidth, chipHeight, chipRadius);
+    
+    // Fill chip with semi-transparent dark background
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+    ctx.fill();
+    
+    // Add white stroke to chip
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Restore context state for text drawing
+    ctx.restore();
+    
+    // Re-apply text shadow for the text
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 12;
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 3;
+    
+    // Draw text with stroke and fill on top of chip
     ctx.strokeText(watermarkText, x, y);
     ctx.fillText(watermarkText, x, y);
     
@@ -2098,7 +2163,16 @@ function displayNodeInfo(nodeId, node) {
                     `).join('')}
                 </div>
             </div>
-            <p><strong>Twitter:</strong> <a href="${project.twitter}" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">Visit Twitter</a></p>
+            <p style="display: flex; align-items: center; gap: 8px;">
+                <strong>Twitter:</strong> 
+                <a href="${project.twitter}" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: #1da1f2; transition: all 0.3s ease;" 
+                   onmouseover="this.style.transform='scale(1.1)'; this.style.color='#0d8bd9';" 
+                   onmouseout="this.style.transform='scale(1)'; this.style.color='#1da1f2';">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.46 5.924c-.793.352-1.646.59-2.542.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082 4.48 4.48 0 0 0-7.635 4.086A12.72 12.72 0 0 1 3.112 4.89a4.48 4.48 0 0 0 1.387 5.976 4.47 4.47 0 0 1-2.03-.561v.057a4.48 4.48 0 0 0 3.594 4.393 4.48 4.48 0 0 1-2.025.077 4.48 4.48 0 0 0 4.184 3.114A8.98 8.98 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.017c8.26 0 12.785-6.84 12.785-12.785 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z"/>
+                    </svg>
+                </a>
+            </p>
 
         `;
         
