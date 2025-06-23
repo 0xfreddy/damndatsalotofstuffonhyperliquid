@@ -619,7 +619,7 @@ const projects = [
     {
       id: 92,
       name: "Keiko",
-      tags: ["Landing"],
+      tags: ["Lending"],
       twitter: "https://x.com/KeikoFinance",
       logo: "/images/logos/keiko.png",
     },
@@ -755,6 +755,146 @@ const projects = [
       tags: ["Tools"],
       twitter: "https://x.com/hyperwarpfi",
       logo: "/images/logos/hyperwarpfi.png",
+    },
+    {
+      id: 112,
+      name: "Uncoil Hype",
+      tags: ["Research"],
+      twitter: "https://x.com/Uncoilhype",
+      logo: "/images/logos/UncoilHype.jpg",
+    },
+    {
+      id: 113,
+      name: "dothype",
+      tags: ["Utility", "Infra"],
+      twitter: "https://x.com/d0tHYPE",
+      logo: "/images/logos/dothype.jpg",
+    },
+    {
+      id: 114,
+      name: "Hytrade",
+      tags: ["Trading"],
+      twitter: "https://x.com/hytradedotfun",
+      logo: "/images/logos/hytrade.jpg",
+    },
+    {
+      id: 115,
+      name: "hyperbloom",
+      tags: ["Aggregator"],
+      twitter: "https://x.com/hyperbloomxyz",
+      logo: "/images/logos/hyperbloom.jpg",
+    },
+    {
+      id: 116,
+      name: "aura",
+      tags: ["Trading"],
+      twitter: "https://x.com/auradotmoney",
+      logo: "/images/logos/aura.jpg",
+    },
+    {
+      id: 117,
+      name: "hyper_g8",
+      tags: ["Trading"],
+      twitter: "https://x.com/hyper_g8",
+      logo: "/images/logos/hyperG8.jpg",
+    },
+    {
+      id: 118,
+      name: "Hyperwave",
+      tags: ["Defi"],
+      twitter: "https://x.com/Hyperwavefi",
+      logo: "/images/logos/Hyperwave.png",
+    },
+    {
+      id: 119,
+      name: "Silhouette",
+      tags: ["Trading", "Privacy"],
+      twitter: "https://x.com/silhouette_ex",
+      logo: "/images/logos/silhouette.jpg",
+    },
+    {
+      id: 120,
+      name: "Hypurr Hub",
+      tags: ["News"],
+      twitter: "https://x.com/HypurrHub",
+      logo: "/images/logos/HypurrHub.png",
+    },
+    {
+      id: 121,
+      name: "Liquid Swap",
+      tags: ["Aggregator"],
+      twitter: "https://x.com/LiquidLaunchHL",
+      logo: "/images/logos/liquidswap.jpg",
+    },
+    {
+      id: 122,
+      name: "Hypersig",
+      tags: ["Security"],
+      twitter: "https://x.com/hypersig_",
+      logo: "/images/logos/hypersig.jpg",
+    },
+    {
+      id: 123,
+      name: "NunchiTrade",
+      tags: ["Yield"],
+      twitter: "https://x.com/nunchitrade",
+      logo: "/images/logos/Nunchi.png",
+    },
+    {
+      id: 124,
+      name: "Shifu Finance",
+      tags: ["Mobile"],
+      twitter: "https://x.com/Shifu_Fi",
+      logo: "/images/logos/ShifuFinance.jpg",
+    },
+    {
+      id: 125,
+      name: "Gems Gun",
+      tags: ["Trading"],
+      twitter: "https://x.com/gems_gun",
+      logo: "/images/logos/GemsGun.jpg",
+    },
+    {
+      id: 126,
+      name: "Symbiosis",
+      tags: ["Dex"],
+      twitter: "https://x.com/symbiosis_fi",
+      logo: "/images/logos/Symbiosis.jpg",
+    },
+    {
+      id: 127,
+      name: "Hybra Finance",
+      tags: ["Dex"],
+      twitter: "https://x.com/HybraFinance",
+      logo: "/images/logos/HybraFinance.jpg",
+    },
+    {
+      id: 128,
+      name: "Risk Finance",
+      tags: ["Options"],
+      twitter: "https://x.com/ryskfinance",
+      logo: "/images/logos/rysk.jpg",
+    },
+    {
+      id: 129,
+      name: "HypurrFlip",
+      tags: ["GambleFi"],
+      twitter: "https://x.com/HypurrFlip",
+      logo: "/images/logos/hypurrflip.jpg",
+    },
+    {
+      id: 130,
+      name: "HyperliquidHub",
+      tags: ["News"],
+      twitter: "https://x.com/Hyperliquid_Hub",
+      logo: "/images/logos/HyperliquidHub.jpg",
+    },
+    {
+      id: 131,
+      name: "hyperscreener",
+      tags: ["Tools", "Data"],
+      twitter: "https://x.com/atareh/status/1927479710470037685",
+      logo: "/images/logos/hyperscreener.png",
     }
 ];
 
@@ -782,7 +922,13 @@ const tags = [
     "Investment",
     "Stablecoin",
     "News",
-    "Landing"
+    "Lending",
+    "Research",
+    "Aggregator",
+    "Privacy",
+    "Utility",
+    "Security",
+    "Options"
 ];
 
 // Define gradients for each category
@@ -811,6 +957,12 @@ const categoryGradients = {
     Stablecoin: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
     News: 'linear-gradient(135deg, #ff4e50 0%, #f9d423 100%)',
     Landing: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    Research: 'linear-gradient(135deg, #cc2b5e 0%, #753a88 100%)',
+    Aggregator: 'linear-gradient(135deg, #fc466b 0%, #3f5efb 100%)',
+    Privacy: 'linear-gradient(135deg, #000046 0%, #1cb5e0 100%)',
+    Utility: 'linear-gradient(135deg, #654ea3 0%, #eaafc8 100%)',
+    Security: 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)',
+    Options: 'linear-gradient(135deg, #8360c3 0%, #2ebf91 100%)',
     default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
 };
 
@@ -839,7 +991,13 @@ const categoryColors = {
     Investment: '#27ae60',
     Stablecoin: '#27ae60',
     News: '#27ae60',
-    Landing: '#27ae60'
+    Lending: '#27ae60',
+    Research: '#27ae60',
+    Aggregator: '#27ae60',
+    Privacy: '#27ae60',
+    Utility: '#27ae60',
+    Security: '#27ae60',
+    Options: '#27ae60'
 };
 
 // Create nodes
@@ -868,15 +1026,30 @@ tags.forEach(tag => {
 
 // Add project nodes - increased size
 projects.forEach(project => {
-    let logoPath = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg';
+    let logoPath = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/hyperevmtech.jpg';
     nodes.add({
         id: `project-${project.id}`,
         color: undefined,
         shape: 'circularImage',
         image: logoPath,
-        brokenImage: '/images/placeholder.svg',
+        brokenImage: '/images/hyperevmtech.jpg',
         size: 80,
-        project: project
+        project: project,
+        // Enhanced image settings for better quality
+        imagePadding: 0,
+        useImageSize: false,
+        // Force minimum resolution for better canvas rendering
+        imageSize: {
+            width: 200,  // Ensure minimum size for canvas rendering
+            height: 200
+        },
+        // Add image preloading for quality control
+        chosen: {
+            node: function(values, id, selected, hovering) {
+                // Enhance rendering when selected/hovered
+                values.size = selected || hovering ? 85 : 80;
+            }
+        }
     });
 });
 
@@ -993,10 +1166,28 @@ function initializeGraph() {
                     color: '#ffffff'
                 }
             }
+        },
+        // Force high-resolution canvas rendering
+        configure: {
+            enabled: false
+        },
+        // Ensure high pixel density rendering
+        autoResize: true,
+        height: '100%',
+        width: '100%',
+        // Add canvas-specific quality settings
+        canvas: {
+            imageSmoothingEnabled: true,
+            imageSmoothingQuality: 'high'
         }
     };
     
     network = new vis.Network(container, data, options);
+    
+    // Force high-DPI rendering - DISABLED to fix zoom issue
+    // setTimeout(() => {
+    //     forceHighDPIRendering();
+    // }, 100);
     
     // Handle node selection
     network.on("click", function(params) {
@@ -1388,12 +1579,92 @@ function captureGraphImage() {
             return;
         }
         
-        // Directly capture without fitting (to avoid potential issues)
-        performGraphCapture();
+        // Force a high-quality redraw before capture
+        console.log('Forcing high-quality redraw before capture...');
+        
+        // Apply quality settings to the canvas
+        const canvas = document.querySelector('#graph-container canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+        }
+        
+        // Force network redraw with quality settings
+        if (network.redraw) {
+            network.redraw();
+        }
+        
+        // Wait a bit for the redraw to complete, then capture
+        setTimeout(() => {
+            performGraphCapture();
+        }, 500); // Give time for high-quality rendering
         
     } catch (error) {
         console.error('Error preparing graph for capture:', error);
         alert('Unable to prepare graph for capture: ' + error.message);
+    }
+}
+
+// Function to temporarily enhance network rendering resolution
+async function enhanceNetworkResolution() {
+    return new Promise((resolve, reject) => {
+        try {
+            console.log('Attempting to enhance network resolution...');
+            
+            // Store original canvas size
+            const container = document.getElementById('graph-container');
+            const originalRect = container.getBoundingClientRect();
+            
+            // Temporarily increase the container size to force higher resolution rendering
+            const scaleFactor = 2;
+            const tempWidth = originalRect.width * scaleFactor;
+            const tempHeight = originalRect.height * scaleFactor;
+            
+            // Apply temporary scaling
+            container.style.width = tempWidth + 'px';
+            container.style.height = tempHeight + 'px';
+            container.style.transform = `scale(${1/scaleFactor})`;
+            container.style.transformOrigin = 'top left';
+            
+            // Force network to redraw at new size
+            if (network && network.redraw) {
+                network.redraw();
+                
+                // Wait for redraw to complete
+                setTimeout(() => {
+                    console.log('Network enhanced to higher resolution');
+                    resolve();
+                }, 200);
+            } else {
+                reject('Network redraw not available');
+            }
+            
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+// Function to restore original network resolution after capture
+function restoreNetworkResolution() {
+    try {
+        const container = document.getElementById('graph-container');
+        
+        // Remove temporary scaling
+        container.style.width = '';
+        container.style.height = '';
+        container.style.transform = '';
+        container.style.transformOrigin = '';
+        
+        // Force network to redraw at original size
+        if (network && network.redraw) {
+            network.redraw();
+        }
+        
+        console.log('Network resolution restored to original');
+    } catch (error) {
+        console.error('Error restoring network resolution:', error);
     }
 }
 
@@ -1461,107 +1732,113 @@ function performGraphCapture() {
         
         const ctx = shareCanvas.getContext('2d');
         
-        // Instead of trying to get bounding box, just capture the entire canvas
-        // at very high resolution for crisp quality
+        // Get device pixel ratio for high-DPI displays
+        const devicePixelRatio = window.devicePixelRatio || 1;
+        console.log('Device pixel ratio:', devicePixelRatio);
+        
+        // Source dimensions (accounting for potential DPI scaling)
         const sourceWidth = networkCanvas.width;
         const sourceHeight = networkCanvas.height;
+        const sourceAspectRatio = sourceWidth / sourceHeight;
         
-        console.log('Source dimensions:', sourceWidth, 'x', sourceHeight);
+        // Check if the canvas has a different CSS size vs actual size
+        const canvasRect = networkCanvas.getBoundingClientRect();
+        const cssWidth = canvasRect.width;
+        const cssHeight = canvasRect.height;
         
-        // Set ultra-high resolution dimensions for crisp quality
-        const scalingFactor = 4; // 4x scaling for ultra-high resolution
-        const targetWidth = Math.min(4000, sourceWidth * scalingFactor);  // Max 4000px width, 4x scale
-        const targetHeight = Math.min(3200, sourceHeight * scalingFactor); // Max 3200px height, 4x scale
+        console.log('Source canvas dimensions:', sourceWidth, 'x', sourceHeight);
+        console.log('CSS dimensions:', cssWidth, 'x', cssHeight);
+        console.log('Source aspect ratio:', sourceAspectRatio);
         
-        // Calculate scale to maintain aspect ratio
-        const scale = Math.min(targetWidth / sourceWidth, targetHeight / sourceHeight);
-        const canvasWidth = Math.floor(sourceWidth * scale);
-        const canvasHeight = Math.floor(sourceHeight * scale);
+        // Force high-resolution output with focus on quality over extreme size
+        const baseScalingFactor = Math.max(3, devicePixelRatio * 2); // Balanced scaling for quality
+        const maxWidth = 4000;  // Reasonable max dimensions focused on quality
+        const maxHeight = 3000;
         
-        // For display in popup, scale down to reasonable size
-        const maxDisplayWidth = 800;
-        const maxDisplayHeight = 640;
-        const displayScale = Math.min(maxDisplayWidth / canvasWidth, maxDisplayHeight / canvasHeight);
-        const displayWidth = Math.floor(canvasWidth * displayScale);
-        const displayHeight = Math.floor(canvasHeight * displayScale);
+        console.log('Device pixel ratio:', devicePixelRatio);
+        console.log('Base scaling factor:', baseScalingFactor);
         
-        console.log('Canvas dimensions:', canvasWidth, 'x', canvasHeight);
+        // Calculate target dimensions maintaining aspect ratio
+        let targetWidth, targetHeight;
+        
+        if (sourceAspectRatio > 1) {
+            // Landscape - aim for good quality without excessive size
+            targetWidth = Math.max(2400, Math.min(maxWidth, sourceWidth * baseScalingFactor));
+            targetHeight = targetWidth / sourceAspectRatio;
+        } else {
+            // Portrait or square - aim for good quality without excessive size
+            targetHeight = Math.max(2000, Math.min(maxHeight, sourceHeight * baseScalingFactor));
+            targetWidth = targetHeight * sourceAspectRatio;
+        }
+        
+        // Ensure we don't exceed maximum dimensions
+        if (targetWidth > maxWidth) {
+            targetWidth = maxWidth;
+            targetHeight = targetWidth / sourceAspectRatio;
+        }
+        if (targetHeight > maxHeight) {
+            targetHeight = maxHeight;
+            targetWidth = targetHeight * sourceAspectRatio;
+        }
+        
+        const canvasWidth = Math.floor(targetWidth);
+        const canvasHeight = Math.floor(targetHeight);
+        
+        console.log('FINAL OUTPUT RESOLUTION:', canvasWidth, 'x', canvasHeight);
+        console.log('This should be much higher than 1280x903!');
+        
+        // For display in popup, maintain aspect ratio but fit within container
+        const containerMaxWidth = 600;
+        const containerMaxHeight = 400;
+        
+        let displayWidth, displayHeight;
+        const displayScale = Math.min(containerMaxWidth / canvasWidth, containerMaxHeight / canvasHeight);
+        displayWidth = Math.floor(canvasWidth * displayScale);
+        displayHeight = Math.floor(canvasHeight * displayScale);
+        
+        console.log('Target canvas dimensions:', canvasWidth, 'x', canvasHeight);
         console.log('Display dimensions:', displayWidth, 'x', displayHeight);
-        console.log('Scale factor:', scale);
+        console.log('Scaling factor used:', baseScalingFactor);
         
-        // Set canvas to ultra-high resolution for capture
+        // Set canvas to ultra-high resolution for capture (maintains aspect ratio)
         shareCanvas.width = canvasWidth;
         shareCanvas.height = canvasHeight;
         
-        // Set CSS size for display (much smaller for popup viewing)
+        // Set CSS size for display (maintains aspect ratio)
         shareCanvas.style.width = displayWidth + 'px';
         shareCanvas.style.height = displayHeight + 'px';
         
-        // Enable ultra-high-quality rendering
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
+        // Enable maximum quality rendering settings
+        ctx.imageSmoothingEnabled = false; // Start with no smoothing for background
         
-        // Scale the context for high-DPI rendering
-        const devicePixelRatio = window.devicePixelRatio || 1;
-        if (devicePixelRatio > 1) {
-            // Further enhance for high-DPI displays
-            ctx.scale(1, 1); // Keep 1:1 ratio but ensure crisp rendering
+        // Draw custom gradient background
+        drawGradientBackground(ctx, canvasWidth, canvasHeight, currentGradientConfig);
+        
+        // For the network canvas drawing, use the best quality settings
+        try {
+            // Use high-quality smoothing for the network content
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            
+            // Direct high-quality drawing since source canvas is now high-DPI
+            ctx.drawImage(
+                networkCanvas,
+                0, 0, sourceWidth, sourceHeight,
+                0, 0, canvasWidth, canvasHeight
+            );
+            
+            console.log('High-resolution image drawn successfully from high-DPI source');
+            
+            // Add watermarks (scaled for high resolution)
+            addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
+            
+            // Show the popup
+            showSharePopup();
+            
+        } catch (drawError) {
+            console.error('Error drawing image:', drawError);
+            alert('Error capturing graph image: ' + drawError.message);
         }
-        
-        // Load and draw mesh gradient background
-        const backgroundImg = new Image();
-        backgroundImg.onload = function() {
-            // Draw the mesh gradient background to fill the entire canvas
-            ctx.drawImage(backgroundImg, 0, 0, canvasWidth, canvasHeight);
-            
-            // Draw the entire network canvas at high resolution
-            try {
-                ctx.drawImage(
-                    networkCanvas,
-                    0, 0, sourceWidth, sourceHeight,    // Source: entire canvas
-                    0, 0, canvasWidth, canvasHeight     // Destination: high resolution
-                );
-                
-                console.log('High-resolution image drawn successfully with mesh gradient background');
-                
-                // Add watermarks (scaled for high resolution)
-                addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
-                
-                // Show the popup
-                showSharePopup();
-                
-            } catch (drawError) {
-                console.error('Error drawing image:', drawError);
-                alert('Error capturing graph image: ' + drawError.message);
-            }
-        };
-        
-        backgroundImg.onerror = function() {
-            console.warn('Failed to load mesh gradient background, using solid color fallback');
-            // Fallback to solid color background
-            ctx.fillStyle = '#0C2926';
-            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-            
-            // Draw the network canvas
-            try {
-                ctx.drawImage(
-                    networkCanvas,
-                    0, 0, sourceWidth, sourceHeight,
-                    0, 0, canvasWidth, canvasHeight
-                );
-                
-                console.log('High-resolution image drawn with fallback background');
-                addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
-                showSharePopup();
-                
-            } catch (drawError) {
-                console.error('Error drawing image:', drawError);
-                alert('Error capturing graph image: ' + drawError.message);
-            }
-        };
-        
-        // Load the mesh gradient image
-        backgroundImg.src = '/images/background/image-mesh-gradient.png';
         
     } catch (error) {
         console.error('Error in performGraphCapture:', error);
@@ -1570,8 +1847,46 @@ function performGraphCapture() {
 }
 
 function addWatermarkToCanvas(ctx, width, height) {
-    // Remove all watermarks and text overlays - keep canvas clean
-    // No title, subtitle, or watermark text will be added
+    // Check if watermark is enabled
+    const watermarkToggle = document.getElementById('watermark-toggle');
+    if (!watermarkToggle || !watermarkToggle.checked) {
+        return; // Skip watermark if toggle is off
+    }
+    
+    // Add watermark text at the top of the image
+    const watermarkText = "damn thats a lot of stuff on hyperliquid";
+    
+    // Calculate font size based on image width (responsive sizing) - made bigger
+    const baseFontSize = Math.max(36, width * 0.035); // Increased from 0.02 to 0.035
+    const fontSize = Math.min(baseFontSize, 72); // Increased cap from 48px to 72px
+    
+    // Set font properties
+    ctx.font = `bold ${fontSize}px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.lineWidth = 3; // Increased stroke width for better visibility
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    
+    // Add text shadow effect
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 12; // Increased shadow blur
+    ctx.shadowOffsetX = 3; // Increased shadow offset
+    ctx.shadowOffsetY = 3;
+    
+    // Position at top center with some padding
+    const x = width / 2;
+    const y = Math.max(40, height * 0.04); // Increased padding
+    
+    // Draw text with stroke and fill
+    ctx.strokeText(watermarkText, x, y);
+    ctx.fillText(watermarkText, x, y);
+    
+    // Reset shadow
+    ctx.shadowColor = 'transparent';
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
 }
 
 function showSharePopup() {
@@ -1580,6 +1895,9 @@ function showSharePopup() {
     
     // Initialize button event listeners
     initializeShareButtons();
+    
+    // Initialize gradient controls
+    initializeGradientControls();
 }
 
 function closeSharePopup() {
@@ -1758,7 +2076,21 @@ function displayNodeInfo(nodeId, node) {
     if (nodeId === 'hyperEVM') {
         console.log('Displaying hyperEVM info');
         
-        nodeTitle.textContent = 'hyperEVM';
+        // Clear existing content and create title with project count
+        nodeTitle.innerHTML = '';
+        
+        // Create title span
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = 'hyperEVM';
+        
+        // Create project count chip
+        const projectCountChip = document.createElement('span');
+        projectCountChip.className = 'project-count-chip';
+        projectCountChip.textContent = `projects: ${projects.length}`;
+        
+        // Append both elements
+        nodeTitle.appendChild(titleSpan);
+        nodeTitle.appendChild(projectCountChip);
         
         infoContent.innerHTML = ``;
         
@@ -1838,17 +2170,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Select hyperEVM node by default
+    // Select hyperEVM node by default - DISABLED to fix zoom issue
     setTimeout(() => {
         network.selectNodes(['hyperEVM']);
         displayNodeInfo('hyperEVM', nodes.get('hyperEVM'));
-        network.focus('hyperEVM', {
-            scale: 0.3,
-            animation: {
-                duration: 1500,
-                easingFunction: 'easeInOutQuad'
-            }
-        });
+        // network.focus('hyperEVM', {
+        //     scale: 0.3,
+        //     animation: {
+        //         duration: 1500,
+        //         easingFunction: 'easeInOutQuad'
+        //     }
+        // });
     }, 2000);
 });
 
@@ -1926,17 +2258,17 @@ function filterGraphByCategories(selectedCategories) {
     // Show BIRU BIRU button when categories are filtered
     showBiruBiruButton();
     
-    // Auto-fit all visible nodes with a slight delay to ensure rendering is complete
-    setTimeout(() => {
-        if (network) {
-            network.fit({
-                animation: {
-                    duration: 1000,
-                    easingFunction: 'easeInOutQuad'
-                }
-            });
-        }
-    }, 100);
+    // Auto-fit all visible nodes with a slight delay to ensure rendering is complete - DISABLED to fix zoom issue
+    // setTimeout(() => {
+    //     if (network) {
+    //         network.fit({
+    //             animation: {
+    //                 duration: 1000,
+    //                 easingFunction: 'easeInOutQuad'
+    //             }
+    //         });
+    //     }
+    // }, 100);
 }
 
 // Collection box functions REMOVED - no longer needed for this version
@@ -2166,3 +2498,325 @@ function createRedCrossDataUrl() {
     
     return canvas.toDataURL();
 }
+
+// Gradient customization variables
+let currentGradientConfig = {
+    color1: { hex: '#0B2927', x: 20, y: 20 },
+    color2: { hex: '#A5EEDA', x: 80, y: 50 },
+    color3: { hex: '#2A5A50', x: 50, y: 80 }
+};
+
+// Initialize gradient controls
+function initializeGradientControls() {
+    const color1Input = document.getElementById('color1');
+    const color2Input = document.getElementById('color2');
+    const color3Input = document.getElementById('color3');
+    const watermarkToggle = document.getElementById('watermark-toggle');
+    
+    const randomizeBtn = document.getElementById('randomize-gradient-btn');
+    
+    // Update gradient config when inputs change
+    function updateGradientConfig() {
+        currentGradientConfig = {
+            color1: { hex: color1Input.value, x: 20, y: 20 },      // Fixed top-left position
+            color2: { hex: color2Input.value, x: 80, y: 50 },     // Fixed right-center position
+            color3: { hex: color3Input.value, x: 50, y: 80 }      // Fixed bottom-center position
+        };
+        updateCanvasPreview(); // Update the actual canvas image
+    }
+    
+    // Update canvas when watermark toggle changes
+    function updateCanvasWithWatermark() {
+        updateCanvasPreview(); // This will trigger a redraw with or without watermark
+    }
+    
+    // Add event listeners for real-time updates
+    [color1Input, color2Input, color3Input].forEach(input => {
+        input.addEventListener('input', updateGradientConfig);
+    });
+    
+    // Add watermark toggle event listener
+    if (watermarkToggle) {
+        watermarkToggle.addEventListener('change', updateCanvasWithWatermark);
+    }
+    
+    randomizeBtn.addEventListener('click', () => {
+        randomizeGradient();
+        updateCanvasPreview(); // Update canvas after randomization
+    });
+}
+
+// Randomize gradient colors and positions
+function randomizeGradient() {
+    const colors = ['#0B2927', '#A5EEDA', '#2A5A50', '#1a4a3a', '#7dd3c0', '#0f3530', '#b8f2e6', '#2d6e5e'];
+    
+    currentGradientConfig = {
+        color1: { 
+            hex: colors[Math.floor(Math.random() * colors.length)], 
+            x: 20, y: 20    // Fixed top-left position
+        },
+        color2: { 
+            hex: colors[Math.floor(Math.random() * colors.length)], 
+            x: 80, y: 50    // Fixed right-center position
+        },
+        color3: { 
+            hex: colors[Math.floor(Math.random() * colors.length)], 
+            x: 50, y: 80    // Fixed bottom-center position
+        }
+    };
+    
+    // Update input values
+    document.getElementById('color1').value = currentGradientConfig.color1.hex;
+    document.getElementById('color2').value = currentGradientConfig.color2.hex;
+    document.getElementById('color3').value = currentGradientConfig.color3.hex;
+    
+    updateCanvasPreview();
+}
+
+// Apply gradient to the canvas image
+function applyGradientToImage() {
+    // Re-generate the image with the new gradient
+    captureGraphImage();
+}
+
+// Generate canvas gradient
+function drawGradientBackground(ctx, width, height, config) {
+    // Create multiple radial gradients and composite them
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = width;
+    tempCanvas.height = height;
+    const tempCtx = tempCanvas.getContext('2d');
+    
+    // Base color
+    tempCtx.fillStyle = config.color1.hex;
+    tempCtx.fillRect(0, 0, width, height);
+    
+    // Add each radial gradient with blend modes
+    [config.color1, config.color2, config.color3].forEach((colorConfig, index) => {
+        const gradient = tempCtx.createRadialGradient(
+            (colorConfig.x / 100) * width, (colorConfig.y / 100) * height, 0,
+            (colorConfig.x / 100) * width, (colorConfig.y / 100) * height, Math.min(width, height) * 0.6
+        );
+        
+        gradient.addColorStop(0, colorConfig.hex);
+        gradient.addColorStop(0.5, hexToRgba(colorConfig.hex, 0.5));
+        gradient.addColorStop(1, 'transparent');
+        
+        tempCtx.globalCompositeOperation = index === 0 ? 'source-over' : 'overlay';
+        tempCtx.fillStyle = gradient;
+        tempCtx.fillRect(0, 0, width, height);
+    });
+    
+    // Draw the final gradient onto the main canvas
+    ctx.drawImage(tempCanvas, 0, 0);
+}
+
+// Convert hex color to rgba
+function hexToRgba(hex, alpha) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// Update the canvas preview with new gradient
+function updateCanvasPreview() {
+    const shareCanvas = document.getElementById('share-canvas');
+    if (!shareCanvas) return;
+    
+    const ctx = shareCanvas.getContext('2d');
+    const width = shareCanvas.width;
+    const height = shareCanvas.height;
+    
+    // Store the current graph content
+    const graphImageData = ctx.getImageData(0, 0, width, height);
+    
+    // Clear and redraw gradient background
+    ctx.clearRect(0, 0, width, height);
+    drawGradientBackground(ctx, width, height, currentGradientConfig);
+    
+    // Get the network canvas again and redraw it
+    const networkCanvas = document.querySelector('#graph-container canvas');
+    if (networkCanvas) {
+        const sourceWidth = networkCanvas.width;
+        const sourceHeight = networkCanvas.height;
+        
+        try {
+            ctx.drawImage(
+                networkCanvas,
+                0, 0, sourceWidth, sourceHeight,
+                0, 0, width, height
+            );
+        } catch (error) {
+            console.log('Could not redraw network canvas, keeping previous content');
+        }
+    }
+    
+    // Add watermark if enabled
+    addWatermarkToCanvas(ctx, width, height);
+}
+
+// Function to enhance canvas image quality, especially for low-resolution node images
+function enhanceCanvasImageQuality(ctx, width, height) {
+    try {
+        console.log('Applying image quality enhancement...');
+        
+        // Get the image data
+        const imageData = ctx.getImageData(0, 0, width, height);
+        const data = imageData.data;
+        
+        // Apply sharpening filter to improve clarity of low-res images
+        const sharpenKernel = [
+            0, -1, 0,
+            -1, 5, -1,
+            0, -1, 0
+        ];
+        
+        // Apply subtle sharpening to enhance edges
+        applySharpeningFilter(data, width, height, sharpenKernel, 0.3);
+        
+        // Put the enhanced image data back
+        ctx.putImageData(imageData, 0, 0);
+        
+        console.log('Image quality enhancement applied');
+        
+    } catch (error) {
+        console.warn('Could not apply image enhancement:', error);
+        // Continue without enhancement if it fails
+    }
+}
+
+// Apply sharpening filter to image data
+function applySharpeningFilter(data, width, height, kernel, intensity) {
+    const output = new Uint8ClampedArray(data);
+    
+    for (let y = 1; y < height - 1; y++) {
+        for (let x = 1; x < width - 1; x++) {
+            for (let c = 0; c < 3; c++) { // RGB channels only
+                let sum = 0;
+                for (let ky = -1; ky <= 1; ky++) {
+                    for (let kx = -1; kx <= 1; kx++) {
+                        const idx = ((y + ky) * width + (x + kx)) * 4 + c;
+                        sum += data[idx] * kernel[(ky + 1) * 3 + (kx + 1)];
+                    }
+                }
+                
+                const currentIdx = (y * width + x) * 4 + c;
+                const originalValue = data[currentIdx];
+                const sharpenedValue = Math.max(0, Math.min(255, sum));
+                
+                // Blend original and sharpened values based on intensity
+                output[currentIdx] = originalValue + (sharpenedValue - originalValue) * intensity;
+            }
+        }
+    }
+    
+    // Copy the enhanced data back
+    for (let i = 0; i < data.length; i++) {
+        if (i % 4 !== 3) { // Skip alpha channel
+            data[i] = output[i];
+        }
+    }
+}
+
+// Force high-DPI rendering for vis.js canvas
+function forceHighDPIRendering() {
+    try {
+        console.log('Forcing high-DPI rendering...');
+        
+        const canvas = document.querySelector('#graph-container canvas');
+        if (!canvas) {
+            console.warn('Canvas not found for high-DPI rendering');
+            return;
+        }
+        
+        const ctx = canvas.getContext('2d');
+        const devicePixelRatio = window.devicePixelRatio || 1;
+        
+        console.log('Device pixel ratio:', devicePixelRatio);
+        console.log('Canvas size before:', canvas.width, 'x', canvas.height);
+        
+        // Get the CSS size
+        const rect = canvas.getBoundingClientRect();
+        const cssWidth = rect.width;
+        const cssHeight = rect.height;
+        
+        console.log('CSS size:', cssWidth, 'x', cssHeight);
+        
+        // Set the actual canvas size to match device pixel ratio
+        canvas.width = cssWidth * devicePixelRatio;
+        canvas.height = cssHeight * devicePixelRatio;
+        
+        // Scale the canvas back down using CSS
+        canvas.style.width = cssWidth + 'px';
+        canvas.style.height = cssHeight + 'px';
+        
+        // Apply high-quality rendering settings to the context
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.textRenderingOptimization = 'optimizeQuality';
+        
+        // Scale the drawing context so everything draws at the higher resolution
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+        
+        console.log('Canvas size after:', canvas.width, 'x', canvas.height);
+        console.log('High-DPI rendering applied with quality settings');
+        
+        // Force network to redraw at new resolution
+        if (network && network.redraw) {
+            network.redraw();
+        }
+        
+        // Also try to enhance image loading quality for nodes
+        enhanceNodeImageQuality();
+        
+    } catch (error) {
+        console.error('Error applying high-DPI rendering:', error);
+    }
+}
+
+// Function to enhance node image loading quality
+function enhanceNodeImageQuality() {
+    try {
+        console.log('Enhancing node image quality...');
+        
+        // Force reload all project node images with better quality settings
+        projects.forEach(project => {
+            const nodeId = `project-${project.id}`;
+            const node = nodes.get(nodeId);
+            
+            if (node && node.image) {
+                // Create a high-quality image element
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                
+                // Set high-quality loading
+                img.style.imageRendering = 'high-quality';
+                img.style.imageRendering = '-webkit-optimize-contrast';
+                img.style.imageRendering = 'crisp-edges';
+                
+                img.onload = function() {
+                    // Update the node with the high-quality loaded image
+                    nodes.update({
+                        id: nodeId,
+                        image: img.src,
+                        // Force vis.js to use higher quality rendering
+                        imageSize: {
+                            width: Math.max(200, img.naturalWidth),
+                            height: Math.max(200, img.naturalHeight)
+                        }
+                    });
+                };
+                
+                img.src = node.image;
+            }
+        });
+        
+        console.log('Node image quality enhancement applied');
+        
+    } catch (error) {
+        console.warn('Could not enhance node image quality:', error);
+    }
+}
+
+// Initialize the network

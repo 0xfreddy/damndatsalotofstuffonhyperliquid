@@ -36,40 +36,35 @@
 
         <!-- Information Panel -->
         <div class="info-section">
-            <div class="glass-panel">
-                <!-- Top Section: Node Information -->
-                <div class="info-top-section">
-                    <div class="info-header">
-                        <div class="node-indicator"></div>
-                        <h2 id="node-title">Select a node</h2>
-                    </div>
-                    
-                    <div id="info-content" class="info-content">
-                        <p class="placeholder">Click on a project or category to see details here.</p>
-                    </div>
-                    
-                    <div id="category-multiselect-container" style="display:none; margin-top: 20px;">
-                        <div id="category-chips-container" class="category-chips-container">
-                            <!-- Category chips will be dynamically generated here -->
-                        </div>
-                    </div>
+            <!-- Top Panel: Node Information and Tags -->
+            <div class="glass-panel info-panel-top">
+                <div class="info-header">
+                    <div class="node-indicator"></div>
+                    <h2 id="node-title">Select a node</h2>
                 </div>
                 
-                <!-- Divider -->
-                <div class="info-divider"></div>
+                <div id="info-content" class="info-content">
+                    <p class="placeholder">Click on a project or category to see details here.</p>
+                </div>
                 
-                <!-- Bottom Section: HYPE Data -->
-                <div class="info-bottom-section">
-                    <div class="hype-data-content">
-                        <div class="hype-stat-item">
-                            <div class="stat-label">Price</div>
-                            <div class="stat-value" id="hype-price">$12.34</div>
-                            <div class="stat-change positive" id="hype-price-change">+2.45%</div>
-                        </div>
-                        <div class="hype-stat-item">
-                            <div class="stat-label">TVL</div>
-                            <div class="stat-value" id="hype-tvl">$1.2B</div>
-                        </div>
+                <div id="category-multiselect-container" style="display:none; margin-top: 20px;">
+                    <div id="category-chips-container" class="category-chips-container">
+                        <!-- Category chips will be dynamically generated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Panel: HYPE Data and Actions -->
+            <div class="glass-panel info-panel-bottom">
+                <div class="hype-data-content">
+                    <div class="hype-stat-item">
+                        <div class="stat-label">Price</div>
+                        <div class="stat-value" id="hype-price">$12.34</div>
+                        <div class="stat-change positive" id="hype-price-change">+2.45%</div>
+                    </div>
+                    <div class="hype-stat-item">
+                        <div class="stat-label">TVL</div>
+                        <div class="stat-value" id="hype-tvl">$1.2B</div>
                     </div>
                 </div>
                 
@@ -90,6 +85,44 @@
                 <div class="share-image-container">
                     <canvas id="share-canvas" style="max-width: 100%; height: auto;"></canvas>
                 </div>
+                
+                <!-- Gradient Customization Controls -->
+                <div class="gradient-controls">
+                    <div class="gradient-controls-header">
+                        <div class="color-and-randomize-row">
+                            <div class="color-controls">
+                                <div class="color-group">
+                                    <input type="color" id="color1" value="#0B2927">
+                                </div>
+                                
+                                <div class="color-group">
+                                    <input type="color" id="color2" value="#A5EEDA">
+                                </div>
+                                
+                                <div class="color-group">
+                                    <input type="color" id="color3" value="#2A5A50">
+                                </div>
+                            </div>
+                            
+                            <div class="watermark-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="watermark-toggle" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">hyperliquid</span>
+                                </label>
+                            </div>
+                            
+                            <button id="randomize-gradient-btn" class="randomize-btn" title="Randomize gradient">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="share-actions">
                     <div class="share-button-chip">
                         <button id="copy-image-btn" class="share-action-btn copy-btn">
@@ -116,6 +149,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.2"></script>
 </body>
 </html> 
