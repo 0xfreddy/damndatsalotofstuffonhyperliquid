@@ -676,15 +676,23 @@ body {
     }
     
     .info-section {
-        flex: none;
-        height: auto;
-        max-height: 35vh;
+        flex: 1 !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 300px !important;
+        max-width: none !important;
+        min-width: 100% !important;
+        width: 100% !important;
         order: 2;
     }
     
     .glass-panel {
-        padding: 15px;
-        border-radius: 12px;
+        padding: 15px !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
     
     #graph-container {
@@ -712,29 +720,49 @@ body {
     
     /* Mobile-optimized info panels */
     .info-panel-top {
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
+        flex: none !important;
+        min-height: 200px !important;
+        max-height: none !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
     }
     
     .info-panel-bottom {
-        flex: none;
-        height: auto;
-        padding: 15px;
+        flex: 1 !important;
+        min-height: 120px !important;
+        height: auto !important;
+        padding: 15px !important;
+        width: 100% !important;
+        max-width: none !important;
     }
     
     /* Compact category chips for mobile - allow full display with wrapping */
     .category-chips-container {
-        display: flex;
-        flex-wrap: wrap;
-        max-height: none;
-        overflow-y: visible;
-        gap: 6px;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #category-multiselect-container {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
     }
     
     .category-chip {
@@ -830,8 +858,12 @@ body {
     }
     
     .glass-panel {
-        padding: 10px;
-        border-radius: 10px;
+        padding: 10px !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
     
     .graph-section {
@@ -840,8 +872,32 @@ body {
     }
     
     .info-section {
-        max-height: 40vh;
-        overflow-y: auto;
+        max-height: none !important;
+        min-height: 280px !important;
+        height: auto !important;
+        overflow-y: visible !important;
+        max-width: none !important;
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .info-panel-top {
+        flex: none !important;
+        min-height: 180px !important;
+        max-height: none !important;
+        overflow: visible !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+    }
+    
+    .info-panel-bottom {
+        flex: 1 !important;
+        min-height: 100px !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
     }
     
     .category-chip {
@@ -852,16 +908,26 @@ body {
     
     /* Ensure categories display properly on very small screens */
     .category-chips-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        line-height: 1.2;
-        width: 100%;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+        line-height: 1.2 !important;
+        width: 100% !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     #category-multiselect-container {
-        width: 100%;
-        flex-shrink: 0;
+        width: 100% !important;
+        flex-shrink: 0 !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
     }
     
     .biru-biru-btn {
@@ -920,15 +986,30 @@ body {
     }
     
     .info-section {
-        flex: 1;
-        max-height: none;
+        flex: 1 !important;
+        max-height: none !important;
         order: 2;
-        min-width: 300px;
+        min-width: 300px !important;
+        max-width: none !important;
+        width: 100% !important;
     }
     
-    .info-panel-top,
+    .info-panel-top {
+        flex: none !important;
+        min-height: 200px !important;
+        max-height: none !important;
+        overflow: visible !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
     .info-panel-bottom {
-        height: 50%;
+        flex: 1 !important;
+        min-height: 120px !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
     }
 }
 
