@@ -1,0 +1,14 @@
+{
+  "name": "hyperevm-ecosystem-graph",
+  "version": "1.0.0",
+  "description": "HyperEVM Ecosystem Graph Visualization - Static Site",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - no start command'"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+} 

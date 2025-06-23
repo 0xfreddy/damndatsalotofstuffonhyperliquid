@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>damn</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Vercel Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Include vis.js for graph visualization -->
+    <script src="https://unpkg.com/vis-network@9.1.6/dist/vis-network.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Graph Container -->
+        <div class="graph-section">
+            <div class="glass-panel">
+                <div id="graph-container"></div>
+                
+                <!-- Red cross overlay for node removal mode -->
+                <div id="node-removal-overlay" class="node-removal-overlay"></div>
+                
+                <!-- Node Removal Instructions -->
+                <div id="node-removal-instructions" class="node-removal-instructions" style="display: none;">
+                    Click on nodes to remove them
+                </div>
+                
+                <!-- Hyperliquid-ify Action Button -->
+                <div id="biru-biru-container" class="biru-biru-container" style="display: none;">
+                    <button id="biru-biru-btn" class="biru-biru-btn">Hyperliquid-ify</button>
+                    <div id="action-buttons" class="action-buttons" style="display: none;">
+                        <button id="reset-categories-btn" class="action-btn reset-btn-secondary" title="Reset">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                        </button>
+                        <button id="share-btn" class="action-btn share-btn">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Panel -->
+        <div class="info-section">
+            <!-- Top Panel: Node Information and Tags -->
+            <div class="glass-panel info-panel-top">
+                <div class="info-header">
+                    <div class="node-indicator"></div>
+                    <h2 id="node-title">Select a node</h2>
+                </div>
+                
+                <div id="info-content" class="info-content">
+                    <p class="placeholder">Click on a project or category to see details here.</p>
+                </div>
+                
+                <div id="category-multiselect-container" style="display:none; margin-top: 20px;">
+                    <div id="category-chips-container" class="category-chips-container">
+                        <!-- Category chips will be dynamically generated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Panel: HYPE Data and Actions -->
+            <div class="glass-panel info-panel-bottom">
+                <div class="hype-data-content">
+                    <div class="hype-stat-item">
+                        <div class="stat-label">Price</div>
+                        <div class="stat-value" id="hype-price">$12.34</div>
+                        <div class="stat-change positive" id="hype-price-change">+2.45%</div>
+                    </div>
+                    <div class="hype-stat-item">
+                        <div class="stat-label">TVL</div>
+                        <div class="stat-value" id="hype-tvl">$1.2B</div>
+                    </div>
+                </div>
+                
+                <!-- Shoot DM Chip -->
+                <div class="shoot-dm-chip" onclick="window.open('https://x.com/freddy_0x', '_blank')" title="Shoot dm">
+                    <span class="default-text">Missed Something?</span>
+                    <span class="hover-text">Shoot dm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Popup Modal -->
+    <div id="share-popup" class="share-popup" style="display: none;">
+        <div class="share-popup-overlay" onclick="closeSharePopup()"></div>
+        <div class="share-popup-content">
+            <div class="share-popup-body">
+                <div class="share-image-container">
+                    <canvas id="share-canvas" style="max-width: 100%; height: auto;"></canvas>
+                </div>
+                
+                <!-- Gradient Customization Controls -->
+                <div class="gradient-controls">
+                    <div class="gradient-controls-header">
+                        <div class="color-and-randomize-row">
+                            <div class="color-controls">
+                                <div class="color-group">
+                                    <input type="color" id="color1" value="#0B2927">
+                                </div>
+                                
+                                <div class="color-group">
+                                    <input type="color" id="color2" value="#A5EEDA">
+                                </div>
+                                
+                                <div class="color-group">
+                                    <input type="color" id="color3" value="#2A5A50">
+                                </div>
+                            </div>
+                            
+                            <div class="watermark-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="watermark-toggle" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">hyperliquid</span>
+                                </label>
+                            </div>
+                            
+                            <button id="randomize-gradient-btn" class="randomize-btn" title="Randomize gradient">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="share-actions">
+                    <div class="share-button-chip">
+                        <button id="copy-image-btn" class="share-action-btn copy-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="m5,9a2,2 0 0 1 2,-2h2"></path>
+                                <path d="m5,9v10a2,2 0 0 0 2,2h10"></path>
+                            </svg>
+                            Copy Image
+                        </button>
+                    </div>
+                    <div class="share-button-chip">
+                        <button id="download-image-btn" class="share-action-btn download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=4.4"></script>
+</body>
+</html> 
