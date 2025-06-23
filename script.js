@@ -1123,8 +1123,11 @@ function initializeGraph() {
             hierarchical: false
         },
         nodes: {
-            borderWidth: 0,
-            borderWidthSelected: 0,
+            borderWidth: 2,
+            borderWidthSelected: 5,
+            color: {
+                border: '#27ae60'
+            },
             font: {
                 size: 20,
                 strokeWidth: 3,
@@ -1854,7 +1857,7 @@ function addWatermarkToCanvas(ctx, width, height) {
     }
     
     // Add watermark text at the top of the image
-    const watermarkText = "damn thats a lot of stuff on hyperliquid";
+    const watermarkText = "damnthatsalotofstuffonhyperliquid.wiki";
     
     // Calculate font size based on image width (responsive sizing) - made bigger
     const baseFontSize = Math.max(36, width * 0.035); // Increased from 0.02 to 0.035
@@ -1865,8 +1868,8 @@ function addWatermarkToCanvas(ctx, width, height) {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
     ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
     ctx.lineWidth = 3; // Increased stroke width for better visibility
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'bottom';
     
     // Add text shadow effect
     ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
@@ -1874,9 +1877,9 @@ function addWatermarkToCanvas(ctx, width, height) {
     ctx.shadowOffsetX = 3; // Increased shadow offset
     ctx.shadowOffsetY = 3;
     
-    // Position at top center with some padding
-    const x = width / 2;
-    const y = Math.max(40, height * 0.04); // Increased padding
+    // Position at bottom left with some padding
+    const x = Math.max(40, width * 0.03); // Left padding
+    const y = height - Math.max(40, height * 0.04); // Bottom padding
     
     // Draw text with stroke and fill
     ctx.strokeText(watermarkText, x, y);
@@ -2010,16 +2013,57 @@ function downloadImage() {
 window.closeSharePopup = closeSharePopup;
 
 // Display node information in the panel
+// Helper function to reset node indicator to default state
+function resetNodeIndicator() {
+    const nodeHeader = document.querySelector('.info-header');
+    const existingIndicator = nodeHeader.querySelector('.node-indicator, .project-logo-img');
+    
+    if (existingIndicator) {
+        existingIndicator.remove();
+    }
+    
+    // Create default node indicator
+    const nodeIndicator = document.createElement('div');
+    nodeIndicator.className = 'node-indicator';
+    nodeHeader.insertBefore(nodeIndicator, nodeHeader.firstChild);
+}
+
+// Helper function to set project logo as indicator
+function setProjectLogoIndicator(logoUrl) {
+    const nodeHeader = document.querySelector('.info-header');
+    const existingIndicator = nodeHeader.querySelector('.node-indicator, .project-logo-img');
+    
+    if (existingIndicator) {
+        existingIndicator.remove();
+    }
+    
+    // Create project logo image
+    const logoImg = document.createElement('img');
+    logoImg.className = 'project-logo-img';
+    logoImg.src = logoUrl;
+    logoImg.alt = 'Project Logo';
+    logoImg.style.cssText = `
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(39, 174, 96, 0.6);
+        box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+        transition: all 0.3s ease;
+    `;
+    
+    nodeHeader.insertBefore(logoImg, nodeHeader.firstChild);
+}
+
 function displayNodeInfo(nodeId, node) {
     console.log('displayNodeInfo called with:', { nodeId, node: node ? node.project || node : 'no node' });
     
     // Check if required elements exist
     const nodeTitle = document.getElementById('node-title');
     const infoContent = document.getElementById('info-content');
-    const nodeIndicator = document.querySelector('.node-indicator');
     
-    if (!nodeTitle || !infoContent || !nodeIndicator) {
-        console.error('Missing required elements:', { nodeTitle: !!nodeTitle, infoContent: !!infoContent, nodeIndicator: !!nodeIndicator });
+    if (!nodeTitle || !infoContent) {
+        console.error('Missing required elements:', { nodeTitle: !!nodeTitle, infoContent: !!infoContent });
         return;
     }
     
@@ -2055,11 +2099,12 @@ function displayNodeInfo(nodeId, node) {
                 </div>
             </div>
             <p><strong>Twitter:</strong> <a href="${project.twitter}" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: underline;">Visit Twitter</a></p>
-            ${project.logo ? `<img src="${project.logo.replace('/images/logos/', '/images/')}" alt="${project.name}" style="max-width: 100px; margin-top: 10px; border-radius: 10px;">` : ''}
+
         `;
         
-        nodeIndicator.style.background = '#27ae60';
-        nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
+        // Set project logo as actual image element
+        const logoUrl = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg';
+        setProjectLogoIndicator(logoUrl);
         
         document.getElementById('category-multiselect-container').style.display = 'none';
         return;
@@ -2088,8 +2133,8 @@ function displayNodeInfo(nodeId, node) {
             </div>
         `;
         
-        nodeIndicator.style.background = '#27ae60';
-        nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
+        // Reset node indicator to default state for categories
+        resetNodeIndicator();
         
         document.getElementById('category-multiselect-container').style.display = 'none';
         return;
@@ -2118,8 +2163,8 @@ function displayNodeInfo(nodeId, node) {
         infoContent.innerHTML = ``;
         infoContent.style.display = 'none'; // Hide the empty content div
         
-        nodeIndicator.style.background = '#27ae60';
-        nodeIndicator.style.boxShadow = '0 0 10px #27ae60';
+        // Reset node indicator to default state for hyperEVM
+        resetNodeIndicator();
         
         // Show and populate category chips
         const multiSelectContainer = document.getElementById('category-multiselect-container');
