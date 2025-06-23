@@ -658,6 +658,7 @@ body {
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
+        overflow-y: auto;
     }
     
     .container {
@@ -678,12 +679,13 @@ body {
     .info-section {
         flex: 1 !important;
         height: auto !important;
-        max-height: none !important;
+        max-height: 35vh !important;
         min-height: 300px !important;
         max-width: none !important;
         min-width: 100% !important;
         width: 100% !important;
         order: 2;
+        overflow-y: auto !important;
     }
     
     .glass-panel {
@@ -721,7 +723,7 @@ body {
     /* Mobile-optimized info panels */
     .info-panel-top {
         flex: none !important;
-        min-height: 200px !important;
+        min-height: auto !important;
         max-height: none !important;
         overflow: visible !important;
         display: flex !important;
@@ -872,10 +874,10 @@ body {
     }
     
     .info-section {
-        max-height: none !important;
+        max-height: 40vh !important;
         min-height: 280px !important;
         height: auto !important;
-        overflow-y: visible !important;
+        overflow-y: auto !important;
         max-width: none !important;
         min-width: 100% !important;
         width: 100% !important;
@@ -883,7 +885,7 @@ body {
     
     .info-panel-top {
         flex: none !important;
-        min-height: 180px !important;
+        min-height: auto !important;
         max-height: none !important;
         overflow: visible !important;
         height: auto !important;
@@ -987,16 +989,17 @@ body {
     
     .info-section {
         flex: 1 !important;
-        max-height: none !important;
+        max-height: 100vh !important;
         order: 2;
         min-width: 300px !important;
         max-width: none !important;
         width: 100% !important;
+        overflow-y: auto !important;
     }
     
     .info-panel-top {
         flex: none !important;
-        min-height: 200px !important;
+        min-height: auto !important;
         max-height: none !important;
         overflow: visible !important;
         height: auto !important;
