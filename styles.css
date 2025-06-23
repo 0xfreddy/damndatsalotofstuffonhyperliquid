@@ -656,14 +656,279 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
     .container {
+        flex-direction: column;
+        height: 100vh;
+        padding: 10px;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+    
+    .graph-section {
+        flex: 1;
+        min-height: 60vh;
+        max-height: 60vh;
+        order: 1;
+    }
+    
+    .info-section {
+        flex: none;
+        height: auto;
+        max-height: 35vh;
+        order: 2;
+    }
+    
+    .glass-panel {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    #graph-container {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Ensure vis.js canvas doesn't overflow */
+    .vis-network {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+    
+    .vis-network canvas {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* Mobile-optimized info panels */
+    .info-panel-top {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        display: flex;
         flex-direction: column;
     }
     
-    .graph-section,
+    .info-panel-bottom {
+        flex: none;
+        height: auto;
+        padding: 15px;
+    }
+    
+    /* Compact category chips for mobile - allow full display with wrapping */
+    .category-chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: none;
+        overflow-y: visible;
+        gap: 6px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .category-chip {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 16px;
+    }
+    
+    /* Mobile-optimized buttons */
+    .biru-biru-container {
+        bottom: 15px;
+        padding: 4px 8px;
+        border-radius: 20px;
+    }
+    
+    .biru-biru-btn {
+        min-width: 28px;
+        height: 28px;
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    .action-btn {
+        min-height: 28px;
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
+    .reset-btn-secondary {
+        width: 28px;
+        padding: 4px;
+    }
+    
+    /* Mobile instructions positioning */
+    .node-removal-instructions {
+        bottom: 60px;
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 10px;
+    }
+    
+    /* Compact stats for mobile */
+    .hype-data-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .hype-stat-item {
+        text-align: center;
+    }
+    
+    .stat-value {
+        font-size: 16px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    .stat-change {
+        font-size: 11px;
+    }
+    
+    /* Mobile shoot-dm chip */
+    .shoot-dm-chip {
+        margin-top: 10px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    /* Hide hover effects on mobile */
+    .category-chip:hover,
+    .biru-biru-btn:hover,
+    .action-btn:hover,
+    .shoot-dm-chip:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    /* Ensure collection box is mobile-friendly */
+    .collection-box {
+        min-width: 280px;
+        max-width: 90vw;
+        padding: 15px;
+    }
+}
+
+/* Additional mobile breakpoints */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+        gap: 5px;
+    }
+    
+    .glass-panel {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .graph-section {
+        min-height: 55vh;
+        max-height: 55vh;
+    }
+    
+    .info-section {
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+    
+    .category-chip {
+        font-size: 10px;
+        padding: 3px 6px;
+        border-radius: 12px;
+    }
+    
+    /* Ensure categories display properly on very small screens */
+    .category-chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        line-height: 1.2;
+        width: 100%;
+    }
+    
+    #category-multiselect-container {
+        width: 100%;
+        flex-shrink: 0;
+    }
+    
+    .biru-biru-btn {
+        min-width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+    
+    .action-btn {
+        min-height: 24px;
+        font-size: 10px;
+    }
+    
+    .reset-btn-secondary {
+        width: 24px;
+    }
+    
+    .node-removal-instructions {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .collection-box {
+        min-width: 260px;
+        max-width: 95vw;
+        padding: 12px;
+    }
+    
+    .collection-slots {
+        gap: 8px;
+    }
+    
+    .collection-slot {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .collection-slot .project-logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+        height: 100vh;
+    }
+    
+    .graph-section {
+        flex: 2;
+        min-height: auto;
+        max-height: none;
+        order: 1;
+    }
+    
     .info-section {
         flex: 1;
-        max-width: 100%;
+        max-height: none;
+        order: 2;
+        min-width: 300px;
+    }
+    
+    .info-panel-top,
+    .info-panel-bottom {
+        height: 50%;
     }
 }
 
