@@ -1192,7 +1192,89 @@ function initializeGraph() {
         }
     };
     
+    // Mobile detection and responsive adjustments
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        console.log('Mobile device detected, applying mobile-specific settings');
+        
+        // Mobile-specific options - keep minimal changes
+        options.interaction.navigationButtons = false; // Disable nav buttons on mobile
+        options.interaction.keyboard = false; // Disable keyboard on mobile
+        
+        // Keep original physics but with faster stabilization
+        options.physics.stabilization.iterations = 150;
+        options.physics.stabilization.updateInterval = 50;
+        
+        // Adjust node sizes for mobile visibility - not too small
+        options.nodes.scaling = {
+            min: 25, // Increased from 20 to ensure visibility
+            max: 80  // Reduced from 120 but not too small
+        };
+        
+        // Slightly smaller fonts for mobile
+        options.nodes.font.size = 14; // Increased from 12
+        options.groups.category.font.size = 16; // Increased from 14
+        
+        console.log('Mobile options applied:', {
+            nodeScaling: options.nodes.scaling,
+            fontSize: options.nodes.font.size
+        });
+    }
+    
+    console.log('Creating vis.js network with data:', {
+        nodes: data.nodes.length,
+        edges: data.edges.length,
+        isMobile: isMobile
+    });
+    
     network = new vis.Network(container, data, options);
+    
+    // Mobile-specific event handlers and debugging
+    if (isMobile) {
+        console.log('Setting up mobile-specific event handlers');
+        
+        // Add debugging for network events
+        network.on("beforeDrawing", function(ctx) {
+            console.log('Network is drawing on mobile');
+        });
+        
+        network.on("afterDrawing", function(ctx) {
+            console.log('Network finished drawing on mobile');
+        });
+        
+        // Prevent zoom on double tap for mobile
+        network.on("doubleClick", function(params) {
+            params.event.preventDefault();
+        });
+        
+        // Add mobile stabilization debugging
+        network.on("stabilizationProgress", function(params) {
+            console.log('Mobile stabilization progress:', Math.round(params.iterations/params.total * 100) + '%');
+        });
+        
+        // Handle resize events for mobile orientation changes
+        window.addEventListener('orientationchange', function() {
+            console.log('Mobile orientation changed');
+            setTimeout(() => {
+                network.redraw();
+                network.fit();
+                ensureMobileCanvasSize();
+            }, 200);
+        });
+        
+        // Handle window resize for mobile
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                console.log('Mobile window resized');
+                setTimeout(() => {
+                    network.redraw();
+                    network.fit();
+                    ensureMobileCanvasSize();
+                }, 200);
+            }
+        });
+    }
     
     // Force high-DPI rendering - DISABLED to fix zoom issue
     // setTimeout(() => {
@@ -1274,13 +1356,38 @@ function initializeGraph() {
     
     // Center the hyperEVM node
     network.on("stabilizationIterationsDone", function() {
-        network.fit({
-            nodes: ['hyperEVM'],
-            animation: {
-                duration: 1000,
-                easingFunction: 'easeInOutQuad'
-            }
-        });
+        console.log('Network stabilization completed');
+        
+        if (isMobile) {
+            console.log('Applying mobile-specific post-stabilization fixes');
+            
+            // For mobile, fit all nodes to show the full graph
+            network.fit({
+                animation: {
+                    duration: 1000,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+            
+            setTimeout(() => {
+                // Ensure canvas sizing is correct
+                ensureMobileCanvasSize();
+                
+                // Force a redraw
+                network.redraw();
+                
+                console.log('Mobile initialization completed');
+            }, 200);
+        } else {
+            // Desktop behavior
+            network.fit({
+                nodes: ['hyperEVM'],
+                animation: {
+                    duration: 1000,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }
     });
     
     // Initialize BIRU BIRU functionality
@@ -3035,5 +3142,60 @@ function enhanceNodeImageQuality() {
         console.warn('Could not enhance node image quality:', error);
     }
 }
+
+// Mobile-specific canvas sizing function
+function ensureMobileCanvasSize() {
+    if (window.innerWidth <= 768) {
+        const container = document.getElementById('graph-container');
+        const canvas = container.querySelector('canvas');
+        
+        if (canvas && container) {
+            const containerRect = container.getBoundingClientRect();
+            const maxWidth = containerRect.width;
+            const maxHeight = containerRect.height;
+            
+            console.log('Mobile canvas sizing:', {
+                containerSize: { width: maxWidth, height: maxHeight },
+                canvasSize: { width: canvas.width, height: canvas.height },
+                canvasStyle: { width: canvas.style.width, height: canvas.style.height }
+            });
+            
+            // Set canvas to fill container exactly
+            canvas.style.width = maxWidth + 'px';
+            canvas.style.height = maxHeight + 'px';
+            canvas.style.maxWidth = '100%';
+            canvas.style.maxHeight = '100%';
+            canvas.style.display = 'block';
+            canvas.style.position = 'relative';
+            
+            // Ensure the canvas internal dimensions are reasonable
+            if (canvas.width === 0 || canvas.height === 0) {
+                canvas.width = maxWidth;
+                canvas.height = maxHeight;
+                console.log('Fixed zero canvas dimensions');
+            }
+            
+            console.log('Mobile canvas sizing applied:', {
+                finalCanvasStyle: { width: canvas.style.width, height: canvas.style.height },
+                finalCanvasSize: { width: canvas.width, height: canvas.height }
+            });
+        } else {
+            console.warn('Canvas or container not found for mobile sizing');
+        }
+    }
+}
+
+// Add global resize handler for mobile
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+        setTimeout(() => {
+            ensureMobileCanvasSize();
+            if (network) {
+                network.redraw();
+                network.fit();
+            }
+        }, 100);
+    }
+});
 
 // Initialize the network
