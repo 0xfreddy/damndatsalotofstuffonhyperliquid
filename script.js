@@ -1098,6 +1098,117 @@ let selectedCategories = [];
 // Initialize the network
 let network = null;
 
+// Mobile view state
+let isListView = true; // Default to list view on mobile
+
+// Initialize mobile view
+function initializeMobileView() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Set default view to list
+        document.getElementById('graph-section').classList.add('hidden-mobile');
+        document.getElementById('mobile-list-view').classList.remove('hidden-mobile');
+        
+        // Populate project list
+        populateProjectList();
+        
+        // Add toggle event listener
+        const toggleBtn = document.getElementById('view-toggle-btn');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', toggleView);
+        }
+    }
+}
+
+// Toggle between list and graph view
+function toggleView() {
+    const graphSection = document.getElementById('graph-section');
+    const listView = document.getElementById('mobile-list-view');
+    const graphIcon = document.querySelector('.graph-icon');
+    const listIcon = document.querySelector('.list-icon');
+    
+    isListView = !isListView;
+    
+    if (isListView) {
+        graphSection.classList.add('hidden-mobile');
+        listView.classList.remove('hidden-mobile');
+        graphIcon.style.display = 'inline';
+        listIcon.style.display = 'none';
+    } else {
+        graphSection.classList.remove('hidden-mobile');
+        listView.classList.add('hidden-mobile');
+        graphIcon.style.display = 'none';
+        listIcon.style.display = 'inline';
+        
+        // Fit network on view change
+        if (network) {
+            setTimeout(() => network.fit(), 100);
+        }
+    }
+}
+
+// Populate the project list for mobile view
+function populateProjectList() {
+    const projectListContainer = document.getElementById('project-list');
+    if (!projectListContainer) return;
+    
+    projectListContainer.innerHTML = '';
+    
+    // Sort projects by name
+    const sortedProjects = [...projects].sort((a, b) => a.name.localeCompare(b.name));
+    
+    sortedProjects.forEach(project => {
+        const projectItem = document.createElement('div');
+        projectItem.className = 'project-item';
+        
+        const projectLogo = document.createElement('img');
+        projectLogo.className = 'project-logo';
+        projectLogo.src = project.logo;
+        projectLogo.alt = project.name;
+        projectLogo.onerror = function() {
+            this.src = '/images/default-logo.png';
+        };
+        
+        const projectInfo = document.createElement('div');
+        projectInfo.className = 'project-info';
+        
+        const projectName = document.createElement('div');
+        projectName.className = 'project-name';
+        projectName.textContent = project.name;
+        
+        const projectMeta = document.createElement('div');
+        projectMeta.className = 'project-meta';
+        
+        // Add primary tag
+        if (project.tags && project.tags.length > 0) {
+            const projectTag = document.createElement('span');
+            projectTag.className = 'project-tag';
+            projectTag.textContent = project.tags[0];
+            projectMeta.appendChild(projectTag);
+        }
+        
+        // Add Twitter link
+        if (project.twitter) {
+            const twitterLink = document.createElement('a');
+            twitterLink.className = 'project-twitter';
+            twitterLink.href = project.twitter;
+            twitterLink.target = '_blank';
+            twitterLink.rel = 'noopener noreferrer';
+            twitterLink.innerHTML = '𝕏';
+            projectMeta.appendChild(twitterLink);
+        }
+        
+        projectInfo.appendChild(projectName);
+        projectInfo.appendChild(projectMeta);
+        
+        projectItem.appendChild(projectLogo);
+        projectItem.appendChild(projectInfo);
+        
+        projectListContainer.appendChild(projectItem);
+    });
+}
+
 function initializeGraph() {
     const container = document.getElementById('graph-container');
     
@@ -2448,6 +2559,9 @@ function updateSection(sectionName, items) {
 
 // Handle collapsible sections
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mobile view first
+    initializeMobileView();
+    
     // Initialize graph
     initializeGraph();
     
@@ -3187,7 +3301,12 @@ function ensureMobileCanvasSize() {
 
 // Add global resize handler for mobile
 window.addEventListener('resize', function() {
-    if (window.innerWidth <= 768) {
+    const isMobile = window.innerWidth <= 768;
+    const mobileHeader = document.querySelector('.mobile-header');
+    const mobileListView = document.getElementById('mobile-list-view');
+    const graphSection = document.getElementById('graph-section');
+    
+    if (isMobile) {
         setTimeout(() => {
             ensureMobileCanvasSize();
             if (network) {
@@ -3195,6 +3314,28 @@ window.addEventListener('resize', function() {
                 network.fit();
             }
         }, 100);
+        
+        // Apply mobile view
+        mobileHeader.style.display = 'flex';
+        document.body.style.paddingTop = '50px';
+        if (isListView) {
+            mobileListView.style.display = 'block';
+            graphSection.classList.add('hidden-mobile');
+        } else {
+            mobileListView.style.display = 'none';
+            graphSection.classList.remove('hidden-mobile');
+        }
+    } else {
+        // Reset to desktop view
+        mobileHeader.style.display = 'none';
+        mobileListView.style.display = 'none';
+        graphSection.classList.remove('hidden-mobile');
+        graphSection.style.display = '';
+        document.body.style.paddingTop = '';
+        
+        if (network) {
+            network.fit();
+        }
     }
 });
 

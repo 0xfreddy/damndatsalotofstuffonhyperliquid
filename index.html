@@ -9,9 +9,29 @@
     <script src="https://unpkg.com/vis-network@9.1.6/dist/vis-network.min.js"></script>
 </head>
 <body>
+    <!-- Mobile Header (only visible on mobile) -->
+    <div class="mobile-header">
+        <h1 class="mobile-title">lorem lorem</h1>
+        <div class="view-toggle">
+            <button class="view-toggle-btn" id="view-toggle-btn">
+                <span class="toggle-icon graph-icon">📊</span>
+                <span class="toggle-icon list-icon" style="display: none;">📋</span>
+            </button>
+        </div>
+    </div>
+    
     <div class="container">
+        <!-- Mobile List View (only visible on mobile) -->
+        <div class="mobile-list-view" id="mobile-list-view">
+            <div class="glass-panel">
+                <div class="project-list" id="project-list">
+                    <!-- Projects will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        
         <!-- Graph Container -->
-        <div class="graph-section">
+        <div class="graph-section" id="graph-section">
             <div class="glass-panel">
                 <div id="graph-container"></div>
                 
