@@ -5,903 +5,903 @@ const projects = [
       name: "felix",
       tags: ["Defi"],
       twitter: "https://x.com/felixprotocol",
-      logo: "/images/logos/felix-logo.png",
+      logo: "/images/felix-logo.png",
     },
     {
       id: 2,
       name: "HyperDitto",
       tags: ["Tools"],
       twitter: "https://x.com/hyperditto",
-      logo: "/images/logos/hyperditto.png",
+      logo: "/images/hyperditto.png",
     },
     {
       id: 3,
       name: "hyperland",
       tags: ["Defi", "Staking"],
       twitter: "https://x.com/hyperlendx",
-      logo: "/images/logos/hyperland-logo.png",
+      logo: "/images/hyperland-logo.png",
     },
     {
       id: 4,
       name: "stHYPE",
       tags: ["Staking", "Defi"],
       twitter: "https://x.com/stakedhype",
-      logo: "/images/logos/sthype-logo.png",
+      logo: "/images/sthype-logo.png",
     },
     {
       id: 5,
       name: "Katōshi",
       tags: ["Trading", "Data"],
       twitter: "https://x.com/KatoshiAI",
-      logo: "/images/logos/katoshi-logo.png",
+      logo: "/images/katoshi-logo.png",
     },
     {
       id: 6,
       name: "HyperSwap",
       tags: ["Dex", "Tools"],
       twitter: "https://x.com/HyperSwapX",
-      logo: "/images/logos/hyperswap-logo.png",
+      logo: "/images/hyperswap-logo.png",
     },
     {
       id: 7,
       name: "Kinetiq",
       tags: ["LST"],
       twitter: "https://x.com/kinetiq_xyz",
-      logo: "/images/logos/kinetiq-logo.png",
+      logo: "/images/kinetiq1-logo.png",
     },
     {
       id: 8,
       name: "HyBridge",
       tags: ["Infra"],
       twitter: "https://x.com/HyBridgeHL",
-      logo: "/images/logos/hybridge-logo.png",
+      logo: "/images/hybridge-logo.png",
     },
     {
       id: 9,
       name: "HL Names",
       tags: ["Tools", "Social"],
       twitter: "https://x.com/hlnames",
-      logo: "/images/logos/hl-names-logo.png",
+      logo: "/images/hl-names-logo.png",
     },
     {
       id: 10,
       name: "fanfun",
       tags: ["Social", "Meme"],
       twitter: "https://x.com/fan_dot_fun",
-      logo: "/images/logos/funfun-logo.png",
+      logo: "/images/funfun-logo.png",
     },
     {
       id: 11,
       name: "Kieko Finance",
       tags: ["Defi"],
       twitter: "https://x.com/KeikoFinance",
-      logo: "/images/logos/kieko-finance-logo.png",
+      logo: "/images/kieko-finance-logo.png",
     },
     {
       id: 12,
       name: "HFun",
       tags: ["Trading", "Social"],
       twitter: "https://x.com/Hypurrfun",
-      logo: "/images/logos/hfun-logo.png",
+      logo: "/images/hfun-logo.png",
     },
     {
       id: 13,
       name: "pvp.trade",
       tags: ["Trading", "Social"],
       twitter: "https://x.com/pvp_dot_trade",
-      logo: "/images/logos/pvp-trade-logo.png",
+      logo: "/images/pvp-trade-logo.png",
     },
     {
       id: 14,
       name: "HyperFun",
       tags: ["GambleFi"],
       twitter: "https://x.com/hyperfunX",
-      logo: "/images/logos/hyperfun-logo.png",
+      logo: "/images/hyperfun-logo.png",
     },
     {
       id: 15,
       name: "PurrBurn",
       tags: ["Data"],
       twitter: "https://x.com/janklimo",
-      logo: "/images/logos/purrburn-logo.png",
+      logo: "/images/purrburn-logo.png",
     },
     {
       id: 16,
       name: "Hypurrscan",
       tags: ["Explorer", "Data"],
       twitter: "https://x.com/HypurrScan",
-      logo: "/images/logos/hypurrscan-logo.png",
+      logo: "/images/hypurrscan-logo.png",
     },
     {
       id: 17,
       name: "Yeeti",
       tags: ["Meme"],
       twitter: "https://x.com/YeetiOnHL",
-      logo: "/images/logos/yeeti-logo.png",
+      logo: "/images/yeeti-logo.png",
     },
     {
       id: 18,
       name: "Catbal",
       tags: ["Meme"],
       twitter: "https://x.com/CatCabal_hl",
-      logo: "/images/logos/catcabal-logo.png",
+      logo: "/images/catcabal-logo.png",
     },
     {
       id: 19,
       name: "Pip",
       tags: ["Meme"],
       twitter: "https://x.com/PipOnHL",
-      logo: "/images/logos/pip-logo.png",
+      logo: "/images/pip-logo.png",
     },
     {
       id: 20,
       name: "DeFi LLama",
       tags: ["Analytics", "Data"],
       twitter: "https://x.com/DefiLlama",
-      logo: "/images/logos/defillama-logo.png",
+      logo: "/images/defillama-logo.png",
     },
     {
       id: 22,
       name: "Hyperbeat",
       tags: ["Infra","Staking"],
       twitter: "https://x.com/0xHyperBeat",
-      logo: "/images/logos/hyperbeat.png",
+      logo: "/images/hyperbeat.png",
     },
     {
       id: 23,
       name: "Liquid Start",
       tags: ["Defi"],
       twitter: "https://x.com/Liquid_Start",
-      logo: "/images/logos/liquidstart-logo.png",
+      logo: "/images/liquidstart-logo.png",
     },
     {
       id: 24,
       name: "Rage Trade",
       tags: ["Trading"],
       twitter: "https://x.com/rage_trade",
-      logo: "/images/logos/rage-trade.png",
+      logo: "/images/rage-trade.png",
     },
     {
       id: 25,
       name: "Hypurr Finance",
       tags: ["Defi"],
       twitter: "https://x.com/hypurrfi",
-      logo: "/images/logos/hypurrfinance-logo.png",
+      logo: "/images/hypurrfinance-logo.png",
     },
     {
       id: 26,
       name: "Hyperstats",
       tags: ["Analytics", "Tools"],
       twitter: "https://x.com/hyperstats_xyz",
-      logo: "/images/logos/hyperstats-logo.png",
+      logo: "/images/hyperstats-logo.png",
     },
     {
       id: 27,
       name: "VegasHL",
       tags: ["GambleFi"],
       twitter: "https://x.com/vegas_hl",
-      logo: "/images/logos/vegas-logo.png",
+      logo: "/images/vegas-logo.png",
     },
     {
       id: 28,
       name: "Hypervisor",
       tags: ["Data", "Analytics"],
       twitter: "https://x.com/Hypervisor_hl",
-      logo: "/images/logos/hypervisor-logo.png",
+      logo: "/images/hypervisor-logo.png",
     },
     {
       id: 29,
       name: "Harmonix Finance",
       tags: ["Yield", "Defi"],
       twitter: "https://x.com/harmonixfi",
-      logo: "/images/logos/harmony-logo.png",
+      logo: "/images/harmony-logo.png",
     },
     {
       id: 30,
       name: "RNDM",
       tags: ["Defi"],
       twitter: "https://x.com/RNDM_IO",
-      logo: "/images/logos/rndm-logo.png",
+      logo: "/images/rndm-logo.png",
     },
     {
       id: 31,
       name: "MIM Spell",
       tags: ["Yield", "Defi"],
       twitter: "https://x.com/mim_spell",
-      logo: "/images/logos/mim-logo.png",
+      logo: "/images/mim-logo.png",
     },
     {
       id: 32,
       name: "Nucleus Earn",
       tags: ["Defi"],
       twitter: "https://x.com/nucleusearn",
-      logo: "/images/logos/nucleus-logo.png",
+      logo: "/images/nucleus-logo.png",
     },
     {
       id: 33,
       name: "Thunder Labs",
       tags: ["LST"],
       twitter: "https://x.com/ThunderheadLabs",
-      logo: "/images/logos/thunderlabs-logo.png",
+      logo: "/images/thunderlabs-logo.png",
     },
     {
       id: 34,
       name: "KittenSwap",
       tags: ["Dex"],
       twitter: "https://x.com/kittenswaphype",
-      logo: "/images/logos/kittenswap-logo.png",
+      logo: "/images/kittenswap-logo.png",
     },
     {
       id: 35,
       name: "Hyperterminal",
       tags: ["Analytics", "Trading"],
       twitter: "https://x.com/hyterminal",
-      logo: "/images/logos/hyperterminal-logo.png",
+      logo: "/images/hyperterminal-logo.png",
     },
     {
       id: 36,
       name: "HyperScanner",
       tags: ["Analytics", "Explorer"],
       twitter: "https://x.com/hyper_scanner",
-      logo: "/images/logos/hyperscanner-png.png",
+      logo: "/images/hyperscanner-png.png",
     },
     {
       id: 37,
       name: "Pyth",
       tags: ["Oracle", "Infra"],
       twitter: "https://x.com/PythNetwork",
-      logo: "/images/logos/pyth-logo.png",
+      logo: "/images/pyth-logo.png",
     },
     {
       id: 38,
       name: "StorkOracle",
       tags: ["Oracle", "Infra"],
       twitter: "https://x.com/StorkOracle",
-      logo: "/images/logos/storkoracle-logo.png",
+      logo: "/images/storkoracle-logo.png",
     },
     {
       id: 39,
       name: "Mypurrfolio",
       tags: ["Analytics", "Data"],
       twitter: "https://x.com/mypurrfolio",
-      logo: "/images/logos/mypurrfolio-logo.png",
+      logo: "/images/mypurrfolio-logo.png",
     },
     {
       id: 40,
       name: "Insilico Terminal",
       tags: ["Trading", "Analytics"],
       twitter: "https://x.com/InsilicoTrading",
-      logo: "/images/logos/insilico-logo.png",
+      logo: "/images/insilico-logo.png",
     },
     {
       id: 41,
       name: "memedata",
       tags: ["Analytics"],
       twitter: "https://x.com/shinji2048",
-      logo: "/images/logos/shinji2048.png",
+      logo: "/images/shinji2048.png",
     },
     {
       id: 42,
       name: "Slate",
       tags: ["AI", "Tools", "Trading"],
       twitter: "https://x.com/slate_hl",
-      logo: "/images/logos/slate-logo.png",
+      logo: "/images/Slate.png",
     },
     {
       id: 44,
       name: "Chris Ling",
       tags: ["Tools", "Trading"],
       twitter: "https://x.com/chrisling_hl",
-      logo: "/images/logos/chrisling-logo.png",
+      logo: "/images/ChrisLing.png",
     },
     {
       id: 45,
       name: "Schizo",
       tags: ["Meme"],
       twitter: "https://x.com/schizo_on_hl",
-      logo: "/images/logos/schizo-logo.png",
+      logo: "/images/schizo-logo.png",
     },
     {
       id: 46,
       name: "Peri Pair Bot",
       tags: ["Trading"],
       twitter: "https://x.com/peripairbot",
-      logo: "/images/logos/peripairbot-logo.png",
+      logo: "/images/peripairbot-logo.png",
     },
     {
       id: 47,
       name: "Vapor",
       tags: ["Social", "AI"],
       twitter: "https://x.com/vaporwarefun",
-      logo: "/images/logos/vapor-logo.png",
+      logo: "/images/vapor-logo.png",
     },
     {
       id: 48,
       name: "Hey Jeff",
       tags: ["Tools"],
       twitter: "https://x.com/janklimo",
-      logo: "/images/logos/peripairbot-logo.png",
+      logo: "/images/peripairbot-logo.png",
     },
     {
       id: 49,
       name: "Hypurr Collective",
       tags: ["Community"],
       twitter: "https://x.com/hypurr_co",
-      logo: "/images/logos/hypurr-logo.png",
+      logo: "/images/hypurr-logo.png",
     },
     {
       id: 50,
       name: "Panda",
       tags: ["Meme","Community"],
       twitter: "https://x.com/panda_on_hl",
-      logo: "/images/logos/panda-logo.png",
+      logo: "/images/panda-logo.png",
     },
     {
       id: 51,
       name: "LadyOnHL",
       tags: ["Meme"],
       twitter: "https://x.com/lady_on_hl",
-      logo: "/images/logos/ladyhl-logo.png",
+      logo: "/images/ladyhl-logo.png",
     },
     {
       id: 52,
       name: "HyperDash",
       tags: ["Analytics", "Data"],
       twitter: "https://x.com/hypurrdash",
-      logo: "/images/logos/hyperdash-logo.png",
+      logo: "/images/hyperdash-logo.png",
     },
     {
       id: 53,
       name: "WashOnHL",
       tags: ["Trading"],
       twitter: "https://x.com/wash_on_hl",
-      logo: "/images/logos/washsniper-logo.png",
+      logo: "/images/washsniper-logo.png",
     },
     {
       id: 54,
       name: "HyperTracker",
       tags: ["Tools"],
       twitter: "https://x.com/NMTD8/status/1871588493283270733",
-      logo: "/images/logos/hypertracker-logo.png",
+      logo: "/images/hypertracker-logo.png",
     },
     {
       id: 55,
       name: "Hyperlend Explorer",
       tags: ["Explorer"],
       twitter: "https://explorer.hyperlend.finance/",
-      logo: "/images/logos/hyperland-logo.png",
+      logo: "/images/hyperland-logo.png",
     },
     {
       id: 56,
       name: "ASXN",
       tags: ["Data"],
       twitter: "https://x.com/asxn_r/status/1873668265450598613",
-      logo: "/images/logos/asxn-logo.png",
+      logo: "/images/asxn-logo.png",
     },
     {
       id: 57,
       name: "Hypertrack",
       tags: ["Tools"],
       twitter: "https://x.com/hyperlendx/status/1855309389814432163",
-      logo: "/images/logos/hypertrack-logo.png",
+      logo: "/images/hypertrack-logo.png",
     },
     {
       id: 58,
       name: "Tholos",
       tags: ["Tools"],
       twitter: "https://x.com/TholosApp",
-      logo: "/images/logos/tholos-logo.png",
+      logo: "/images/tholos-logo.png",
     },
     {
       id: 59,
       name: "Octis",
       tags: ["Trading"],
       twitter: "https://x.com/octis_808",
-      logo: "/images/logos/octis.png",
+      logo: "/images/octis.png",
     },
     {
       id: 60,
       name: "Hypio",
       tags: ["NFT","Community"],
       twitter: "https://x.com/HypioHL",
-      logo: "/images/logos/hypio.png",
+      logo: "/images/hypio.png",
     },
     {
       id: 61,
       name: "Hyperflip",
       tags: ["GambleFi"],
       twitter: "https://x.com/hypercoinflip",
-      logo: "/images/logos/hyperflip.png",
+      logo: "/images/hyperflip.png",
     },
     {
       id: 62,
       name: "USDC Inflows",
       tags: ["Data"],
       twitter: "https://x.com/mogie__/status/1881818562274459701",
-      logo: "/images/logos/mogie.png",
+      logo: "/images/mogie.png",
     },
     {
       id: 63,
       name: "Hyperdelta",
       tags: ["Trading"],
       twitter: "https://x.com/HyperdeltaX",
-      logo: "/images/logos/hyperdelta.png",
+      logo: "/images/hyperdelta.png",
     },
     {
       id: 64,
       name: "Hypervol",
       tags: ["Trading"],
       twitter: "https://x.com/Hypervol_xyz",
-      logo: "/images/logos/hypervol.png",
+      logo: "/images/hypervol.png",
     },
     {
       id: 65,
       name: "Kibl",
       tags: ["Defi"],
       twitter: "https://x.com/kiblprotocol",
-      logo: "/images/logos/kibl.png",
+      logo: "/images/kibl.png",
     },
     {
       id: 66,
       name: "Marbles",
       tags: ["RWA"],
       twitter: "https://x.com/marblesrwa",
-      logo: "/images/logos/marbles-logo.png",
+      logo: "/images/marbles-logo.png",
     },
     {
       id: 68,
       name: "Liquidlaunch",
       tags: [ "AI"],
       twitter: "https://x.com/LiquidLaunchHL",
-      logo: "/images/logos/liquidlaunch-logo.png",
+      logo: "/images/liquidlaunch-logo.png",
     },
     {
       id: 69,
       name: "Autist",
       tags: ["Meme"],
       twitter: "https://x.com/autisthyper",
-      logo: "/images/logos/autist.png",
+      logo: "/images/autist.png",
     },
     {
       id: 70,
       name: "HCR Bot",
       tags: ["Infra"],
       twitter: "https://x.com/HCR_BOT",
-      logo: "/images/logos/hcrbot-logo.png",
+      logo: "/images/hcrbot-logo.png",
     },
     {
       id: 71,
       name: "Liquina",
       tags: ["Infra"],
       twitter: "https://x.com/LiquinaHL",
-      logo: "/images/logos/liquina.png",
+      logo: "/images/liquina.png",
     },
     {
       id: 72,
       name: "Dexari",
       tags: ["Trading","Mobile"],
       twitter: "https://x.com/DexariDotCom",
-      logo: "/images/logos/dexari.png",
+      logo: "/images/dexari.png",
     },
     {
       id: 73,
       name: "Hypurr Markets",
       tags: ["Tools"],
       twitter: "https://x.com/HypurrMarkets",
-      logo: "/images/logos/hypurrmarkets.png",
+      logo: "/images/hypurrmarkets.png",
     },
     {
       id: 74,
       name: "Hype Terminal",
       tags: ["Trading"],
       twitter: "https://x.com/hype_terminal",
-      logo: "/images/logos/hypeterminal.png",
+      logo: "/images/hypeterminal.png",
     },
     {
       id: 75,
       name: "HL Fund",
       tags: ["Investment"],
       twitter: "https://x.com/hl_fund",
-      logo: "/images/logos/hlfund.png",
+      logo: "/images/hlfund.png",
     },
     {
       id: 76,
       name: "Hyperrich",
       tags: ["Trading","Tools"],
       twitter: "https://x.com/hyperrichdotfun",
-      logo: "/images/logos/Hyperrich.png",
+      logo: "/images/Hyperrich.png",
     },
     {
       id: 77,
       name: "Slate",
       tags: ["AI", "Tools", "Trading"],
       twitter: "https://x.com/slate_ceo",
-      logo: "/images/logos/Slate.png",
+      logo: "/images/Slate.png",
     },
     {
       id: 78,
       name: "Chris Ling",
       tags: ["Tools", "Trading"],
       twitter: "https://x.com/chrisling_dev",
-      logo: "/images/logos/ChrisLing.png",
+      logo: "/images/ChrisLing.png",
     },
     {
       id: 79,
       name: "Mercury App",
       tags: ["Mobile", "Trading"],
       twitter: "https://x.com/mercuryapphl",
-      logo: "/images/logos/MercuryApp.png",
+      logo: "/images/MercuryApp.png",
     },
     {
       id: 80,
       name: "Hyperstable",
       tags: ["Stablecoin", "Yield"],
       twitter: "https://x.com/HyperstableX",
-      logo: "/images/logos/Hyperstable.png",
+      logo: "/images/Hyperstable.png",
     },
     {
       id: 81,
       name: "Hyperlane",
       tags: ["Infra"],
       twitter: "https://x.com/hyperlane",
-      logo: "/images/logos/Hyperlane.png",
+      logo: "/images/Hyperlane.png",
     },
     {
       id: 82,
       name: "LiquidLoot",
       tags: ["NFT"],
       twitter: "https://x.com/LootLiquid",
-      logo: "/images/logos/Liquidloot.png",
+      logo: "/images/Liquidloot.png",
     },
     {
       id: 83,
       name: "Okto",
       tags: ["Infra","Mobile"],
       twitter: "https://x.com/okto_web3",
-      logo: "/images/logos/Okto.png",
+      logo: "/images/Okto.png",
     },
     {
       id: 84,
       name: "Bridge Hypio",
       tags: ["Infra", "NFT"],
       twitter: "https://x.com/HypioHL",
-      logo: "/images/logos/hypio.png",
+      logo: "/images/hypio.png",
     },
     {
       id: 85,
       name: "Eternal AI",
       tags: ["AI"],
       twitter: "https://x.com/CryptoEternalAI",
-      logo: "/images/logos/EternalAI.png",
+      logo: "/images/EternalAI.png",
     },
     {
       id: 86,
       name: "deBridge",
       tags: ["Infra"],
       twitter: "https://x.com/deBridgeFinance",
-      logo: "/images/logos/debridge.png",
+      logo: "/images/debridge.png",
     },
     {
       id: 87,
       name: "Valantis",
       tags: ["Defi","Yield"],
       twitter: "https://x.com/ValantisLabs",
-      logo: "/images/logos/valantis.png",
+      logo: "/images/valantis.png",
     },
     {
       id: 88,
       name: "Hyperyield",
       tags: ["Yield", "Defi"],
       twitter: "https://x.com/HyperYieldx",
-      logo: "/images/logos/hyperyield.png",
+      logo: "/images/hyperyield.png",
     },
     {
       id: 89,
       name: "Hyperupdates",
       tags: ["News"],
       twitter: "https://x.com/hyper_updates",
-      logo: "/images/logos/hyperupdates.png",
+      logo: "/images/hyperupdates.png",
     },
     {
       id: 90,
       name: "Hana",
       tags: ["Trading"],
       twitter: "https://x.com/HanaNetwork",
-      logo: "/images/logos/hana.png",
+      logo: "/images/hana.png",
     },
     {
       id: 91,
       name: "Hypers",
       tags: ["NFT"],
       twitter: "https://x.com/HypersOnHL",
-      logo: "/images/logos/hypers.png",
+      logo: "/images/hypers.png",
     },
     {
       id: 92,
       name: "Keiko",
       tags: ["Lending"],
       twitter: "https://x.com/KeikoFinance",
-      logo: "/images/logos/keiko.png",
+      logo: "/images/keiko.png",
     },
     {
       id: 93,
       name: "Laminar",
       tags: ["Dex"],
       twitter: "https://x.com/laminar_xyz",
-      logo: "/images/logos/laminar.png",
+      logo: "/images/laminar.png",
     },
     {
       id: 94,
       name: "Mizu",
       tags: ["Yield"],
       twitter: "https://x.com/mizulabs",
-      logo: "/images/logos/mizu.png",
+      logo: "/images/mizu.png",
     },
     {
       id: 95,
       name: "Hypershot",
       tags: ["Trading", "Tools"],
       twitter: "https://x.com/Hypershot_xyz",
-      logo: "/images/logos/hypershot.png",
+      logo: "/images/hypershot.png",
     },
     {
       id: 96,
       name: "Hyperflash",
       tags: ["LST"],
       twitter: "https://x.com/HyperFlash_hl",
-      logo: "/images/logos/hyperflash.png",
+      logo: "/images/hyperflash.png",
     },
     {
       id: 97,
       name: "Fan App",
       tags: ["Tools"],
       twitter: "https://x.com/fanappX",
-      logo: "/images/logos/fan.png",
+      logo: "/images/fan.png",
     },
     {
       id: 98,
       name: "Sentiment",
       tags: ["LST"],
       twitter: "https://x.com/sentimentxyz",
-      logo: "/images/logos/sentient.png",
+      logo: "/images/sentient.png",
     },
     {
       id: 99,
       name: "Hypernews",
       tags: ["News"],
       twitter: "https://x.com/HyperliquidNews",
-      logo: "/images/logos/hypernews.png",
+      logo: "/images/hypernews.png",
     },
     {
       id: 100,
       name: "Unit",
       tags: ["Yield", "Defi"],
       twitter: "https://x.com/hyperunit",
-      logo: "/images/logos/unit.png",
+      logo: "/images/unit.png",
     },
     {
       id: 101,
       name: "HiveFi",
       tags: ["Defi"],
       twitter: "https://x.com/HiveFi_X",
-      logo: "/images/logos/hivefi.png",
+      logo: "/images/hifive.png",
     },
     {
       id: 102,
       name: "Gigabrain",
       tags: ["Tools", "Trading", "AI"],
       twitter: "https://x.com/GigabrainGG",
-      logo: "/images/logos/gigabrain.png",
+      logo: "/images/gigabrain.png",
     },
     {
       id: 103,
       name: "Perpflow",
       tags: ["Trading"],
       twitter: "https://x.com/perpflow",
-      logo: "/images/logos/perpflow.png",
+      logo: "/images/perpflow.png",
     },
     {
       id: 104,
       name: "HyperProjects",
       tags: ["News"],
       twitter: "https://x.com/HyperProjectsX",
-      logo: "/images/logos/hyperproject.png",
+      logo: "/images/hyperproject.png",
     },
     {
       id: 105,
       name: "Ezpairs",
       tags: ["Trading"],
       twitter: "https://x.com/EzPairs/photo",
-      logo: "/images/logos/expairs.png",
+      logo: "/images/expairs.png",
     },
     {
       id: 106,
       name: "Altitude",
       tags: ["Infra"],
       twitter: "https://x.com/valtitudexyz",
-      logo: "/images/logos/altitude.png",
+      logo: "/images/altitude.png",
     },
     {
       id: 107,
       name: "LayerZero",
       tags: ["Infra"],
       twitter: "https://x.com/LayerZero_Core/status/1920848296219996251",
-      logo: "/images/logos/layerzero.png",
+      logo: "/images/layerzero.png",
     },
     {
       id: 108,
       name: "SuperX",
       tags: ["Trading"],
       twitter: "https://x.com/trysuper_",
-      logo: "/images/logos/superx.png",
+      logo: "/images/superx.png",
     },
     {
       id: 109,
       name: "Dune",
       tags: ["Infra"],
       twitter: "https://x.com/Dune/status/1920465979857150169",
-      logo: "/images/logos/dune.png",
+      logo: "/images/dune.png",
     },
     {
       id: 110,
       name: "Liminal",
       tags: ["Yield"],
       twitter: "https://x.com/liminalmoney",
-      logo: "/images/logos/liminal.jpg",
+      logo: "/images/liminal.jpg",
     },
     {
       id: 111,
       name: "Hyperwarpfi",
       tags: ["Tools"],
       twitter: "https://x.com/hyperwarpfi",
-      logo: "/images/logos/hyperwarpfi.png",
+      logo: "/images/hyperwarpfi.png",
     },
     {
       id: 112,
       name: "Uncoil Hype",
       tags: ["Research"],
       twitter: "https://x.com/Uncoilhype",
-      logo: "/images/logos/UncoilHype.jpg",
+      logo: "/images/UncoilHype.jpg",
     },
     {
       id: 113,
       name: "dothype",
       tags: ["Utility", "Infra"],
       twitter: "https://x.com/d0tHYPE",
-      logo: "/images/logos/dothype.jpg",
+      logo: "/images/dothype.jpg",
     },
     {
       id: 114,
       name: "Hytrade",
       tags: ["Trading"],
       twitter: "https://x.com/hytradedotfun",
-      logo: "/images/logos/hytrade.jpg",
+      logo: "/images/hytrade.jpg",
     },
     {
       id: 115,
       name: "hyperbloom",
       tags: ["Aggregator"],
       twitter: "https://x.com/hyperbloomxyz",
-      logo: "/images/logos/hyperbloom.jpg",
+      logo: "/images/hyperbloom.jpg",
     },
     {
       id: 116,
       name: "aura",
       tags: ["Trading"],
       twitter: "https://x.com/auradotmoney",
-      logo: "/images/logos/aura.jpg",
+      logo: "/images/aura.jpg",
     },
     {
       id: 117,
       name: "hyper_g8",
       tags: ["Trading"],
       twitter: "https://x.com/hyper_g8",
-      logo: "/images/logos/hyperG8.jpg",
+      logo: "/images/hyperG8.jpg",
     },
     {
       id: 118,
       name: "Hyperwave",
       tags: ["Defi"],
       twitter: "https://x.com/Hyperwavefi",
-      logo: "/images/logos/Hyperwave.png",
+      logo: "/images/Hyperwave.png",
     },
     {
       id: 119,
       name: "Silhouette",
       tags: ["Trading", "Privacy"],
       twitter: "https://x.com/silhouette_ex",
-      logo: "/images/logos/silhouette.jpg",
+      logo: "/images/silhouette.jpg",
     },
     {
       id: 120,
       name: "Hypurr Hub",
       tags: ["News"],
       twitter: "https://x.com/HypurrHub",
-      logo: "/images/logos/HypurrHub.png",
+      logo: "/images/HypurrHub.png",
     },
     {
       id: 121,
       name: "Liquid Swap",
       tags: ["Aggregator"],
       twitter: "https://x.com/LiquidLaunchHL",
-      logo: "/images/logos/liquidswap.jpg",
+      logo: "/images/liquidswap.jpg",
     },
     {
       id: 122,
       name: "Hypersig",
       tags: ["Security"],
       twitter: "https://x.com/hypersig_",
-      logo: "/images/logos/hypersig.jpg",
+      logo: "/images/hypersig.jpg",
     },
     {
       id: 123,
       name: "NunchiTrade",
       tags: ["Yield"],
       twitter: "https://x.com/nunchitrade",
-      logo: "/images/logos/Nunchi.png",
+      logo: "/images/Nunchi.png",
     },
     {
       id: 124,
       name: "Shifu Finance",
       tags: ["Mobile"],
       twitter: "https://x.com/Shifu_Fi",
-      logo: "/images/logos/ShifuFinance.jpg",
+      logo: "/images/ShifuFinance.jpg",
     },
     {
       id: 125,
       name: "Gems Gun",
       tags: ["Trading"],
       twitter: "https://x.com/gems_gun",
-      logo: "/images/logos/GemsGun.jpg",
+      logo: "/images/GemsGun.jpg",
     },
     {
       id: 126,
       name: "Symbiosis",
       tags: ["Dex"],
       twitter: "https://x.com/symbiosis_fi",
-      logo: "/images/logos/Symbiosis.jpg",
+      logo: "/images/Symbiosis.jpg",
     },
     {
       id: 127,
       name: "Hybra Finance",
       tags: ["Dex"],
       twitter: "https://x.com/HybraFinance",
-      logo: "/images/logos/HybraFinance.jpg",
+      logo: "/images/HybraFinance.jpg",
     },
     {
       id: 128,
       name: "Risk Finance",
       tags: ["Options"],
       twitter: "https://x.com/ryskfinance",
-      logo: "/images/logos/rysk.jpg",
+      logo: "/images/rysk.jpg",
     },
     {
       id: 129,
       name: "HypurrFlip",
       tags: ["GambleFi"],
       twitter: "https://x.com/HypurrFlip",
-      logo: "/images/logos/hypurrflip.jpg",
+      logo: "/images/hypurrflip.jpg",
     },
     {
       id: 130,
       name: "HyperliquidHub",
       tags: ["News"],
       twitter: "https://x.com/Hyperliquid_Hub",
-      logo: "/images/logos/HyperliquidHub.jpg",
+      logo: "/images/HyperliquidHub.jpg",
     },
     {
       id: 131,
       name: "hyperscreener",
       tags: ["Tools", "Data"],
       twitter: "https://x.com/atareh/status/1927479710470037685",
-      logo: "/images/logos/hyperscreener.png",
+      logo: "/images/hyperscreener.png",
     },
     {
         id: 133,
         name: "HyperEVM",
         tags: ["Data"],
         twitter: "https://x.com/PixOnChain/status/1932589848566890837",
-        logo: "/images/logos/hyperevmtech.jpg",
+        logo: "/images/hyperevmtech.jpg",
     }
 ];
 
@@ -1007,84 +1007,114 @@ const categoryColors = {
     Options: '#27ae60'
 };
 
-// Create nodes
-const nodes = new vis.DataSet([
-    // Central node - increased size
-    { id: 'hyperEVM', label: '', shape: 'circularImage', image: 'images/hyperliquid.png', size: 120, color: { background: 'rgba(0,0,0,0)', border: 'rgba(0,0,0,0)', highlight: 'rgba(0,0,0,0)', hover: 'rgba(0,0,0,0)' }, borderWidth: 2, font: { color: 'rgba(0,0,0,0)', size: 1 } }
-]);
+// Create nodes and edges datasets (will be populated when vis.js loads)
+let nodes = null;
+let edges = null;
 
-// Add category nodes - increased size and font
-tags.forEach(tag => {
-    nodes.add({
-        id: tag,
-        label: tag,
-        color: {
-            background: 'rgba(0,0,0,0)',
-            border: '#000',
-            highlight: { background: 'rgba(0,0,0,0)', border: '#000' },
-            hover: { background: 'rgba(0,0,0,0)', border: '#000' }
-        },
-        shape: 'box',
-        font: { color: '#fff', size: 50 },
-        size: 90,
-        group: 'category'
-    });
-});
-
-// Add project nodes - increased size
-projects.forEach(project => {
-    let logoPath = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/hyperevmtech.jpg';
-    nodes.add({
-        id: `project-${project.id}`,
-        color: undefined,
-        shape: 'circularImage',
-        image: logoPath,
-        brokenImage: '/images/hyperevmtech.jpg',
-        size: 80,
-        project: project,
-        // Enhanced image settings for better quality
-        imagePadding: 0,
-        useImageSize: false,
-        // Force minimum resolution for better canvas rendering
-        imageSize: {
-            width: 200,  // Ensure minimum size for canvas rendering
-            height: 200
-        },
-        // Add image preloading for quality control
-        chosen: {
-            node: function(values, id, selected, hovering) {
-                // Enhance rendering when selected/hovered
-                values.size = selected || hovering ? 85 : 80;
-            }
+// Simple function to create graph data
+function createGraphData() {
+    if (typeof vis === 'undefined') {
+        console.error('vis.js not loaded');
+        return false;
+    }
+    
+    if (nodes && edges) {
+        console.log('Graph data already created');
+        return true;
+    }
+    
+    // Create nodes
+    nodes = new vis.DataSet([
+        // Central node
+        { 
+            id: 'hyperEVM', 
+            label: '', 
+            shape: 'circularImage', 
+            image: 'images/hyperliquid.png', 
+            size: 120, 
+            color: { 
+                background: 'rgba(0,0,0,0)', 
+                border: 'rgba(0,0,0,0)', 
+                highlight: 'rgba(0,0,0,0)', 
+                hover: 'rgba(0,0,0,0)' 
+            }, 
+            borderWidth: 2, 
+            font: { color: 'rgba(0,0,0,0)', size: 1 } 
         }
-    });
-});
+    ]);
 
-// Create edges
-const edges = new vis.DataSet([]);
-
-// Connect categories to hyperEVM
-tags.forEach(tag => {
-    edges.add({
-        from: 'hyperEVM',
-        to: tag,
-        width: 3,
-        color: { color: 'rgba(20, 216, 121, 0.5)' },
-        dashes: true
-    });
-});
-
-// Connect projects to their tags
-projects.forEach(project => {
-    project.tags.forEach(tag => {
-        edges.add({
-            from: tag,
-            to: `project-${project.id}`,
-            width: 2,
-            color: { color: 'rgba(255,255,255,0.2)' }
+    // Add category nodes
+    tags.forEach(tag => {
+        nodes.add({
+            id: tag,
+            label: tag,
+            color: {
+                background: 'rgba(0,0,0,0)',
+                border: '#000',
+                highlight: { background: 'rgba(0,0,0,0)', border: '#000' },
+                hover: { background: 'rgba(0,0,0,0)', border: '#000' }
+            },
+            shape: 'box',
+            font: { color: '#fff', size: 50 },
+            size: 90,
+            group: 'category'
         });
     });
-});
+
+    // Add project nodes
+    projects.forEach(project => {
+        let logoPath = project.logo || '/images/placeholder.svg';
+        nodes.add({
+            id: `project-${project.id}`,
+            color: undefined,
+            shape: 'circularImage',
+            image: logoPath,
+            brokenImage: '/images/hyperevmtech.jpg',
+            size: 80,
+            project: project,
+            imagePadding: 0,
+            useImageSize: false,
+            imageSize: {
+                width: 200,
+                height: 200
+            },
+            chosen: {
+                node: function(values, id, selected, hovering) {
+                    values.size = selected || hovering ? 85 : 80;
+                }
+            }
+        });
+    });
+
+    // Create edges
+    edges = new vis.DataSet([]);
+
+    // Connect categories to hyperEVM
+    tags.forEach(tag => {
+        edges.add({
+            from: 'hyperEVM',
+            to: tag,
+            width: 3,
+            color: { color: 'rgba(20, 216, 121, 0.5)' },
+            dashes: true
+        });
+    });
+
+    // Connect projects to their tags
+    projects.forEach(project => {
+        project.tags.forEach(tag => {
+            edges.add({
+                from: tag,
+                to: `project-${project.id}`,
+                width: 2,
+                color: { color: 'rgba(255,255,255,0.2)' }
+            });
+        });
+    });
+    
+    console.log('Created', nodes.length, 'nodes and', edges.length, 'edges');
+    return true;
+}
 
 // Collection box state - REMOVED (no longer needed)
 // Node removal state
@@ -1100,63 +1130,236 @@ let network = null;
 
 // Mobile view state
 let isListView = true; // Default to list view on mobile
+let selectedMobileTags = []; // Track selected tags for mobile filtering
+
+// Initialize mobile tag filters
+function initializeMobileTagFilters() {
+    const filterContainer = document.getElementById('mobile-tag-filters');
+    if (!filterContainer) return;
+    
+    // Clear existing chips
+    filterContainer.innerHTML = '';
+    
+    // Add "All" chip first
+    const allChip = document.createElement('div');
+    allChip.className = 'mobile-tag-chip active';
+    allChip.textContent = 'All';
+    allChip.dataset.tag = 'all';
+    allChip.addEventListener('click', () => handleMobileTagClick('all'));
+    filterContainer.appendChild(allChip);
+    
+    // Add chips for each tag
+    tags.forEach(tag => {
+        const chip = document.createElement('div');
+        chip.className = 'mobile-tag-chip';
+        chip.textContent = tag;
+        chip.dataset.tag = tag;
+        chip.addEventListener('click', () => handleMobileTagClick(tag));
+        filterContainer.appendChild(chip);
+    });
+}
+
+// Handle mobile tag chip clicks
+function handleMobileTagClick(tag) {
+    const chips = document.querySelectorAll('.mobile-tag-chip');
+    
+    if (tag === 'all') {
+        // Clear all selections and select "All"
+        selectedMobileTags = [];
+        chips.forEach(chip => {
+            chip.classList.toggle('active', chip.dataset.tag === 'all');
+        });
+    } else {
+        // Toggle the clicked tag
+        const allChip = document.querySelector('.mobile-tag-chip[data-tag="all"]');
+        const clickedChip = document.querySelector(`.mobile-tag-chip[data-tag="${tag}"]`);
+        
+        if (selectedMobileTags.includes(tag)) {
+            // Remove tag from selection
+            selectedMobileTags = selectedMobileTags.filter(t => t !== tag);
+            clickedChip.classList.remove('active');
+        } else {
+            // Add tag to selection
+            selectedMobileTags.push(tag);
+            clickedChip.classList.add('active');
+        }
+        
+        // Update "All" chip state
+        if (selectedMobileTags.length === 0) {
+            allChip.classList.add('active');
+        } else {
+            allChip.classList.remove('active');
+        }
+    }
+    
+    // Refresh the project list with filtering
+    populateProjectList(selectedMobileTags);
+}
 
 // Initialize mobile view
 function initializeMobileView() {
-    const isMobile = window.innerWidth <= 768;
+    console.log('Initializing mobile view...');
     
-    if (isMobile) {
-        // Set default view to list
-        document.getElementById('graph-section').classList.add('hidden-mobile');
-        document.getElementById('mobile-list-view').classList.remove('hidden-mobile');
-        
-        // Populate project list
-        populateProjectList();
-        
-        // Add toggle event listener
-        const toggleBtn = document.getElementById('view-toggle-btn');
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', toggleView);
-        }
+    const graphSection = document.getElementById('graph-section');
+    const listView = document.getElementById('mobile-list-view');
+    const mobileHeader = document.querySelector('.mobile-header');
+    
+    if (!graphSection || !listView) {
+        console.error('Required elements not found');
+        return;
+    }
+    
+    // Show mobile header
+    if (mobileHeader) {
+        mobileHeader.style.display = 'flex';
+        document.body.style.paddingTop = '50px';
+    }
+    
+    // Reset isListView to true for mobile
+    isListView = true;
+    
+    // Show list view by default on mobile (use only inline styles to avoid CSS conflicts)
+    graphSection.style.display = 'none';
+    listView.style.display = 'block';
+    
+    // Set icons correctly (list view is active)
+    const graphIcon = document.querySelector('.graph-icon');
+    const listIcon = document.querySelector('.list-icon');
+    if (graphIcon && listIcon) {
+        graphIcon.style.display = 'none';
+        listIcon.style.display = 'inline';
+    }
+    
+    // Initialize tag filters for mobile
+    initializeMobileTagFilters();
+    
+    // Populate project list
+    console.log('Populating mobile project list...');
+    populateProjectList();
+    
+    // Add toggle event listener (remove existing first to avoid duplicates)
+    const toggleBtn = document.getElementById('view-toggle-btn');
+    if (toggleBtn) {
+        toggleBtn.removeEventListener('click', toggleMobileView);
+        toggleBtn.addEventListener('click', toggleMobileView);
     }
 }
 
-// Toggle between list and graph view
-function toggleView() {
+// Simplified mobile toggle function
+function toggleMobileView() {
+    console.log('Toggling mobile view');
+    
     const graphSection = document.getElementById('graph-section');
     const listView = document.getElementById('mobile-list-view');
     const graphIcon = document.querySelector('.graph-icon');
     const listIcon = document.querySelector('.list-icon');
     
+    if (!graphSection || !listView) {
+        console.error('Cannot toggle: elements not found');
+        return;
+    }
+    
     isListView = !isListView;
+    console.log('Switched to:', isListView ? 'List' : 'Graph');
     
     if (isListView) {
-        graphSection.classList.add('hidden-mobile');
-        listView.classList.remove('hidden-mobile');
-        graphIcon.style.display = 'inline';
-        listIcon.style.display = 'none';
-    } else {
-        graphSection.classList.remove('hidden-mobile');
-        listView.classList.add('hidden-mobile');
-        graphIcon.style.display = 'none';
-        listIcon.style.display = 'inline';
+        // Show list view
+        graphSection.style.display = 'none';
+        listView.style.display = 'block';
         
-        // Fit network on view change
-        if (network) {
-            setTimeout(() => network.fit(), 100);
+        if (graphIcon && listIcon) {
+            graphIcon.style.display = 'none';
+            listIcon.style.display = 'inline';
+        }
+        
+        // Show tag filters
+        const tagFilters = document.getElementById('mobile-tag-filters');
+        if (tagFilters) {
+            tagFilters.style.display = 'flex';
+        }
+        
+        // Ensure list is populated with current filters
+        populateProjectList(selectedMobileTags);
+    } else {
+        // Show graph view
+        listView.style.display = 'none';
+        graphSection.style.display = 'block';
+        
+        if (graphIcon && listIcon) {
+            graphIcon.style.display = 'inline';
+            listIcon.style.display = 'none';
+        }
+        
+        // Hide tag filters in graph view
+        const tagFilters = document.getElementById('mobile-tag-filters');
+        if (tagFilters) {
+            tagFilters.style.display = 'none';
+        }
+        
+        // Initialize graph if needed
+        if (!network) {
+            // Initialize graph if needed  
+            if (typeof vis !== 'undefined') {
+                if (!nodes || !edges) {
+                    createGraphData();
+                }
+                if (nodes && edges) {
+                    initializeGraph();
+                }
+            } else {
+                console.warn('vis.js not loaded, cannot show graph');
+                // Revert to list view
+                isListView = true;
+                graphSection.style.display = 'none';
+                listView.style.display = 'block';
+                if (graphIcon && listIcon) {
+                    graphIcon.style.display = 'none';
+                    listIcon.style.display = 'inline';
+                }
+            }
+        } else {
+            // Fit the network if already initialized
+            setTimeout(() => {
+                ensureMobileCanvasSize();
+                network.fit();
+            }, 100);
         }
     }
 }
 
-// Populate the project list for mobile view
-function populateProjectList() {
+
+// Populate the project list for mobile view with optional tag filtering
+function populateProjectList(filterTags = []) {
     const projectListContainer = document.getElementById('project-list');
-    if (!projectListContainer) return;
+    if (!projectListContainer) {
+        console.error('Project list container not found');
+        return;
+    }
     
+    console.log('Populating project list with filters:', filterTags);
     projectListContainer.innerHTML = '';
     
-    // Sort projects by name
-    const sortedProjects = [...projects].sort((a, b) => a.name.localeCompare(b.name));
+    if (!projects || projects.length === 0) {
+        console.error('No projects found');
+        projectListContainer.innerHTML = '<div style="padding: 20px; color: rgba(255,255,255,0.6); text-align: center;">No projects available</div>';
+        return;
+    }
+    
+    // Filter projects based on selected tags
+    let filteredProjects = projects;
+    if (filterTags.length > 0) {
+        filteredProjects = projects.filter(project => 
+            project.tags && project.tags.some(tag => filterTags.includes(tag))
+        );
+    }
+    
+    if (filteredProjects.length === 0) {
+        projectListContainer.innerHTML = '<div style="padding: 20px; color: rgba(255,255,255,0.6); text-align: center;">No projects match the selected filters</div>';
+        return;
+    }
+    
+    // Sort filtered projects by name
+    const sortedProjects = [...filteredProjects].sort((a, b) => a.name.localeCompare(b.name));
     
     sortedProjects.forEach(project => {
         const projectItem = document.createElement('div');
@@ -1211,6 +1414,25 @@ function populateProjectList() {
 
 function initializeGraph() {
     const container = document.getElementById('graph-container');
+    
+    if (!container) {
+        console.error('Graph container not found');
+        return;
+    }
+    
+    // Check if nodes and edges are initialized
+    if (!nodes || !edges) {
+        console.error('Nodes and edges not initialized, cannot create graph');
+        return;
+    }
+    
+    // Check if network already exists
+    if (network) {
+        console.log('Network already initialized');
+        return;
+    }
+    
+    console.log('Initializing graph with', nodes.length, 'nodes and', edges.length, 'edges');
     
     const data = {
         nodes: nodes,
@@ -1296,11 +1518,7 @@ function initializeGraph() {
         autoResize: true,
         height: '100%',
         width: '100%',
-        // Add canvas-specific quality settings
-        canvas: {
-            imageSmoothingEnabled: true,
-            imageSmoothingQuality: 'high'
-        }
+        // Canvas settings removed - let vis.js handle this internally
     };
     
     // Mobile detection and responsive adjustments
@@ -1339,20 +1557,26 @@ function initializeGraph() {
         isMobile: isMobile
     });
     
-    network = new vis.Network(container, data, options);
+    // Check if vis is loaded
+    if (typeof vis === 'undefined') {
+        console.error('vis.js library not loaded');
+        return;
+    }
+    
+    try {
+        network = new vis.Network(container, data, options);
+        console.log('Network initialized successfully');
+    } catch (error) {
+        console.error('Error initializing network:', error);
+        return;
+    }
     
     // Mobile-specific event handlers and debugging
     if (isMobile) {
         console.log('Setting up mobile-specific event handlers');
         
-        // Add debugging for network events
-        network.on("beforeDrawing", function(ctx) {
-            console.log('Network is drawing on mobile');
-        });
-        
-        network.on("afterDrawing", function(ctx) {
-            console.log('Network finished drawing on mobile');
-        });
+        // Remove verbose debugging for better performance
+        // Events kept but logging removed
         
         // Prevent zoom on double tap for mobile
         network.on("doubleClick", function(params) {
@@ -1387,10 +1611,7 @@ function initializeGraph() {
         });
     }
     
-    // Force high-DPI rendering - DISABLED to fix zoom issue
-    // setTimeout(() => {
-    //     forceHighDPIRendering();
-    // }, 100);
+    // High-DPI rendering removed - vis.js handles this internally
     
     // Handle node selection
     network.on("click", function(params) {
@@ -2395,7 +2616,7 @@ function displayNodeInfo(nodeId, node) {
         `;
         
         // Set project logo as actual image element
-        const logoUrl = project.logo ? project.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg';
+        const logoUrl = project.logo || '/images/placeholder.svg';
         setProjectLogoIndicator(logoUrl);
         
         document.getElementById('category-multiselect-container').style.display = 'none';
@@ -2415,7 +2636,7 @@ function displayNodeInfo(nodeId, node) {
             <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
                 ${projectsInCategory.map(p => `
                     <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 6px 10px;">
-                        <img src="${p.logo ? p.logo.replace('/images/logos/', '/images/') : '/images/placeholder.svg'}" alt="${p.name}" style="width: 32px; height: 32px; border-radius: 50%; background: #fff; object-fit: cover; border: 1.5px solid #27ae60;">
+                        <img src="${p.logo || '/images/placeholder.svg'}" alt="${p.name}" style="width: 32px; height: 32px; border-radius: 50%; background: #fff; object-fit: cover; border: 1.5px solid #27ae60;">
                         <span style="color: #fff; font-size: 15px;">${p.name}</span>
                         <a href="${p.twitter}" target="_blank" style="margin-left: 8px; display: flex; align-items: center; text-decoration: none;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="#1da1f2" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 5.924c-.793.352-1.646.59-2.542.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082 4.48 4.48 0 0 0-7.635 4.086A12.72 12.72 0 0 1 3.112 4.89a4.48 4.48 0 0 0 1.387 5.976 4.47 4.47 0 0 1-2.03-.561v.057a4.48 4.48 0 0 0 3.594 4.393 4.48 4.48 0 0 1-2.025.077 4.48 4.48 0 0 0 4.184 3.114A8.98 8.98 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.017c8.26 0 12.785-6.84 12.785-12.785 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z"/></svg>
@@ -2559,16 +2780,22 @@ function updateSection(sectionName, items) {
 
 // Handle collapsible sections
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize mobile view first
-    initializeMobileView();
+    console.log('DOM loaded, initializing app...');
     
-    // Initialize graph
-    initializeGraph();
+    const isMobile = window.innerWidth <= 768;
+    console.log('Device type:', isMobile ? 'Mobile' : 'Desktop');
     
-    // Fetch and display HYPE data
+    // Initialize mobile or desktop view based on screen size
+    if (isMobile) {
+        // Mobile: Initialize list view immediately, don't wait for vis.js
+        initializeMobileView();
+    } else {
+        // Desktop: Initialize graph view (requires vis.js)
+        initializeDesktopView();
+    }
+    
+    // Fetch HYPE data (works independently)
     fetchHypeData();
-    
-    // Fetch and display HYPE price data
     fetchHypePrice();
     
     // Handle section toggles
@@ -2579,20 +2806,59 @@ document.addEventListener('DOMContentLoaded', function() {
             sectionItem.classList.toggle('active');
         });
     });
-    
-    // Select hyperEVM node by default - DISABLED to fix zoom issue
-    setTimeout(() => {
-        network.selectNodes(['hyperEVM']);
-        displayNodeInfo('hyperEVM', nodes.get('hyperEVM'));
-        // network.focus('hyperEVM', {
-        //     scale: 0.3,
-        //     animation: {
-        //         duration: 1500,
-        //         easingFunction: 'easeInOutQuad'
-        //     }
-        // });
-    }, 2000);
 });
+
+// Initialize desktop view with graph
+function initializeDesktopView() {
+    console.log('Initializing desktop view...');
+    
+    // Hide mobile elements
+    const mobileHeader = document.querySelector('.mobile-header');
+    if (mobileHeader) {
+        mobileHeader.style.display = 'none';
+        document.body.style.paddingTop = '0';
+    }
+    
+    const listView = document.getElementById('mobile-list-view');
+    if (listView) {
+        listView.style.display = 'none';
+    }
+    
+    // Show graph section
+    const graphSection = document.getElementById('graph-section');
+    if (graphSection) {
+        graphSection.style.display = '';
+    }
+    
+    // Initialize graph (wait for vis.js if needed)
+    function tryInitGraph() {
+        if (typeof vis === 'undefined') {
+            setTimeout(tryInitGraph, 100);
+            return;
+        }
+        
+        // vis.js is loaded, create graph
+        if (createGraphData()) {
+            initializeGraph();
+            setupGraphEventHandlers();
+        }
+    }
+    
+    tryInitGraph();
+}
+
+// Setup graph-specific event handlers
+function setupGraphEventHandlers() {
+    // Select hyperEVM node by default - DISABLED to fix zoom issue
+    if (network && nodes) {
+        setTimeout(() => {
+            if (network && nodes) {
+                network.selectNodes(['hyperEVM']);
+                displayNodeInfo('hyperEVM', nodes.get('hyperEVM'));
+            }
+        }, 2000);
+    }
+}
 
 // On page load, clear selection
 window.selectedCategories = [];
@@ -3257,86 +3523,46 @@ function enhanceNodeImageQuality() {
     }
 }
 
-// Mobile-specific canvas sizing function
+// Mobile-specific canvas sizing function - simplified to let vis.js handle it
 function ensureMobileCanvasSize() {
-    if (window.innerWidth <= 768) {
-        const container = document.getElementById('graph-container');
-        const canvas = container.querySelector('canvas');
-        
-        if (canvas && container) {
-            const containerRect = container.getBoundingClientRect();
-            const maxWidth = containerRect.width;
-            const maxHeight = containerRect.height;
-            
-            console.log('Mobile canvas sizing:', {
-                containerSize: { width: maxWidth, height: maxHeight },
-                canvasSize: { width: canvas.width, height: canvas.height },
-                canvasStyle: { width: canvas.style.width, height: canvas.style.height }
-            });
-            
-            // Set canvas to fill container exactly
-            canvas.style.width = maxWidth + 'px';
-            canvas.style.height = maxHeight + 'px';
-            canvas.style.maxWidth = '100%';
-            canvas.style.maxHeight = '100%';
-            canvas.style.display = 'block';
-            canvas.style.position = 'relative';
-            
-            // Ensure the canvas internal dimensions are reasonable
-            if (canvas.width === 0 || canvas.height === 0) {
-                canvas.width = maxWidth;
-                canvas.height = maxHeight;
-                console.log('Fixed zero canvas dimensions');
+    if (window.innerWidth <= 768 && network) {
+        // Just let vis.js handle the canvas sizing and fitting
+        network.redraw();
+        network.fit({
+            animation: {
+                duration: 500,
+                easingFunction: 'easeInOutQuad'
             }
-            
-            console.log('Mobile canvas sizing applied:', {
-                finalCanvasStyle: { width: canvas.style.width, height: canvas.style.height },
-                finalCanvasSize: { width: canvas.width, height: canvas.height }
-            });
-        } else {
-            console.warn('Canvas or container not found for mobile sizing');
-        }
+        });
     }
 }
 
-// Add global resize handler for mobile
+// Track last window width for resize detection
+let lastWindowWidth = window.innerWidth;
+
+// Add global resize handler for responsive behavior
 window.addEventListener('resize', function() {
+    const wasMobile = lastWindowWidth <= 768;
     const isMobile = window.innerWidth <= 768;
-    const mobileHeader = document.querySelector('.mobile-header');
-    const mobileListView = document.getElementById('mobile-list-view');
-    const graphSection = document.getElementById('graph-section');
     
-    if (isMobile) {
+    // Check if we crossed the mobile/desktop threshold
+    if (wasMobile !== isMobile) {
+        console.log('Device type changed:', isMobile ? 'Mobile' : 'Desktop');
+        
+        // Reload the appropriate view
+        location.reload(); // Simple solution: reload to reinitialize properly
+    } else if (network) {
+        // Just resize the network if it exists
         setTimeout(() => {
-            ensureMobileCanvasSize();
-            if (network) {
-                network.redraw();
-                network.fit();
+            if (isMobile) {
+                ensureMobileCanvasSize();
             }
-        }, 100);
-        
-        // Apply mobile view
-        mobileHeader.style.display = 'flex';
-        document.body.style.paddingTop = '50px';
-        if (isListView) {
-            mobileListView.style.display = 'block';
-            graphSection.classList.add('hidden-mobile');
-        } else {
-            mobileListView.style.display = 'none';
-            graphSection.classList.remove('hidden-mobile');
-        }
-    } else {
-        // Reset to desktop view
-        mobileHeader.style.display = 'none';
-        mobileListView.style.display = 'none';
-        graphSection.classList.remove('hidden-mobile');
-        graphSection.style.display = '';
-        document.body.style.paddingTop = '';
-        
-        if (network) {
+            network.redraw();
             network.fit();
-        }
+        }, 100);
     }
+    
+    lastWindowWidth = window.innerWidth;
 });
 
 // Initialize the network
