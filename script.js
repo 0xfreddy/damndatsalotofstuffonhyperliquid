@@ -1222,6 +1222,12 @@ function initializeMobileView() {
     graphSection.style.display = 'none';
     listView.style.display = 'block';
     
+    // Hide info panels in list view on mobile
+    const infoSection = document.querySelector('.info-section');
+    if (infoSection) {
+        infoSection.style.display = 'none';
+    }
+    
     // Set icons correctly (list view is active)
     const graphIcon = document.querySelector('.graph-icon');
     const listIcon = document.querySelector('.list-icon');
@@ -1278,6 +1284,12 @@ function toggleMobileView() {
             tagFilters.style.display = 'flex';
         }
         
+        // Hide info panels in list view on mobile
+        const infoSection = document.querySelector('.info-section');
+        if (infoSection) {
+            infoSection.style.display = 'none';
+        }
+        
         // Ensure list is populated with current filters
         populateProjectList(selectedMobileTags);
     } else {
@@ -1294,6 +1306,12 @@ function toggleMobileView() {
         const tagFilters = document.getElementById('mobile-tag-filters');
         if (tagFilters) {
             tagFilters.style.display = 'none';
+        }
+        
+        // Show info panels in graph view on mobile
+        const infoSection = document.querySelector('.info-section');
+        if (infoSection) {
+            infoSection.style.display = '';
         }
         
         // Initialize graph if needed
