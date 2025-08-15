@@ -1231,12 +1231,12 @@ function initializeMobileView() {
         infoSection.style.display = 'none';
     }
     
-    // Set icons correctly (list view is active)
-    const graphIcon = document.querySelector('.graph-icon');
-    const listIcon = document.querySelector('.list-icon');
-    if (graphIcon && listIcon) {
-        graphIcon.style.display = 'none';
-        listIcon.style.display = 'inline';
+    // Set toggle state correctly (list view is active)
+    const listOption = document.querySelector('.list-option');
+    const graphOption = document.querySelector('.graph-option');
+    if (listOption && graphOption) {
+        listOption.classList.add('active');
+        graphOption.classList.remove('active');
     }
     
     // Initialize tag filters for mobile
@@ -1274,8 +1274,8 @@ function toggleMobileView() {
     
     const graphSection = document.getElementById('graph-section');
     const listView = document.getElementById('mobile-list-view');
-    const graphIcon = document.querySelector('.graph-icon');
-    const listIcon = document.querySelector('.list-icon');
+    const listOption = document.querySelector('.list-option');
+    const graphOption = document.querySelector('.graph-option');
     
     if (!graphSection || !listView) {
         console.error('Cannot toggle: elements not found');
@@ -1290,9 +1290,10 @@ function toggleMobileView() {
         graphSection.style.display = 'none';
         listView.style.display = 'block';
         
-        if (graphIcon && listIcon) {
-            graphIcon.style.display = 'none';
-            listIcon.style.display = 'inline';
+        // Update toggle state
+        if (listOption && graphOption) {
+            listOption.classList.add('active');
+            graphOption.classList.remove('active');
         }
         
         // Don't automatically show tag filters - let user control with filter button
@@ -1311,9 +1312,10 @@ function toggleMobileView() {
         listView.style.display = 'none';
         graphSection.style.display = 'block';
         
-        if (graphIcon && listIcon) {
-            graphIcon.style.display = 'inline';
-            listIcon.style.display = 'none';
+        // Update toggle state
+        if (listOption && graphOption) {
+            listOption.classList.remove('active');
+            graphOption.classList.add('active');
         }
         
         // Hide tag filters in graph view
@@ -1344,9 +1346,9 @@ function toggleMobileView() {
                 isListView = true;
                 graphSection.style.display = 'none';
                 listView.style.display = 'block';
-                if (graphIcon && listIcon) {
-                    graphIcon.style.display = 'none';
-                    listIcon.style.display = 'inline';
+                if (listOption && graphOption) {
+                    listOption.classList.add('active');
+                    graphOption.classList.remove('active');
                 }
             }
         } else {

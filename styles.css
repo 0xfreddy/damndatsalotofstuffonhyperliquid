@@ -731,20 +731,40 @@ body {
     transform: scale(1.05);
 }
 
-.view-toggle-btn {
+.toggle-switch {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    padding: 8px 12px;
-    color: #fff;
+    padding: 4px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 18px;
+    position: relative;
+    min-width: 80px;
 }
 
-.view-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+.toggle-switch:hover {
+    background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
+}
+
+.toggle-option {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    user-select: none;
+}
+
+.toggle-option.active {
+    background: #14d879;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-list-view {
