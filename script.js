@@ -1388,7 +1388,7 @@ function populateProjectList(filterTags = []) {
         projectLogo.src = project.logo;
         projectLogo.alt = project.name;
         projectLogo.onerror = function() {
-            this.src = '/images/default-logo.png';
+            this.src = '/images/placeholder.svg';
         };
         
         const projectInfo = document.createElement('div');
