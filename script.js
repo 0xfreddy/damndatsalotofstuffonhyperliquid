@@ -2566,44 +2566,14 @@ window.closeSharePopup = closeSharePopup;
 // Display node information in the panel
 // Helper function to reset node indicator to default state
 function resetNodeIndicator() {
-    const nodeHeader = document.querySelector('.info-header');
-    const existingIndicator = nodeHeader.querySelector('.node-indicator, .project-logo-img');
-    
-    if (existingIndicator) {
-        existingIndicator.remove();
-    }
-    
-    // Create default node indicator
-    const nodeIndicator = document.createElement('div');
-    nodeIndicator.className = 'node-indicator';
-    nodeHeader.insertBefore(nodeIndicator, nodeHeader.firstChild);
+    // Node indicator is no longer used - function kept for compatibility
+    console.log('resetNodeIndicator called - node indicator removed from UI');
 }
 
 // Helper function to set project logo as indicator
 function setProjectLogoIndicator(logoUrl) {
-    const nodeHeader = document.querySelector('.info-header');
-    const existingIndicator = nodeHeader.querySelector('.node-indicator, .project-logo-img');
-    
-    if (existingIndicator) {
-        existingIndicator.remove();
-    }
-    
-    // Create project logo image
-    const logoImg = document.createElement('img');
-    logoImg.className = 'project-logo-img';
-    logoImg.src = logoUrl;
-    logoImg.alt = 'Project Logo';
-    logoImg.style.cssText = `
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid rgba(39, 174, 96, 0.6);
-        box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
-        transition: all 0.3s ease;
-    `;
-    
-    nodeHeader.insertBefore(logoImg, nodeHeader.firstChild);
+    // Project logo indicator is no longer used - function kept for compatibility
+    console.log('setProjectLogoIndicator called - project logo indicator removed from UI');
 }
 
 function displayNodeInfo(nodeId, node) {
@@ -2662,9 +2632,7 @@ function displayNodeInfo(nodeId, node) {
 
         `;
         
-        // Set project logo as actual image element
-        const logoUrl = project.logo || '/images/placeholder.svg';
-        setProjectLogoIndicator(logoUrl);
+        // Project logo indicator removed from UI
         
         document.getElementById('category-multiselect-container').style.display = 'none';
         return;
@@ -2716,9 +2684,23 @@ function displayNodeInfo(nodeId, node) {
         projectCountChip.className = 'project-count-chip';
         projectCountChip.textContent = `projects: ${projects.length}`;
         
-        // Append both elements
+        // Create reset filters button
+        const resetFiltersBtn = document.createElement('button');
+        resetFiltersBtn.id = 'reset-filters-btn';
+        resetFiltersBtn.className = 'reset-filters-btn';
+        resetFiltersBtn.style.display = 'none';
+        resetFiltersBtn.title = 'Reset filters';
+        resetFiltersBtn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+        `;
+        
+        // Append elements
         nodeTitle.appendChild(titleSpan);
         nodeTitle.appendChild(projectCountChip);
+        nodeTitle.appendChild(resetFiltersBtn);
         
         infoContent.innerHTML = ``;
         infoContent.style.display = 'none'; // Hide the empty content div

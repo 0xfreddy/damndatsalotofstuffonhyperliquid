@@ -13,7 +13,7 @@
     <div class="mobile-header">
         <h1 class="mobile-title">damn</h1>
         <div class="mobile-controls">
-            <button class="filter-toggle-btn" id="filter-toggle-btn">Filter</button>
+            <button class="filter-toggle-btn" id="filter-toggle-btn">Filters</button>
             <div class="view-toggle">
                 <button class="view-toggle-btn" id="view-toggle-btn">
                     <span class="toggle-icon graph-icon">list view</span>
@@ -71,7 +71,6 @@
             <!-- Top Panel: Node Information and Tags -->
             <div class="glass-panel info-panel-top">
                 <div class="info-header">
-                    <div class="node-indicator"></div>
                     <h2 id="node-title">Select a node</h2>
                 </div>
                 
@@ -80,16 +79,8 @@
                 </div>
                 
                 <div id="category-multiselect-container" style="display:none; margin-top: 20px;">
-                    <div class="category-header">
-                        <div id="category-chips-container" class="category-chips-container">
-                            <!-- Category chips will be dynamically generated here -->
-                        </div>
-                        <button id="reset-filters-btn" class="reset-filters-btn" style="display: none;" title="Reset filters">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="1 4 1 10 7 10"></polyline>
-                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-                            </svg>
-                        </button>
+                    <div id="category-chips-container" class="category-chips-container">
+                        <!-- Category chips will be dynamically generated here -->
                     </div>
                 </div>
             </div>
