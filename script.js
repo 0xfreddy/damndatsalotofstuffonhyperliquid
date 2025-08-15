@@ -1249,6 +1249,13 @@ function initializeMobileView() {
         toggleBtn.removeEventListener('click', toggleMobileView);
         toggleBtn.addEventListener('click', toggleMobileView);
     }
+    
+    // Add filter toggle event listener
+    const filterToggleBtn = document.getElementById('filter-toggle-btn');
+    if (filterToggleBtn) {
+        filterToggleBtn.removeEventListener('click', toggleMobileFilters);
+        filterToggleBtn.addEventListener('click', toggleMobileFilters);
+    }
 }
 
 // Simplified mobile toggle function
@@ -1278,11 +1285,8 @@ function toggleMobileView() {
             listIcon.style.display = 'inline';
         }
         
-        // Show tag filters
-        const tagFilters = document.getElementById('mobile-tag-filters');
-        if (tagFilters) {
-            tagFilters.style.display = 'flex';
-        }
+        // Don't automatically show tag filters - let user control with filter button
+        // Filters will remain in their current state (hidden by default)
         
         // Hide info panels in list view on mobile
         const infoSection = document.querySelector('.info-section');
@@ -1342,6 +1346,31 @@ function toggleMobileView() {
                 network.fit();
             }, 100);
         }
+    }
+}
+
+// Toggle mobile filters visibility
+function toggleMobileFilters() {
+    console.log('Toggling mobile filters');
+    
+    const filterToggleBtn = document.getElementById('filter-toggle-btn');
+    const tagFilters = document.getElementById('mobile-tag-filters');
+    
+    if (!filterToggleBtn || !tagFilters) {
+        console.error('Filter elements not found');
+        return;
+    }
+    
+    const isVisible = tagFilters.style.display === 'flex' || tagFilters.style.display === '';
+    
+    if (isVisible) {
+        // Hide filters
+        tagFilters.style.display = 'none';
+        filterToggleBtn.classList.remove('active');
+    } else {
+        // Show filters
+        tagFilters.style.display = 'flex';
+        filterToggleBtn.classList.add('active');
     }
 }
 

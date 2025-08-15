@@ -681,6 +681,35 @@ body {
     text-transform: lowercase;
 }
 
+.mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.filter-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.filter-toggle-btn.active {
+    background: #14d879;
+    border-color: #14d879;
+    color: #000;
+}
+
 .view-toggle-btn {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -717,7 +746,7 @@ body {
 
 /* Mobile tag filters */
 .mobile-tag-filters {
-    display: flex;
+    display: none; /* Hidden by default */
     flex-wrap: wrap;
     gap: 8px;
     padding: 10px;
