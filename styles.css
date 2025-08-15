@@ -1266,11 +1266,41 @@ body {
     color: #fff;
 }
 
+/* Category Header and Reset Button */
+.category-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.reset-filters-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-filters-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transform: scale(1.05);
+}
+
 /* Category Chips */
 .category-chips-container {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    flex: 1;
 }
 
 .category-chip {

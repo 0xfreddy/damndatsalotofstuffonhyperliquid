@@ -2740,6 +2740,16 @@ function displayNodeInfo(nodeId, node) {
             </div>
         `).join('');
         
+        // Add event listener for reset button
+        const resetBtn = document.getElementById('reset-filters-btn');
+        if (resetBtn) {
+            resetBtn.removeEventListener('click', resetAllFilters);
+            resetBtn.addEventListener('click', resetAllFilters);
+        }
+        
+        // Update reset button visibility
+        updateResetButtonVisibility();
+        
         // Apply current filter
         filterGraphByCategories(window.selectedCategories || []);
         return;
@@ -2763,12 +2773,49 @@ function toggleCategoryChip(category) {
     // Store globally for access by other functions
     window.selectedCategories = selectedCategories;
     
+    // Show/hide reset button based on selection
+    updateResetButtonVisibility();
+    
     console.log('Selected categories:', selectedCategories);
     filterGraphByCategories(selectedCategories);
 }
 
-// Make the function global
+// Function to update reset button visibility
+function updateResetButtonVisibility() {
+    const resetBtn = document.getElementById('reset-filters-btn');
+    if (resetBtn) {
+        if (selectedCategories && selectedCategories.length > 0) {
+            resetBtn.style.display = 'flex';
+        } else {
+            resetBtn.style.display = 'none';
+        }
+    }
+}
+
+// Function to reset all filters
+function resetAllFilters() {
+    // Clear selected categories
+    selectedCategories = [];
+    window.selectedCategories = [];
+    
+    // Remove selected class from all chips
+    const selectedChips = document.querySelectorAll('.category-chip.selected');
+    selectedChips.forEach(chip => {
+        chip.classList.remove('selected');
+    });
+    
+    // Hide reset button
+    updateResetButtonVisibility();
+    
+    // Reset graph to show all nodes
+    filterGraphByCategories([]);
+    
+    console.log('All filters reset');
+}
+
+// Make the functions global
 window.toggleCategoryChip = toggleCategoryChip;
+window.resetAllFilters = resetAllFilters;
 
 // Function to filter graph by a single category (called from project details panel)
 function filterByCategory(category) {
@@ -2776,37 +2823,52 @@ function filterByCategory(category) {
     
     // Set the selected category (replace any existing selection)
     window.selectedCategories = [category];
+    selectedCategories = [category];
+    
+    // Update reset button visibility
+    updateResetButtonVisibility();
     
     // Apply the filter
     filterGraphByCategories([category]);
     
-    // Update the hyperEVM panel to show the selected category
-    setTimeout(() => {
-        network.selectNodes(['hyperEVM']);
-        displayNodeInfo('hyperEVM', nodes.get('hyperEVM'));
-        
-        // Ensure the view is centered on all visible nodes - DISABLED to fix zoom loop
-        // setTimeout(() => {
-        //     if (network) {
-        //         const visibleNodeIds = [];
-        //         nodes.forEach(node => {
-        //             if (!node.hidden) {
-        //                 visibleNodeIds.push(node.id);
-        //             }
-        //         });
-        //         
-        //         if (visibleNodeIds.length > 0) {
-        //             network.fit({
-        //                 nodes: visibleNodeIds,
-        //                 animation: {
-        //                     duration: 800,
-        //                     easingFunction: 'easeInOutQuad'
-        //                 }
-        //             });
-        //         }
-        //     }
-        // }, 300);
-    }, 100);
+            // Update the hyperEVM panel to show the selected category
+        setTimeout(() => {
+            network.selectNodes(['hyperEVM']);
+            displayNodeInfo('hyperEVM', nodes.get('hyperEVM'));
+            
+            // Update category chips to show selected state
+            const chips = document.querySelectorAll('.category-chip');
+            chips.forEach(chip => {
+                const chipCategory = chip.getAttribute('data-category');
+                if (chipCategory === category) {
+                    chip.classList.add('selected');
+                } else {
+                    chip.classList.remove('selected');
+                }
+            });
+            
+            // Ensure the view is centered on all visible nodes - DISABLED to fix zoom loop
+            // setTimeout(() => {
+            //     if (network) {
+            //         const visibleNodeIds = [];
+            //         nodes.forEach(node => {
+            //             if (!node.hidden) {
+            //                 visibleNodeIds.push(node.id);
+            //             }
+            //         });
+            //         
+            //         if (visibleNodeIds.length > 0) {
+            //             network.fit({
+            //                 nodes: visibleNodeIds,
+            //                 animation: {
+            //                     duration: 800,
+            //                     easingFunction: 'easeInOutQuad'
+            //                 }
+            //             });
+            //         }
+            //     }
+            // }, 300);
+        }, 100);
     
     // Optional: Show a notification about the filter
     console.log(`Graph filtered to show only "${category}" projects`);
