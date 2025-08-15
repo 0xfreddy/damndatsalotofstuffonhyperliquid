@@ -1192,6 +1192,9 @@ function handleMobileTagClick(tag) {
         }
     }
     
+    // Update reset button visibility
+    updateResetButtonVisibility();
+    
     // Refresh the project list with filtering
     populateProjectList(selectedMobileTags);
 }
@@ -1255,6 +1258,13 @@ function initializeMobileView() {
     if (filterToggleBtn) {
         filterToggleBtn.removeEventListener('click', toggleMobileFilters);
         filterToggleBtn.addEventListener('click', toggleMobileFilters);
+    }
+    
+    // Add mobile reset button event listener
+    const mobileResetBtn = document.getElementById('mobile-reset-filters-btn');
+    if (mobileResetBtn) {
+        mobileResetBtn.removeEventListener('click', resetAllFilters);
+        mobileResetBtn.addEventListener('click', resetAllFilters);
     }
 }
 
@@ -2675,10 +2685,6 @@ function displayNodeInfo(nodeId, node) {
         // Clear existing content and create title with project count
         nodeTitle.innerHTML = '';
         
-        // Create title span
-        const titleSpan = document.createElement('span');
-        titleSpan.textContent = 'hyperEVM';
-        
         // Create project count chip
         const projectCountChip = document.createElement('span');
         projectCountChip.className = 'project-count-chip';
@@ -2698,7 +2704,6 @@ function displayNodeInfo(nodeId, node) {
         `;
         
         // Append elements
-        nodeTitle.appendChild(titleSpan);
         nodeTitle.appendChild(projectCountChip);
         nodeTitle.appendChild(resetFiltersBtn);
         
@@ -2764,12 +2769,23 @@ function toggleCategoryChip(category) {
 
 // Function to update reset button visibility
 function updateResetButtonVisibility() {
+    // Update desktop reset button
     const resetBtn = document.getElementById('reset-filters-btn');
     if (resetBtn) {
         if (selectedCategories && selectedCategories.length > 0) {
             resetBtn.style.display = 'flex';
         } else {
             resetBtn.style.display = 'none';
+        }
+    }
+    
+    // Update mobile reset button
+    const mobileResetBtn = document.getElementById('mobile-reset-filters-btn');
+    if (mobileResetBtn) {
+        if (selectedCategories && selectedCategories.length > 0) {
+            mobileResetBtn.style.display = 'flex';
+        } else {
+            mobileResetBtn.style.display = 'none';
         }
     }
 }
@@ -2786,11 +2802,25 @@ function resetAllFilters() {
         chip.classList.remove('selected');
     });
     
+    // Clear mobile tag selections
+    selectedMobileTags = [];
+    const mobileChips = document.querySelectorAll('.mobile-tag-chip');
+    mobileChips.forEach(chip => {
+        if (chip.dataset.tag === 'all') {
+            chip.classList.add('active');
+        } else {
+            chip.classList.remove('active');
+        }
+    });
+    
     // Hide reset button
     updateResetButtonVisibility();
     
     // Reset graph to show all nodes
     filterGraphByCategories([]);
+    
+    // Refresh mobile project list
+    populateProjectList([]);
     
     console.log('All filters reset');
 }

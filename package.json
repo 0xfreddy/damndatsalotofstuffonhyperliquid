@@ -1,7 +1,7 @@
 {
   "name": "hyperevm-ecosystem-graph",
   "version": "1.0.0",
-  "description": "HyperEVM Ecosystem Graph Visualization - Static Site",
+  "description": "all stuff on hyperliquid",
   "main": "index.html",
   "scripts": {
     "build": "echo 'Static site - no build required'",
