@@ -902,6 +902,216 @@ const projects = [
         tags: ["Data"],
         twitter: "https://x.com/PixOnChain/status/1932589848566890837",
         logo: "/images/hyperevmtech.jpg",
+    },
+    {
+        id: 134,
+        name: "Hyena",
+        tags: ["Yield"],
+        twitter: "https://x.com/hyenatrade",
+        logo: "/images/Hyena.png",
+    },
+    {
+        id: 135,
+        name: "HyperTutor",
+        tags: ["Education"],
+        twitter: "https://x.com/HyperTutor",
+        logo: "/images/HyperTutor.png",
+    },
+    {
+        id: 136,
+        name: "Allium",
+        tags: ["Dashboard"],
+        twitter: "https://x.com/ethanyish/status/1952380476272025912",
+        logo: "/images/allium.png",
+    },
+    {
+        id: 137,
+        name: "Octav",
+        tags: ["Tracking"],
+        twitter: "https://x.com/OctavFi",
+        logo: "/images/Octav.png",
+    },
+    {
+        id: 138,
+        name: "Spectra",
+        tags: ["Defi"],
+        twitter: "https://x.com/Spectra_Finance",
+        logo: "/images/Spectra.png",
+    },
+    {
+        id: 139,
+        name: "HyperBrick",
+        tags: ["Dex"],
+        twitter: "https://x.com/HyperBrickX",
+        logo: "/images/HyperBrick.png",
+    },
+    {
+        id: 140,
+        name: "Gas.zip",
+        tags: ["Bridge"],
+        twitter: "https://x.com/gasdotzip",
+        logo: "/images/gaszip.png",
+    },
+    {
+        id: 141,
+        name: "Relay",
+        tags: ["Bridge"],
+        twitter: "https://x.com/RelayProtocol",
+        logo: "/images/Relay.png",
+    },
+    {
+        id: 142,
+        name: "hx_finance",
+        tags: ["Dex"],
+        twitter: "https://x.com/hx_finance",
+        logo: "/images/hx_finance.png",
+    },
+    {
+        id: 143,
+        name: "HyperCat",
+        tags: ["Dex"],
+        twitter: "https://x.com/HyperCatEx",
+        logo: "/images/HyperCat.png",
+    },
+    {
+        id: 144,
+        name: "Project X",
+        tags: ["Dex"],
+        twitter: "https://x.com/prjx_hl",
+        logo: "/images/Project X.png",
+    },
+    {
+        id: 145,
+        name: "Drops",
+        tags: ["Dashboard"],
+        twitter: "https://www.drops.bot/free-hyperevm-checker",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 146,
+        name: "Bebop",
+        tags: ["Dex"],
+        twitter: "https://x.com/bebop_dex",
+        logo: "/images/bebop.png",
+    },
+    {
+        id: 147,
+        name: "HyperTracker",
+        tags: ["Tracking"],
+        twitter: "https://x.com/CMMHyperTracker",
+        logo: "/images/HyperTracker.png",
+    },
+    {
+        id: 148,
+        name: "HyperTracker - Heatmap",
+        tags: ["Dashboard"],
+        twitter: "https://app.coinmarketman.com/hypertracker/heatmap",
+        logo: "/images/HyperTracker.png",
+    },
+    {
+        id: 149,
+        name: "Skewga",
+        tags: ["Dashboard"],
+        twitter: "https://www.skewga.com/crypto",
+        logo: "/images/Skewga.png",
+    },
+    {
+        id: 150,
+        name: "HyperZap",
+        tags: ["Trading", "Bot"],
+        twitter: "https://x.com/hyperzap_io",
+        logo: "/images/HyperZap.png",
+    },
+    {
+        id: 151,
+        name: "Hypeburn",
+        tags: ["Dashboard"],
+        twitter: "https://www.hypeburn.fun/builders",
+        logo: "/images/janhl.PNG",
+    },
+    {
+        id: 152,
+        name: "Hyperpie",
+        tags: ["Launchpad", "Dex"],
+        twitter: "https://x.com/hyperpiexyz_io",
+        logo: "/images/Hyperpie.png",
+    },
+    {
+        id: 153,
+        name: "HypurrOTC",
+        tags: ["NFT"],
+        twitter: "https://x.com/drip__trade/status/1941137769528463597?s=46&t=qym20GtjJYoGwJ9qMSF5Pw",
+        logo: "/images/driptrade-logo.png",
+    },
+    {
+        id: 154,
+        name: "Hyperliquid UAE Community",
+        tags: ["Community"],
+        twitter: "https://x.com/Hyperliquidae",
+        logo: "/images/HyperliquidUAE.png",
+    },
+    {
+        id: 155,
+        name: "HL.eco",
+        tags: ["Tracking"],
+        twitter: "https://x.com/hl_eco",
+        logo: "/images/hleco.png",
+    },
+    {
+        id: 156,
+        name: "Delpho",
+        tags: ["Stablecoins"],
+        twitter: "https://x.com/delpho_labs",
+        logo: "/images/Delpho.png",
+    },
+    {
+        id: 157,
+        name: "Harmonix Finance",
+        tags: ["Yield"],
+        twitter: "https://x.com/harmonixfi",
+        logo: "/images/Harmonix.png",
+    },
+    {
+        id: 158,
+        name: "Scatter",
+        tags: ["NFT"],
+        twitter: "https://x.com/scatter_art",
+        logo: "/images/scatter.png",
+    },
+    {
+        id: 159,
+        name: "hyperevm.farm",
+        tags: ["Dashboard", "Tools"],
+        twitter: "https://x.com/PixOnChain/status/1937949012235325920",
+        logo: "/images/pix.png",
+    },
+    {
+        id: 160,
+        name: "Flowscan",
+        tags: ["Dashboard", "Tool", "Tracking"],
+        twitter: "https://www.flowscan.xyz/builders?builder=all",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 161,
+        name: "BasedApp",
+        tags: ["Trading", "Mobile"],
+        twitter: "https://x.com/BasedOneX",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 162,
+        name: "Dreamcash",
+        tags: ["Trading", "Mobile"],
+        twitter: "https://x.com/Dreamcashxyz",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 163,
+        name: "Supercexy",
+        tags: ["Trading", "Mobile"],
+        twitter: "https://x.com/try_supercexy",
+        logo: "/images/placeholder.svg",
     }
 ];
 
@@ -935,7 +1145,11 @@ const tags = [
     "Privacy",
     "Utility",
     "Security",
-    "Options"
+    "Options",
+    "Education",
+    "Launchpad",
+    "Stablecoins",
+    "Tool"
 ];
 
 // Define gradients for each category
@@ -970,6 +1184,10 @@ const categoryGradients = {
     Utility: 'linear-gradient(135deg, #654ea3 0%, #eaafc8 100%)',
     Security: 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)',
     Options: 'linear-gradient(135deg, #8360c3 0%, #2ebf91 100%)',
+    Education: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    Launchpad: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    Stablecoins: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+    Tool: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
     default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
 };
 
@@ -1004,7 +1222,11 @@ const categoryColors = {
     Privacy: '#27ae60',
     Utility: '#27ae60',
     Security: '#27ae60',
-    Options: '#27ae60'
+    Options: '#27ae60',
+    Education: '#27ae60',
+    Launchpad: '#27ae60',
+    Stablecoins: '#27ae60',
+    Tool: '#27ae60'
 };
 
 // Create nodes and edges datasets (will be populated when vis.js loads)
