@@ -52,7 +52,7 @@ const projects = [
     {
       id: 8,
       name: "HyBridge",
-      tags: ["Infra"],
+      tags: ["Bridge"],
       twitter: "https://x.com/HyBridgeHL",
       logo: "/images/hybridge-logo.png",
     },
@@ -563,7 +563,7 @@ const projects = [
     {
       id: 84,
       name: "Bridge Hypio",
-      tags: ["Infra", "NFT"],
+      tags: ["Bridge", "NFT"],
       twitter: "https://x.com/HypioHL",
       logo: "/images/hypio.png",
     },
@@ -577,7 +577,7 @@ const projects = [
     {
       id: 86,
       name: "deBridge",
-      tags: ["Infra"],
+      tags: ["Bridge"],
       twitter: "https://x.com/deBridgeFinance",
       logo: "/images/debridge.png",
     },
@@ -1134,6 +1134,7 @@ const tags = [
     "Community", 
     "AI",
     "NFT",
+    "Bridge"
     "RWA",
     "Mobile",
     "Investment",
@@ -1149,7 +1150,9 @@ const tags = [
     "Education",
     "Launchpad",
     "Stablecoins",
-    "Tool"
+    "Tool",
+    "Dashboard",
+    "Tracking"
 ];
 
 // Define gradients for each category
