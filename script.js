@@ -143,7 +143,7 @@ const projects = [
     {
       id: 22,
       name: "Hyperbeat",
-      tags: ["Infra","Staking"],
+      tags: ["Staking"],
       twitter: "https://x.com/0xHyperBeat",
       logo: "/images/hyperbeat.png",
     },
@@ -920,7 +920,7 @@ const projects = [
     {
         id: 136,
         name: "Allium",
-        tags: ["Dashboard"],
+        tags: ["Dashboard","Tools"],
         twitter: "https://x.com/ethanyish/status/1952380476272025912",
         logo: "/images/allium.png",
     },
@@ -1081,7 +1081,7 @@ const projects = [
     {
         id: 159,
         name: "hyperevm.farm",
-        tags: ["Dashboard", "Tools"],
+        tags: ["Dashboard", "Tool"],
         twitter: "https://x.com/PixOnChain/status/1937949012235325920",
         logo: "/images/pix.png",
     },
@@ -1097,21 +1097,21 @@ const projects = [
         name: "BasedApp",
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/BasedOneX",
-        logo: "/images/based.png",
+        logo: "/images/placeholder.svg",
     },
     {
         id: 162,
         name: "Dreamcash",
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/Dreamcashxyz",
-        logo: "/images/dreamcash.png",
+        logo: "/images/placeholder.svg",
     },
     {
         id: 163,
         name: "Supercexy",
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/try_supercexy",
-        logo: "/images/Supercexy.png",
+        logo: "/images/placeholder.svg",
     }
 ];
 
@@ -1134,7 +1134,6 @@ const tags = [
     "Community", 
     "AI",
     "NFT",
-    "Bridge"
     "RWA",
     "Mobile",
     "Investment",
@@ -1152,6 +1151,7 @@ const tags = [
     "Stablecoins",
     "Tool",
     "Dashboard",
+    "Bridge",
     "Tracking"
 ];
 
@@ -1191,6 +1191,9 @@ const categoryGradients = {
     Launchpad: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     Stablecoins: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
     Tool: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
+    Bridge: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
+    Tracking: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
+    Dashboard: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
     default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
 };
 
