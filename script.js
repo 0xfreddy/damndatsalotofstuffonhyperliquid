@@ -16,7 +16,7 @@ const projects = [
     },
     {
       id: 3,
-      name: "hyperland",
+      name: "hyperlend",
       tags: ["Defi", "Staking"],
       twitter: "https://x.com/hyperlendx",
       logo: "/images/hyperland-logo.png",
@@ -1097,21 +1097,21 @@ const projects = [
         name: "BasedApp",
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/BasedOneX",
-        logo: "/images/placeholder.svg",
+        logo: "/images/based.png",
     },
     {
         id: 162,
         name: "Dreamcash",
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/Dreamcashxyz",
-        logo: "/images/placeholder.svg",
+        logo: "/images/dreamcash.png",
     },
     {
         id: 163,
         name: "Supercexy",
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/try_supercexy",
-        logo: "/images/placeholder.svg",
+        logo: "/images/Supercexy.png",
     }
 ];
 
