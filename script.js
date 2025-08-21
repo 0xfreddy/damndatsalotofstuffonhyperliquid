@@ -2802,6 +2802,8 @@ function downloadImage() {
 
 // Make functions global for HTML onclick handlers
 window.closeSharePopup = closeSharePopup;
+window.selectProjectFromBento = selectProjectFromBento;
+window.closeProjectPopup = closeProjectPopup;
 
 // Display node information in the panel
 // Helper function to reset node indicator to default state
@@ -3917,3 +3919,154 @@ window.addEventListener('resize', function() {
 });
 
 // Initialize the network
+
+// Bento Grid Functionality
+let currentView = 'graph'; // 'graph' or 'bento'
+
+// Initialize bento grid
+function initializeBentoGrid() {
+    const bentoGrid = document.getElementById('bento-grid');
+    if (!bentoGrid) return;
+    
+    // Group projects by category
+    const categories = {};
+    projects.forEach(project => {
+        project.tags.forEach(tag => {
+            if (!categories[tag]) {
+                categories[tag] = [];
+            }
+            categories[tag].push(project);
+        });
+    });
+    
+    // Create bento grid HTML
+    bentoGrid.innerHTML = '';
+    Object.keys(categories).forEach(category => {
+        const categoryProjects = categories[category];
+        const categoryElement = document.createElement('div');
+        categoryElement.className = 'bento-category';
+        categoryElement.innerHTML = `
+            <div class="bento-category-header">
+                <h3 class="bento-category-title">${category}</h3>
+                <span class="bento-category-count">${categoryProjects.length}</span>
+            </div>
+            <div class="bento-projects">
+                ${categoryProjects.map(project => `
+                    <div class="bento-project" data-project-id="${project.id}" onclick="selectProjectFromBento(${project.id})">
+                        <img src="${project.logo}" alt="${project.name}" class="bento-project-logo" onerror="this.src='/images/placeholder.svg'">
+                        <div class="bento-project-name">${project.name}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        bentoGrid.appendChild(categoryElement);
+    });
+}
+
+// Handle project selection from bento grid
+function selectProjectFromBento(projectId) {
+    const project = projects.find(p => p.id === projectId);
+    if (!project) return;
+    
+    // Remove previous selection
+    document.querySelectorAll('.bento-project.selected').forEach(el => {
+        el.classList.remove('selected');
+    });
+    
+    // Add selection to clicked project
+    const projectElement = document.querySelector(`[data-project-id="${projectId}"]`);
+    if (projectElement) {
+        projectElement.classList.add('selected');
+    }
+    
+    // Show project popup
+    showProjectPopup(project);
+    
+    // If in graph view, also select the node
+    if (currentView === 'graph' && network) {
+        const nodeId = `project-${projectId}`;
+        network.selectNodes([nodeId]);
+    }
+}
+
+// Show project popup
+function showProjectPopup(project) {
+    const popup = document.getElementById('project-popup');
+    const logo = document.getElementById('project-popup-logo');
+    const name = document.getElementById('project-popup-name');
+    const twitter = document.getElementById('project-popup-twitter');
+    const tags = document.getElementById('project-popup-tags');
+    
+    // Set popup content
+    logo.src = project.logo;
+    logo.alt = project.name;
+    logo.onerror = function() {
+        this.src = '/images/placeholder.svg';
+    };
+    
+    name.textContent = project.name;
+    twitter.href = project.twitter;
+    
+    // Populate tags
+    tags.innerHTML = project.tags.map(tag => 
+        `<span class="project-popup-tag">${tag}</span>`
+    ).join('');
+    
+    // Show popup
+    popup.style.display = 'flex';
+}
+
+// Close project popup
+function closeProjectPopup() {
+    const popup = document.getElementById('project-popup');
+    popup.style.display = 'none';
+}
+
+// View toggle functionality
+function initializeViewToggle() {
+    const toggleOptions = document.querySelectorAll('.desktop-view-toggle .toggle-option');
+    const graphSection = document.getElementById('graph-section');
+    const bentoSection = document.getElementById('bento-section');
+    const infoSection = document.querySelector('.info-section');
+    
+    toggleOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const view = option.dataset.view;
+            if (view === currentView) return;
+            
+            // Update active state for all toggle options
+            document.querySelectorAll('.desktop-view-toggle .toggle-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            
+            // Set active state for the clicked option and its counterpart
+            option.classList.add('active');
+            const otherToggle = document.querySelector(`.desktop-view-toggle .toggle-option[data-view="${view}"]:not(.active)`);
+            if (otherToggle) {
+                otherToggle.classList.add('active');
+            }
+            
+            // Switch views
+            if (view === 'bento') {
+                graphSection.style.display = 'none';
+                bentoSection.style.display = 'block';
+                infoSection.style.display = 'none'; // Hide side panel in bento view
+                currentView = 'bento';
+                initializeBentoGrid();
+            } else {
+                bentoSection.style.display = 'none';
+                graphSection.style.display = 'block';
+                infoSection.style.display = 'flex'; // Show side panel in graph view
+                currentView = 'graph';
+                if (network) {
+                    network.redraw();
+                }
+            }
+        });
+    });
+}
+
+// Initialize view toggle on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initializeViewToggle();
+});

@@ -398,6 +398,7 @@ body {
 .info-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 15px;
     margin-bottom: 15px;
     padding-bottom: 10px;
@@ -2130,4 +2131,382 @@ body {
 
 .share-popup-content::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
+}
+
+/* Desktop View Toggle */
+.desktop-view-toggle {
+    display: none;
+}
+
+.desktop-view-toggle .toggle-switch {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 1px;
+}
+
+.desktop-view-toggle .toggle-option {
+    padding: 6px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.desktop-view-toggle .toggle-option.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.desktop-view-toggle .toggle-option:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bento Grid Section */
+.bento-section {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+.bento-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.bento-category {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.bento-category:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.bento-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bento-category-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+.bento-category-count {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.bento-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 8px;
+}
+
+.bento-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+}
+
+.bento-project:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.bento-project.selected {
+    background: rgba(165, 238, 218, 0.2);
+    border-color: rgba(165, 238, 218, 0.4);
+}
+
+.bento-project-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 4px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.bento-project-name {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Show desktop toggle only on desktop */
+@media (min-width: 768px) {
+    .desktop-view-toggle {
+        display: block;
+    }
+    
+    .info-header {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .info-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .desktop-view-toggle {
+        align-self: flex-end;
+    }
+    
+    .bento-header {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Mobile adjustments for bento grid */
+@media (max-width: 767px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .bento-projects {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 8px;
+    }
+    
+    .bento-project-logo {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .bento-project-name {
+        font-size: 8px;
+    }
+}
+
+/* Project Popup Styles */
+.project-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.project-popup-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0;
+    max-width: 400px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+
+.project-popup-body {
+    padding: 0 20px 20px 20px;
+}
+
+.project-popup-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.project-popup-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.project-popup-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-popup-header-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-popup-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+}
+
+.project-popup-twitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(29, 161, 242, 0.2);
+    border: 2px solid rgba(29, 161, 242, 0.4);
+    border-radius: 8px;
+    color: #1da1f2;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.project-popup-twitter:hover {
+    background: rgba(29, 161, 242, 0.3);
+    border-color: rgba(29, 161, 242, 0.6);
+    transform: scale(1.05);
+    color: #0d8bd9;
+}
+
+.project-popup-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-popup-tag {
+    background: rgba(39, 174, 96, 0.15);
+    border: 1px solid rgba(39, 174, 96, 0.3);
+    color: #27ae60;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-popup-tag:hover {
+    background: rgba(39, 174, 96, 0.25);
+    border-color: rgba(39, 174, 96, 0.4);
+    transform: scale(1.05);
+}
+
+/* Mobile adjustments for project popup */
+@media (max-width: 767px) {
+    .project-popup-content {
+        width: 95%;
+        max-width: 350px;
+    }
+    
+    .project-popup-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .project-popup-logo {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .project-popup-header-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .project-popup-name {
+        font-size: 18px;
+    }
+    
+    .project-popup-twitter {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .project-popup-tags {
+        justify-content: center;
+    }
 } 

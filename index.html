@@ -43,6 +43,8 @@
             </div>
         </div>
         
+
+
         <!-- Graph Container -->
         <div class="graph-section" id="graph-section">
             <div class="glass-panel">
@@ -72,12 +74,35 @@
             </div>
         </div>
 
+        <!-- Bento Grid Container -->
+        <div class="bento-section" id="bento-section" style="display: none;">
+            <div class="glass-panel">
+                <div class="bento-header">
+                    <div class="desktop-view-toggle" id="desktop-view-toggle-bento">
+                        <div class="toggle-switch">
+                            <span class="toggle-option graph-option" data-view="graph">Graph</span>
+                            <span class="toggle-option bento-option active" data-view="bento">Bento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-grid" id="bento-grid">
+                    <!-- Bento grid will be dynamically populated -->
+                </div>
+            </div>
+        </div>
+
         <!-- Information Panel -->
         <div class="info-section">
             <!-- Top Panel: Node Information and Tags -->
             <div class="glass-panel info-panel-top">
                 <div class="info-header">
                     <h2 id="node-title">Select a node</h2>
+                    <div class="desktop-view-toggle" id="desktop-view-toggle">
+                        <div class="toggle-switch">
+                            <span class="toggle-option graph-option active" data-view="graph">Graph</span>
+                            <span class="toggle-option bento-option" data-view="bento">Bento</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div id="info-content" class="info-content">
@@ -109,6 +134,31 @@
                 <div class="shoot-dm-chip" onclick="window.open('https://x.com/freddy_0x', '_blank')" title="Shoot dm">
                     <span class="default-text">Missed Something?</span>
                     <span class="hover-text">Shoot dm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Popup Modal -->
+    <div id="project-popup" class="project-popup" style="display: none;">
+        <div class="project-popup-overlay" onclick="closeProjectPopup()"></div>
+        <div class="project-popup-content">
+            <div class="project-popup-body">
+                <div class="project-popup-info">
+                    <img id="project-popup-logo" src="" alt="" class="project-popup-logo">
+                    <div class="project-popup-details">
+                        <div class="project-popup-header-row">
+                            <h3 id="project-popup-name" class="project-popup-name"></h3>
+                            <a id="project-popup-twitter" href="" target="_blank" class="project-popup-twitter">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.46 5.924c-.793.352-1.646.59-2.542.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082 4.48 4.48 0 0 0-7.635 4.086A12.72 12.72 0 0 1 3.112 4.89a4.48 4.48 0 0 0 1.387 5.976 4.47 4.47 0 0 1-2.03-.561v.057a4.48 4.48 0 0 0 3.594 4.393 4.48 4.48 0 0 1-2.025.077 4.48 4.48 0 0 0 4.184 3.114A8.98 8.98 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.017c8.26 0 12.785-6.84 12.785-12.785 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div id="project-popup-tags" class="project-popup-tags">
+                            <!-- Tags will be dynamically added here -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
