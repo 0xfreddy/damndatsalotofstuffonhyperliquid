@@ -2192,7 +2192,9 @@ body {
     gap: 15px;
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .bento-category {
@@ -2284,6 +2286,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     padding: 4px 2px;
     border-radius: 6px;
     cursor: pointer;
@@ -2292,12 +2295,14 @@ body {
     border: 1px solid transparent;
     min-width: 0;
     max-width: 100%;
+    min-height: 50px;
+    box-sizing: border-box;
 }
 
 .bento-project:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .bento-project.selected {
@@ -2306,13 +2311,15 @@ body {
 }
 
 .bento-project-logo {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 6px;
-    object-fit: cover;
-    margin-bottom: 4px;
+    object-fit: contain;
+    margin-bottom: 2px;
     background: rgba(255, 255, 255, 0.1);
     flex-shrink: 0;
+    padding: 2px;
+    box-sizing: border-box;
 }
 
 .bento-project-name {
@@ -2349,8 +2356,8 @@ body {
     }
     
     .bento-header {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
+        margin-bottom: 1px;
+        padding-bottom: 1px;
     }
 }
 
@@ -2383,27 +2390,26 @@ body {
     }
 }
 
-/* Mobile adjustments for bento grid */
-@media (max-width: 767px) {
+/* Extra small screen adjustments for bento grid */
+@media (max-width: 360px) {
     .bento-grid {
-        grid-template-columns: repeat(6, 1fr);
-        gap: 10px;
-        grid-auto-rows: minmax(100px, auto);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        grid-auto-rows: minmax(80px, auto);
     }
     
-    /* Mobile size adjustments */
     .bento-category.size-large {
-        grid-column: span 3;
+        grid-column: span 1;
         grid-row: span 2;
     }
     
     .bento-category.size-medium {
-        grid-column: span 2;
+        grid-column: span 1;
         grid-row: span 2;
     }
     
     .bento-category.size-small {
-        grid-column: span 2;
+        grid-column: span 1;
         grid-row: span 1;
     }
     
@@ -2413,37 +2419,182 @@ body {
     }
     
     .bento-category.size-large .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
     }
     
     .bento-category.size-medium .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
     }
     
     .bento-category.size-small .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(22px, 1fr));
     }
     
     .bento-category.size-tiny .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+    }
+    
+    .bento-project {
+        min-height: 35px;
     }
     
     .bento-project-logo {
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
+        padding: 1px;
+        box-sizing: border-box;
     }
     
     .bento-project-name {
-        font-size: 7px;
+        font-size: 4px;
     }
     
     .bento-category-title {
-        font-size: 12px;
+        font-size: 9px;
     }
     
     .bento-category-count {
-        font-size: 9px;
-        padding: 1px 4px;
+        font-size: 6px;
+        padding: 1px 2px;
+    }
+}
+
+/* Very small screen adjustments for bento grid */
+@media (max-width: 480px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+    
+    .bento-category.size-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-medium {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-small {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-tiny {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-large .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    }
+    
+    .bento-category.size-medium .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
+    }
+    
+    .bento-category.size-small .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    }
+    
+    .bento-category.size-tiny .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+    }
+    
+    .bento-project {
+        min-height: 40px;
+    }
+    
+    .bento-project-logo {
+        width: 16px;
+        height: 16px;
+        padding: 1px;
+        box-sizing: border-box;
+    }
+    
+    .bento-project-name {
+        font-size: 5px;
+    }
+    
+    .bento-category-title {
+        font-size: 10px;
+    }
+    
+    .bento-category-count {
+        font-size: 7px;
+        padding: 1px 2px;
+    }
+}
+
+/* Mobile adjustments for bento grid */
+@media (max-width: 767px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        grid-auto-rows: minmax(120px, auto);
+    }
+    
+    /* Mobile size adjustments */
+    .bento-category.size-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-medium {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-small {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-tiny {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-large .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    }
+    
+    .bento-category.size-medium .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+    }
+    
+    .bento-category.size-small .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    }
+    
+    .bento-category.size-tiny .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
+    }
+    
+    .bento-project {
+        min-height: 45px;
+    }
+    
+    .bento-project-logo {
+        width: 18px;
+        height: 18px;
+        padding: 1px;
+        box-sizing: border-box;
+    }
+    
+    .bento-project-name {
+        font-size: 6px;
+    }
+    
+    .bento-category-title {
+        font-size: 11px;
+    }
+    
+    .bento-category-count {
+        font-size: 8px;
+        padding: 1px 3px;
     }
 }
 
