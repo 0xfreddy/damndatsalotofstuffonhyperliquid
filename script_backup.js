@@ -80,7 +80,7 @@ const projects = [
     {
       id: 12,
       name: "HFun",
-      tags: ["Trading", "Social"],
+      tags: ["Trading", "Social","Launchpad"],
       twitter: "https://x.com/Hypurrfun",
       logo: "/images/logos/hfun-logo.png",
     },
@@ -782,7 +782,8 @@ const tags = [
     "Investment",
     "Stablecoin",
     "News",
-    "Landing"
+    "Landing",
+    "Prediction Market"
 ];
 
 // Define gradients for each category
@@ -811,6 +812,7 @@ const categoryGradients = {
     Stablecoin: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
     News: 'linear-gradient(135deg, #ff4e50 0%, #f9d423 100%)',
     Landing: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    "Prediction Market": 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
     default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
 };
 
@@ -819,7 +821,6 @@ const categoryColors = {
     Defi: '#27ae60',
     Dex: '#27ae60',
     Meme: '#27ae60',
-    Staking: '#27ae60',
     Trading: '#27ae60',
     Infra: '#27ae60',
     Social: '#27ae60',
@@ -839,7 +840,8 @@ const categoryColors = {
     Investment: '#27ae60',
     Stablecoin: '#27ae60',
     News: '#27ae60',
-    Landing: '#27ae60'
+    Landing: '#27ae60',
+    "Prediction Market": '#27ae60'
 };
 
 // Create nodes

@@ -1084,6 +1084,55 @@ const projects = [
         tags: ["Trading", "Mobile"],
         twitter: "https://x.com/try_supercexy",
         logo: "/images/supercexy.png",
+    },
+    {
+        id: 164,
+        name: "Ooga Booga",
+        tags: ["Aggregator"],
+        twitter: "https://x.com/0xoogabooga",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 165,
+        name: "Aura Score",
+        tags: ["Dashboard"],
+        twitter: "https://x.com/Larpseidon/status/1940791686420222373",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 166,
+        name: "Ventuals",
+        tags: ["Trading"],
+        twitter: "https://x.com/ventuals_",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 167,
+        name: "HypertradeX",
+        tags: ["Dex"],
+        twitter: "https://x.com/HypertradeX",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 168,
+        name: "HypiqFI",
+        tags: ["Prediction Market"],
+        twitter: "https://x.com/hypiq_fi",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 169,
+        name: "Hyperliquid Analytics",
+        tags: ["Dashboard"],
+        twitter: "https://x.com/intern_cc/status/1958143380338118698",
+        logo: "/images/placeholder.svg",
+    },
+    {
+        id: 170,
+        name: "Deploy Finance",
+        tags: ["Defi", "AI"],
+        twitter: "https://x.com/DeployFinance",
+        logo: "/images/placeholder.svg",
     }
 ];
 
@@ -1091,7 +1140,6 @@ const tags = [
     "Defi",
     "Dex",
     "Meme",
-    "Staking",
     "Trading",
     "Infra",
     "Social",
@@ -1116,7 +1164,8 @@ const tags = [
     "Launchpad",
     "Dashboard",
     "Bridge",
-    "Tracking"
+    "Tracking",
+    "Prediction Market"
 ];
 
 // Define gradients for each category
@@ -1124,7 +1173,6 @@ const categoryGradients = {
     Defi: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     Dex: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     Meme: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-    Staking: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     Trading: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     Infra: 'linear-gradient(135deg, #667eea 0%, #48dbfb 100%)',
     Social: 'linear-gradient(135deg, #fc6c8f 0%, #ff9a44 100%)',
@@ -1150,6 +1198,7 @@ const categoryGradients = {
     Bridge: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
     Tracking: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
     Dashboard: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
+    "Prediction Market": 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
     default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
 };
 
@@ -1158,7 +1207,6 @@ const categoryColors = {
     Defi: '#27ae60',
     Dex: '#27ae60',
     Meme: '#27ae60',
-    Staking: '#27ae60',
     Trading: '#27ae60',
     Infra: '#27ae60',
     Social: '#27ae60',
@@ -1185,6 +1233,7 @@ const categoryColors = {
     Security: '#27ae60',
     Options: '#27ae60',
     Launchpad: '#27ae60',
+    "Prediction Market": '#27ae60',
     Stablecoins: '#27ae60'
 };
 

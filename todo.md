@@ -1,37 +1,43 @@
-# Todo: Run the App
-
-## Plan
-This is a static HTML website with a Python server script. The app appears to be a graph visualization of the Hyperliquid ecosystem.
+# Add New Projects to Hyperliquid Ecosystem
 
 ## Tasks
-- [x] Check if Python is available on the system
-- [x] Run the Python server script (run_server.py)
-- [x] Verify the server starts successfully
-- [x] Open the app in browser (should happen automatically)
-- [x] Fix bento grid categorization issue
-- [x] Fix errors in script.js
-- [x] Test basic functionality
+- [x] Add "Prediction Market" category to tags array
+- [x] Add gradient and color for "Prediction Market" category
+- [x] Add Ooga Booga (Aggregator) project with ID 164
+- [x] Add Aura Score (Dashboard) project with ID 165
+- [x] Add Ventuals (Trading) project with ID 166
+- [x] Add HypertradeX (Dex) project with ID 167
+- [x] Add HypiqFI (Prediction Market) project with ID 168
+- [x] Add Hyperliquid Analytics (Dashboard) project with ID 169
+- [x] Add Deploy Finance (Defi AI) project with ID 170
+- [x] Add placeholder images for new projects
+- [x] Test the visualization with new projects
+- [ ] Commit and push changes to GitHub
 
 ## Review
 
 ### Summary of Changes Made
 
-**High-level explanation**: Successfully ran the Hyperliquid ecosystem visualization app, fixed bento grid categorization, corrected script.js errors, and verified all functionality.
+**High-level explanation**: Successfully added 7 new projects to the Hyperliquid ecosystem visualization and created a new "Prediction Market" category.
 
 **What was done**:
-1. **Identified the app type**: Static HTML website with Python server script
-2. **Resolved port conflict**: Port 8000 was already in use, killed the existing process
-3. **Started the server**: Python server script is now running on localhost:8000
-4. **Verified functionality**: Server responds with HTTP 200 status
-5. **Opened in browser**: App should now be accessible at http://localhost:8000
-6. **Fixed bento grid issue**: Updated HFun project to include "Launchpad" tag so it appears in all three categories (Trading, Social, Launchpad)
-7. **Fixed script.js errors**: Corrected duplicate ID 22 and updated all project IDs to maintain proper sequential numbering
-8. **Verified price/TVL APIs**: Confirmed both DeFiLlama and CoinGecko APIs are working correctly for real-time data
+1. **Added new category**: Created "Prediction Market" category with a unique gradient (red to cyan)
+2. **Updated tags array**: Added "Prediction Market" to both main script and backup script
+3. **Added gradient and color**: Created visual styling for the new category
+4. **Added 7 new projects**:
+   - Ooga Booga (Aggregator) - ID 164
+   - Aura Score (Dashboard) - ID 165  
+   - Ventuals (Trading) - ID 166
+   - HypertradeX (Dex) - ID 167
+   - HypiqFI (Prediction Market) - ID 168
+   - Hyperliquid Analytics (Dashboard) - ID 169
+   - Deploy Finance (Defi AI) - ID 170
+5. **Used placeholder images**: All new projects use placeholder.svg until proper logos are added
+6. **Updated both files**: Modified both script.js and script_backup.js for consistency
+7. **Started server**: Python server is running to test the visualization
 
-**App details**:
-- **Type**: Static HTML website with graph visualization
-- **Technology**: Uses vis.js for graph visualization
-- **Server**: Python HTTP server on port 8000
-- **Features**: Interactive graph of Hyperliquid ecosystem projects with filtering and info panels
-
-The app is now running successfully and should be open in your browser!
+**Technical details**:
+- All projects follow the existing data structure with id, name, tags, twitter, and logo fields
+- Twitter links are properly formatted for the X.com platform
+- Category assignments match the user's specifications
+- Sequential ID numbering maintained (164-170)
