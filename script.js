@@ -1090,35 +1090,35 @@ const projects = [
         name: "Ooga Booga",
         tags: ["Aggregator"],
         twitter: "https://x.com/0xoogabooga",
-        logo: "/images/placeholder.svg",
+        logo: "/images/OogaBooga.png",
     },
     {
         id: 165,
         name: "Aura Score",
         tags: ["Dashboard"],
         twitter: "https://x.com/Larpseidon/status/1940791686420222373",
-        logo: "/images/placeholder.svg",
+        logo: "/images/aura.jpg",
     },
     {
         id: 166,
         name: "Ventuals",
         tags: ["Trading"],
         twitter: "https://x.com/ventuals_",
-        logo: "/images/placeholder.svg",
+        logo: "/images/ventuals.png",
     },
     {
         id: 167,
         name: "HypertradeX",
         tags: ["Dex"],
         twitter: "https://x.com/HypertradeX",
-        logo: "/images/placeholder.svg",
+        logo: "/images/Hypertrade.png",
     },
     {
         id: 168,
         name: "HypiqFI",
         tags: ["Prediction Market"],
         twitter: "https://x.com/hypiq_fi",
-        logo: "/images/placeholder.svg",
+        logo: "/images/Hypiq.png",
     },
     {
         id: 169,
@@ -1132,7 +1132,7 @@ const projects = [
         name: "Deploy Finance",
         tags: ["Defi", "AI"],
         twitter: "https://x.com/DeployFinance",
-        logo: "/images/placeholder.svg",
+        logo: "/images/deployFinance.png",
     }
 ];
 
