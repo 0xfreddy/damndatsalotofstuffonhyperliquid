@@ -3941,12 +3941,21 @@ function initializeBentoGrid() {
         });
     });
     
+    // Function to determine size class based on project count
+    function getSizeClass(count) {
+        if (count >= 15) return 'size-large';
+        if (count >= 8) return 'size-medium';
+        if (count >= 4) return 'size-small';
+        return 'size-tiny';
+    }
+    
     // Create bento grid HTML
     bentoGrid.innerHTML = '';
     Object.keys(categories).forEach(category => {
         const categoryProjects = categories[category];
+        const sizeClass = getSizeClass(categoryProjects.length);
         const categoryElement = document.createElement('div');
-        categoryElement.className = 'bento-category';
+        categoryElement.className = `bento-category ${sizeClass}`;
         categoryElement.innerHTML = `
             <div class="bento-category-header">
                 <h3 class="bento-category-title">${category}</h3>
