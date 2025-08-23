@@ -474,7 +474,7 @@ const projects = [
       name: "Hyperrich",
       tags: ["Trading","Tools"],
       twitter: "https://x.com/hyperrichdotfun",
-      logo: "/images/Hyperrich.png",
+              logo: "/images/hyperrich.png",
     },
     {
       id: 73,
@@ -1097,7 +1097,7 @@ const projects = [
         name: "Ventuals",
         tags: ["Trading"],
         twitter: "https://x.com/ventuals_",
-        logo: "/images/ventuals.png",
+        logo: "/images/Ventuals.png",
     },
     {
         id: 167,
@@ -1111,7 +1111,7 @@ const projects = [
         name: "HypiqFI",
         tags: ["Prediction Market"],
         twitter: "https://x.com/hypiq_fi",
-        logo: "/images/Hypiq.png",
+        logo: "/images/hypiq.png",
     },
     {
         id: 169,
@@ -1125,7 +1125,7 @@ const projects = [
         name: "Deploy Finance",
         tags: ["Defi", "AI"],
         twitter: "https://x.com/DeployFinance",
-        logo: "/images/deployFinance.png",
+        logo: "/images/DeployFinance.PNG",
     }
 ];
 
