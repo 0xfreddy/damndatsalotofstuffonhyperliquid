@@ -2201,6 +2201,7 @@ body {
     border-radius: 12px;
     padding: 20px;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 /* Dynamic sizing based on project count */
@@ -2258,35 +2259,39 @@ body {
 .bento-projects {
     display: grid;
     gap: 8px;
+    overflow: hidden;
+    width: 100%;
 }
 
 /* Dynamic project grid based on category size */
 .bento-category.size-large .bento-projects {
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 }
 
 .bento-category.size-medium .bento-projects {
-    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
 }
 
 .bento-category.size-small .bento-projects {
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 }
 
 .bento-category.size-tiny .bento-projects {
-    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
 }
 
 .bento-project {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px 4px;
+    padding: 6px 2px;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid transparent;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .bento-project:hover {
@@ -2301,12 +2306,13 @@ body {
 }
 
 .bento-project-logo {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 6px;
     object-fit: cover;
     margin-bottom: 4px;
     background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
 }
 
 .bento-project-name {
@@ -2407,24 +2413,24 @@ body {
     }
     
     .bento-category.size-large .bento-projects {
-        grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
     }
     
     .bento-category.size-medium .bento-projects {
-        grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     }
     
     .bento-category.size-small .bento-projects {
-        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
     }
     
     .bento-category.size-tiny .bento-projects {
-        grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     }
     
     .bento-project-logo {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
     
     .bento-project-name {
