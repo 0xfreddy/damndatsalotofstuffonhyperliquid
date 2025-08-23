@@ -2267,19 +2267,19 @@ body {
 
 /* Dynamic project grid based on category size */
 .bento-category.size-large .bento-projects {
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-}
-
-.bento-category.size-medium .bento-projects {
-    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
-}
-
-.bento-category.size-small .bento-projects {
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 }
 
-.bento-category.size-tiny .bento-projects {
+.bento-category.size-medium .bento-projects {
     grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+}
+
+.bento-category.size-small .bento-projects {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+}
+
+.bento-category.size-tiny .bento-projects {
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
 }
 
 .bento-project {
@@ -2297,6 +2297,7 @@ body {
     max-width: 100%;
     min-height: 50px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .bento-project:hover {
@@ -2361,6 +2362,96 @@ body {
     }
 }
 
+/* Medium desktop adjustments for bento grid */
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .bento-grid {
+        grid-template-columns: repeat(11, 1fr);
+        gap: 12px;
+        grid-auto-rows: minmax(110px, auto);
+    }
+    
+    .bento-category.size-large {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-medium {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-small {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-tiny {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-large .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+    }
+    
+    .bento-category.size-medium .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(42px, 1fr));
+    }
+    
+    .bento-category.size-small .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
+    }
+    
+    .bento-category.size-tiny .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+    }
+}
+
+/* Smaller desktop adjustments for bento grid */
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .bento-grid {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 12px;
+        grid-auto-rows: minmax(110px, auto);
+    }
+    
+    .bento-category.size-large {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-medium {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .bento-category.size-small {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-tiny {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .bento-category.size-large .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    }
+    
+    .bento-category.size-medium .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    }
+    
+    .bento-category.size-small .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    }
+    
+    .bento-category.size-tiny .bento-projects {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    }
+}
+
 /* Tablet adjustments for bento grid */
 @media (max-width: 1024px) and (min-width: 768px) {
     .bento-grid {
@@ -2388,157 +2479,35 @@ body {
         grid-column: span 1;
         grid-row: span 1;
     }
-}
-
-/* Extra small screen adjustments for bento grid */
-@media (max-width: 360px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4px;
-        grid-auto-rows: minmax(80px, auto);
-    }
-    
-    .bento-category.size-large {
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    
-    .bento-category.size-medium {
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    
-    .bento-category.size-small {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    
-    .bento-category.size-tiny {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
     
     .bento-category.size-large .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     }
     
     .bento-category.size-medium .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
     }
     
     .bento-category.size-small .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(22px, 1fr));
-    }
-    
-    .bento-category.size-tiny .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-    }
-    
-    .bento-project {
-        min-height: 35px;
-    }
-    
-    .bento-project-logo {
-        width: 14px;
-        height: 14px;
-        padding: 1px;
-        box-sizing: border-box;
-    }
-    
-    .bento-project-name {
-        font-size: 4px;
-    }
-    
-    .bento-category-title {
-        font-size: 9px;
-    }
-    
-    .bento-category-count {
-        font-size: 6px;
-        padding: 1px 2px;
-    }
-}
-
-/* Very small screen adjustments for bento grid */
-@media (max-width: 480px) {
-    .bento-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        grid-auto-rows: minmax(100px, auto);
-    }
-    
-    .bento-category.size-large {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    
-    .bento-category.size-medium {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    
-    .bento-category.size-small {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    
-    .bento-category.size-tiny {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    
-    .bento-category.size-large .bento-projects {
         grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     }
     
-    .bento-category.size-medium .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
-    }
-    
-    .bento-category.size-small .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
-    }
-    
     .bento-category.size-tiny .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
-    }
-    
-    .bento-project {
-        min-height: 40px;
-    }
-    
-    .bento-project-logo {
-        width: 16px;
-        height: 16px;
-        padding: 1px;
-        box-sizing: border-box;
-    }
-    
-    .bento-project-name {
-        font-size: 5px;
-    }
-    
-    .bento-category-title {
-        font-size: 10px;
-    }
-    
-    .bento-category-count {
-        font-size: 7px;
-        padding: 1px 2px;
+        grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
     }
 }
 
 /* Mobile adjustments for bento grid */
 @media (max-width: 767px) {
     .bento-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        grid-auto-rows: minmax(120px, auto);
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
     }
     
     /* Mobile size adjustments */
     .bento-category.size-large {
-        grid-column: span 2;
+        grid-column: span 3;
         grid-row: span 2;
     }
     
@@ -2548,7 +2517,7 @@ body {
     }
     
     .bento-category.size-small {
-        grid-column: span 1;
+        grid-column: span 2;
         grid-row: span 1;
     }
     
@@ -2558,43 +2527,39 @@ body {
     }
     
     .bento-category.size-large .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
     }
     
     .bento-category.size-medium .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     }
     
     .bento-category.size-small .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
     }
     
     .bento-category.size-tiny .bento-projects {
-        grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
-    }
-    
-    .bento-project {
-        min-height: 45px;
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     }
     
     .bento-project-logo {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         padding: 1px;
         box-sizing: border-box;
     }
     
     .bento-project-name {
-        font-size: 6px;
+        font-size: 7px;
     }
     
     .bento-category-title {
-        font-size: 11px;
+        font-size: 12px;
     }
     
     .bento-category-count {
-        font-size: 8px;
-        padding: 1px 3px;
+        font-size: 9px;
+        padding: 1px 4px;
     }
 }
 
