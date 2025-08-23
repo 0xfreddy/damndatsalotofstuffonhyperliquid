@@ -176,13 +176,6 @@ const projects = [
       logo: "/images/vegas-logo.png",
     },
     {
-      id: 29,
-      name: "Hypervisor",
-      tags: ["Data", "Analytics"],
-      twitter: "https://x.com/Hypervisor_hl",
-      logo: "/images/hypervisor-logo.png",
-    },
-    {
       id: 30,
       name: "Harmonix Finance",
       tags: ["Defi"],
@@ -759,7 +752,7 @@ const projects = [
     {
       id: 116,
       name: "aura",
-      tags: ["Trading"],
+      tags: ["Trading","Mobile"],
       twitter: "https://x.com/auradotmoney",
       logo: "/images/aura.jpg",
     },

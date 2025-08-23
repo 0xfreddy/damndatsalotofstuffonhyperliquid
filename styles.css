@@ -2199,7 +2199,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 20px;
+    padding: 12px;
     transition: all 0.3s ease;
     overflow: hidden;
 }
@@ -2235,13 +2235,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bento-category-title {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     color: #fff;
     margin: 0;
@@ -2250,15 +2250,15 @@ body {
 .bento-category-count {
     background: rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.8);
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 10px;
     font-weight: 500;
 }
 
 .bento-projects {
     display: grid;
-    gap: 8px;
+    gap: 6px;
     overflow: hidden;
     width: 100%;
 }
@@ -2284,7 +2284,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6px 2px;
+    padding: 4px 2px;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -2438,12 +2438,12 @@ body {
     }
     
     .bento-category-title {
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .bento-category-count {
-        font-size: 10px;
-        padding: 2px 6px;
+        font-size: 9px;
+        padding: 1px 4px;
     }
 }
 
