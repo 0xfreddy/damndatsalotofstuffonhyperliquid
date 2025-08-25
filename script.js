@@ -2355,37 +2355,10 @@ function initializeGraph() {
     initializeBiruBiru();
 }
 
-// Apply glow effect to HyperEVM node
+// Glow effect removed from HyperEVM node
 function applyHyperEVMGlow() {
-    // Simple approach - just log that CSS is handling the glow
-    
+    // Glow effects removed
 }
-
-// Add CSS animation for pulsing glow
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes hyperEVMPulse {
-        0%, 100% {
-            filter: 
-                drop-shadow(0 0 20px rgba(39, 174, 96, 1.0))
-                drop-shadow(0 0 40px rgba(39, 174, 96, 0.8))
-                drop-shadow(0 0 60px rgba(39, 174, 96, 0.6))
-                drop-shadow(0 0 80px rgba(39, 174, 96, 0.4))
-                drop-shadow(0 0 100px rgba(39, 174, 96, 0.2));
-            transform: scale(1);
-        }
-        50% {
-            filter: 
-                drop-shadow(0 0 30px rgba(39, 174, 96, 1.0))
-                drop-shadow(0 0 60px rgba(39, 174, 96, 0.9))
-                drop-shadow(0 0 90px rgba(39, 174, 96, 0.7))
-                drop-shadow(0 0 120px rgba(39, 174, 96, 0.5))
-                drop-shadow(0 0 150px rgba(39, 174, 96, 0.3));
-            transform: scale(1.05);
-        }
-    }
-`;
-document.head.appendChild(style);
 
 // BIRU BIRU functionality
 function initializeBiruBiru() {

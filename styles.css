@@ -615,24 +615,15 @@ body {
     transition: all 0.3s ease !important;
 }
 
-/* Hover effects for nodes - much more visible glow */
+/* Hover effects for nodes - removed glow */
 .vis-network .vis-image:hover {
     border: 4px solid rgba(255,255,255,0.8) !important;
-    box-shadow: 
-        0 0 30px rgba(255,255,255,0.8), 
-        0 0 60px rgba(255,255,255,0.6),
-        0 0 90px rgba(255,255,255,0.4),
-        0 4px 16px rgba(0,0,0,0.3) !important;
-    transform: scale(1.1) !important;
+    transform: scale(1.05) !important;
 }
 
-/* Category node hover effects - enhanced glow */
+/* Category node hover effects - removed glow */
 .vis-network .vis-node:hover {
-    box-shadow: 
-        0 0 25px rgba(255,255,255,0.6),
-        0 0 50px rgba(255,255,255,0.4),
-        0 0 75px rgba(255,255,255,0.2) !important;
-    transform: scale(1.05) !important;
+    transform: scale(1.02) !important;
     transition: all 0.3s ease !important;
 }
 
@@ -1930,19 +1921,9 @@ body {
     transform: translateY(0);
 }
 
-/* Enhanced glow for the central HyperEVM node specifically */
+/* Removed glow for the central HyperEVM node */
 .vis-network canvas {
-    filter: drop-shadow(0 0 30px rgba(39, 174, 96, 0.6));
-    animation: hyperEVMCanvasGlow 3s ease-in-out infinite;
-}
-
-@keyframes hyperEVMCanvasGlow {
-    0%, 100% {
-        filter: drop-shadow(0 0 30px rgba(39, 174, 96, 0.6));
-    }
-    50% {
-        filter: drop-shadow(0 0 50px rgba(39, 174, 96, 0.8));
-    }
+    /* Glow effects removed */
 }
 
 /* Gradient Customization Controls */
