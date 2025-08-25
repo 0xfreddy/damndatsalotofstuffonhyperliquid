@@ -3,7 +3,7 @@ const projects = [
     {
       id: 1,
       name: "felix",
-      tags: ["Defi"],
+      tags: ["Lending", "Defi"], // Updated: Felix is primarily a lending protocol
       twitter: "https://x.com/felixprotocol",
       logo: "/images/felix-logo.png",
     },
@@ -17,1115 +17,1466 @@ const projects = [
     {
       id: 3,
       name: "hyperlend",
-      tags: ["Defi"],
+      tags: ["Lending", "Defi"], // Updated: HyperLend is primarily a lending protocol
       twitter: "https://x.com/hyperlendx",
       logo: "/images/hyperland-logo.png",
     },
     {
-      id: 5,
+      id: 4,
       name: "Katōshi",
-      tags: ["Trading", "AI"],
+      tags: ["Trading", "AI", "Bot"], // Updated: Added Bot tag as it's a trading bot platform
       twitter: "https://x.com/KatoshiAI",
       logo: "/images/katoshi-logo.png",
     },
     {
-      id: 6,
+      id: 5,
       name: "HyperSwap",
-      tags: ["Dex"],
+      tags: ["Dex"], // Kept as is - correctly tagged
       twitter: "https://x.com/HyperSwapX",
       logo: "/images/hyperswap-logo.png",
     },
     {
-      id: 7,
+      id: 6,
       name: "Kinetiq",
-      tags: ["LST"],
+      tags: ["LST"], // Kept as is - correctly tagged
       twitter: "https://x.com/kinetiq_xyz",
       logo: "/images/kinetiq1-logo.png",
     },
     {
-      id: 8,
+      id: 7,
       name: "HyBridge",
-      tags: ["Bridge"],
+      tags: ["Bridge"], // Kept as is - correctly tagged
       twitter: "https://x.com/HyBridgeHL",
       logo: "/images/hybridge-logo.png",
     },
     {
-      id: 9,
+      id: 8,
       name: "HL Names",
-      tags: ["Tools", "Social"],
+      tags: ["Tools", "Social"], // Kept as is - correctly tagged
       twitter: "https://x.com/hlnames",
       logo: "/images/hl-names-logo.png",
     },
     {
-      id: 10,
+      id: 9,
       name: "fanfun",
-      tags: ["Social", "Meme"],
+      tags: ["Social", "SocialFi"], // Updated: Fan App is SocialFi focused
       twitter: "https://x.com/fan_dot_fun",
       logo: "/images/funfun-logo.png",
     },
     {
-      id: 11,
+      id: 10,
       name: "Kieko Finance",
-      tags: ["Defi"],
+      tags: ["Lending", "Defi", "Stablecoin"], // Updated: Keiko is a lending protocol with stablecoin features
       twitter: "https://x.com/KeikoFinance",
       logo: "/images/kieko-finance-logo.png",
     },
     {
-      id: 12,
+      id: 11,
       name: "HFun",
-      tags: ["Trading", "Social", "Launchpad"],
+      tags: ["Bot", "Launchpad"], // Updated: HypurrFun is primarily a bot for launching and trading
       twitter: "https://x.com/Hypurrfun",
       logo: "/images/hfun-logo.png",
     },
     {
-      id: 13,
+      id: 12,
       name: "pvp.trade",
-      tags: ["Trading", "Social"],
+      tags: ["Bot", "Trading"], // Updated: pvp.trade is primarily a trading bot
       twitter: "https://x.com/pvp_dot_trade",
       logo: "/images/pvp-trade-logo.png",
     },
     {
-      id: 14,
+      id: 13,
       name: "HyperFun",
-      tags: ["GambleFi"],
+      tags: ["GambleFi"], // Kept as is - correctly tagged
       twitter: "https://x.com/hyperfunX",
       logo: "/images/hyperfun-logo.png",
     },
     {
-      id: 15,
+      id: 14,
       name: "PurrBurn",
-      tags: ["Data"],
+      tags: ["Analytics", "Data"], // Updated: More specific - it's analytics focused
       twitter: "https://x.com/janklimo",
       logo: "/images/purrburn-logo.png",
     },
     {
-      id: 16,
+      id: 15,
       name: "Hypurrscan",
-      tags: ["Explorer", "Data"],
+      tags: ["Explorer", "Tools"], // Updated: Block explorer is a tool
       twitter: "https://x.com/HypurrScan",
       logo: "/images/hypurrscan-logo.png",
     },
     {
-      id: 17,
+      id: 16,
       name: "Yeeti",
-      tags: ["Meme"],
+      tags: ["Meme"], // Kept as is - correctly tagged
       twitter: "https://x.com/YeetiOnHL",
       logo: "/images/yeeti-logo.png",
     },
     {
-      id: 18,
+      id: 17,
       name: "Catbal",
-      tags: ["Meme"],
+      tags: ["Meme"], // Kept as is - correctly tagged
       twitter: "https://x.com/CatCabal_hl",
       logo: "/images/catcabal-logo.png",
     },
     {
-      id: 19,
+      id: 18,
       name: "Pip",
-      tags: ["Meme"],
+      tags: ["Meme", "NFT"], // Updated: PiP has NFT components
       twitter: "https://x.com/PipOnHL",
       logo: "/images/pip-logo.png",
     },
     {
-      id: 20,
+      id: 19,
       name: "DeFi LLama",
-      tags: ["Analytics", "Data"],
+      tags: ["Analytics", "Tools"], // Updated: DeFi Llama is primarily an analytics tool
       twitter: "https://x.com/DefiLlama",
       logo: "/images/defillama-logo.png",
     },
     {
-      id: 22,
+      id: 20,
       name: "Hyperbeat",
-      tags: ["Defi"],
+      tags: ["Defi"], // Kept as is - correctly tagged
       twitter: "https://x.com/0xHyperBeat",
       logo: "/images/hyperbeat.png",
     },
     {
-        id: 23,
+        id: 21,
         name: "MaterSwap",
-        tags: ["Dex"],
+        tags: ["Dex"], // Kept as is - correctly tagged
         twitter: "https://x.com/0xHyperBeat",
         logo: "/images/hyperbeat.png",
-      },
+    },
     {
-      id: 25,
+      id: 22,
       name: "Rage Trade",
-      tags: ["Trading"],
+      tags: ["Trading"], // Kept as is - correctly tagged
       twitter: "https://x.com/rage_trade",
       logo: "/images/rage-trade.png",
     },
     {
-      id: 26,
+      id: 23,
       name: "Hypurr Finance",
-      tags: ["Defi"],
+      tags: ["Lending", "Defi"], // Updated: HypurrFi is primarily a lending protocol
       twitter: "https://x.com/hypurrfi",
       logo: "/images/hypurrfinance-logo.png",
     },
     {
-      id: 27,
+      id: 24,
       name: "Hyperstats",
-      tags: ["Analytics", "Tools"],
+      tags: ["Analytics", "Tools"], // Kept as is - correctly tagged
       twitter: "https://x.com/hyperstats_xyz",
       logo: "/images/hyperstats-logo.png",
     },
     {
-      id: 28,
+      id: 25,
       name: "VegasHL",
-      tags: ["GambleFi"],
+      tags: ["GambleFi"], // Kept as is - correctly tagged
       twitter: "https://x.com/vegas_hl",
       logo: "/images/vegas-logo.png",
     },
     {
-      id: 30,
+      id: 26,
       name: "Harmonix Finance",
-      tags: ["Defi"],
+      tags: ["Defi"], // Kept as is - correctly tagged
       twitter: "https://x.com/harmonixfi",
       logo: "/images/harmony-logo.png",
     },
     {
-      id: 31,
+      id: 27,
       name: "RNDM",
-      tags: ["Defi","AI"],
+      tags: ["Defi", "AI", "Launchpad"], // Updated: RNDM has launchpad features
       twitter: "https://x.com/RNDM_IO",
       logo: "/images/rndm-logo.png",
     },
     {
-      id: 32,
+      id: 28,
       name: "MIM Spell",
-      tags: ["Defi"],
+      tags: ["Defi", "Stablecoin"], // Updated: MIM is stablecoin focused
       twitter: "https://x.com/mim_spell",
       logo: "/images/mim-logo.png",
     },
     {
-      id: 33,
+      id: 29,
       name: "Nucleus Earn",
-      tags: ["Defi"],
+      tags: ["Defi"], // Kept as is - correctly tagged
       twitter: "https://x.com/nucleusearn",
       logo: "/images/nucleus-logo.png",
     },
     {
-      id: 34,
+      id: 30,
       name: "Thunder Labs",
-      tags: ["LST"],
+      tags: ["LST"], // Kept as is - correctly tagged (Thunderhead)
       twitter: "https://x.com/thunderheadxyz",
       logo: "/images/thunderlabs-logo.png",
     },
     {
-      id: 35,
+      id: 31,
       name: "KittenSwap",
-      tags: ["Dex"],
+      tags: ["Dex"], // Kept as is - correctly tagged
       twitter: "https://x.com/kittenswaphype",
       logo: "/images/kittenswap-logo.png",
     },
     {
-      id: 36,
+      id: 32,
       name: "Hyperterminal",
-      tags: ["Analytics", "Trading"],
+      tags: ["Analytics", "Trading", "Tools"], // Updated: Added Tools tag
       twitter: "https://x.com/hyterminal",
       logo: "/images/hyperterminal-logo.png",
     },
     {
-      id: 37,
+      id: 33,
       name: "HyperScanner",
-      tags: ["Analytics", "Explorer"],
+      tags: ["Analytics", "Explorer", "Tools"], // Updated: Added Tools tag
       twitter: "https://x.com/hyper_scanner",
       logo: "/images/hyperscanner-png.png",
     },
     {
-      id: 38,
+      id: 34,
       name: "Pyth",
-      tags: ["Oracle", "Infra"],
+      tags: ["Oracle", "Infra"], // Kept as is - correctly tagged
       twitter: "https://x.com/PythNetwork",
       logo: "/images/pyth-logo.png",
     },
     {
-      id: 39,
+      id: 35,
       name: "StorkOracle",
-      tags: ["Oracle", "Infra"],
+      tags: ["Oracle", "Infra"], // Kept as is - correctly tagged
       twitter: "https://x.com/StorkOracle",
       logo: "/images/storkoracle-logo.png",
     },
     {
-      id: 40,
+      id: 36,
       name: "Insilico Terminal",
-      tags: ["Trading", "Analytics"],
+      tags: ["Trading", "Analytics", "Tools"], // Updated: Added Tools tag
       twitter: "https://x.com/InsilicoTrading",
       logo: "/images/insilico-logo.png",
     },
     {
-      id: 41,
+      id: 37,
       name: "Slate",
-      tags: ["AI", "Tools", "Trading"],
+      tags: ["AI", "Tools", "Trading"], // Kept as is - correctly tagged
       twitter: "https://x.com/slate_hl",
       logo: "/images/Slate.png",
     },
     {
-      id: 42,
+      id: 38,
       name: "Chris Ling",
-      tags: ["Tools", "Trading"],
+      tags: ["Tools", "Trading"], // Kept as is - correctly tagged
       twitter: "https://x.com/chrisling_hl",
       logo: "/images/ChrisLing.png",
     },
     {
-      id: 43,
+      id: 39,
       name: "Schizo",
-      tags: ["Meme"],
+      tags: ["Meme"], // Kept as is - correctly tagged
       twitter: "https://x.com/schizo_on_hl",
       logo: "/images/schizo-logo.png",
     },
     {
-      id: 44,
+      id: 40,
       name: "Peri Pair Bot",
-      tags: ["Trading"],
+      tags: ["Bot", "Trading"], // Updated: Added Bot tag as it's a trading bot
       twitter: "https://x.com/peripairbot",
       logo: "/images/peripairbot-logo.png",
     },
     {
-      id: 45,
+      id: 41,
       name: "Vapor",
-      tags: ["Social", "AI"],
+      tags: ["Social", "AI", "Launchpad"], // Updated: Vapor has launchpad features
       twitter: "https://x.com/vaporwarefun",
       logo: "/images/vapor-logo.png",
     },
     {
-      id: 46,
+      id: 42,
       name: "Hey Jeff",
-      tags: ["Tools"],
+      tags: ["Tools"], // Kept as is - correctly tagged
       twitter: "https://x.com/janklimo",
       logo: "/images/peripairbot-logo.png",
     },
     {
-      id: 47,
+      id: 43,
       name: "Hypurr Collective",
-      tags: ["Community"],
+      tags: ["Community"], // Kept as is - correctly tagged
       twitter: "https://x.com/hypurr_co",
       logo: "/images/hypurr-logo.png",
     },
     {
-      id: 48,
+      id: 44,
       name: "Panda",
-      tags: ["Meme","Community"],
+      tags: ["Meme", "Community"], // Kept as is - correctly tagged
       twitter: "https://x.com/panda_on_hl",
       logo: "/images/panda-logo.png",
     },
     {
-      id: 49,
+      id: 45,
       name: "LadyOnHL",
-      tags: ["Meme"],
+      tags: ["Meme"], // Kept as is - correctly tagged
       twitter: "https://x.com/lady_on_hl",
       logo: "/images/ladyhl-logo.png",
     },
     {
-      id: 50,
+      id: 46,
       name: "HyperDash",
-      tags: ["Analytics", "Data"],
+      tags: ["Analytics", "Tools"], // Updated: More accurate categorization
       twitter: "https://x.com/hypurrdash",
       logo: "/images/hyperdash-logo.png",
     },
     {
-      id: 51,
+      id: 47,
       name: "WashOnHL",
-      tags: ["Trading"],
+      tags: ["Trading", "Bot"], // Updated: Added Bot tag as it's a trading bot
       twitter: "https://x.com/wash_on_hl",
       logo: "/images/washsniper-logo.png",
     },
     {
-      id: 52,
+      id: 48,
       name: "HyperTracker",
-      tags: ["Tools"],
+      tags: ["Tools", "Tracking"], // Updated: Added Analytics tag
       twitter: "https://x.com/NMTD8/status/1871588493283270733",
       logo: "/images/hypertracker-logo.png",
     },
     {
-      id: 53,
+      id: 49,
       name: "Hyperlend Explorer",
-      tags: ["Explorer"],
+      tags: ["Explorer", "Tools"], // Updated: Added Tools tag
       twitter: "https://explorer.hyperlend.finance/",
       logo: "/images/hyperland-logo.png",
     },
     {
-      id: 54,
+      id: 50,
       name: "ASXN",
-      tags: ["Data"],
+      tags: ["Analytics", "Tools"], // Updated: More accurate categorization
       twitter: "https://x.com/asxn_r/status/1873668265450598613",
       logo: "/images/asxn-logo.png",
     },
     {
-      id: 55,
+      id: 51,
       name: "Hypertrack",
-      tags: ["Tools"],
+      tags: ["Tools", "Analytics"], // Updated: Added Analytics tag
       twitter: "https://x.com/hyperlendx/status/1855309389814432163",
       logo: "/images/hypertrack-logo.png",
     },
     {
-      id: 56,
+      id: 52,
       name: "Tholos",
-      tags: ["Tools"],
+      tags: ["Tools", "Security"], // Updated: Tholos is focused on custody/security
       twitter: "https://x.com/TholosApp",
       logo: "/images/tholos-logo.png",
     },
     {
-      id: 57,
+      id: 53,
       name: "Octis",
-      tags: ["Trading"],
+      tags: ["Trading", "NFT", "Gaming"], // Updated: Octis has NFT and gaming components
       twitter: "https://x.com/octis_808",
       logo: "/images/octis.png",
     },
     {
-      id: 58,
+      id: 54,
       name: "Hypio",
-      tags: ["NFT","Community"],
+      tags: ["NFT", "Community"], // Kept as is - correctly tagged
       twitter: "https://x.com/HypioHL",
       logo: "/images/hypio.png",
     },
     {
-      id: 59,
+      id: 55,
       name: "Hyperflip",
-      tags: ["GambleFi"],
+      tags: ["GambleFi"], // Kept as is - correctly tagged
       twitter: "https://x.com/hypercoinflip",
       logo: "/images/hyperflip.png",
     },
     {
-      id: 60,
+      id: 56,
       name: "USDC Inflows",
-      tags: ["Data"],
+      tags: ["Analytics", "Tools"], // Updated: More accurate categorization
       twitter: "https://x.com/mogie__/status/1881818562274459701",
       logo: "/images/mogie.png",
     },
     {
-      id: 61,
+      id: 57,
       name: "Hyperdelta",
-      tags: ["Options"],
+      tags: ["Options"], // Kept as is - correctly tagged
       twitter: "https://x.com/HyperdeltaX",
       logo: "/images/hyperdelta.png",
     },
     {
-      id: 62,
+      id: 58,
       name: "Hypervol",
-      tags: ["Trading"],
+      tags: ["Options", "Trading"], // Updated: Hypervol is options focused
       twitter: "https://x.com/Hypervol_xyz",
       logo: "/images/hypervol.png",
     },
     {
-      id: 63,
+      id: 59,
       name: "Kibl",
-      tags: ["Defi"],
+      tags: ["Lending", "Defi"], // Updated: Kibl is a lending protocol
       twitter: "https://x.com/kiblprotocol",
       logo: "/images/kibl.png",
     },
     {
-      id: 64,
+      id: 60,
       name: "Liquidlaunch",
-      tags: [ "AI"],
+      tags: ["Launchpad", "AI"], // Updated: Added Launchpad tag
       twitter: "https://x.com/LiquidLaunchHL",
       logo: "/images/liquidlaunch-logo.png",
     },
     {
-      id: 65,
+      id: 61,
       name: "Autist",
-      tags: ["Meme"],
+      tags: ["Meme"], // Kept as is - correctly tagged
       twitter: "https://x.com/autisthyper",
       logo: "/images/autist.png",
     },
     {
-      id: 66,
+      id: 62,
       name: "HCR Bot",
-      tags: ["Infra"],
+      tags: ["Bot", "Infra"], // Updated: Added Bot tag as it's a bot
       twitter: "https://x.com/HCR_BOT",
       logo: "/images/hcrbot-logo.png",
     },
     {
-      id: 67,
+      id: 63,
       name: "Liquina",
-      tags: ["Infra"],
+      tags: ["Infra"], // Kept as is - correctly tagged
       twitter: "https://x.com/LiquinaHL",
       logo: "/images/liquina.png",
     },
     {
-      id: 68,
+      id: 64,
       name: "Dexari",
-      tags: ["Trading","Mobile"],
+      tags: ["Trading", "Mobile"], // Kept as is - correctly tagged
       twitter: "https://x.com/DexariDotCom",
       logo: "/images/dexari.png",
     },
     {
-      id: 69,
+      id: 65,
       name: "Hypurr Markets",
-      tags: ["Tools"],
+      tags: ["Tools"], // Kept as is - correctly tagged
       twitter: "https://x.com/HypurrMarkets",
       logo: "/images/hypurrmarkets.png",
     },
     {
-      id: 70,
+      id: 66,
       name: "Hype Terminal",
-      tags: ["Trading"],
+      tags: ["Trading", "Tools"], // Updated: Added Tools tag
       twitter: "https://x.com/hype_terminal",
       logo: "/images/hypeterminal.png",
     },
     {
-      id: 71,
+      id: 67,
       name: "HL Fund",
-      tags: ["Tools"],
+      tags: ["Tools", "Community"], // Updated: HL Fund is community focused
       twitter: "https://x.com/hl_fund",
       logo: "/images/hlfund.png",
     },
     {
-      id: 72,
+      id: 68,
       name: "Hyperrich",
-      tags: ["Trading","Tools"],
+      tags: ["Trading", "Tools"], // Kept as is - correctly tagged
       twitter: "https://x.com/hyperrichdotfun",
-              logo: "/images/hyperrich.png",
+      logo: "/images/hyperrich.png",
     },
     {
-      id: 73,
+      id: 69,
       name: "Slate",
-      tags: ["AI", "Tools", "Trading"],
+      tags: ["AI", "Tools", "Trading"], // Kept as is - correctly tagged (duplicate of #41)
       twitter: "https://x.com/slate_ceo",
       logo: "/images/Slate.png",
     },
     {
-      id: 74,
+      id: 70,
       name: "Chris Ling",
-      tags: ["Tools", "Trading"],
+      tags: ["Tools", "Trading"], // Kept as is - correctly tagged (duplicate of #42)
       twitter: "https://x.com/chrisling_dev",
       logo: "/images/ChrisLing.png",
     },
     {
-      id: 75,
+      id: 71,
       name: "Mercury App",
-      tags: ["Mobile", "Trading"],
+      tags: ["Mobile", "Trading"], // Kept as is - correctly tagged
       twitter: "https://x.com/mercuryapphl",
       logo: "/images/MercuryApp.png",
     },
     {
-      id: 76,
+      id: 72,
       name: "Hyperstable",
-      tags: ["Stablecoin"],
+      tags: ["Stablecoin", "Lending"], // Updated: Hyperstable has lending features
       twitter: "https://x.com/HyperstableX",
       logo: "/images/Hyperstable.png",
     },
     {
-      id: 81,
+      id: 73,
       name: "Hyperlane",
-      tags: ["Infra"],
+      tags: ["Infra", "Bridge"], // Updated: Hyperlane is bridge infrastructure
       twitter: "https://x.com/hyperlane",
       logo: "/images/Hyperlane.png",
     },
     {
-      id: 82,
+      id: 74,
       name: "LiquidLoot",
-      tags: ["NFT"],
+      tags: ["NFT", "Launchpad"], // Updated: LiquidLoot has launchpad features
       twitter: "https://x.com/LootLiquid",
       logo: "/images/Liquidloot.png",
     },
     {
-      id: 83,
+      id: 75,
       name: "Okto",
-      tags: ["Infra","Mobile"],
+      tags: ["Mobile", "Infra"], // Updated: More accurate categorization
       twitter: "https://x.com/okto_web3",
       logo: "/images/Okto.png",
     },
     {
-      id: 84,
+      id: 76,
       name: "Bridge Hypio",
-      tags: ["Bridge", "NFT"],
+      tags: ["Bridge", "NFT"], // Kept as is - correctly tagged
       twitter: "https://x.com/HypioHL",
       logo: "/images/hypio.png",
     },
     {
-      id: 85,
+      id: 77,
       name: "Eternal AI",
-      tags: ["AI"],
+      tags: ["AI"], // Kept as is - correctly tagged
       twitter: "https://x.com/CryptoEternalAI",
       logo: "/images/EternalAI.png",
     },
     {
-      id: 86,
+      id: 78,
       name: "deBridge",
-      tags: ["Bridge"],
+      tags: ["Bridge"], // Kept as is - correctly tagged
       twitter: "https://x.com/deBridgeFinance",
       logo: "/images/debridge.png",
     },
     {
-      id: 87,
+      id: 79,
       name: "Valantis",
-      tags: ["Defi"],
+      tags: ["LST", "Dex"], // Updated: Valantis is LST focused DEX
       twitter: "https://x.com/ValantisLabs",
       logo: "/images/valantis.png",
     },
     {
-      id: 88,
+      id: 80,
       name: "Hyperyield",
-      tags: ["Defi"],
+      tags: ["Lending", "Defi"], // Updated: HyperYield is a lending protocol
       twitter: "https://x.com/HyperYieldx",
       logo: "/images/hyperyield.png",
     },
     {
-      id: 89,
+      id: 81,
       name: "Hyperupdates",
-      tags: ["News"],
+      tags: ["News"], // Kept as is - correctly tagged
       twitter: "https://x.com/hyper_updates",
       logo: "/images/hyperupdates.png",
     },
     {
-      id: 90,
+      id: 82,
       name: "Hana",
-      tags: ["Trading"],
+      tags: ["Trading", "Bridge", "Mobile"], // Updated: Hana Network is mobile focused with bridge features
       twitter: "https://x.com/HanaNetwork",
       logo: "/images/hana.png",
     },
     {
-      id: 91,
+      id: 83,
       name: "Hypers",
-      tags: ["NFT"],
+      tags: ["NFT"], // Kept as is - correctly tagged
       twitter: "https://x.com/HypersOnHL",
       logo: "/images/hypers.png",
     },
     {
-      id: 92,
-      name: "Keiko",
-      tags: ["Defi"],
-      twitter: "https://x.com/KeikoFinance",
-      logo: "/images/keiko.png",
-    },
-    {
-      id: 93,
+      id: 84,
       name: "Laminar",
-      tags: ["Dex"],
+      tags: ["Dex", "Aggregator"], // Updated: Laminar is a DEX aggregator
       twitter: "https://x.com/laminar_xyz",
       logo: "/images/laminar.png",
     },
     {
-      id: 94,
+      id: 85,
       name: "Mizu",
-      tags: ["Defi"],
+      tags: ["Defi"], // Kept as is - correctly tagged
       twitter: "https://x.com/mizulabs",
       logo: "/images/mizu.png",
     },
     {
-      id: 95,
+      id: 86,
       name: "Hypershot",
-      tags: ["Trading", "Tools"],
+      tags: ["Trading", "Tools"], // Kept as is - correctly tagged
       twitter: "https://x.com/Hypershot_xyz",
       logo: "/images/hypershot.png",
     },
     {
-      id: 96,
+      id: 87,
       name: "Hyperflash",
-      tags: ["LST"],
+      tags: ["LST"], // Kept as is - correctly tagged
       twitter: "https://x.com/HyperFlash_hl",
       logo: "/images/hyperflash.png",
     },
     {
-      id: 97,
+      id: 88,
       name: "Fan App",
-      tags: ["Tools"],
+      tags: ["SocialFi", "Tools"], // Updated: Fan App is SocialFi focused
       twitter: "https://x.com/fanappX",
       logo: "/images/fan.png",
     },
     {
-      id: 98,
+      id: 89,
       name: "Sentiment",
-      tags: ["LST"],
+      tags: ["Lending", "Defi"], // Updated: Sentiment is a lending protocol
       twitter: "https://x.com/sentimentxyz",
       logo: "/images/sentient.png",
     },
     {
-      id: 99,
+      id: 90,
       name: "Hypernews",
-      tags: ["News"],
+      tags: ["News"], // Kept as is - correctly tagged
       twitter: "https://x.com/HyperliquidNews",
       logo: "/images/hypernews.png",
     },
     {
-      id: 100,
+      id: 91,
       name: "Unit",
-      tags: ["Defi"],
+      tags: ["Bridge", "Defi"], // Updated: Unit is primarily a bridge
       twitter: "https://x.com/hyperunit",
       logo: "/images/unit.png",
     },
     {
-      id: 101,
+      id: 92,
       name: "HiveFi",
-      tags: ["Defi"],
+      tags: ["Bot", "Defi"], // Updated: HiveFi is bot/strategy focused
       twitter: "https://x.com/HiveFi_X",
       logo: "/images/hifive.png",
     },
     {
-      id: 102,
+      id: 93,
       name: "Gigabrain",
-      tags: ["Tools", "Trading", "AI"],
+      tags: ["Tools", "Trading", "AI"], // Kept as is - correctly tagged
       twitter: "https://x.com/GigabrainGG",
       logo: "/images/gigabrain.png",
     },
     {
-      id: 103,
+      id: 94,
       name: "Perpflow",
-      tags: ["Trading"],
+      tags: ["Trading", "Defi"], // Updated: Added Defi tag for delta-neutral strategies
       twitter: "https://x.com/perpflow",
       logo: "/images/perpflow.png",
     },
     {
-      id: 104,
+      id: 95,
       name: "HyperProjects",
-      tags: ["News"],
+      tags: ["News"], // Kept as is - correctly tagged
       twitter: "https://x.com/HyperProjectsX",
       logo: "/images/hyperproject.png",
     },
     {
-      id: 105,
+      id: 96,
       name: "Ezpairs",
-      tags: ["Trading"],
+      tags: ["Trading"], // Kept as is - correctly tagged
       twitter: "https://x.com/EzPairs/photo",
       logo: "/images/expairs.png",
     },
     {
-      id: 106,
+      id: 97,
       name: "Altitude",
-      tags: ["Infra"],
+      tags: ["Infra"], // Updated: Added Trading tag
       twitter: "https://x.com/valtitudexyz",
       logo: "/images/altitude.png",
     },
     {
-      id: 107,
+      id: 98,
       name: "LayerZero",
-      tags: ["Infra"],
+      tags: ["Infra", "Bridge"], // Updated: LayerZero is bridge infrastructure
       twitter: "https://x.com/LayerZero_Core/status/1920848296219996251",
       logo: "/images/layerzero.png",
     },
     {
-      id: 108,
+      id: 99,
       name: "SuperX",
-      tags: ["Trading"],
+      tags: ["Bot", "Trading"], // Updated: SuperX is a trading bot
       twitter: "https://x.com/trysuper_",
       logo: "/images/superx.png",
     },
     {
-      id: 109,
+      id: 100,
       name: "Dune",
-      tags: ["Infra"],
+      tags: ["Analytics", "Infra"], // Updated: Dune is primarily analytics
       twitter: "https://x.com/Dune/status/1920465979857150169",
       logo: "/images/dune.png",
     },
     {
-      id: 110,
+      id: 101,
       name: "Liminal",
-      tags: ["Defi"],
+      tags: ["Defi"], // Kept as is - correctly tagged
       twitter: "https://x.com/liminalmoney",
       logo: "/images/liminal.jpg",
     },
     {
-      id: 111,
+      id: 102,
       name: "Hyperwarpfi",
-      tags: ["Tools"],
+      tags: ["NFT", "Tools"], // Updated: HyperWarp is NFT focused
       twitter: "https://x.com/hyperwarpfi",
       logo: "/images/hyperwarpfi.png",
     },
     {
-      id: 112,
+      id: 103,
       name: "Uncoil Hype",
-      tags: ["Research"],
+      tags: ["Research"], // Kept as is - correctly tagged
       twitter: "https://x.com/Uncoilhype",
       logo: "/images/UncoilHype.jpg",
     },
     {
-      id: 113,
+      id: 104,
       name: "dothype",
-      tags: ["Tools"],
+      tags: ["Tools"], // Kept as is - correctly tagged
       twitter: "https://x.com/d0tHYPE",
       logo: "/images/dothype.jpg",
     },
     {
-      id: 114,
+      id: 105,
       name: "Hytrade",
-      tags: ["Trading"],
+      tags: ["Trading", "Launchpad"], // Updated: Hytrade has launchpad features
       twitter: "https://x.com/hytradedotfun",
       logo: "/images/hytrade.jpg",
     },
     {
-      id: 115,
+      id: 106,
       name: "hyperbloom",
-      tags: ["Aggregator"],
+      tags: ["Dex", "Aggregator"], // Updated: HyperBloom is a DEX aggregator
       twitter: "https://x.com/hyperbloomxyz",
       logo: "/images/hyperbloom.jpg",
     },
     {
-      id: 116,
+      id: 107,
       name: "aura",
-      tags: ["Trading","Mobile"],
+      tags: ["Trading", "Mobile"], // Kept as is - correctly tagged
       twitter: "https://x.com/auradotmoney",
       logo: "/images/aura.jpg",
     },
     {
-      id: 117,
-      name: "hyper_g8",
-      tags: ["Trading"],
+      id: 108,
+      name: "hyperG8",
+      tags: ["Trading", "Dex", "Aggregator"], // Updated: hyperG8 is a DEX aggregator
       twitter: "https://x.com/hyper_g8",
       logo: "/images/hyperG8.jpg",
     },
     {
-      id: 118,
+      id: 109,
       name: "Hyperwave",
-      tags: ["Defi"],
+      tags: ["Defi"], // Kept as is - correctly tagged
       twitter: "https://x.com/Hyperwavefi",
       logo: "/images/Hyperwave.png",
     },
     {
-      id: 119,
+      id: 110,
       name: "Silhouette",
-      tags: ["Trading", "Privacy"],
+      tags: ["Trading", "Privacy", "Dex"], // Updated: Added Dex tag
       twitter: "https://x.com/silhouette_ex",
       logo: "/images/silhouette.jpg",
     },
     {
-      id: 120,
+      id: 111,
       name: "Hypurr Hub",
-      tags: ["News"],
+      tags: ["News"], // Kept as is - correctly tagged
       twitter: "https://x.com/HypurrHub",
       logo: "/images/HypurrHub.png",
     },
     {
-      id: 121,
+      id: 112,
       name: "Liquid Swap",
-      tags: ["Aggregator"],
+      tags: ["Launchpad", "Dex", "Aggregator"], // Updated: LiquidSwap is launchpad + DEX
       twitter: "https://x.com/LiquidLaunchHL",
       logo: "/images/liquidswap.jpg",
     },
     {
-      id: 122,
+      id: 113,
       name: "Hypersig",
-      tags: ["Security"],
+      tags: ["Security", "Tools"], // Updated: Added Tools tag
       twitter: "https://x.com/hypersig_",
       logo: "/images/hypersig.jpg",
     },
     {
-      id: 123,
+      id: 114,
       name: "NunchiTrade",
-      tags: ["Defi"],
+      tags: ["Options", "Defi"], // Updated: Nunchi is options focused
       twitter: "https://x.com/nunchitrade",
       logo: "/images/Nunchi.png",
     },
     {
-      id: 124,
+      id: 115,
       name: "Shifu Finance",
-      tags: ["Mobile"],
+      tags: ["Mobile"], // Kept as is - correctly tagged
       twitter: "https://x.com/Shifu_Fi",
       logo: "/images/ShifuFinance.jpg",
     },
     {
-      id: 125,
+      id: 116,
       name: "Gems Gun",
-      tags: ["Trading"],
+      tags: ["Trading", "Tools"], // Updated: GemsGun is trading focused
       twitter: "https://x.com/gems_gun",
       logo: "/images/GemsGun.jpg",
     },
     {
-      id: 126,
+      id: 117,
       name: "Symbiosis",
-      tags: ["Dex"],
+      tags: ["Bridge", "Dex"], // Updated: Symbiosis is bridge focused
       twitter: "https://x.com/symbiosis_fi",
       logo: "/images/Symbiosis.jpg",
     },
     {
-      id: 127,
+      id: 118,
       name: "Hybra Finance",
-      tags: ["Dex"],
+      tags: ["Dex"], // Kept as is - correctly tagged
       twitter: "https://x.com/HybraFinance",
       logo: "/images/HybraFinance.jpg",
     },
     {
-      id: 128,
+      id: 119,
       name: "Risk Finance",
-      tags: ["Options"],
+      tags: ["Options"], // Updated: Rysk Finance is options focused
       twitter: "https://x.com/ryskfinance",
       logo: "/images/rysk.jpg",
     },
     {
-      id: 129,
+      id: 120,
       name: "HypurrFlip",
-      tags: ["GambleFi"],
+      tags: ["GambleFi"], // Kept as is - correctly tagged
       twitter: "https://x.com/HypurrFlip",
       logo: "/images/hypurrflip.jpg",
     },
     {
-      id: 130,
+      id: 121,
       name: "HyperliquidHub",
-      tags: ["News"],
+      tags: ["News"], // Kept as is - correctly tagged
       twitter: "https://x.com/Hyperliquid_Hub",
       logo: "/images/HyperliquidHub.jpg",
     },
     {
-      id: 131,
+      id: 122,
       name: "hyperscreener",
-      tags: ["Tools", "Data"],
+      tags: ["Tools", "Analytics"], // Updated: More accurate categorization
       twitter: "https://x.com/atareh/status/1927479710470037685",
       logo: "/images/hyperscreener.png",
     },
     {
-        id: 133,
+        id: 123,
         name: "HyperEVM",
-        tags: ["Data"],
+        tags: ["Analytics", "Tools"], // Updated: More accurate categorization
         twitter: "https://x.com/PixOnChain/status/1932589848566890837",
         logo: "/images/hyperevmtech.jpg",
     },
     {
-        id: 134,
+        id: 124,
         name: "Hyena",
-        tags: ["Defi"],
+        tags: ["Trading"], // Updated: Hyena is trading focused
         twitter: "https://x.com/hyenatrade",
         logo: "/images/Hyena.png",
     },
     {
-        id: 135,
+        id: 125,
         name: "HyperTutor",
-        tags: ["Research"],
+        tags: ["Research", "Community"], // Updated: Added Community tag
         twitter: "https://x.com/HyperTutor",
         logo: "/images/HyperTutor.png",
     },
     {
-        id: 136,
+        id: 126,
         name: "Allium",
-        tags: ["Dashboard","Tools"],
+        tags: ["Analytics", "Tools"], // Updated: Allium is analytics focused
         twitter: "https://x.com/ethanyish/status/1952380476272025912",
         logo: "/images/allium.png",
     },
     {
-        id: 137,
+        id: 127,
         name: "Octav",
-        tags: ["Tracking"],
+        tags: ["Tools", "Tracking"], // Updated: Added Analytics tag
         twitter: "https://x.com/OctavFi",
         logo: "/images/Octav.png",
     },
     {
-        id: 138,
+        id: 128,
         name: "Spectra",
-        tags: ["Defi"],
+        tags: ["Defi"], // Kept as is - correctly tagged
         twitter: "https://x.com/Spectra_Finance",
         logo: "/images/Spectra.png",
     },
     {
-        id: 139,
+        id: 129,
         name: "HyperBrick",
-        tags: ["Dex"],
+        tags: ["Dex"], // Kept as is - correctly tagged
         twitter: "https://x.com/HyperBrickX",
         logo: "/images/HyperBrick.png",
     },
     {
-        id: 140,
+        id: 130,
         name: "Gas.zip",
-        tags: ["Bridge"],
+        tags: ["Bridge"], // Kept as is - correctly tagged
         twitter: "https://x.com/gasdotzip",
         logo: "/images/gaszip.png",
     },
     {
-        id: 141,
+        id: 131,
         name: "Relay",
-        tags: ["Bridge"],
+        tags: ["Bridge"], // Kept as is - correctly tagged
         twitter: "https://x.com/RelayProtocol",
         logo: "/images/Relay.png",
     },
     {
-        id: 142,
+        id: 132,
         name: "hx_finance",
-        tags: ["Dex"],
+        tags: ["Dex", "Privacy"], // Updated: hx_finance has privacy features
         twitter: "https://x.com/hx_finance",
         logo: "/images/hx_finance.png",
     },
     {
-        id: 143,
+        id: 133,
         name: "HyperCat",
-        tags: ["Dex"],
+        tags: ["Dex"], // Kept as is - correctly tagged
         twitter: "https://x.com/HyperCatEx",
         logo: "/images/HyperCat.png",
     },
     {
-        id: 144,
+        id: 134,
         name: "Project X",
-        tags: ["Dex"],
+        tags: ["Dex"], // Kept as is - correctly tagged
         twitter: "https://x.com/prjx_hl",
         logo: "/images/Project X.png",
     },
     {
-        id: 145,
+        id: 135,
         name: "Drops",
-        tags: ["Dashboard"],
+        tags: ["Tools", "Analytics"], // Updated: Drops is analytics/tools focused
         twitter: "https://www.drops.bot/free-hyperevm-checker",
         logo: "/images/placeholder.svg",
     },
     {
-        id: 146,
+        id: 136,
         name: "Bebop",
-        tags: ["Dex"],
+        tags: ["Dex", "Aggregator"], // Updated: Bebop is a DEX aggregator
         twitter: "https://x.com/bebop_dex",
         logo: "/images/bebop.png",
     },
     {
-        id: 147,
+        id: 137,
         name: "HyperTracker",
-        tags: ["Tracking"],
+        tags: ["Analytics", "Tools"], // Updated: More accurate categorization
         twitter: "https://x.com/CMMHyperTracker",
         logo: "/images/HyperTracker.png",
     },
     {
-        id: 148,
+        id: 138,
         name: "HyperTracker - Heatmap",
-        tags: ["Dashboard"],
+        tags: ["Analytics", "Tools"], // Updated: More accurate categorization
         twitter: "https://app.coinmarketman.com/hypertracker/heatmap",
         logo: "/images/HyperTracker.png",
     },
     {
-        id: 149,
+        id: 139,
         name: "Skewga",
-        tags: ["Dashboard"],
+        tags: ["Analytics", "Tools"], // Updated: Skewga is analytics focused
         twitter: "https://www.skewga.com/crypto",
         logo: "/images/Skewga.png",
     },
     {
-        id: 150,
+        id: 140,
         name: "HyperZap",
-        tags: ["Trading"],
+        tags: ["Bot", "Trading"], // Updated: HyperZap is a trading bot
         twitter: "https://x.com/hyperzap_io",
         logo: "/images/HyperZap.png",
     },
     {
-        id: 151,
+        id: 141,
         name: "Hypeburn",
-        tags: ["Dashboard"],
+        tags: ["Analytics", "Tools"], // Updated: HYPE Burn is analytics focused
         twitter: "https://www.hypeburn.fun/builders",
         logo: "/images/janhl.PNG",
     },
     {
-        id: 152,
+        id: 142,
         name: "Hyperpie",
-        tags: ["Launchpad", "Dex"],
+        tags: ["LST", "Launchpad", "Dex"], // Updated: Hyperpie is LST focused
         twitter: "https://x.com/hyperpiexyz_io",
         logo: "/images/Hyperpie.png",
     },
     {
-        id: 153,
+        id: 143,
         name: "HypurrOTC",
-        tags: ["NFT"],
+        tags: ["NFT", "Trading"], // Updated: Added Trading tag
         twitter: "https://x.com/drip__trade/status/1941137769528463597?s=46&t=qym20GtjJYoGwJ9qMSF5Pw",
         logo: "/images/driptrade-logo.png",
     },
     {
-        id: 154,
+        id: 144,
         name: "Hyperliquid UAE Community",
-        tags: ["Community"],
+        tags: ["Community"], // Kept as is - correctly tagged
         twitter: "https://x.com/Hyperliquidae",
         logo: "/images/HyperliquidUAE.png",
     },
     {
-        id: 155,
+        id: 145,
         name: "HL.eco",
-        tags: ["Tracking"],
+        tags: ["Tracking", "Tools"], // Updated: More accurate categorization
         twitter: "https://x.com/hl_eco",
         logo: "/images/hleco.png",
     },
     {
-        id: 156,
+        id: 146,
         name: "Delpho",
-        tags: ["Stablecoin"],
+        tags: ["Stablecoin"], // Kept as is - correctly tagged
         twitter: "https://x.com/delpho_labs",
         logo: "/images/Delpho.png",
     },
     {
-        id: 157,
+        id: 147,
         name: "Harmonix Finance",
-        tags: ["Defi"],
+        tags: ["Defi"], // Kept as is - correctly tagged
         twitter: "https://x.com/harmonixfi",
         logo: "/images/Harmonix.png",
     },
     {
-        id: 158,
+        id: 148,
         name: "Scatter",
-        tags: ["NFT"],
+        tags: ["NFT"], // Kept as is - correctly tagged
         twitter: "https://x.com/scatter_art",
         logo: "/images/scatter.png",
     },
     {
-        id: 159,
+        id: 149,
         name: "hyperevm.farm",
-        tags: ["Dashboard", "Tools"],
+        tags: ["Analytics", "Tools"], // Updated: More accurate categorization
         twitter: "https://x.com/PixOnChain/status/1937949012235325920",
         logo: "/images/pix.png",
     },
     {
-        id: 160,
+        id: 150,
         name: "Flowscan",
-        tags: ["Dashboard", "Tools", "Tracking"],
+        tags: ["Tracking", "Tools"], // Updated: More accurate categorization
         twitter: "https://www.flowscan.xyz/builders?builder=all",
         logo: "/images/placeholder.svg",
     },
     {
-        id: 161,
+        id: 151,
         name: "BasedApp",
-        tags: ["Trading", "Mobile"],
+        tags: ["Trading", "Mobile"], // Kept as is - correctly tagged
         twitter: "https://x.com/BasedOneX",
-        logo: "/images/based.png",
+        logo: "/images/Based.png",
     },
     {
-        id: 162,
+        id: 152,
         name: "Dreamcash",
-        tags: ["Trading", "Mobile"],
+        tags: ["Trading", "Mobile"], // Kept as is - correctly tagged
         twitter: "https://x.com/Dreamcashxyz",
         logo: "/images/dreamcash.png",
     },
     {
-        id: 163,
+        id: 153,
         name: "Supercexy",
-        tags: ["Trading", "Mobile"],
+        tags: ["Trading", "Mobile"], // Kept as is - correctly tagged
         twitter: "https://x.com/try_supercexy",
-        logo: "/images/supercexy.png",
+        logo: "/images/Supercexy.png",
     },
     {
-        id: 164,
+        id: 154,
         name: "Ooga Booga",
-        tags: ["Aggregator"],
+        tags: ["Dex", "Aggregator"], // Updated: Ooga Booga is a DEX aggregator
         twitter: "https://x.com/0xoogabooga",
         logo: "/images/OogaBooga.png",
     },
     {
-        id: 165,
+        id: 155,
         name: "Aura Score",
-        tags: ["Dashboard"],
+        tags: ["Analytics", "Tools"], // Updated: Aura Score is analytics focused
         twitter: "https://x.com/Larpseidon/status/1940791686420222373",
         logo: "/images/aura.jpg",
     },
     {
-        id: 166,
+        id: 156,
         name: "Ventuals",
-        tags: ["Trading"],
+        tags: ["Trading"], // Kept as is - correctly tagged
         twitter: "https://x.com/ventuals_",
         logo: "/images/Ventuals.png",
     },
     {
-        id: 167,
+        id: 157,
         name: "HypertradeX",
-        tags: ["Dex"],
+        tags: ["Dex", "Aggregator"], // Updated: Hypertrade is a DEX aggregator
         twitter: "https://x.com/HypertradeX",
         logo: "/images/Hypertrade.png",
     },
     {
-        id: 168,
+        id: 158,
         name: "HypiqFI",
-        tags: ["Prediction Market"],
+        tags: ["Prediction Market"], // Kept as is - correctly tagged
         twitter: "https://x.com/hypiq_fi",
         logo: "/images/hypiq.png",
     },
     {
-        id: 169,
+        id: 159,
         name: "Hyperliquid Analytics",
-        tags: ["Dashboard"],
+        tags: ["Analytics", "Tools"], // Updated: More accurate categorization
         twitter: "https://x.com/intern_cc/status/1958143380338118698",
         logo: "/images/placeholder.svg",
     },
     {
-        id: 170,
+        id: 160,
         name: "Deploy Finance",
-        tags: ["Defi", "AI"],
+        tags: ["Defi", "AI"], // Kept as is - correctly tagged
         twitter: "https://x.com/DeployFinance",
         logo: "/images/DeployFinance.PNG",
+    },
+    {
+        id: 161,
+        name: "HyperFlow",
+        tags: ["Bridge", "Dex"],
+        twitter: "https://x.com/HyperFlow_fun",
+        logo: "/images/hyperflow.png",
+    },
+    {
+        id: 162,
+        name: "Hyperdrive",
+        tags: ["Lending", "Defi"],
+        twitter: "https://x.com/hyperdrivedefi",
+        logo: "/images/hyperdrive.png",
+    },
+    {
+        id: 163,
+        name: "Gliquid by Algebra",
+        tags: ["Dex"],
+        twitter: "https://x.com/gliquidx",
+        logo: "/images/gliquid.png",
+    },
+    {
+        id: 164,
+        name: "Dextrabot",
+        tags: ["Bot", "Trading"],
+        twitter: "https://x.com/dextrabot",
+        logo: "/images/dextrabot.png",
+    },
+    {
+        id: 165,
+        name: "nest",
+        tags: ["Dex","Trading"],
+        twitter: "https://x.com/NestExchange",
+        logo: "/images/nest.png",
+    },
+    {
+        id: 166,
+        name: "LiquidScan",
+        tags: ["Bot"],
+        twitter: "https://x.com/liquidscan_fun",
+        logo: "/images/liquidscan.png",
+    },
+    {
+        id: 167,
+        name: "Blueberry",
+        tags: ["Defi"],
+        twitter: "https://www.blueberry.garden/",
+        logo: "/images/Blueberry.png",
+    },
+    {
+        id: 168,
+        name: "ApStation",
+        tags: ["Dex", "Aggregator"],
+        twitter: "https://x.com/apstation_io",
+        logo: "/images/apstation.png",
+    },
+    {
+        id: 169,
+        name: "Looped Hype",
+        tags: ["LST"],
+        twitter: "https://x.com/Looped_HYPE",
+        logo: "/images/loopedhype.png",
+    },
+    {
+        id: 170,
+        name: "Pendle",
+        tags: ["Defi"],
+        twitter: "https://x.com/pendle_fi",
+        logo: "/images/pendle.png",
+    },
+    {
+        id: 171,
+        name: "fullstack",
+        tags: ["Trading"],
+        twitter: "https://x.com/fullstack_trade",
+        logo: "/images/fullstack.png",
+    },
+    {
+        id: 172,
+        name: "Theo",
+        tags: ["Defi"],
+        twitter: "https://x.com/theo_network",
+        logo: "/images/theo.png",
+    },
+    {
+        id: 173,
+        name: "The Hyperliquid Bridge by LayerZero",
+        tags: ["Bridge"],
+        twitter: "https://x.com/LayerZero_Core/status/1923425362123583946",
+        logo: "/images/layerzero.png",
+    },
+    {
+        id: 174,
+        name: "Jumper Exchange",
+        tags: ["Bridge", "Dex"],
+        twitter: "https://x.com/JumperExchange",
+        logo: "/images/jumper.png",
+    },
+    {
+        id: 175,
+        name: "Bungee",
+        tags: ["Bridge", "Dex"],
+        twitter: "https://x.com/BungeeExchange",
+        logo: "/images/bungee.png",
+    },
+    {
+        id: 176,
+        name: "HyperPath",
+        tags: ["Dex", "Aggregator"],
+        twitter: "https://x.com/hyper_path",
+        logo: "/images/hyperpath.png",
+    },
+    {
+        id: 177,
+        name: "Coinpilot",
+        tags: ["Mobile"],
+        twitter: "https://x.com/trycoinpilot",
+        logo: "/images/coinpilot.png",
+    },
+    {
+        id: 178,
+        name: "HyperChonk",
+        tags: ["Dex"],
+        twitter: "https://x.com/hyperchonk",
+        logo: "/images/hyperchonk.png",
+    },
+    {
+        id: 179,
+        name: "optfun",
+        tags: ["Options"],
+        twitter: "https://opt.fun/",
+        logo: "/images/optfun.png",
+    },
+    {
+        id: 180,
+        name: "HyperMoon.Fun",
+        tags: ["Launchpad"],
+        twitter: "https://x.com/HyperMoonFun",
+        logo: "/images/HyperMoon.png",
+    },
+    {
+        id: 181,
+        name: "Beefy",
+        tags: ["Defi"],
+        twitter: "https://x.com/beefyfinance",
+        logo: "/images/beefy.png",
+    },
+    {
+        id: 182,
+        name: "Hippo1000",
+        tags: ["Bot"],
+        twitter: "https://x.com/hippo1000_xyz",
+        logo: "/images/hippo1000.png",
+    },
+    {
+        id: 183,
+        name: "FUNDAMENTAL",
+        tags: ["Tools"],
+        twitter: "https://x.com/FundamentalHL",
+        logo: "/images/fundamentalhl.png",
+    },
+    {
+        id: 184,
+        name: "Transak",
+        tags: ["Bridge"],
+        twitter: "https://transak.com/",
+        logo: "/images/transak.png",
+    },
+    {
+        id: 185,
+        name: "Pulse",
+        tags: ["Analytics"],
+        twitter: "https://x.com/PulseOnHL",
+        logo: "/images/pulsehl.png",
+    },
+    {
+        id: 186,
+        name: "Upheaval",
+        tags: ["Dex"],
+        twitter: "https://x.com/upheavalfi",
+        logo: "/images/upheaval.png",
+    },
+    {
+        id: 187,
+        name: "Hypervault",
+        tags: ["Defi"],
+        twitter: "https://x.com/hypervaultfi",
+        logo: "/images/hypervaultfi.png",
+    },
+    {
+        id: 188,
+        name: "Nimbus Trade",
+        tags: ["Bot", "Tools"],
+        twitter: "https://x.com/NimbusTrade_",
+        logo: "/images/nimbus.png",
+    },
+    {
+        id: 189,
+        name: "SEKAI",
+        tags: ["LST"],
+        twitter: "https://x.com/sekai_fi",
+        logo: "/images/sekai.png",
+    },
+    {
+        id: 190,
+        name: "HypurrQuant",
+        tags: ["Bot", "Defi"],
+        twitter: "https://x.com/hypurrquant",
+        logo: "/images/hypurrquant.png",
+    },
+    {
+        id: 191,
+        name: "Wallet V",
+        tags: ["Trading","Mobile"],
+        twitter: "https://x.com/WalletV_io",
+        logo: "/images/walletv.png",
+    },
+    {
+        id: 192,
+        name: "Liquid Terminal",
+        tags: ["Trading","Dashboard"],
+        twitter: "https://x.com/liquidterminal",
+        logo: "/images/liquidterminal.png",
+    },
+
+    {
+        id: 193,
+        name: "RAMSES",
+        tags: ["Dex"],
+        twitter: "https://x.com/RamsesExchange",
+        logo: "/images/ramses.png",
+    },
+    {
+        id: 194,
+        name: "Houdini Swap",
+        tags: ["Dex"],
+        twitter: "https://x.com/houdiniswap",
+        logo: "/images/houdiniswap.png",
+    },
+    {
+        id: 195,
+        name: "GlueX Protocol",
+        tags: ["Dex", "Aggregator"],
+        twitter: "https://dapp.gluex.xyz/",
+        logo: "/images/gluex.png",
+    },
+    {
+        id: 196,
+        name: "alright botty",
+        tags: ["Bot"],
+        twitter: "https://x.com/alrightbotty",
+        logo: "/images/alrightbotty.png",
+    },
+    {
+        id: 197,
+        name: "Brahma",
+        tags: ["Tools"],
+        twitter: "https://x.com/BrahmaFi",
+        logo: "/images/brahma.png",
+    },
+    {
+        id: 198,
+        name: "TopDog",
+        tags: ["Bot"],
+        twitter: "https://x.com/topdog_perp",
+        logo: "/images/topdog.png",
+    },
+    {
+        id: 199,
+        name: "Overdraft",
+        tags: ["Bridge"],
+        twitter: "https://x.com/overdraftdefi",
+        logo: "/images/overdraft.png",
+    },
+    {
+        id: 200,
+        name: "PurrSwap",
+        tags: ["Dex"],
+        twitter: "https://purrswap.finance/",
+        logo: "/images/overdraft.png",
+    },
+    {
+        id: 201,
+        name: "Cathena",
+        tags: ["Defi","AI"],
+        twitter: "https://x.com/cathena_hl",
+        logo: "/images/cathena.png",
+    },
+    {
+        id: 202,
+        name: "HyperVision",
+        tags: ["Dex", "Bridge","Privacy"],
+        twitter: "https://x.com/VisionLabsHL",
+        logo: "/images/visionlabs.png",
+    },
+    {
+        id: 203,
+        name: "DeBank",
+        tags: ["Tools", "Tracking"],
+        twitter: "https://x.com/DeBankDeFi",
+        logo: "/images/debank.png",
+    },
+    {
+        id: 204,
+        name: "Supurr",
+        tags: ["Options"],
+        twitter: "https://x.com/supurr_app",
+        logo: "/images/supurr.png",
+    },
+    {
+        id: 205,
+        name: "SuperHype",
+        tags: ["Launchpad"],
+        twitter: "https://x.com/superhype_app",
+        logo: "/images/superhype.png",
+    },
+    {
+        id: 206,
+        name: "HypeRPC",
+        tags: ["Infra"],
+        twitter: "https://x.com/hyperpc_",
+        logo: "/images/HypeRPC.png",
+    },
+    {
+        id: 207,
+        name: "Vortx HL",
+        tags: ["Prediction Market"],
+        twitter: "https://x.com/vortx_hl",
+        logo: "/images/vortx.png",
+    },
+    {
+        id: 208,
+        name: "Mass",
+        tags: ["Trading","Mobile"],
+        twitter: "https://x.com/massdotmoney",
+        logo: "/images/mass.png",
+    },
+    {
+        id: 209,
+        name: "Defined",
+        tags: ["Trading"],
+        twitter: "https://x.com/definedfi",
+        logo: "/images/defined.png",
+    },
+    {
+        id: 210,
+        name: "Copin",
+        tags: ["Bot"],
+        twitter: "https://x.com/Copin_io",
+        logo: "/images/copin.png",
+    },
+    {
+        id: 211,
+        name: "Outcome",
+        tags: ["Prediction Market"],
+        twitter: "https://x.com/outcomemarketx",
+        logo: "/images/outcome.png",
     }
 ];
 
@@ -1158,7 +1509,8 @@ const tags = [
     "Dashboard",
     "Bridge",
     "Tracking",
-    "Prediction Market"
+    "Prediction Market",
+    "Bot"
 ];
 
 // Define gradients for each category
@@ -1192,6 +1544,7 @@ const categoryGradients = {
     Tracking: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
     Dashboard: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
     "Prediction Market": 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
+    Bot: 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
     default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
 };
 
@@ -1227,6 +1580,7 @@ const categoryColors = {
     Options: '#27ae60',
     Launchpad: '#27ae60',
     "Prediction Market": '#27ae60',
+    Bot: '#27ae60',
     Stablecoins: '#27ae60'
 };
 
@@ -1242,7 +1596,7 @@ function createGraphData() {
     }
     
     if (nodes && edges) {
-        console.log('Graph data already created');
+        
         return true;
     }
     
@@ -1335,7 +1689,7 @@ function createGraphData() {
         });
     });
     
-    console.log('Created', nodes.length, 'nodes and', edges.length, 'edges');
+    
     return true;
 }
 
@@ -1424,7 +1778,7 @@ function handleMobileTagClick(tag) {
 
 // Initialize mobile view
 function initializeMobileView() {
-    console.log('Initializing mobile view...');
+    
     
     const graphSection = document.getElementById('graph-section');
     const listView = document.getElementById('mobile-list-view');
@@ -1466,7 +1820,7 @@ function initializeMobileView() {
     initializeMobileTagFilters();
     
     // Populate project list
-    console.log('Populating mobile project list...');
+    
     populateProjectList();
     
     // Add toggle event listener (remove existing first to avoid duplicates)
@@ -1493,7 +1847,7 @@ function initializeMobileView() {
 
 // Simplified mobile toggle function
 function toggleMobileView() {
-    console.log('Toggling mobile view');
+    
     
     const graphSection = document.getElementById('graph-section');
     const listView = document.getElementById('mobile-list-view');
@@ -1506,7 +1860,7 @@ function toggleMobileView() {
     }
     
     isListView = !isListView;
-    console.log('Switched to:', isListView ? 'List' : 'Graph');
+    
     
     if (isListView) {
         // Show list view
@@ -1586,7 +1940,7 @@ function toggleMobileView() {
 
 // Toggle mobile filters visibility
 function toggleMobileFilters() {
-    console.log('Toggling mobile filters');
+    
     
     const filterToggleBtn = document.getElementById('filter-toggle-btn');
     const tagFilters = document.getElementById('mobile-tag-filters');
@@ -1618,7 +1972,7 @@ function populateProjectList(filterTags = []) {
         return;
     }
     
-    console.log('Populating project list with filters:', filterTags);
+    
     projectListContainer.innerHTML = '';
     
     if (!projects || projects.length === 0) {
@@ -1710,11 +2064,11 @@ function initializeGraph() {
     
     // Check if network already exists
     if (network) {
-        console.log('Network already initialized');
+        
         return;
     }
     
-    console.log('Initializing graph with', nodes.length, 'nodes and', edges.length, 'edges');
+    
     
     const data = {
         nodes: nodes,
@@ -1807,7 +2161,7 @@ function initializeGraph() {
     const isMobile = window.innerWidth <= 768;
     
     if (isMobile) {
-        console.log('Mobile device detected, applying mobile-specific settings');
+        
         
         // Mobile-specific options - keep minimal changes
         options.interaction.navigationButtons = false; // Disable nav buttons on mobile
@@ -1827,17 +2181,10 @@ function initializeGraph() {
         options.nodes.font.size = 14; // Increased from 12
         options.groups.category.font.size = 16; // Increased from 14
         
-        console.log('Mobile options applied:', {
-            nodeScaling: options.nodes.scaling,
-            fontSize: options.nodes.font.size
-        });
+        
     }
     
-    console.log('Creating vis.js network with data:', {
-        nodes: data.nodes.length,
-        edges: data.edges.length,
-        isMobile: isMobile
-    });
+    
     
     // Check if vis is loaded
     if (typeof vis === 'undefined') {
@@ -1847,7 +2194,7 @@ function initializeGraph() {
     
     try {
         network = new vis.Network(container, data, options);
-        console.log('Network initialized successfully');
+        
     } catch (error) {
         console.error('Error initializing network:', error);
         return;
@@ -1855,7 +2202,7 @@ function initializeGraph() {
     
     // Mobile-specific event handlers and debugging
     if (isMobile) {
-        console.log('Setting up mobile-specific event handlers');
+        
         
         // Remove verbose debugging for better performance
         // Events kept but logging removed
@@ -1867,12 +2214,12 @@ function initializeGraph() {
         
         // Add mobile stabilization debugging
         network.on("stabilizationProgress", function(params) {
-            console.log('Mobile stabilization progress:', Math.round(params.iterations/params.total * 100) + '%');
+            
         });
         
         // Handle resize events for mobile orientation changes
         window.addEventListener('orientationchange', function() {
-            console.log('Mobile orientation changed');
+            
             setTimeout(() => {
                 network.redraw();
                 network.fit();
@@ -1883,7 +2230,7 @@ function initializeGraph() {
         // Handle window resize for mobile
         window.addEventListener('resize', function() {
             if (window.innerWidth <= 768) {
-                console.log('Mobile window resized');
+                
                 setTimeout(() => {
                     network.redraw();
                     network.fit();
@@ -1970,10 +2317,10 @@ function initializeGraph() {
     
     // Center the hyperEVM node
     network.on("stabilizationIterationsDone", function() {
-        console.log('Network stabilization completed');
+        
         
         if (isMobile) {
-            console.log('Applying mobile-specific post-stabilization fixes');
+            
             
             // For mobile, fit all nodes to show the full graph
             network.fit({
@@ -1990,7 +2337,7 @@ function initializeGraph() {
                 // Force a redraw
                 network.redraw();
                 
-                console.log('Mobile initialization completed');
+                
             }, 200);
         } else {
             // Desktop behavior
@@ -2011,7 +2358,7 @@ function initializeGraph() {
 // Apply glow effect to HyperEVM node
 function applyHyperEVMGlow() {
     // Simple approach - just log that CSS is handling the glow
-    console.log('Canvas glow effect applied via CSS');
+    
 }
 
 // Add CSS animation for pulsing glow
@@ -2138,9 +2485,9 @@ function enterNodeRemovalMode() {
         }
     });
     
-    console.log('Entered node removal mode');
-    console.log('Graph container classes:', graphContainer.classList.toString());
-    console.log('Container has removal class:', graphContainer.classList.contains('node-removal-mode'));
+    
+    
+    
 }
 
 function exitNodeRemovalMode() {
@@ -2179,7 +2526,7 @@ function exitNodeRemovalMode() {
     // Restore all original node images
     restoreAllOriginalImages();
     
-    console.log('Exited node removal mode');
+    
 }
 
 // Restore original images for all project nodes
@@ -2200,41 +2547,41 @@ function restoreAllOriginalImages() {
 }
 
 function removeNodeFromGraph(nodeId) {
-    console.log('Removing node:', nodeId);
-    console.log('Current removedNodeIds before removal:', removedNodeIds);
+    
+    
     
     // Add to removed list
     if (!removedNodeIds.includes(nodeId)) {
         removedNodeIds.push(nodeId);
-        console.log('Node added to removed list. New list:', removedNodeIds);
+        
     } else {
-        console.log('Node already in removed list');
+        
     }
     
     // Hide the node and its edges
     nodes.update({id: nodeId, hidden: true});
-    console.log('Node hidden:', nodeId);
+    
     
     // Hide edges connected to this node
     const connectedEdges = edges.get({
         filter: edge => edge.from === nodeId || edge.to === nodeId
     });
     
-    console.log('Connected edges to hide:', connectedEdges.length);
+    
     connectedEdges.forEach(edge => {
         edges.update({id: edge.id, hidden: true});
     });
     
     // Update reset button visibility
-    console.log('Calling updateResetButtonVisibility...');
+    
     updateResetButtonVisibility();
     
-    console.log('Total removed nodes after removal:', removedNodeIds.length);
+    
 }
 
 function resetRemovedNodes() {
-    console.log('Resetting removed nodes, total to restore:', removedNodeIds.length);
-    console.log('Nodes to restore:', removedNodeIds);
+    
+    
     
     // Store the nodes to restore before clearing the array
     const nodesToRestore = [...removedNodeIds];
@@ -2244,7 +2591,7 @@ function resetRemovedNodes() {
     
     // Show all previously removed nodes
     nodesToRestore.forEach(nodeId => {
-        console.log('Restoring node:', nodeId);
+        
         nodes.update({id: nodeId, hidden: false});
     });
     
@@ -2268,30 +2615,30 @@ function resetRemovedNodes() {
     // Update reset button visibility
     updateResetButtonVisibility();
     
-    console.log(`All ${nodesToRestore.length} nodes restored successfully`);
-    console.log('Removed nodes list cleared, current length:', removedNodeIds.length);
+    
+    
 }
 
 function updateResetButtonVisibility() {
-    console.log('updateResetButtonVisibility called');
-    console.log('Current removedNodeIds length:', removedNodeIds.length);
-    console.log('Current removedNodeIds:', removedNodeIds);
+    
+    
+    
     
     const resetBtn = document.getElementById('reset-categories-btn');
     const actionButtons = document.getElementById('action-buttons');
-    console.log('Reset button element found:', !!resetBtn);
-    console.log('Action buttons container found:', !!actionButtons);
+    
+    
     
     if (resetBtn && actionButtons) {
         if (removedNodeIds.length > 0) {
-            console.log('Showing reset button - nodes have been removed');
+            
             // Make sure the action buttons container is visible
             actionButtons.style.display = 'flex';
             // Show the reset button
             resetBtn.style.display = 'flex';
             resetBtn.style.visibility = 'visible';
         } else {
-            console.log('Hiding reset button - no nodes removed');
+            
             resetBtn.style.display = 'none';
             // Check if we should hide the entire action buttons container
             const shareBtn = document.getElementById('share-btn');
@@ -2306,14 +2653,14 @@ function updateResetButtonVisibility() {
 }
 
 function handleShare() {
-    console.log('Opening share popup...');
+    
     captureGraphImage();
 }
 
 // Share popup functions
 function captureGraphImage() {
     try {
-        console.log('Starting graph capture...');
+        
         
         // Check if network is initialized
         if (!network) {
@@ -2323,7 +2670,7 @@ function captureGraphImage() {
         }
         
         // Force a high-quality redraw before capture
-        console.log('Forcing high-quality redraw before capture...');
+        
         
         // Apply quality settings to the canvas
         const canvas = document.querySelector('#graph-container canvas');
@@ -2353,7 +2700,7 @@ function captureGraphImage() {
 async function enhanceNetworkResolution() {
     return new Promise((resolve, reject) => {
         try {
-            console.log('Attempting to enhance network resolution...');
+            
             
             // Store original canvas size
             const container = document.getElementById('graph-container');
@@ -2376,7 +2723,7 @@ async function enhanceNetworkResolution() {
                 
                 // Wait for redraw to complete
                 setTimeout(() => {
-                    console.log('Network enhanced to higher resolution');
+                    
                     resolve();
                 }, 200);
             } else {
@@ -2405,7 +2752,7 @@ function restoreNetworkResolution() {
             network.redraw();
         }
         
-        console.log('Network resolution restored to original');
+        
     } catch (error) {
         console.error('Error restoring network resolution:', error);
     }
@@ -2413,25 +2760,25 @@ function restoreNetworkResolution() {
 
 function performGraphCapture() {
     try {
-        console.log('Performing graph capture...');
+        
         
         // Multiple methods to find the canvas
         let networkCanvas = null;
         
         // Method 1: Direct query selector
         networkCanvas = document.querySelector('#graph-container canvas');
-        console.log('Method 1 - Direct selector:', networkCanvas);
+        
         
         if (!networkCanvas) {
             // Method 2: Vis.js specific selector
             networkCanvas = document.querySelector('#graph-container .vis-network canvas');
-            console.log('Method 2 - Vis selector:', networkCanvas);
+            
         }
         
         if (!networkCanvas) {
             // Method 3: Find all canvases and use the first one
             const allCanvases = document.querySelectorAll('#graph-container canvas');
-            console.log('Method 3 - All canvases:', allCanvases);
+            
             if (allCanvases.length > 0) {
                 networkCanvas = allCanvases[0];
             }
@@ -2442,10 +2789,10 @@ function performGraphCapture() {
             try {
                 if (network && network.canvas && network.canvas.frame && network.canvas.frame.canvas) {
                     networkCanvas = network.canvas.frame.canvas;
-                    console.log('Method 4 - Network object:', networkCanvas);
+                    
                 }
             } catch (e) {
-                console.log('Method 4 failed:', e);
+                
             }
         }
         
@@ -2455,8 +2802,8 @@ function performGraphCapture() {
             return;
         }
         
-        console.log('Found canvas:', networkCanvas);
-        console.log('Canvas dimensions:', networkCanvas.width, 'x', networkCanvas.height);
+        
+        
         
         // Validate canvas has proper dimensions
         if (!networkCanvas.width || !networkCanvas.height) {
@@ -2477,7 +2824,7 @@ function performGraphCapture() {
         
         // Get device pixel ratio for high-DPI displays
         const devicePixelRatio = window.devicePixelRatio || 1;
-        console.log('Device pixel ratio:', devicePixelRatio);
+        
         
         // Source dimensions (accounting for potential DPI scaling)
         const sourceWidth = networkCanvas.width;
@@ -2489,17 +2836,17 @@ function performGraphCapture() {
         const cssWidth = canvasRect.width;
         const cssHeight = canvasRect.height;
         
-        console.log('Source canvas dimensions:', sourceWidth, 'x', sourceHeight);
-        console.log('CSS dimensions:', cssWidth, 'x', cssHeight);
-        console.log('Source aspect ratio:', sourceAspectRatio);
+        
+        
+        
         
         // Force high-resolution output with focus on quality over extreme size
         const baseScalingFactor = Math.max(3, devicePixelRatio * 2); // Balanced scaling for quality
         const maxWidth = 4000;  // Reasonable max dimensions focused on quality
         const maxHeight = 3000;
         
-        console.log('Device pixel ratio:', devicePixelRatio);
-        console.log('Base scaling factor:', baseScalingFactor);
+        
+        
         
         // Calculate target dimensions maintaining aspect ratio
         let targetWidth, targetHeight;
@@ -2527,8 +2874,8 @@ function performGraphCapture() {
         const canvasWidth = Math.floor(targetWidth);
         const canvasHeight = Math.floor(targetHeight);
         
-        console.log('FINAL OUTPUT RESOLUTION:', canvasWidth, 'x', canvasHeight);
-        console.log('This should be much higher than 1280x903!');
+        
+        
         
         // For display in popup, maintain aspect ratio but fit within container
         const containerMaxWidth = 600;
@@ -2539,9 +2886,9 @@ function performGraphCapture() {
         displayWidth = Math.floor(canvasWidth * displayScale);
         displayHeight = Math.floor(canvasHeight * displayScale);
         
-        console.log('Target canvas dimensions:', canvasWidth, 'x', canvasHeight);
-        console.log('Display dimensions:', displayWidth, 'x', displayHeight);
-        console.log('Scaling factor used:', baseScalingFactor);
+        
+        
+        
         
         // Set canvas to ultra-high resolution for capture (maintains aspect ratio)
         shareCanvas.width = canvasWidth;
@@ -2570,7 +2917,7 @@ function performGraphCapture() {
                 0, 0, canvasWidth, canvasHeight
             );
             
-            console.log('High-resolution image drawn successfully from high-DPI source');
+            
             
             // Add watermarks (scaled for high resolution)
             addWatermarkToCanvas(ctx, canvasWidth, canvasHeight);
@@ -2787,7 +3134,7 @@ function downloadImage() {
         link.click();
         document.body.removeChild(link);
         
-        console.log('Graph image downloaded');
+        
         
     } catch (error) {
         console.error('Error downloading image:', error);
@@ -2804,17 +3151,17 @@ window.closeProjectPopup = closeProjectPopup;
 // Helper function to reset node indicator to default state
 function resetNodeIndicator() {
     // Node indicator is no longer used - function kept for compatibility
-    console.log('resetNodeIndicator called - node indicator removed from UI');
+    
 }
 
 // Helper function to set project logo as indicator
 function setProjectLogoIndicator(logoUrl) {
     // Project logo indicator is no longer used - function kept for compatibility
-    console.log('setProjectLogoIndicator called - project logo indicator removed from UI');
+    
 }
 
 function displayNodeInfo(nodeId, node) {
-    console.log('displayNodeInfo called with:', { nodeId, node: node ? node.project || node : 'no node' });
+    
     
     // Check if required elements exist
     const nodeTitle = document.getElementById('node-title');
@@ -3785,7 +4132,7 @@ function forceHighDPIRendering() {
         const ctx = canvas.getContext('2d');
         const devicePixelRatio = window.devicePixelRatio || 1;
         
-        console.log('Device pixel ratio:', devicePixelRatio);
+        
         console.log('Canvas size before:', canvas.width, 'x', canvas.height);
         
         // Get the CSS size

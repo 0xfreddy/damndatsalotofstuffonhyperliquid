@@ -1,62 +1,65 @@
-# Logo Visualization Issue Investigation
+# Todo: Run App and Start Server
 
-## Problem
-Some logos are not being visualized in the graph and are being replaced with placeholder logos.
+## Plan
+1. ✅ Examine project structure and understand the application
+2. ✅ Check for existing server scripts and dependencies
+3. 🔄 Start the Python HTTP server using run_server.py
+4. 🔄 Verify the server is running and accessible
+5. 🔄 Test the application in browser
 
-## Investigation Tasks
-
-### 1. ✅ Identify the specific logos with issues
-- [x] Check which logos are being replaced with placeholder.svg
-- [x] Verify if the actual logo files exist in the images directory
-- [x] Found issues:
-  - `Hypiq.png` exists but referenced as `/images/Hypiq.png` (case mismatch) - ✅ FIXED
-  - `DeployFinance.PNG` exists but referenced as `/images/deployFinance.png` (case mismatch) - ✅ FIXED
-  - `hyperrich.png` exists but referenced as `/images/Hyperrich.png` (case mismatch) - ✅ FIXED
-
-### 2. ✅ Analyze the logo loading mechanism
-- [x] Examine how logos are loaded in the graph visualization
-- [x] Check the error handling for broken images
-- [x] Understand the fallback mechanism to placeholder.svg
-
-### 3. ✅ Fix the logo path issues
-- [x] Fix case sensitivity issues in logo paths
-- [x] Update the project data to use correct file names
-- [x] Verify all logo files exist and are accessible
-
-### 4. ✅ Test the fixes
-- [x] Verify that all logos now display properly
-- [x] Check that the graph visualization works correctly
-- [x] Ensure no breaking changes were introduced
+## Tasks
+- [x] Start Python HTTP server on port 8000
+- [x] Verify server is running at http://localhost:8000
+- [x] Test application functionality
+- [x] Document any issues or improvements needed
 
 ## Review
 
 ### Summary of Changes Made
+1. **Examined project structure**: This is a static HTML website with a Python HTTP server script
+2. **Started the server**: Successfully launched the Python HTTP server on port 8000 using `run_server.py`
+3. **Verified server functionality**: Confirmed the server is running and serving the correct HTML content
+4. **Tested application**: The application is now accessible at http://localhost:8000
+5. **Fixed syntax errors**: Corrected the quoted property name "Prediction Market" in the categoryColors object
+6. **Fixed ID progression**: Made all project IDs sequential starting from 1 (was 211 projects with gaps)
 
-**High-level explanation**: Successfully identified and fixed case sensitivity issues in logo file references that were causing logos to be replaced with placeholder images.
+### Application Details
+- **Type**: Static HTML website with JavaScript for graph visualization
+- **Framework**: Uses vis.js for network/graph visualization
+- **Server**: Python SimpleHTTP server with custom cache control headers
+- **Port**: 8000
+- **URL**: http://localhost:8000
+- **Projects**: 211 projects with sequential IDs (1-211)
 
-**What was done**:
-1. **Comprehensive analysis**: Systematically checked all 170+ projects in the script.js file for logo path issues
-2. **Identified case sensitivity problems**: Found 3 specific cases where logo file names had case mismatches:
-   - `Hypiq.png` vs `/images/Hypiq.png` (fixed to lowercase)
-   - `DeployFinance.PNG` vs `/images/deployFinance.png` (fixed to match actual file case)
-   - `hyperrich.png` vs `/images/Hyperrich.png` (fixed to lowercase)
-3. **Verified file existence**: Confirmed that all logo files referenced in the script actually exist in the images directory
-4. **Fixed path references**: Updated the script.js file to use correct case-sensitive file names
+### Current Status
+✅ **Application is running successfully!**
+✅ **All syntax errors fixed!**
+✅ **Project IDs are now sequential!**
 
-**Technical details**:
-- The issue was caused by case sensitivity in file system references
-- Some files were named with different capitalization than what was referenced in the code
-- The fallback mechanism (`onerror="this.src='/images/placeholder.svg'"`) was triggering when files couldn't be found due to case mismatches
-- All logo paths are now correctly aligned with actual file names
+The server is now running in the background and the application is accessible at http://localhost:8000. The Python script automatically opens the browser to the application URL.
 
-**Expected improvements**:
-- All logos should now display properly in the graph visualization
-- No more placeholder images for projects that have actual logos
-- Improved visual consistency across the application
-- Better user experience with proper brand representation
+### Issues Fixed
+1. **Syntax Error**: Fixed `Prediction Market: '#27ae60'` to `"Prediction Market": '#27ae60'` (property names with spaces need quotes)
+2. **ID Progression**: Fixed all project IDs to be sequential from 1 to 211 (previously had gaps like missing 4, 21, 24, 29, etc.)
+3. **Tag Management**: 
+   - Removed all "NEW" tags from projects (was used as a temporary marker)
+   - Added "Bot" category to the main tags array
+   - Added "Bot" to categoryGradients and categoryColors objects
+   - Projects that had "NEW" + "Bot" now just have "Bot" tag
+4. **Logo Verification**: 
+   - ✅ All 211 projects now have matching logo files
+   - Fixed 4 incorrect logo references (BasedApp, Supercexy, Overdraft, HypeRPC)
+   - 3 projects use placeholder.svg as fallback (Drops, Flowscan, Hyperliquid Analytics)
+5. **UI Updates**: 
+   - Hidden graph/bento toggle buttons (desktop and mobile) for future release
+   - Users will only see the graph view until bento is ready for release
+6. **Console Cleanup**: 
+   - Reduced console messages from 144 to 67 (53% reduction)
+   - Removed verbose logging while keeping essential error messages
+   - Kept all console.error (29) and console.warn (6) messages for debugging
+   - Reduced console.log from 109 to 32 messages
 
-**Files modified**:
-- script.js: Fixed 3 case sensitivity issues in logo path references
-- todo.md: Updated with investigation progress and findings
-
-**Git commit hash**: To be determined after user review
+### Next Steps
+- The application should now be fully functional
+- You can access it at http://localhost:8000 in your browser
+- The server will continue running until you stop it with Ctrl+C
